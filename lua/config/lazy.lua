@@ -8,32 +8,30 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
-	spec = {
-		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
-	  { import = "lazyvim.plugins.extras.util.project" },
+  spec = {
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "lazyvim.plugins.extras.util.project" },
+    { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.coding.copilot" },
-		{ import = "lazyvim.plugins.extras.lang.typescript" },
-		{ import = "lazyvim.plugins.extras.lang.json" },
-		{ import = "plugins" },
-	},
-	defaults = {
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "plugins" },
+  },
+  defaults = {
     lazy = false,
-		-- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
-		-- have outdated releases, which may break your Neovim install.
-		version = false, -- always use the latest git commit
-	},
-	install = { colorscheme = { "catppuccin" } },
-	checker = { enabled = true }, -- automatically check for plugin updates
-	performance = {
-		rtp = {
-			disabled_plugins = {
-				"gzip",
-				"tarPlugin",
-				"tohtml",
-				"tutor",
-				"zipPlugin",
-			},
-		},
-	},
+    version = false, -- always use the latest git commit
+  },
+  checker = { enabled = true }, -- automatically check for plugin updates
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
 })
