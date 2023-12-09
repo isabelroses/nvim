@@ -1,0 +1,10 @@
+{
+  "neodev": {
+    "library": {
+      "enabled": true
+    }
+  },
+  "lspconfig": {
+    "sumneko_lua": {}
+  }
+}

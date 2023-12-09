@@ -1,0 +1,306 @@
+[alpha-nvim]
+fetch.github = "goolord/alpha-nvim"
+src.git = "https://github.com/goolord/alpha-nvim"
+
+[asyncrun-vim]
+fetch.github = "skywind3000/asyncrun.vim"
+src.git = "https://github.com/skywind3000/asyncrun.vim"
+
+[asynctasks-vim]
+fetch.github = "skywind3000/asynctasks.vim"
+src.git = "https://github.com/skywind3000/asynctasks.vim"
+
+[bufferline]
+fetch.github = "akinsho/bufferline.nvim"
+src.git = "https://github.com/akinsho/bufferline.nvim"
+
+[catppuccin]
+fetch.github = "catppuccin/nvim"
+src.git = "https://github.com/catppuccin/nvim"
+
+[cmp-buffer]
+fetch.github = "hrsh7th/cmp-buffer"
+src.git = "https://github.com/hrsh7th/cmp-buffer"
+
+[cmp-cmdline]
+fetch.github = "hrsh7th/cmp-cmdline"
+src.git = "https://github.com/hrsh7th/cmp-cmdline"
+
+[cmp-git]
+fetch.github = "petertriho/cmp-git"
+src.git = "https://github.com/petertriho/cmp-git"
+
+[cmp-nvim-lsp]
+fetch.github = "hrsh7th/cmp-nvim-lsp"
+src.git = "https://github.com/hrsh7th/cmp-nvim-lsp"
+
+[cmp-path]
+fetch.github = "hrsh7th/cmp-path"
+src.git = "https://github.com/hrsh7th/cmp-path"
+
+[cmp_luasnip]
+fetch.github = "saadparwaiz1/cmp_luasnip"
+src.git = "https://github.com/saadparwaiz1/cmp_luasnip"
+
+[color-picker]
+fetch.github = "ziontee113/color-picker.nvim"
+src.git = "https://github.com/ziontee113/color-picker.nvim"
+
+[comment]
+fetch.github = "numtostr/comment.nvim"
+src.git = "https://github.com/numtostr/comment.nvim"
+
+[copilot-lua]
+fetch.github = "zbirenbaum/copilot.lua"
+src.git = "https://github.com/zbirenbaum/copilot.lua"
+
+[copilot-cmp]
+fetch.github = "zbirenbaum/copilot-cmp"
+src.git = "https://github.com/zbirenbaum/copilot-cmp"
+
+[crates]
+fetch.github = "saecki/crates.nvim"
+src.git = "https://github.com/saecki/crates.nvim"
+
+[diffview]
+fetch.github = "sindrets/diffview.nvim"
+src.git = "https://github.com/sindrets/diffview.nvim"
+
+[dressing]
+fetch.github = "stevearc/dressing.nvim"
+src.git = "https://github.com/stevearc/dressing.nvim"
+
+[editorconfig]
+fetch.github = "gpanders/editorconfig.nvim"
+src.git = "https://github.com/gpanders/editorconfig.nvim"
+
+[fidget]
+fetch.github = "j-hui/fidget.nvim"
+src.git = "https://github.com/j-hui/fidget.nvim"
+src.branch = "legacy"
+
+[friendly-snippets]
+fetch.github = "rafamadriz/friendly-snippets"
+src.git = "https://github.com/rafamadriz/friendly-snippets"
+
+[gitsigns]
+fetch.github = "lewis6991/gitsigns.nvim"
+src.git = "https://github.com/lewis6991/gitsigns.nvim"
+
+[glance]
+fetch.github = "dnlhc/glance.nvim"
+src.git = "https://github.com/dnlhc/glance.nvim"
+
+[indent-blankline]
+fetch.github = "lukas-reineke/indent-blankline.nvim"
+src.git = "https://github.com/lukas-reineke/indent-blankline.nvim"
+
+[lazy]
+fetch.github = "folke/lazy.nvim"
+src.git = "https://github.com/folke/lazy.nvim"
+
+[lazygit]
+fetch.github = "kdheepak/lazygit.nvim"
+src.git = "https://github.com/kdheepak/lazygit.nvim"
+
+[lsp-status]
+fetch.github = "nvim-lua/lsp-status.nvim"
+src.git = "https://github.com/nvim-lua/lsp-status.nvim"
+
+[lspkind]
+fetch.github = "onsails/lspkind.nvim"
+src.git = "https://github.com/onsails/lspkind.nvim"
+
+[ltex-extra]
+fetch.github = "barreiroleo/ltex-extra.nvim"
+src.git = "https://github.com/barreiroleo/ltex-extra.nvim"
+
+[lualine]
+fetch.github = "nvim-lualine/lualine.nvim"
+src.git = "https://github.com/nvim-lualine/lualine.nvim"
+
+[luasnip]
+fetch.github = "L3MON4D3/LuaSnip"
+src.git = "https://github.com/L3MON4D3/LuaSnip"
+
+[markdown-preview]
+extract = ["app/yarn.lock"]
+fetch.github = "iamcco/markdown-preview.nvim"
+src.git = "https://github.com/iamcco/markdown-preview.nvim"
+
+[neoconf]
+fetch.github = "folke/neoconf.nvim"
+src.git = "https://github.com/folke/neoconf.nvim"
+
+[neodev]
+fetch.github = "folke/neodev.nvim"
+src.git = "https://github.com/folke/neodev.nvim"
+
+[neorepl]
+fetch.github = "ii14/neorepl.nvim"
+src.git = "https://github.com/ii14/neorepl.nvim"
+
+[neovim-session-manager]
+fetch.github = "Shatur/neovim-session-manager"
+src.git = "https://github.com/Shatur/neovim-session-manager"
+
+[null-ls]
+fetch.github = "jose-elias-alvarez/null-ls.nvim"
+src.git = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+
+[nvim-autopairs]
+fetch.github = "windwp/nvim-autopairs"
+src.git = "https://github.com/windwp/nvim-autopairs"
+
+[nvim-cmp]
+fetch.github = "hrsh7th/nvim-cmp"
+src.git = "https://github.com/hrsh7th/nvim-cmp"
+
+[nvim-colorizer-lua]
+fetch.github = "nvchad/nvim-colorizer.lua"
+src.git = "https://github.com/nvchad/nvim-colorizer.lua"
+
+[nvim-dap]
+fetch.github = "mfussenegger/nvim-dap"
+src.git = "https://github.com/mfussenegger/nvim-dap"
+
+[nvim-dap-ui]
+fetch.github = "rcarriga/nvim-dap-ui"
+src.git = "https://github.com/rcarriga/nvim-dap-ui"
+
+[nvim-dap-virtual-text]
+fetch.github = "theHamsta/nvim-dap-virtual-text"
+src.git = "https://github.com/theHamsta/nvim-dap-virtual-text"
+
+[nvim-lspconfig]
+fetch.github = "neovim/nvim-lspconfig"
+src.git = "https://github.com/neovim/nvim-lspconfig"
+
+[nvim-navic]
+fetch.github = "SmiteshP/nvim-navic"
+src.git = "https://github.com/SmiteshP/nvim-navic"
+
+[nvim-notify]
+fetch.github = "rcarriga/nvim-notify"
+src.git = "https://github.com/rcarriga/nvim-notify"
+
+[nvim-spectre]
+fetch.github = "nvim-pack/nvim-spectre"
+src.git = "https://github.com/nvim-pack/nvim-spectre"
+
+[nvim-surround]
+fetch.github = "kylechui/nvim-surround"
+src.git = "https://github.com/kylechui/nvim-surround"
+
+[nvim-tree-lua]
+fetch.github = "nvim-tree/nvim-tree.lua"
+src.git = "https://github.com/nvim-tree/nvim-tree.lua"
+
+[nvim-treesitter]
+fetch.github = "nvim-treesitter/nvim-treesitter"
+src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
+
+[nvim-treesitter-context]
+fetch.github = "nvim-treesitter/nvim-treesitter-context"
+src.git = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+
+[nvim-treesitter-textobjects]
+fetch.github = "nvim-treesitter/nvim-treesitter-textobjects"
+src.git = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+
+[nvim-ts-autotag]
+fetch.github = "windwp/nvim-ts-autotag"
+src.git = "https://github.com/windwp/nvim-ts-autotag"
+
+[nvim-web-devicons]
+fetch.github = "nvim-tree/nvim-web-devicons"
+src.git = "https://github.com/nvim-tree/nvim-web-devicons"
+
+[obsidian-nvim]
+fetch.github = "epwalsh/obsidian.nvim"
+src.git = "https://github.com/epwalsh/obsidian.nvim"
+
+[playground]
+fetch.github = "nvim-treesitter/playground"
+src.git = "https://github.com/nvim-treesitter/playground"
+
+[plenary]
+fetch.github = "nvim-lua/plenary.nvim"
+src.git = "https://github.com/nvim-lua/plenary.nvim"
+
+[presence]
+fetch.github = "andweeb/presence.nvim"
+src.git = "https://github.com/andweeb/presence.nvim"
+
+[py_lsp]
+fetch.github = "hallerpatrick/py_lsp.nvim"
+src.git = "https://github.com/hallerpatrick/py_lsp.nvim"
+
+[rainbow-delimiters]
+fetch.github = "hiphish/rainbow-delimiters.nvim"
+src.git = "https://github.com/hiphish/rainbow-delimiters.nvim"
+
+[rust-tools]
+fetch.github = "simrat39/rust-tools.nvim"
+src.git = "https://github.com/simrat39/rust-tools.nvim"
+
+[schemastore]
+fetch.github = "b0o/schemastore.nvim"
+src.git = "https://github.com/b0o/schemastore.nvim"
+
+[telescope]
+fetch.github = "nvim-telescope/telescope.nvim"
+src.git = "https://github.com/nvim-telescope/telescope.nvim"
+
+[telescope-asynctasks]
+fetch.github = "GustavoKatel/telescope-asynctasks.nvim"
+src.git = "https://github.com/GustavoKatel/telescope-asynctasks.nvim"
+
+[telescope-file-browser]
+fetch.github = "nvim-telescope/telescope-file-browser.nvim"
+src.git = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+
+[telescope-fzf-native]
+fetch.github = "nvim-telescope/telescope-fzf-native.nvim"
+src.git = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+
+[telescope-project]
+fetch.github = "nvim-telescope/telescope-project.nvim"
+src.git = "https://github.com/nvim-telescope/telescope-project.nvim"
+
+[telescope-ui-select]
+fetch.github = "nvim-telescope/telescope-ui-select.nvim"
+src.git = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+
+[todo-comments]
+fetch.github = "folke/todo-comments.nvim"
+src.git = "https://github.com/folke/todo-comments.nvim"
+
+[toggleterm]
+fetch.github = "akinsho/toggleterm.nvim"
+src.git = "https://github.com/akinsho/toggleterm.nvim"
+
+[trouble]
+fetch.github = "folke/trouble.nvim"
+src.git = "https://github.com/folke/trouble.nvim"
+
+[typescript-tools]
+fetch.github = "pmizio/typescript-tools.nvim"
+src.git = "https://github.com/pmizio/typescript-tools.nvim"
+
+[vim-fugitive]
+fetch.github = "tpope/vim-fugitive"
+src.git = "https://github.com/tpope/vim-fugitive"
+
+[vim-table-mode]
+fetch.github = "dhruvasagar/vim-table-mode"
+src.git = "https://github.com/dhruvasagar/vim-table-mode"
+
+[which-key]
+fetch.github = "folke/which-key.nvim"
+src.git = "https://github.com/folke/which-key.nvim"
+
+[neovide]
+src.github = "neovide/neovide"
+fetch.github = "neovide/neovide"
+cargo_locks = ["Cargo.lock"]

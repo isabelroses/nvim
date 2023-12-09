@@ -1,0 +1,49 @@
+name: Build and populate cache
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 3" # 03:00 on Wednesday, this is beacuse we want to update 1hr after the inputs update
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: 
+          - default
+          - neovide
+          - nvim-treesitter
+          - telescope-fzf-native
+          - markdown-preview
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v10
+        with:
+          overprovision-lvm: true
+          remove-android: true
+          remove-dotnet: true
+          remove-haskell: true
+          remove-codeql: true
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          logger: pretty
+
+      - name: Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Setup cachix
+        uses: cachix/cachix-action@v13
+        with:
+          name: isabelroses
+          signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
+          authToken: "${{ secrets.CACHIX_TOKEN }}"
+
+      - name: Build from the matrix
+        run: nix build -L .#${{ matrix.package }}
