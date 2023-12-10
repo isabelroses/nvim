@@ -19,9 +19,12 @@ return function()
 		["<leader>"] = {
 			y = { '"+y', "Copy to clipboard" },
 			p = { '"+p', "Paste from clipboard" },
-			gd = { "<cmd>Gvdiff!<CR>", "Git diff" },
-			gg = { "<cmd>LazyGit<cr>", "LazyGit" },
-			qq = { "<cmd>qall<cr>", "Quit all" },
+			g = {
+				name = "+git",
+				d = { "<cmd>Gvdiff!<CR>", "Git diff" },
+				g = { "<cmd>LazyGit<cr>", "LazyGit" },
+			},
+			q = { "<cmd>qall<cr>", "Quit all" },
 		},
 	}, { mode = { "n", "v" } })
 
