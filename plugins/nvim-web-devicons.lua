@@ -3,7 +3,7 @@ return function()
 
 	local devicons = require("nvim-web-devicons")
 	devicons.setup({
-	    override_by_filename = {
+		override_by_filename = {
 			[".ecrc"] = {
 				icon = "",
 				name = "EditorConfigChecker",
