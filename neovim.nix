@@ -23,6 +23,7 @@
           luaPackages.teal-language-server
 
           # webdev
+          deno
           nodePackages.nodejs
           # nodePackages."@astrojs/language-server"
           nodePackages."@tailwindcss/language-server"
@@ -43,8 +44,11 @@
           statix
           deadnix
 
+          # go
+          gopls
+          go
+
           # etc
-          deno
           emmet-ls
           ltex-ls
           nodePackages.prettier
