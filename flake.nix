@@ -82,13 +82,6 @@
         packages = rec {
           default = neovim;
           neovim = config.neovim.final;
-          neovide = pkgs.callPackage ./pkgs/neovide {
-            env = {
-              NEOVIDE_FRAME = "none";
-              NEOVIDE_MULTIGRID = "1";
-              NEOVIM_BIN = "${neovim}/bin/nvim";
-            };
-          };
           nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter {};
           telescope-fzf-native = pkgs.callPackage ./pkgs/telescope-fzf-native {};
           markdown-preview = pkgs.callPackage ./pkgs/markdown-preview {};

@@ -158,6 +158,7 @@ vim.cmd([[au BufRead,BufNewFile *.jq setfiletype jq]])
 
 local common = { capabilities = capabilities }
 
+require("isabel.lsp.go").setup(common)
 require("isabel.lsp.ltex").setup(common)
 require("isabel.lsp.null-ls")
 require("isabel.lsp.nix").setup(common)

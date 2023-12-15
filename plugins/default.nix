@@ -337,6 +337,13 @@ in rec {
         config = true;
       };
 
+      go-nvim = {
+        src = srcs.go-nvim;
+        dependencies = {
+          guihua-lua.src = srcs.guihua-lua;
+        };
+      };
+
       nvim-dap = {
         src = srcs.nvim-dap;
         dependencies = {

@@ -24,7 +24,7 @@
 
           # webdev
           nodePackages.nodejs
-          nodePackages."@astrojs/language-server"
+          # nodePackages."@astrojs/language-server"
           nodePackages."@tailwindcss/language-server"
           nodePackages.alex
           nodePackages.bash-language-server
@@ -45,6 +45,7 @@
 
           # etc
           deno
+          emmet-ls
           ltex-ls
           nodePackages.prettier
           proselint

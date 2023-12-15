@@ -91,6 +91,14 @@ src.git = "https://github.com/lewis6991/gitsigns.nvim"
 fetch.github = "dnlhc/glance.nvim"
 src.git = "https://github.com/dnlhc/glance.nvim"
 
+[go-nvim]
+fetch.github = "ray-x/go.nvim"
+src.git = "https://github.com/ray-x/go.nvim"
+
+[guihua-lua]
+fetch.github = "ray-x/guihua.lua"
+src.git = "https://github.com/ray-x/guihua.lua"
+
 [indent-blankline]
 fetch.github = "lukas-reineke/indent-blankline.nvim"
 src.git = "https://github.com/lukas-reineke/indent-blankline.nvim"
@@ -299,8 +307,3 @@ src.git = "https://github.com/dhruvasagar/vim-table-mode"
 [which-key]
 fetch.github = "folke/which-key.nvim"
 src.git = "https://github.com/folke/which-key.nvim"
-
-[neovide]
-src.github = "neovide/neovide"
-fetch.github = "neovide/neovide"
-cargo_locks = ["Cargo.lock"]

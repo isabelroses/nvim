@@ -12,7 +12,6 @@ jobs:
       matrix:
         package: 
           - default
-          - neovide
           - nvim-treesitter
           - telescope-fzf-native
           - markdown-preview
