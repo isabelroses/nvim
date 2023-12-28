@@ -1,36 +1,36 @@
-name: Update Flake Inputs
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 2 * * 3" # 02:00 on Wednesday
-
-jobs:
-  update-lockfile:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4.1.0
-
-      - name: Install Nix
-        uses: nixbuild/nix-quick-install-action@v26
-
-      - name: Update Sources
-        run: |
-          nix run github:berberman/nvfetcher
-          pushd pkgs/nvim-treesitter
-          nix run github:berberman/nvfetcher
-          popd
-
-      - name: Update Lockfile
-        uses: DeterminateSystems/update-flake-lock@main
-        id: update
-        with:
-          pr-title: "chore(deps): update inputs"
-          commit-msg: "chore(deps): update inputs"
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Merge Changes
-        run: gh pr merge ${{ steps.update.outputs.pull-request-number }} --squash --delete-branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# name: Update Flake Inputs
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron: "0 2 * * 3" # 02:00 on Wednesday
+#
+# jobs:
+#   update-lockfile:
+#     runs-on: ubuntu-latest
+#
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4.1.0
+#
+#       - name: Install Nix
+#         uses: nixbuild/nix-quick-install-action@v26
+#
+#       - name: Update Sources
+#         run: |
+#           nix run github:berberman/nvfetcher
+#           pushd pkgs/nvim-treesitter
+#           nix run github:berberman/nvfetcher
+#           popd
+#
+#       - name: Update Lockfile
+#         uses: DeterminateSystems/update-flake-lock@main
+#         id: update
+#         with:
+#           pr-title: "chore(deps): update inputs"
+#           commit-msg: "chore(deps): update inputs"
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#
+#       - name: Merge Changes
+#         run: gh pr merge ${{ steps.update.outputs.pull-request-number }} --squash --delete-branch
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
