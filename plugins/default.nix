@@ -133,11 +133,11 @@ in rec {
   };
 
   # tabs
-  bufferline = {
-    src = srcs.bufferline;
-    config = ./bufferline.lua;
-    dependencies = {inherit catppuccin;};
-  };
+  # bufferline = {
+  #   src = srcs.bufferline;
+  #   config = ./bufferline.lua;
+  #   dependencies = {inherit catppuccin;};
+  # };
 
   # nicer notfications
   notify = {
