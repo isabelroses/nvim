@@ -89,6 +89,30 @@
         "type": "github"
       }
     },
+    "nekowinston-nur": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": []
+      },
+      "locked": {
+        "lastModified": 1703833421,
+        "narHash": "sha256-rM6jnw08Z0AeCVY0CwClqgg9vuadCzpKl+MoIL8SDgc=",
+        "owner": "nekowinston",
+        "repo": "nur",
+        "rev": "6e220cb725bc01f9bfa2dbc866776ad20d33c058",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nekowinston",
+        "repo": "nur",
+        "type": "github"
+      }
+    },
     "neovim-nix": {
       "inputs": {
         "flake-parts": [
@@ -224,6 +248,7 @@
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",
+        "nekowinston-nur": "nekowinston-nur",
         "neovim-nix": "neovim-nix",
         "nil": "nil",
         "nixpkgs": "nixpkgs",

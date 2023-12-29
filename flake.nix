@@ -25,10 +25,19 @@
     neovim-nix = {
       url = "github:willruggiano/neovim.nix";
       inputs = {
+        nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
         neovim.follows = "";
-        nixpkgs.follows = "nixpkgs";
         pre-commit-nix.follows = "pre-commit-nix";
+      };
+    };
+
+    nekowinston-nur = {
+      url = "github:nekowinston/nur";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+        rust-overlay.follows = "";
       };
     };
 
@@ -58,7 +67,13 @@
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [];
+          overlays = [
+            (_: p: {
+              repos = {
+                nekowinston = import inputs.nekowinston-nur {inherit (p) pkgs;};
+              };
+            })
+          ];
         };
 
         checks = {
@@ -92,10 +107,12 @@
   nixConfig = {
     extra-substituters = [
       "https://pre-commit-hooks.cachix.org"
+      "https://nekowinston.cachix.org"
       "https://isabelroses.cachix.org"
     ];
     extra-trusted-public-keys = [
       "pre-commit-hooks.cachix.org-1:Pkk3Panw5AW24TOv6kz3PvLhlH8puAsJTBbOPmBo7Rc="
+      "nekowinston.cachix.org-1:lucpmaO+JwtoZj16HCO1p1fOv68s/RL1gumpVzRHRDs="
       "isabelroses.cachix.org-1:mXdV/CMcPDaiTmkQ7/4+MzChpOe6Cb97njKmBQQmLPM="
     ];
   };

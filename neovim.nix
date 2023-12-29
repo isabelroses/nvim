@@ -45,27 +45,7 @@
           deadnix
 
           # go
-          # see https://github.com/ray-x/go.nvim/blob/master/lua/go/install.lua
-          go
-          delve # dlv
-          ginkgo
-          # go-enum
-          gofumpt
-          golangci-lint
-          golines
-          gomodifytags
-          # gomvp
-          gopls
-          gotests
-          gotestsum
-          gotools # callgraph, goimports, gorename, guru
-          govulncheck
-          iferr
-          impl
-          # json-to-struct
-          mockgen
-          reftools # fillstruct, fillswitch
-          richgo
+          repos.nekowinston.gonvim-tools
 
           # etc
           emmet-ls

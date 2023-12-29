@@ -1,5 +1,5 @@
 {pkgs}: let
-  srcs = builtins.mapAttrs (name: pkg: pkg.src) (pkgs.callPackage ../_sources/generated.nix {});
+  srcs = builtins.mapAttrs (_: pkg: pkg.src) (pkgs.callPackage ../_sources/generated.nix {});
 in rec {
   config = {
     src = ./config;
@@ -221,27 +221,35 @@ in rec {
     };
   };
 
+  harpoon = {
+    src = srcs.harpoon;
+    config = ./harpoon.lua;
+    dependencies = {
+      inherit plenary telescope;
+    };
+  };
+
   # copilot
   copilot-cmp.src = srcs.copilot-cmp;
 
   copilot-lua = {
     src = srcs.copilot-lua;
     config = {
-      panel.enabled = false;
+      panel.enabled = true;
       suggestion = {
-        enabled = false;
+        enabled = true;
         auto_trigger = true;
         debounce = 75;
-        keymap.accept = "<C-J>";
+        keymap.accept = "<CR>";
       };
       filetypes = {
-        "." = false;
+        "." = true;
         cvs = false;
         gitcommit = false;
         gitrebase = false;
         help = false;
         hgcommit = false;
-        markdown = false;
+        markdown = true;
         svn = false;
         yaml = true;
       };

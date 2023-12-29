@@ -99,6 +99,11 @@ src.git = "https://github.com/ray-x/go.nvim"
 fetch.github = "ray-x/guihua.lua"
 src.git = "https://github.com/ray-x/guihua.lua"
 
+[harpoon]
+fetch.github = "ThePrimeagen/harpoon"
+src.git = "https://github.com/ThePrimeagen/harpoon"
+src.branch = "harpoon2"
+
 [indent-blankline]
 fetch.github = "lukas-reineke/indent-blankline.nvim"
 src.git = "https://github.com/lukas-reineke/indent-blankline.nvim"
