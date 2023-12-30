@@ -158,8 +158,8 @@ fetch.github = "Shatur/neovim-session-manager"
 src.git = "https://github.com/Shatur/neovim-session-manager"
 
 [null-ls]
-fetch.github = "jose-elias-alvarez/null-ls.nvim"
-src.git = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+fetch.github = "nvimtools/none-ls.nvim"
+src.git = "https://github.com/nvimtools/none-ls.nvim"
 
 [nvim-autopairs]
 fetch.github = "windwp/nvim-autopairs"
