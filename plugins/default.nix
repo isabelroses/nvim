@@ -242,19 +242,7 @@ in rec {
         debounce = 75;
         keymap.accept = "<CR>";
       };
-      filetypes = {
-        "." = true;
-        cvs = false;
-        gitcommit = false;
-        gitrebase = false;
-        help = false;
-        hgcommit = false;
-        markdown = true;
-        svn = false;
-        yaml = true;
-      };
       copilot_node_command = "node";
-      server_opts_overrides = {};
     };
   };
 
