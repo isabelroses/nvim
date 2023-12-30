@@ -81,9 +81,10 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 	sources = cmp.config.sources({
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
+		{ name = "path" },
 		{ name = "luasnip" },
-		{ name = "vim-dadbod-completion" },
 		{ name = "buffer" },
 	}),
 	formatting = {
@@ -91,6 +92,7 @@ cmp.setup({
 			mode = "symbol_text",
 			maxwidth = 50,
 			ellipsis_char = "...",
+			symbol_map = { Copilot = "" },
 		}),
 	},
 })
@@ -158,6 +160,7 @@ vim.cmd([[au BufRead,BufNewFile *.jq setfiletype jq]])
 
 local common = { capabilities = capabilities }
 
+require("copilot_cmp").setup() -- setup copilot
 require("isabel.lsp.go").setup(common)
 require("isabel.lsp.ltex").setup(common)
 require("isabel.lsp.null-ls")

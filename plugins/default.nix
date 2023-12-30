@@ -229,9 +229,8 @@ in rec {
     };
   };
 
-  # copilot
+  # copilot (disabled so that cmp works)
   copilot-cmp.src = srcs.copilot-cmp;
-
   copilot-lua = {
     src = srcs.copilot-lua;
     config = {
@@ -264,8 +263,7 @@ in rec {
         };
       };
       filetypes = {
-        yaml = true;
-        markdown = true;
+        "*" = true;
         help = false;
         gitcommit = false;
         gitrebase = false;
@@ -319,6 +317,7 @@ in rec {
     config = ./lsp.lua;
 
     dependencies = rec {
+      inherit copilot-cmp;
       cmp.src = srcs.nvim-cmp;
       cmp-buffer.src = srcs.cmp-buffer;
       cmp-cmdline.src = srcs.cmp-cmdline;
