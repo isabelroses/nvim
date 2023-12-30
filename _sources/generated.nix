@@ -472,15 +472,15 @@
   };
   null-ls = {
     pname = "null-ls";
-    version = "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7";
+    version = "e7382de51b4cf629e56f1fa18192e716e5ba8145";
     src = fetchFromGitHub {
-      owner = "jose-elias-alvarez";
-      repo = "null-ls.nvim";
-      rev = "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7";
+      owner = "nvimtools";
+      repo = "none-ls.nvim";
+      rev = "e7382de51b4cf629e56f1fa18192e716e5ba8145";
       fetchSubmodules = false;
-      sha256 = "sha256-cWA0rzkOp/ekVKaFee7iea1lhnqKtWUIU+fW5M950wI=";
+      sha256 = "sha256-XvOLC4N/fcoKQcpQXecwDJSAfF4z9pkszMjoMtWldNY=";
     };
-    date = "2023-08-11";
+    date = "2023-12-22";
   };
   nvim-autopairs = {
     pname = "nvim-autopairs";
@@ -616,27 +616,27 @@
   };
   nvim-tree-lua = {
     pname = "nvim-tree-lua";
-    version = "50f30bcd8c62ac4a83d133d738f268279f2c2ce2";
+    version = "96a783fbd606a458bcce2ef8041240a8b94510ce";
     src = fetchFromGitHub {
       owner = "nvim-tree";
       repo = "nvim-tree.lua";
-      rev = "50f30bcd8c62ac4a83d133d738f268279f2c2ce2";
+      rev = "96a783fbd606a458bcce2ef8041240a8b94510ce";
       fetchSubmodules = false;
-      sha256 = "sha256-u4JjV0Qwr5ESQ54Ae6SDotCeOil6+2iGC/Uwu0D+Yis=";
+      sha256 = "sha256-N2WdpbnGbzMUNWk8g6K5hT4m3W58LhXpdjN5aIYZFR0=";
     };
-    date = "2023-12-19";
+    date = "2023-12-30";
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "362ebd3a210f20aab80be05557f216cbaf4531e6";
+    version = "e49f1e8ef3e8450a8446cb1f2bbb53c919f60b6d";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "362ebd3a210f20aab80be05557f216cbaf4531e6";
+      rev = "e49f1e8ef3e8450a8446cb1f2bbb53c919f60b6d";
       fetchSubmodules = false;
-      sha256 = "sha256-Ma9pv168WwnxJmn+AdmnnEOQkmn+Flvb05gwhFvbdyA=";
+      sha256 = "sha256-3G5qOgqjZMrUkM7LaI02GTpwra6w+l97cIpFh4DHbgY=";
     };
-    date = "2023-12-29";
+    date = "2023-12-30";
   };
   nvim-treesitter-context = {
     pname = "nvim-treesitter-context";
@@ -676,15 +676,15 @@
   };
   nvim-web-devicons = {
     pname = "nvim-web-devicons";
-    version = "43aa2ddf476012a2155f5f969ee55ab17174da7a";
+    version = "808627b8d412b2a6b6fc6eed816fec3557198b01";
     src = fetchFromGitHub {
       owner = "nvim-tree";
       repo = "nvim-web-devicons";
-      rev = "43aa2ddf476012a2155f5f969ee55ab17174da7a";
+      rev = "808627b8d412b2a6b6fc6eed816fec3557198b01";
       fetchSubmodules = false;
-      sha256 = "sha256-FonYAQphOWxF+X3W1z5OS2MwX4bldcow/43HSMfcouM=";
+      sha256 = "sha256-jve/xoZssmZ51zNPQ6Ow5/nELRoejM2vrO3m6FDlnio=";
     };
-    date = "2023-12-24";
+    date = "2023-12-30";
   };
   obsidian-nvim = {
     pname = "obsidian-nvim";
