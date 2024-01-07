@@ -12,11 +12,10 @@ if not (cmp_present and lsp_present and luasnip_present and neoconf_present) the
 end
 
 vim.opt.completeopt = "menu,menuone,noselect"
-require("luasnip.loaders.from_vscode").lazy_load()
 vim.lsp.set_log_level("trace")
 
 -- border style
-require("lspconfig.ui.windows").default_options.border = "double"
+require("lspconfig.ui.windows").default_options.border = "rounded"
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 	border = vim.g.bc.style,
 })
@@ -36,11 +35,12 @@ local cmp_borders = {
 
 -- stylua: ignore
 local has_words_before = function()
-    ---@diagnostic disable-next-line: deprecated
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  ---@diagnostic disable-next-line: deprecated
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
+-- require("copilot_cmp").setup() -- setup copilot cmp
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -52,8 +52,6 @@ cmp.setup({
 		documentation = cmp_borders,
 	},
 	mapping = cmp.mapping.preset.insert({
-		["<C-b>"] = cmp.mapping.scroll_docs(-4),
-		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
@@ -81,7 +79,7 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 	sources = cmp.config.sources({
-		{ name = "copilot" },
+		-- { name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "luasnip" },
@@ -132,43 +130,27 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		local opts = { buffer = ev.buf }
-		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-		vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
-		vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
-		vim.keymap.set("n", "<space>wl", function()
-			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, opts)
-		vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
 		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-		vim.keymap.set("n", "<space>lr", "<cmd>LspRestart<CR>", opts)
-		vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 		vim.keymap.set("n", "<space>fm", function()
 			vim.lsp.buf.format({ async = true })
 		end, opts)
 	end,
 })
 
--- register jq for jqls
-vim.cmd([[au BufRead,BufNewFile *.jq setfiletype jq]])
-
 local common = { capabilities = capabilities }
 
-require("copilot_cmp").setup() -- setup copilot
 require("isabel.lsp.go").setup(common)
 require("isabel.lsp.ltex").setup(common)
 require("isabel.lsp.null-ls")
 require("isabel.lsp.nix").setup(common)
 require("isabel.lsp.validation").setup(common)
 require("isabel.lsp.webdev").setup(common)
--- external dependencies
-pcall(require("py_lsp").setup, common)
+
 pcall(require("rust-tools").setup, {
 	server = {
 		settings = {
@@ -183,15 +165,7 @@ pcall(require("rust-tools").setup, {
 		executor = require("rust-tools.executors").toggleterm,
 	},
 })
-
-lspconfig.nil_ls.setup(vim.tbl_extend("keep", {
-	settings = {
-		["nil"] = {
-			formatting = { command = { "alejandra" } },
-			nix = { maxMemoryMB = nil },
-		},
-	},
-}, common))
+pcall(require("py_lsp").setup, common)
 
 local servers = {
 	"astro",

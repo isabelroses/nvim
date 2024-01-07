@@ -9,8 +9,6 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null.setup({
 	sources = {
 		null.builtins.formatting.alejandra,
-		null.builtins.diagnostics.statix,
-		null.builtins.diagnostics.deadnix,
 		null.builtins.formatting.black,
 		null.builtins.formatting.dfmt,
 		null.builtins.formatting.deno_fmt.with({
@@ -25,7 +23,9 @@ null.setup({
 		null.builtins.formatting.isort,
 		null.builtins.formatting.prettier.with({
 			filetypes = {
+				"html",
 				"astro",
+				"vue",
 			},
 		}),
 		null.builtins.formatting.rustfmt,
@@ -35,6 +35,8 @@ null.setup({
 			command = "swift-format",
 		}),
 		null.builtins.formatting.taplo,
+		null.builtins.diagnostics.statix,
+		null.builtins.diagnostics.deadnix,
 		null.builtins.diagnostics.alex,
 		null.builtins.diagnostics.proselint,
 	},

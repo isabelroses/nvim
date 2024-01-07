@@ -16,6 +16,7 @@ M.setup = function(opts)
 				formatting = {
 					command = { "alejandra", "--quiet" },
 				},
+				nix = { maxMemoryMB = nil },
 			},
 		},
 	})
