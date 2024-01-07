@@ -42,10 +42,6 @@ in rec {
     dependencies = {inherit plenary;};
   };
 
-  markdown-preview = {
-    package = pkgs.callPackage ../pkgs/markdown-preview {};
-  };
-
   vim-table-mode = {
     src = srcs.vim-table-mode;
     config = ./vim-table-mode.lua;
@@ -174,11 +170,6 @@ in rec {
     };
   };
 
-  color-picker = {
-    src = srcs.color-picker;
-    config = true;
-  };
-
   # comments
   comment = {
     src = srcs.comment;
@@ -212,10 +203,8 @@ in rec {
     src = srcs.telescope;
     config = ./telescope.lua;
     dependencies = {
-      inherit plenary nvim-web-devicons;
-      telescope-asynctasks.src = srcs.telescope-asynctasks;
-      telescope-file-browser.src = srcs.telescope-file-browser;
-      telescope-fzf-native.package = pkgs.callPackage ../pkgs/telescope-fzf-native {};
+      inherit plenary nvim-web-devicons which-key;
+      telescope-fzf-native.package = pkgs.vimPlugins.telescope-fzf-native-nvim;
       telescope-project.src = srcs.telescope-project;
       telescope-ui-select.src = srcs.telescope-ui-select;
     };
@@ -225,70 +214,15 @@ in rec {
     src = srcs.harpoon;
     config = ./harpoon.lua;
     dependencies = {
-      inherit plenary telescope;
+      inherit plenary;
     };
   };
 
-  # copilot (disabled so that cmp works)
-  copilot-cmp.src = srcs.copilot-cmp;
+  # copilot
+  # copilot-cmp.src = srcs.copilot-cmp;
   copilot-lua = {
     src = srcs.copilot-lua;
-    config = {
-      panel = {
-        enabled = true;
-        auto_refresh = false;
-        keymap = {
-          jump_prev = "[[";
-          jump_next = "]]";
-          accept = "<CR>";
-          refresh = "gr";
-          open = "<C-CR>";
-        };
-        layout = {
-          position = "bottom";
-          ratio = 0.4;
-        };
-      };
-      suggestion = {
-        enabled = true;
-        auto_trigger = false;
-        debounce = 75;
-        keymap = {
-          accept = "<M-l>";
-          accept_word = false;
-          accept_line = false;
-          next = "<M-]>";
-          prev = "<M-[>";
-          dismiss = "<C-]>";
-        };
-      };
-      filetypes = {
-        "*" = true;
-        help = false;
-        gitcommit = false;
-        gitrebase = false;
-        hgcommit = false;
-        svn = false;
-        cvs = false;
-        "." = false;
-      };
-      copilot_node_command = "node";
-      server_opts_overrides = {};
-    };
-  };
-
-  # git stuff
-  diffview.src = srcs.diffview;
-
-  gitsigns = {
-    src = srcs.gitsigns;
-    config = ./gitsigns.lua;
-    dependencies = {inherit which-key;};
-  };
-
-  lazygit = {
-    src = srcs.lazygit;
-    dependencies = {inherit plenary;};
+    config = ./copilot.lua;
   };
 
   # lsp
@@ -297,9 +231,7 @@ in rec {
     config = ./tree-sitter.lua;
 
     dependencies = {
-      nvim-treesitter-playground.src = srcs.playground;
       nvim-treesitter-textobjects.src = srcs.nvim-treesitter-textobjects;
-      nvim-ts-autotag.src = srcs.nvim-ts-autotag;
       rainbow-delimiters.src = srcs.rainbow-delimiters;
 
       nvim-treesitter-context = {
@@ -316,8 +248,8 @@ in rec {
     src = srcs.nvim-lspconfig;
     config = ./lsp.lua;
 
-    dependencies = rec {
-      inherit copilot-cmp;
+    dependencies = {
+      # inherit copilot-cmp;
       cmp.src = srcs.nvim-cmp;
       cmp-buffer.src = srcs.cmp-buffer;
       cmp-cmdline.src = srcs.cmp-cmdline;
@@ -339,25 +271,18 @@ in rec {
       luasnip = {
         src = srcs.luasnip;
         dependencies = {
-          friendly-snippets.src = srcs.friendly-snippets;
           my-snippets.src = pkgs.callPackage ../pkgs/snippets {};
         };
       };
 
       trouble = {
         src = srcs.trouble;
-        config.padding = false;
+        config = ./trouble.lua;
       };
 
       neodev = {
         src = srcs.neodev;
         config = true;
-      };
-
-      nvim-autopairs = {
-        src = srcs.nvim-autopairs;
-        config = ./autopairs.lua;
-        dependencies = {inherit cmp;};
       };
 
       crates = {
@@ -384,17 +309,13 @@ in rec {
 
   # misc
   wakatime.src = pkgs.vimPlugins.vim-wakatime; # track my time coding
-  dressing.src = srcs.dressing;
-
-  glance = {
-    src = srcs.glance;
-    config = true;
+  lazygit = {
+    src = srcs.lazygit;
+    dependencies = {inherit plenary;};
   };
 
   # deps
   plenary.src = srcs.plenary;
-  asyncrun-vim.src = srcs.asyncrun-vim;
-  asynctasks-vim.src = srcs.asynctasks-vim;
 
   nvim-web-devicons = {
     src = srcs.nvim-web-devicons;
