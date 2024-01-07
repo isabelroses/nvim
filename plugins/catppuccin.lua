@@ -41,7 +41,7 @@ return function()
 				enabled = true,
 				custom_bg = "NONE",
 			},
-			gitsigns = true,
+			gitsigns = false,
 			markdown = true,
 			symbols_outline = true,
 			ts_rainbow = true,
