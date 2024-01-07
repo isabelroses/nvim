@@ -2,17 +2,9 @@
 fetch.github = "goolord/alpha-nvim"
 src.git = "https://github.com/goolord/alpha-nvim"
 
-[asyncrun-vim]
-fetch.github = "skywind3000/asyncrun.vim"
-src.git = "https://github.com/skywind3000/asyncrun.vim"
-
-[asynctasks-vim]
-fetch.github = "skywind3000/asynctasks.vim"
-src.git = "https://github.com/skywind3000/asynctasks.vim"
-
-[bufferline]
-fetch.github = "akinsho/bufferline.nvim"
-src.git = "https://github.com/akinsho/bufferline.nvim"
+# [bufferline]
+# fetch.github = "akinsho/bufferline.nvim"
+# src.git = "https://github.com/akinsho/bufferline.nvim"
 
 [catppuccin]
 fetch.github = "catppuccin/nvim"
@@ -42,10 +34,6 @@ src.git = "https://github.com/hrsh7th/cmp-path"
 fetch.github = "saadparwaiz1/cmp_luasnip"
 src.git = "https://github.com/saadparwaiz1/cmp_luasnip"
 
-[color-picker]
-fetch.github = "ziontee113/color-picker.nvim"
-src.git = "https://github.com/ziontee113/color-picker.nvim"
-
 [comment]
 fetch.github = "numtostr/comment.nvim"
 src.git = "https://github.com/numtostr/comment.nvim"
@@ -62,14 +50,6 @@ src.git = "https://github.com/zbirenbaum/copilot-cmp"
 fetch.github = "saecki/crates.nvim"
 src.git = "https://github.com/saecki/crates.nvim"
 
-[diffview]
-fetch.github = "sindrets/diffview.nvim"
-src.git = "https://github.com/sindrets/diffview.nvim"
-
-[dressing]
-fetch.github = "stevearc/dressing.nvim"
-src.git = "https://github.com/stevearc/dressing.nvim"
-
 [editorconfig]
 fetch.github = "gpanders/editorconfig.nvim"
 src.git = "https://github.com/gpanders/editorconfig.nvim"
@@ -78,18 +58,6 @@ src.git = "https://github.com/gpanders/editorconfig.nvim"
 fetch.github = "j-hui/fidget.nvim"
 src.git = "https://github.com/j-hui/fidget.nvim"
 src.branch = "legacy"
-
-[friendly-snippets]
-fetch.github = "rafamadriz/friendly-snippets"
-src.git = "https://github.com/rafamadriz/friendly-snippets"
-
-[gitsigns]
-fetch.github = "lewis6991/gitsigns.nvim"
-src.git = "https://github.com/lewis6991/gitsigns.nvim"
-
-[glance]
-fetch.github = "dnlhc/glance.nvim"
-src.git = "https://github.com/dnlhc/glance.nvim"
 
 [go-nvim]
 fetch.github = "ray-x/go.nvim"
@@ -136,11 +104,6 @@ src.git = "https://github.com/nvim-lualine/lualine.nvim"
 fetch.github = "L3MON4D3/LuaSnip"
 src.git = "https://github.com/L3MON4D3/LuaSnip"
 
-[markdown-preview]
-extract = ["app/yarn.lock"]
-fetch.github = "iamcco/markdown-preview.nvim"
-src.git = "https://github.com/iamcco/markdown-preview.nvim"
-
 [neoconf]
 fetch.github = "folke/neoconf.nvim"
 src.git = "https://github.com/folke/neoconf.nvim"
@@ -160,10 +123,6 @@ src.git = "https://github.com/Shatur/neovim-session-manager"
 [null-ls]
 fetch.github = "nvimtools/none-ls.nvim"
 src.git = "https://github.com/nvimtools/none-ls.nvim"
-
-[nvim-autopairs]
-fetch.github = "windwp/nvim-autopairs"
-src.git = "https://github.com/windwp/nvim-autopairs"
 
 [nvim-cmp]
 fetch.github = "hrsh7th/nvim-cmp"
@@ -221,10 +180,6 @@ src.git = "https://github.com/nvim-treesitter/nvim-treesitter-context"
 fetch.github = "nvim-treesitter/nvim-treesitter-textobjects"
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
 
-[nvim-ts-autotag]
-fetch.github = "windwp/nvim-ts-autotag"
-src.git = "https://github.com/windwp/nvim-ts-autotag"
-
 [nvim-web-devicons]
 fetch.github = "nvim-tree/nvim-web-devicons"
 src.git = "https://github.com/nvim-tree/nvim-web-devicons"
@@ -233,17 +188,13 @@ src.git = "https://github.com/nvim-tree/nvim-web-devicons"
 fetch.github = "epwalsh/obsidian.nvim"
 src.git = "https://github.com/epwalsh/obsidian.nvim"
 
-[playground]
-fetch.github = "nvim-treesitter/playground"
-src.git = "https://github.com/nvim-treesitter/playground"
-
 [plenary]
 fetch.github = "nvim-lua/plenary.nvim"
 src.git = "https://github.com/nvim-lua/plenary.nvim"
 
-[presence]
-fetch.github = "andweeb/presence.nvim"
-src.git = "https://github.com/andweeb/presence.nvim"
+# [presence]
+# fetch.github = "andweeb/presence.nvim"
+# src.git = "https://github.com/andweeb/presence.nvim"
 
 [py_lsp]
 fetch.github = "hallerpatrick/py_lsp.nvim"
@@ -265,17 +216,9 @@ src.git = "https://github.com/b0o/schemastore.nvim"
 fetch.github = "nvim-telescope/telescope.nvim"
 src.git = "https://github.com/nvim-telescope/telescope.nvim"
 
-[telescope-asynctasks]
-fetch.github = "GustavoKatel/telescope-asynctasks.nvim"
-src.git = "https://github.com/GustavoKatel/telescope-asynctasks.nvim"
-
 [telescope-file-browser]
 fetch.github = "nvim-telescope/telescope-file-browser.nvim"
 src.git = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
-
-[telescope-fzf-native]
-fetch.github = "nvim-telescope/telescope-fzf-native.nvim"
-src.git = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
 
 [telescope-project]
 fetch.github = "nvim-telescope/telescope-project.nvim"
