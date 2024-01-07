@@ -5,6 +5,10 @@ return function()
 				name = "default",
 				path = "~/documents/obsidian",
 			},
+			{
+				name = "default",
+				path = "~/dev/cssuffering/notes",
+			},
 		},
 		completion = {
 			nvim_cmp = true,
