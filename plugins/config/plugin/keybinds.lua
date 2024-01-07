@@ -3,10 +3,11 @@ local map = function(mode, shortcut, command, opt)
 	vim.keymap.set(mode, shortcut, command, opt)
 end
 
--- merge conflicts
-map("n", "gd", ":diffget")
-map("n", "gdh", ":diffget //2<CR>")
-map("n", "gdl", ":diffget //3<CR>")
+-- move lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==")
+map("n", "<A-k>", "<cmd>m .-2<cr>==")
+map("v", "J", "<cmd>m '>+1<CR>gv=gv")
+map("v", "K", "<cmd>m '<-1<CR>gv=gv")
 
 -- escape :terminal easier
 map("t", "<Esc>", "<C-\\><C-n>")
@@ -18,4 +19,4 @@ map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
 -- NvimTree
-map("n", "<C-N>", ":NvimTreeToggle<CR>")
+map("n", "<C-N>", "<cmd>NvimTreeToggle<CR>")
