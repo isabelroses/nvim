@@ -1,5 +1,6 @@
 return function()
 	local wk = require("which-key")
+
 	wk.setup({
 		key_labels = {
 			["<space>"] = "󱁐 ",
@@ -19,19 +20,21 @@ return function()
 		["<leader>"] = {
 			y = { '"+y', "Copy to clipboard" },
 			p = { '"+p', "Paste from clipboard" },
-			g = {
-				name = "+git",
-				d = { "<cmd>Gvdiff!<CR>", "Git diff" },
-				g = { "<cmd>LazyGit<cr>", "LazyGit" },
-			},
+			gg = { "<cmd>LazyGit<cr>", "LazyGit" },
 			q = { "<cmd>qall<cr>", "Quit all" },
 		},
 	}, { mode = { "n", "v" } })
 
 	wk.register({
 		["<C-s>"] = {
-			"<cmd>:w<cr>",
+			"<cmd>w<cr>",
 			"Save File",
+		},
+		["<leader>"] = {
+			["1"] = "which_key_ignore",
+			["2"] = "which_key_ignore",
+			["3"] = "which_key_ignore",
+			["4"] = "which_key_ignore",
 		},
 	})
 end
