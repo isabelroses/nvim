@@ -25,7 +25,7 @@
           # webdev
           deno
           nodePackages.nodejs
-          # nodePackages."@astrojs/language-server"
+          nodePackages."@astrojs/language-server"
           nodePackages."@tailwindcss/language-server"
           nodePackages.alex
           nodePackages.bash-language-server
@@ -36,7 +36,6 @@
           nodePackages.typescript
           nodePackages.typescript-language-server
           nodePackages.vscode-langservers-extracted
-          nodePackages.yaml-language-server
 
           # nix
           alejandra
@@ -53,8 +52,10 @@
           nodePackages.prettier
           proselint
           shellcheck
+          marksman # markdown
           shfmt
-          taplo
+          taplo # toml
+          nodePackages.yaml-language-server # yaml
         ];
 
         lazy = {

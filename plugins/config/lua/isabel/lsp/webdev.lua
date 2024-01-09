@@ -7,6 +7,7 @@ end
 local M = {}
 
 M.setup = function(opts)
+	lspconfig.marksman.setup(opts) -- markdown
 	lspconfig.astro.setup(opts)
 	lspconfig.cssls.setup(opts)
 	lspconfig.emmet_ls.setup(opts)

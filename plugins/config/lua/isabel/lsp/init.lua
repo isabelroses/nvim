@@ -177,6 +177,7 @@ local servers = {
 	"sourcekit",
 	"taplo",
 	"teal_ls",
+	"marksman",
 }
 
 for _, server in ipairs(servers) do
