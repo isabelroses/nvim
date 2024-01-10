@@ -13,8 +13,6 @@ jobs:
         package: 
           - default
           - nvim-treesitter
-          - telescope-fzf-native
-          - markdown-preview
 
     steps:
       - name: Maximize build space

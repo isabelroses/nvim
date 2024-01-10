@@ -98,7 +98,6 @@
           default = neovim;
           neovim = config.neovim.final;
           nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter {};
-          telescope-fzf-native = pkgs.callPackage ./pkgs/telescope-fzf-native {};
         };
       };
     };
