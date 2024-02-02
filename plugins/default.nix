@@ -42,11 +42,6 @@ in rec {
     dependencies = {inherit plenary;};
   };
 
-  vim-table-mode = {
-    src = srcs.vim-table-mode;
-    config = ./vim-table-mode.lua;
-  };
-
   # rice
   alpha = {
     src = srcs.alpha-nvim;
@@ -181,24 +176,7 @@ in rec {
     config = true;
   };
 
-  # formating
-  indent-blankline = {
-    src = srcs.indent-blankline;
-    config = ./indent-blankline.lua;
-  };
-
   # quicker movement
-  nvim-surround = {
-    src = srcs.nvim-surround;
-    config = true;
-  };
-
-  spectre = {
-    src = srcs.nvim-spectre;
-    config.replace_engine.sed.cmd = "sed";
-    dependencies = {inherit plenary;};
-  };
-
   telescope = {
     src = srcs.telescope;
     config = ./telescope.lua;

@@ -561,8 +561,8 @@ fetch.git = "https://github.com/erasin/tree-sitter-po"
 src.git = "https://github.com/erasin/tree-sitter-po"
 
 [tree-sitter-grammar-poe_filter]
-fetch.git = "https://github.com/ObserverOfTime/tree-sitter-poe-filter"
-src.git = "https://github.com/ObserverOfTime/tree-sitter-poe-filter"
+fetch.git = "https://github.com/observeroftime/tree-sitter-poe-filter"
+src.git = "https://github.com/observeroftime/tree-sitter-poe-filter"
 
 [tree-sitter-grammar-pony]
 fetch.git = "https://github.com/amaanq/tree-sitter-pony"
@@ -888,4 +888,3 @@ src.git = "https://github.com/Philipp-M/tree-sitter-yuck"
 [tree-sitter-grammar-zig]
 fetch.git = "https://github.com/maxxnino/tree-sitter-zig"
 src.git = "https://github.com/maxxnino/tree-sitter-zig"
-

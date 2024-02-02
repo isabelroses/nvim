@@ -64,6 +64,17 @@ M.setup = function(opts)
 		root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 		single_file_support = false,
 	}, opts))
+
+	lspconfig.volar.setup({
+		capabilities = {
+			workspace = {
+				didChangeWatchedFiles = {
+					dynamicRegistration = true,
+				},
+			},
+		},
+		root_dir = require("lspconfig.util").root_pattern("package.json"),
+	})
 end
 
 return M

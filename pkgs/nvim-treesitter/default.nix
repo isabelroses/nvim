@@ -50,7 +50,7 @@
     norg = {};
     norg_meta = {};
     nix = {};
-    php = {};
+    # php = {};
     pug = {};
     python = {};
     rust = {};

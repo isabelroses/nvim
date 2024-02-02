@@ -25,6 +25,7 @@
           # webdev
           deno
           nodePackages.nodejs
+          nodePackages.volar
           nodePackages."@astrojs/language-server"
           nodePackages."@tailwindcss/language-server"
           nodePackages.alex

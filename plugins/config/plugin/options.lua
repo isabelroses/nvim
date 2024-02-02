@@ -34,10 +34,17 @@ vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.softtabstop = 0
 vim.o.expandtab = true
+vim.o.smartindent = true
 -- always show 1 column of sign column (gitsigns, etc.)
 vim.o.signcolumn = "yes:1"
 -- hide search notices, intro
 vim.opt.shortmess:append("sI")
+
+-- disable swap, backup, and undo files
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
+vim.opt.undofile = true
 
 -- stylua: ignore
 local borderchars = {

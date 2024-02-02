@@ -72,10 +72,6 @@ fetch.github = "ThePrimeagen/harpoon"
 src.git = "https://github.com/ThePrimeagen/harpoon"
 src.branch = "harpoon2"
 
-[indent-blankline]
-fetch.github = "lukas-reineke/indent-blankline.nvim"
-src.git = "https://github.com/lukas-reineke/indent-blankline.nvim"
-
 [lazy]
 fetch.github = "folke/lazy.nvim"
 src.git = "https://github.com/folke/lazy.nvim"
@@ -156,14 +152,6 @@ src.git = "https://github.com/SmiteshP/nvim-navic"
 fetch.github = "rcarriga/nvim-notify"
 src.git = "https://github.com/rcarriga/nvim-notify"
 
-[nvim-spectre]
-fetch.github = "nvim-pack/nvim-spectre"
-src.git = "https://github.com/nvim-pack/nvim-spectre"
-
-[nvim-surround]
-fetch.github = "kylechui/nvim-surround"
-src.git = "https://github.com/kylechui/nvim-surround"
-
 [nvim-tree-lua]
 fetch.github = "nvim-tree/nvim-tree.lua"
 src.git = "https://github.com/nvim-tree/nvim-tree.lua"
@@ -192,9 +180,9 @@ src.git = "https://github.com/epwalsh/obsidian.nvim"
 fetch.github = "nvim-lua/plenary.nvim"
 src.git = "https://github.com/nvim-lua/plenary.nvim"
 
-# [presence]
-# fetch.github = "andweeb/presence.nvim"
-# src.git = "https://github.com/andweeb/presence.nvim"
+[presence]
+fetch.github = "andweeb/presence.nvim"
+src.git = "https://github.com/andweeb/presence.nvim"
 
 [py_lsp]
 fetch.github = "hallerpatrick/py_lsp.nvim"
@@ -247,10 +235,6 @@ src.git = "https://github.com/pmizio/typescript-tools.nvim"
 [vim-fugitive]
 fetch.github = "tpope/vim-fugitive"
 src.git = "https://github.com/tpope/vim-fugitive"
-
-[vim-table-mode]
-fetch.github = "dhruvasagar/vim-table-mode"
-src.git = "https://github.com/dhruvasagar/vim-table-mode"
 
 [which-key]
 fetch.github = "folke/which-key.nvim"
