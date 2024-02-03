@@ -2,10 +2,6 @@
 fetch.github = "goolord/alpha-nvim"
 src.git = "https://github.com/goolord/alpha-nvim"
 
-# [bufferline]
-# fetch.github = "akinsho/bufferline.nvim"
-# src.git = "https://github.com/akinsho/bufferline.nvim"
-
 [catppuccin]
 fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"
@@ -17,10 +13,6 @@ src.git = "https://github.com/hrsh7th/cmp-buffer"
 [cmp-cmdline]
 fetch.github = "hrsh7th/cmp-cmdline"
 src.git = "https://github.com/hrsh7th/cmp-cmdline"
-
-[cmp-git]
-fetch.github = "petertriho/cmp-git"
-src.git = "https://github.com/petertriho/cmp-git"
 
 [cmp-nvim-lsp]
 fetch.github = "hrsh7th/cmp-nvim-lsp"
@@ -100,17 +92,9 @@ src.git = "https://github.com/nvim-lualine/lualine.nvim"
 fetch.github = "L3MON4D3/LuaSnip"
 src.git = "https://github.com/L3MON4D3/LuaSnip"
 
-[neoconf]
-fetch.github = "folke/neoconf.nvim"
-src.git = "https://github.com/folke/neoconf.nvim"
-
 [neodev]
 fetch.github = "folke/neodev.nvim"
 src.git = "https://github.com/folke/neodev.nvim"
-
-[neorepl]
-fetch.github = "ii14/neorepl.nvim"
-src.git = "https://github.com/ii14/neorepl.nvim"
 
 [neovim-session-manager]
 fetch.github = "Shatur/neovim-session-manager"
@@ -160,14 +144,6 @@ src.git = "https://github.com/nvim-tree/nvim-tree.lua"
 fetch.github = "nvim-treesitter/nvim-treesitter"
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
 
-[nvim-treesitter-context]
-fetch.github = "nvim-treesitter/nvim-treesitter-context"
-src.git = "https://github.com/nvim-treesitter/nvim-treesitter-context"
-
-[nvim-treesitter-textobjects]
-fetch.github = "nvim-treesitter/nvim-treesitter-textobjects"
-src.git = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
-
 [nvim-web-devicons]
 fetch.github = "nvim-tree/nvim-web-devicons"
 src.git = "https://github.com/nvim-tree/nvim-web-devicons"
@@ -191,10 +167,6 @@ src.git = "https://github.com/hallerpatrick/py_lsp.nvim"
 [rainbow-delimiters]
 fetch.github = "hiphish/rainbow-delimiters.nvim"
 src.git = "https://github.com/hiphish/rainbow-delimiters.nvim"
-
-[rust-tools]
-fetch.github = "simrat39/rust-tools.nvim"
-src.git = "https://github.com/simrat39/rust-tools.nvim"
 
 [schemastore]
 fetch.github = "b0o/schemastore.nvim"

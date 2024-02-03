@@ -1,12 +1,9 @@
-local neoconf_present, neoconf = pcall(require, "neoconf")
-neoconf.setup()
-
 local lsp_present, lspconfig = pcall(require, "lspconfig")
 local cmp_present, cmp = pcall(require, "cmp")
 local navic_present, navic = pcall(require, "nvim-navic")
-local luasnip_present, luasnip = pcall(require, "luasnip")
+local luasnip_present = pcall(require, "luasnip")
 
-if not (cmp_present and lsp_present and luasnip_present and neoconf_present) then
+if not (cmp_present and lsp_present and luasnip_present) then
 	vim.notify("lsp, cmp, luasnip not present", vim.log.levels.ERROR)
 	return
 end
@@ -33,20 +30,8 @@ local cmp_borders = {
 	winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
 }
 
--- stylua: ignore
-local has_words_before = function()
-  ---@diagnostic disable-next-line: deprecated
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
 -- require("copilot_cmp").setup() -- setup copilot cmp
 cmp.setup({
-	snippet = {
-		expand = function(args)
-			luasnip.lsp_expand(args.body)
-		end,
-	},
 	window = {
 		completion = cmp_borders,
 		documentation = cmp_borders,
@@ -54,30 +39,8 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+	}, { "i", "s" }),
 
-		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
-			elseif has_words_before() then
-				cmp.complete()
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
-
-		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
-	}),
 	sources = cmp.config.sources({
 		-- { name = "copilot" },
 		{ name = "nvim_lsp" },
@@ -151,20 +114,6 @@ require("isabel.lsp.nix").setup(common)
 require("isabel.lsp.validation").setup(common)
 require("isabel.lsp.webdev").setup(common)
 
-pcall(require("rust-tools").setup, {
-	server = {
-		settings = {
-			["rust-analyzer"] = {
-				cargo = {
-					autoReload = true,
-				},
-			},
-		},
-	},
-	tools = {
-		executor = require("rust-tools.executors").toggleterm,
-	},
-})
 pcall(require("py_lsp").setup, common)
 
 local servers = {
@@ -178,6 +127,7 @@ local servers = {
 	"taplo",
 	"teal_ls",
 	"marksman",
+	"rust_analyzer",
 }
 
 for _, server in ipairs(servers) do

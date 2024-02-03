@@ -123,13 +123,6 @@ in rec {
     };
   };
 
-  # tabs
-  # bufferline = {
-  #   src = srcs.bufferline;
-  #   config = ./bufferline.lua;
-  #   dependencies = {inherit catppuccin;};
-  # };
-
   # nicer notfications
   notify = {
     src = srcs.nvim-notify;
@@ -209,16 +202,7 @@ in rec {
     config = ./tree-sitter.lua;
 
     dependencies = {
-      nvim-treesitter-textobjects.src = srcs.nvim-treesitter-textobjects;
       rainbow-delimiters.src = srcs.rainbow-delimiters;
-
-      nvim-treesitter-context = {
-        src = srcs.nvim-treesitter-context;
-        config = {
-          enable = false;
-          mode = "topline";
-        };
-      };
     };
   };
 
@@ -234,17 +218,13 @@ in rec {
       cmp-nvim-lsp.src = srcs.cmp-nvim-lsp;
       cmp-path.src = srcs.cmp-path;
       cmp_luasnip.src = srcs.cmp_luasnip;
-      cmp-git.src = srcs.cmp-git;
       lspkind.src = srcs.lspkind;
       null-ls.src = srcs.null-ls;
       lsp-status.src = srcs.lsp-status;
       ltex-extra.src = srcs.ltex-extra;
       schemastore.src = srcs.schemastore;
       py_lsp.src = srcs.py_lsp;
-      rust-tools.src = srcs.rust-tools;
       typescript-tools.src = srcs.typescript-tools;
-      neorepl.src = srcs.neorepl;
-      neoconf.src = srcs.neoconf;
 
       luasnip = {
         src = srcs.luasnip;

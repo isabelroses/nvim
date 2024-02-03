@@ -31,9 +31,6 @@ null.setup({
 		null.builtins.formatting.rustfmt,
 		null.builtins.formatting.shfmt,
 		null.builtins.formatting.stylua,
-		null.builtins.formatting.swiftformat.with({
-			command = "swift-format",
-		}),
 		null.builtins.formatting.taplo,
 		null.builtins.diagnostics.statix,
 		null.builtins.diagnostics.deadnix,
