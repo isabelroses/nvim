@@ -254,14 +254,6 @@ in rec {
           guihua-lua.src = srcs.guihua-lua;
         };
       };
-
-      nvim-dap = {
-        src = srcs.nvim-dap;
-        dependencies = {
-          nvim-dap-ui.src = srcs.nvim-dap-ui;
-          nvim-dap-virtual-text.src = srcs.nvim-dap-virtual-text;
-        };
-      };
     };
   };
 

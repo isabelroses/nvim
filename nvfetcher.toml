@@ -112,18 +112,6 @@ src.git = "https://github.com/hrsh7th/nvim-cmp"
 fetch.github = "nvchad/nvim-colorizer.lua"
 src.git = "https://github.com/nvchad/nvim-colorizer.lua"
 
-[nvim-dap]
-fetch.github = "mfussenegger/nvim-dap"
-src.git = "https://github.com/mfussenegger/nvim-dap"
-
-[nvim-dap-ui]
-fetch.github = "rcarriga/nvim-dap-ui"
-src.git = "https://github.com/rcarriga/nvim-dap-ui"
-
-[nvim-dap-virtual-text]
-fetch.github = "theHamsta/nvim-dap-virtual-text"
-src.git = "https://github.com/theHamsta/nvim-dap-virtual-text"
-
 [nvim-lspconfig]
 fetch.github = "neovim/nvim-lspconfig"
 src.git = "https://github.com/neovim/nvim-lspconfig"
