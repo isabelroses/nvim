@@ -19,6 +19,7 @@ return function()
 	end
 
 	local telescope = require("telescope")
+	local project_actions = require("telescope._extensions.project.actions")
 
 	telescope.load_extension("fzf")
 	telescope.load_extension("notify")
@@ -30,6 +31,54 @@ return function()
 			prompt_prefix = " ",
 			selection_caret = " ",
 			multi_icon = "│",
+			file_ignore_patterns = {
+				"%.npz",
+				"%.pyc",
+				"%.luac",
+				"%.ipynb",
+				"vendor/*",
+				"%.lock",
+				"__pycache__/*",
+				"%.sqlite3",
+				"%.ipynb",
+				"node_modules/*",
+				"%.min.js",
+				"%.jpg",
+				"%.jpeg",
+				"%.png",
+				"%.svg",
+				"%.otf",
+				"%.ttf",
+				".git/",
+				"%.webp",
+				".dart_tool/",
+				".gradle/",
+				".idea/",
+				".settings/",
+				".vscode/",
+				"__pycache__/",
+				"build/",
+				"env/",
+				"gradle/",
+				"node_modules/",
+				"target/",
+				"%.pdb",
+				"%.dll",
+				"%.class",
+				"%.exe",
+				"%.so",
+				"%.cache",
+				"%.ico",
+				"%.pdf",
+				"%.dylib",
+				"%.jar",
+				"%.docx",
+				"%.met",
+				"smalljre_*/*",
+				".vale/",
+				"_sources/",
+				"tmp/",
+			},
       -- stylua: ignore
       borderchars = { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.topleft, bc.topright, bc.botright, bc.botleft },
 		},
@@ -41,36 +90,28 @@ return function()
 			load_session = no_preview(),
 		},
 		extensions = {
-			file_browser = {
-				grouped = true,
-				sorting_strategy = "ascending",
-			},
+			["ui-select"] = no_preview(),
 			fzf = {
 				fuzzy = true,
 				override_generic_sorter = true,
 				override_file_sorter = true,
 				case_mode = "smart_case",
 			},
-			["ui-select"] = no_preview(),
-		},
-	})
-
-	local wk_present, wk = pcall(require, "which-key")
-	if not wk_present then
-		return
-	end
-	wk.register({
-		["<leader><leader>"] = {
-			"<cmd>Telescope find_files<cr>",
-			"Find file",
-		},
-		["<leader>f"] = {
-			name = "+Telescope",
-			g = { "<cmd>Telescope live_grep<cr>", "Live grep" },
-			s = { "<cmd>SessionManager load_session<cr>", "Show sessions" },
-			-- h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
-			-- n = { "<cmd>Telescope notify<cr>", "Show notifications" },
-			-- p = { "<cmd>Telescope project<cr>", "Project" },
+			project = {
+				search_by = { "path", "title" },
+				hidden_files = true, -- default: false
+				sync_with_nvim_tree = true, -- default false
+				base_dirs = {
+					{ "~/dev/aur/", max_depth = 2 },
+					{ "~/dev/ctp/", max_depth = 1 },
+					{ "~/dev/cssuffering/", max_depth = 1 },
+					{ "~/dev/public/", max_depth = 1 },
+					{ "~/dev/private/", max_depth = 1 },
+				},
+				on_project_selected = function(prompt_bufnr)
+					project_actions.change_working_directory(prompt_bufnr, false)
+				end,
+			},
 		},
 	})
 end

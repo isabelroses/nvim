@@ -38,7 +38,7 @@ in rec {
   # markdown stuff
   obsidian-nvim = {
     src = srcs.obsidian-nvim;
-    config = ./obsidian-nvim.lua;
+    config = ./obsidian.lua;
     dependencies = {inherit plenary;};
   };
 

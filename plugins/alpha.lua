@@ -60,10 +60,10 @@ return function()
 		position = "center",
 		val = {
 			dashboard.button("n", "  New file", ":ene <bar> startinsert <cr>"),
-			dashboard.button("SPC SPC", "  Find file", ":Telescope find_files<cr>"),
-			dashboard.button("SPC fg", "  Live grep", ":Telescope live_grep<cr>"),
+			dashboard.button("f", "  Find file", ":Telescope find_files<cr>"),
+			dashboard.button("g", "  Live grep", ":Telescope live_grep<cr>"),
 			dashboard.button("s", "  Show sessions", ":SessionManager load_session<cr>"),
-			dashboard.button("SPC fp", "  Projects", ":Telescope project<CR>"),
+			dashboard.button("p", "  Projects", ":Telescope project<CR>"),
 			dashboard.button("q", "  Quit", ":qa<CR>"),
 		},
 	}
