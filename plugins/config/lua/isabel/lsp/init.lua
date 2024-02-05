@@ -133,7 +133,6 @@ require("isabel.lsp.null-ls")
 require("isabel.lsp.nix").setup(common)
 require("isabel.lsp.validation").setup(common)
 require("isabel.lsp.webdev").setup(common)
-
 pcall(require("py_lsp").setup, common)
 
 local servers = {
