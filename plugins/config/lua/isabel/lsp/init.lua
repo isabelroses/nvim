@@ -1,7 +1,7 @@
 local lsp_present, lspconfig = pcall(require, "lspconfig")
 local cmp_present, cmp = pcall(require, "cmp")
 local navic_present, navic = pcall(require, "nvim-navic")
-local luasnip_present = pcall(require, "luasnip")
+local luasnip_present, luasnip = pcall(require, "luasnip")
 
 if not (cmp_present and lsp_present and luasnip_present) then
 	vim.notify("lsp, cmp, luasnip not present", vim.log.levels.ERROR)
@@ -30,6 +30,13 @@ local cmp_borders = {
 	winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
 }
 
+-- stylua: ignore
+local has_words_before = function()
+  ---@diagnostic disable-next-line: deprecated
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
 -- require("copilot_cmp").setup() -- setup copilot cmp
 cmp.setup({
 	window = {
@@ -38,7 +45,20 @@ cmp.setup({
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-y>"] = cmp.mapping.confirm({ select = true }),
 		["<C-e>"] = cmp.mapping.abort(),
+
+    ["<Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			elseif has_words_before() then
+				cmp.complete()
+			else
+				fallback()
+			end
+		end,
 	}, { "i", "s" }),
 
 	sources = cmp.config.sources({
