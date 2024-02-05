@@ -26,10 +26,27 @@ return function()
 	}, { mode = { "n", "v" } })
 
 	wk.register({
+		-- telescope
+		["<leader><leader>"] = {
+			"<cmd>Telescope find_files<cr>",
+			"Find file",
+		},
+		["<leader>f"] = {
+			name = "+Telescope",
+			g = { "<cmd>Telescope live_grep<cr>", "Live grep" },
+			s = { "<cmd>SessionManager load_session<cr>", "Show sessions" },
+			-- h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
+			-- n = { "<cmd>Telescope notify<cr>", "Show notifications" },
+			p = { "<cmd>Telescope project<cr>", "Project" },
+		},
+
+		-- save file
 		["<C-s>"] = {
 			"<cmd>w<cr>",
 			"Save File",
 		},
+
+		-- reduce clutter
 		["<leader>"] = {
 			["1"] = "which_key_ignore",
 			["2"] = "which_key_ignore",
