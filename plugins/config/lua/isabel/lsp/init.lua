@@ -39,6 +39,11 @@ end
 
 -- require("copilot_cmp").setup() -- setup copilot cmp
 cmp.setup({
+  snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
 	window = {
 		completion = cmp_borders,
 		documentation = cmp_borders,
@@ -49,18 +54,17 @@ cmp.setup({
 		["<C-e>"] = cmp.mapping.abort(),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
+      if cmp.visible() then
+			  cmp.select_next_item()
+		  elseif luasnip.expand_or_jumpable() then
+			  luasnip.expand_or_jump()
 			elseif has_words_before() then
-				cmp.complete()
-			else
-				fallback()
+			  cmp.complete()
+		  else
+			  fallback()
 			end
-		end,
-	}, { "i", "s" }),
-
+		end, { "i", "s" }),
+  }),
 	sources = cmp.config.sources({
 		-- { name = "copilot" },
 		{ name = "nvim_lsp" },
