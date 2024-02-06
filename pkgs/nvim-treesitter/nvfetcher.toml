@@ -105,7 +105,7 @@ src.git = "https://github.com/tree-sitter/tree-sitter-css"
 [tree-sitter-grammar-csv]
 fetch.git = "https://github.com/amaanq/tree-sitter-csv"
 src.git = "https://github.com/amaanq/tree-sitter-csv"
-passthru = { location = "csv" }
+passthru.location = "csv"
 
 [tree-sitter-grammar-cuda]
 fetch.git = "https://github.com/theHamsta/tree-sitter-cuda"
@@ -150,12 +150,12 @@ src.git = "https://github.com/amaanq/tree-sitter-doxygen"
 [tree-sitter-grammar-dtd]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-xml"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-xml"
-passthru = { location = "tree-sitter-dtd" }
+passthru.location = "tree-sitter-dtd"
 
 [tree-sitter-grammar-ebnf]
 fetch.git = "https://github.com/RubixDev/ebnf"
 src.git = "https://github.com/RubixDev/ebnf"
-passthru = { location = "crates/tree-sitter-ebnf" }
+passthru.location = "crates/tree-sitter-ebnf"
 
 [tree-sitter-grammar-eex]
 fetch.git = "https://github.com/connorlay/tree-sitter-eex"
@@ -449,12 +449,12 @@ src.git = "https://github.com/alemuller/tree-sitter-make"
 [tree-sitter-grammar-markdown]
 fetch.git = "https://github.com/MDeiml/tree-sitter-markdown"
 src.git = "https://github.com/MDeiml/tree-sitter-markdown"
-passthru = { location = "tree-sitter-markdown" }
+passthru.location = "tree-sitter-markdown"
 
 [tree-sitter-grammar-markdown_inline]
 fetch.git = "https://github.com/MDeiml/tree-sitter-markdown"
 src.git = "https://github.com/MDeiml/tree-sitter-markdown"
-passthru = { location = "tree-sitter-markdown-inline" }
+passthru.location = "tree-sitter-markdown-inline"
 
 [tree-sitter-grammar-matlab]
 fetch.git = "https://github.com/acristoffers/tree-sitter-matlab"
@@ -509,12 +509,12 @@ src.git = "https://github.com/amaanq/tree-sitter-objc"
 [tree-sitter-grammar-ocaml]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-ocaml"
 src.git = "https://github.com/tree-sitter/tree-sitter-ocaml"
-passthru = { location = "ocaml" }
+passthru.location = "ocaml"
 
 [tree-sitter-grammar-ocaml_interface]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-ocaml"
 src.git = "https://github.com/tree-sitter/tree-sitter-ocaml"
-passthru = { location = "interface" }
+passthru.location = "interface"
 
 [tree-sitter-grammar-ocamllex]
 fetch.git = "https://github.com/atom-ocaml/tree-sitter-ocamllex"
@@ -587,7 +587,7 @@ src.git = "https://github.com/PRQL/tree-sitter-prql"
 [tree-sitter-grammar-psv]
 fetch.git = "https://github.com/amaanq/tree-sitter-csv"
 src.git = "https://github.com/amaanq/tree-sitter-csv"
-passthru = { location = "psv" }
+passthru.location = "psv"
 
 [tree-sitter-grammar-pug]
 fetch.git = "https://github.com/zealot128/tree-sitter-pug"
@@ -765,7 +765,7 @@ src.git = "https://github.com/euclidianAce/tree-sitter-teal"
 [tree-sitter-grammar-terraform]
 fetch.git = "https://github.com/MichaHoffmann/tree-sitter-hcl"
 src.git = "https://github.com/MichaHoffmann/tree-sitter-hcl"
-passthru = { location = "dialects/terraform" }
+passthru.location = "dialects/terraform"
 
 [tree-sitter-grammar-thrift]
 fetch.git = "https://github.com/duskmoon314/tree-sitter-thrift"
@@ -790,12 +790,12 @@ src.git = "https://github.com/ikatyang/tree-sitter-toml"
 [tree-sitter-grammar-tsv]
 fetch.git = "https://github.com/amaanq/tree-sitter-csv"
 src.git = "https://github.com/amaanq/tree-sitter-csv"
-passthru = { location = "tsv" }
+passthru.location = "tsv"
 
 [tree-sitter-grammar-tsx]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-typescript"
 src.git = "https://github.com/tree-sitter/tree-sitter-typescript"
-passthru = { location = "tsx" }
+passthru.location = "tsx"
 
 [tree-sitter-grammar-turtle]
 fetch.git = "https://github.com/BonaBeavis/tree-sitter-turtle"
@@ -808,7 +808,7 @@ src.git = "https://github.com/gbprod/tree-sitter-twig"
 [tree-sitter-grammar-typescript]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-typescript"
 src.git = "https://github.com/tree-sitter/tree-sitter-typescript"
-passthru = { location = "typescript" }
+passthru.location = "typescript"
 
 [tree-sitter-grammar-ungrammar]
 fetch.git = "https://github.com/Philipp-M/tree-sitter-ungrammar"
@@ -829,7 +829,7 @@ src.git = "https://github.com/amaanq/tree-sitter-uxntal"
 [tree-sitter-grammar-v]
 fetch.git = "https://github.com/v-analyzer/v-analyzer"
 src.git = "https://github.com/v-analyzer/v-analyzer"
-passthru = { location = "tree_sitter_v" }
+passthru.location = "tree_sitter_v"
 
 [tree-sitter-grammar-vala]
 fetch.git = "https://github.com/vala-lang/tree-sitter-vala"
@@ -866,12 +866,12 @@ src.git = "https://github.com/theHamsta/tree-sitter-wgsl-bevy"
 [tree-sitter-grammar-wing]
 fetch.git = "https://github.com/winglang/wing"
 src.git = "https://github.com/winglang/wing"
-passthru = { location = "libs/tree-sitter-wing" }
+passthru.location = "libs/tree-sitter-wing"
 
 [tree-sitter-grammar-xml]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-xml"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-xml"
-passthru = { location = "tree-sitter-xml" }
+passthru.location = "tree-sitter-xml"
 
 [tree-sitter-grammar-yaml]
 fetch.git = "https://github.com/ikatyang/tree-sitter-yaml"

@@ -42,6 +42,10 @@ src.git = "https://github.com/zbirenbaum/copilot-cmp"
 fetch.github = "saecki/crates.nvim"
 src.git = "https://github.com/saecki/crates.nvim"
 
+[direnv-vim]
+fetch.github = "direnv/direnv.vim"
+src.git = "https://github.com/direnv/direnv.vim"
+
 [editorconfig]
 fetch.github = "gpanders/editorconfig.nvim"
 src.git = "https://github.com/gpanders/editorconfig.nvim"

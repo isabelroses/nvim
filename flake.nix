@@ -61,6 +61,7 @@
       perSystem = {
         config,
         pkgs,
+        self',
         system,
         ...
       }: {
@@ -88,8 +89,8 @@
         };
 
         devShells.default = pkgs.mkShell {
-          inherit (inputs.self.checks.${system}.pre-commit-check) shellHook;
-          buildInputs = with pkgs; [nil statix deadnix nix-tree];
+          inherit (self'.checks.pre-commit-check) shellHook;
+          buildInputs = with pkgs; [nil statix deadnix nvfetcher nix-tree];
         };
 
         formatter = pkgs.alejandra;
