@@ -259,6 +259,7 @@ in rec {
 
   # misc
   wakatime.src = pkgs.vimPlugins.vim-wakatime; # track my time coding
+  direnv.src = srcs.direnv-vim;
   lazygit = {
     src = srcs.lazygit;
     dependencies = {inherit plenary;};
