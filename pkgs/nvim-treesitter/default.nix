@@ -10,6 +10,11 @@
   nvgrammars = callPackage ./_sources/generated.nix {};
   inherit (nvplugins) nvim-treesitter;
 
+  ts-generate = {
+    overrides.buildInputs = [pkgs.nodejs];
+    overrides.preBuild = "${tree-sitter}/bin/tree-sitter generate";
+  };
+
   grammars = {
     arduino = {};
     astro = {};
@@ -18,10 +23,7 @@
     beancount = {};
     c = {};
     cpp = {};
-    d.overrides = {
-      buildInputs = [pkgs.nodejs];
-      preBuild = "${tree-sitter}/bin/tree-sitter generate";
-    };
+    d = ts-generate;
     css = {};
     csv = {};
     diff = {};
