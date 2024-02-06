@@ -87,7 +87,6 @@ return function()
 			},
 		},
 	}
-	dashboard.config.opts.noautocmd = true
 
 	theta.config.layout = {
 		{ type = "padding", val = 4 },
@@ -99,4 +98,5 @@ return function()
 	}
 
 	alpha.setup(theta.config)
+	vim.cmd([[autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2]])
 end
