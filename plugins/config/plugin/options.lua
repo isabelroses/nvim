@@ -39,6 +39,8 @@ vim.o.smartindent = true
 vim.o.signcolumn = "yes:1"
 -- hide search notices, intro
 vim.opt.shortmess:append("sI")
+-- hide extra text
+vim.opt.conceallevel = 2
 
 -- disable swap, backup, and undo files
 vim.opt.swapfile = false
