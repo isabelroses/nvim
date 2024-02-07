@@ -2772,17 +2772,17 @@
   };
   tree-sitter-grammar-wing = {
     pname = "tree-sitter-grammar-wing";
-    version = "d2c60c4caebec98ef080391b2f27adebc4c5d5a8";
+    version = "8afc22e5bceedee4dc5a2a7162877cf3398125f2";
     src = fetchgit {
       url = "https://github.com/winglang/wing";
-      rev = "d2c60c4caebec98ef080391b2f27adebc4c5d5a8";
+      rev = "8afc22e5bceedee4dc5a2a7162877cf3398125f2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-nqa6CnzGCSizeczs9id/2B21/rlcJwkBAgXAV/tAf1U=";
+      sha256 = "sha256-xyUTcxgdhz23MdrG6EvJJheVm1QkGXrT2c9XWaXlmzA=";
     };
     location = "libs/tree-sitter-wing";
-    date = "2024-02-05";
+    date = "2024-02-06";
   };
   tree-sitter-grammar-xml = {
     pname = "tree-sitter-grammar-xml";
