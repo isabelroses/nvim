@@ -160,6 +160,10 @@ src.git = "https://github.com/hallerpatrick/py_lsp.nvim"
 fetch.github = "hiphish/rainbow-delimiters.nvim"
 src.git = "https://github.com/hiphish/rainbow-delimiters.nvim"
 
+[rustaceanvim]
+fetch.github = "mrcjkb/rustaceanvim"
+src.git = "https://github.com/mrcjkb/rustaceanvim"
+
 [schemastore]
 fetch.github = "b0o/schemastore.nvim"
 src.git = "https://github.com/b0o/schemastore.nvim"

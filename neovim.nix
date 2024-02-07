@@ -12,6 +12,7 @@
           ripgrep
           wakatime
           lazygit
+          direnv
 
           # python
           ruff

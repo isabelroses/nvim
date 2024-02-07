@@ -581,7 +581,7 @@
     },
     "nvim-lspconfig": {
         "cargoLocks": null,
-        "date": "2024-02-06",
+        "date": "2024-02-07",
         "extract": null,
         "name": "nvim-lspconfig",
         "passthru": null,
@@ -593,11 +593,11 @@
             "name": null,
             "owner": "neovim",
             "repo": "nvim-lspconfig",
-            "rev": "0a1a2aa549da0d2294e072e2d725f02cca32f64e",
-            "sha256": "sha256-Xbc3/LJV7iLaVJpwwBIgYMnPnPSKwMBGnjgHFUoyAQA=",
+            "rev": "1bc83418927003552505ec66fa5d6cffae953f6a",
+            "sha256": "sha256-gA/UvFYpC31nmt792ylapqA8TZ7mA+JozXEcBNqlrwo=",
             "type": "github"
         },
-        "version": "0a1a2aa549da0d2294e072e2d725f02cca32f64e"
+        "version": "1bc83418927003552505ec66fa5d6cffae953f6a"
     },
     "nvim-navic": {
         "cargoLocks": null,
@@ -798,6 +798,26 @@
             "type": "github"
         },
         "version": "ca8d5ee2b4ee1eec491040a7601d366ddc8a2e02"
+    },
+    "rustaceanvim": {
+        "cargoLocks": null,
+        "date": "2024-02-06",
+        "extract": null,
+        "name": "rustaceanvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mrcjkb",
+            "repo": "rustaceanvim",
+            "rev": "8940ef5c7e3ffd37712ac0556832b5b10a136874",
+            "sha256": "sha256-wKBcbzFbUamvCGj2kiL2YwIRWmXw66ErVYH3rkaoTG0=",
+            "type": "github"
+        },
+        "version": "8940ef5c7e3ffd37712ac0556832b5b10a136874"
     },
     "schemastore": {
         "cargoLocks": null,

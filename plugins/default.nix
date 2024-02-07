@@ -206,6 +206,16 @@ in rec {
     };
   };
 
+  # rust lsp
+  rustaceanvim = {
+    src = srcs.rustaceanvim;
+    config = ./rust.lua;
+    ft = "rust";
+    dependencies = {
+      inherit which-key;
+    };
+  };
+
   nvim-lspconfig = {
     src = srcs.nvim-lspconfig;
     config = ./lsp.lua;
