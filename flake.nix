@@ -27,7 +27,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
-        neovim.follows = "";
         pre-commit-nix.follows = "pre-commit-nix";
       };
     };

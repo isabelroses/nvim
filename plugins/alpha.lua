@@ -98,5 +98,4 @@ return function()
 	}
 
 	alpha.setup(theta.config)
-	vim.cmd([[autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2]])
 end
