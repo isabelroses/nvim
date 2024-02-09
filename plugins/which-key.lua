@@ -40,6 +40,11 @@ return function()
 			p = { "<cmd>Telescope project<cr>", "Project" },
 		},
 
+		["<leader>u"] = {
+			vim.cmd.UndotreeToggle,
+			"Undo Tree",
+		},
+
 		-- save file
 		["<C-s>"] = {
 			"<cmd>w<cr>",

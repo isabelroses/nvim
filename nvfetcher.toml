@@ -6,6 +6,10 @@ src.git = "https://github.com/goolord/alpha-nvim"
 fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"
 
+[cloak]
+fetch.github = "laytan/cloak.nvim"
+src.git = "https://github.com/laytan/cloak.nvim"
+
 [cmp-buffer]
 fetch.github = "hrsh7th/cmp-buffer"
 src.git = "https://github.com/hrsh7th/cmp-buffer"
@@ -199,6 +203,10 @@ src.git = "https://github.com/folke/trouble.nvim"
 [typescript-tools]
 fetch.github = "pmizio/typescript-tools.nvim"
 src.git = "https://github.com/pmizio/typescript-tools.nvim"
+
+[undotree]
+fetch.github = "mbbill/undotree"
+src.git = "https://github.com/mbbill/undotree"
 
 [vim-fugitive]
 fetch.github = "tpope/vim-fugitive"
