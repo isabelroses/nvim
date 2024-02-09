@@ -267,9 +267,17 @@ in rec {
     };
   };
 
+  # hide my secrets
+  cloak = {
+    src = srcs.cloak;
+    config = ./cloak.lua;
+  };
+
   # misc
   wakatime.src = pkgs.vimPlugins.vim-wakatime; # track my time coding
-  direnv.src = srcs.direnv-vim;
+  direnv.src = srcs.direnv-vim; # direnv integration
+  undotree.src = srcs.undotree; # undo tree
+  # lazygit integration
   lazygit = {
     src = srcs.lazygit;
     dependencies = {inherit plenary;};

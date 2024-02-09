@@ -55,7 +55,7 @@ return function()
 				".gradle/",
 				".idea/",
 				".settings/",
-				".vscode/",
+				-- ".vscode/",  FIXME: this is being seen as a normal directories called vscode too not just the hidden .vscode dir
 				"__pycache__/",
 				"build/",
 				"env/",
