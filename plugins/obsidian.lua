@@ -3,6 +3,10 @@ return function()
 		workspaces = {
 			{
 				name = "default",
+				path = "~/Documents/obsidian",
+			},
+			{
+				name = "default",
 				path = "~/documents/obsidian",
 			},
 			{
