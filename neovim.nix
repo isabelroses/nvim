@@ -13,6 +13,7 @@
           wakatime
           lazygit
           direnv
+          silicon
 
           # python
           ruff

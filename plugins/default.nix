@@ -277,6 +277,12 @@ in rec {
   wakatime.src = pkgs.vimPlugins.vim-wakatime; # track my time coding
   direnv.src = srcs.direnv-vim; # direnv integration
   undotree.src = srcs.undotree; # undo tree
+
+  nvim-silicon = {
+    src = srcs.nvim-silicon;
+    config = ./silicon.lua;
+  };
+
   # lazygit integration
   lazygit = {
     src = srcs.lazygit;
