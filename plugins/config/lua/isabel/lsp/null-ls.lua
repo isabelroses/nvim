@@ -10,14 +10,14 @@ null.setup({
 	sources = {
 		null.builtins.formatting.alejandra,
 		null.builtins.formatting.dfmt,
-		null.builtins.formatting.deno_fmt.with({
-			filetypes = {
-				"javascript",
-				"javascriptreact",
-				"typescript",
-				"typescriptreact",
-			},
-		}),
+		-- null.builtins.formatting.deno_fmt.with({
+		-- 	filetypes = {
+		-- 		"javascript",
+		-- 		"javascriptreact",
+		-- 		"typescript",
+		-- 		"typescriptreact",
+		-- 	},
+		-- }),
 		null.builtins.formatting.gofumpt,
 		null.builtins.formatting.prettier.with({
 			filetypes = {
@@ -26,11 +26,11 @@ null.setup({
 				"vue",
 			},
 		}),
-		null.builtins.formatting.ruff,
-		null.builtins.formatting.rustfmt,
+		-- null.builtins.formatting.ruff,
+		-- null.builtins.formatting.rustfmt,
 		null.builtins.formatting.shfmt,
 		null.builtins.formatting.stylua,
-		null.builtins.formatting.taplo,
+		-- null.builtins.formatting.taplo,
 		null.builtins.diagnostics.statix,
 		null.builtins.diagnostics.deadnix,
 		null.builtins.diagnostics.alex,

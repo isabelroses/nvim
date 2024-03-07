@@ -277,6 +277,10 @@ src.git = "https://github.com/amaanq/tree-sitter-go-sum"
 fetch.git = "https://github.com/omertuc/tree-sitter-go-work"
 src.git = "https://github.com/omertuc/tree-sitter-go-work"
 
+[tree-sitter-grammar-gotemplate]
+fetch.git = "https://github.com/ngalaiko/tree-sitter-go-template"
+src.git = "https://github.com/ngalaiko/tree-sitter-go-template"
+
 [tree-sitter-grammar-gpg]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-gpg-config"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-gpg-config"
