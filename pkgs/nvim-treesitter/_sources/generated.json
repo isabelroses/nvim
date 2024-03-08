@@ -1297,11 +1297,11 @@
         },
         "version": "e2ac513b2240c7ff1069ae33b2df29ce90777c11"
     },
-    "tree-sitter-grammar-gotemplate": {
+    "tree-sitter-grammar-gotmpl": {
         "cargoLocks": null,
         "date": "2024-02-28",
         "extract": null,
-        "name": "tree-sitter-grammar-gotemplate",
+        "name": "tree-sitter-grammar-gotmpl",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -1470,7 +1470,7 @@
     },
     "tree-sitter-grammar-hcl": {
         "cargoLocks": null,
-        "date": "2023-11-18",
+        "date": "2024-03-08",
         "extract": null,
         "name": "tree-sitter-grammar-hcl",
         "passthru": null,
@@ -1480,12 +1480,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e135399cb31b95fac0760b094556d1d5ce84acf0",
-            "sha256": "sha256-Ylxpj+e9YGhyRRRCCVs0g/zhwHpwGELxG2i+E3SFmpQ=",
+            "rev": "e936d3fef8bac884661472dce71ad82284761eb1",
+            "sha256": "sha256-lcvs4auZrMb1f9ocrAnLVxX8JnvrPT18LsJBqoNG9Oo=",
             "type": "git",
             "url": "https://github.com/MichaHoffmann/tree-sitter-hcl"
         },
-        "version": "e135399cb31b95fac0760b094556d1d5ce84acf0"
+        "version": "e936d3fef8bac884661472dce71ad82284761eb1"
     },
     "tree-sitter-grammar-heex": {
         "cargoLocks": null,
@@ -3608,7 +3608,7 @@
     },
     "tree-sitter-grammar-terraform": {
         "cargoLocks": null,
-        "date": "2023-11-18",
+        "date": "2024-03-08",
         "extract": null,
         "name": "tree-sitter-grammar-terraform",
         "passthru": {
@@ -3620,12 +3620,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e135399cb31b95fac0760b094556d1d5ce84acf0",
-            "sha256": "sha256-Ylxpj+e9YGhyRRRCCVs0g/zhwHpwGELxG2i+E3SFmpQ=",
+            "rev": "e936d3fef8bac884661472dce71ad82284761eb1",
+            "sha256": "sha256-lcvs4auZrMb1f9ocrAnLVxX8JnvrPT18LsJBqoNG9Oo=",
             "type": "git",
             "url": "https://github.com/MichaHoffmann/tree-sitter-hcl"
         },
-        "version": "e135399cb31b95fac0760b094556d1d5ce84acf0"
+        "version": "e936d3fef8bac884661472dce71ad82284761eb1"
     },
     "tree-sitter-grammar-thrift": {
         "cargoLocks": null,

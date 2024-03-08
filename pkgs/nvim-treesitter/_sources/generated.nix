@@ -888,8 +888,8 @@
     };
     date = "2023-05-13";
   };
-  tree-sitter-grammar-gotemplate = {
-    pname = "tree-sitter-grammar-gotemplate";
+  tree-sitter-grammar-gotmpl = {
+    pname = "tree-sitter-grammar-gotmpl";
     version = "17144a77be0acdecebd9d557398883569fed41de";
     src = fetchgit {
       url = "https://github.com/ngalaiko/tree-sitter-go-template";
@@ -1007,16 +1007,16 @@
   };
   tree-sitter-grammar-hcl = {
     pname = "tree-sitter-grammar-hcl";
-    version = "e135399cb31b95fac0760b094556d1d5ce84acf0";
+    version = "e936d3fef8bac884661472dce71ad82284761eb1";
     src = fetchgit {
       url = "https://github.com/MichaHoffmann/tree-sitter-hcl";
-      rev = "e135399cb31b95fac0760b094556d1d5ce84acf0";
+      rev = "e936d3fef8bac884661472dce71ad82284761eb1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Ylxpj+e9YGhyRRRCCVs0g/zhwHpwGELxG2i+E3SFmpQ=";
+      sha256 = "sha256-lcvs4auZrMb1f9ocrAnLVxX8JnvrPT18LsJBqoNG9Oo=";
     };
-    date = "2023-11-18";
+    date = "2024-03-08";
   };
   tree-sitter-grammar-heex = {
     pname = "tree-sitter-grammar-heex";
@@ -2468,17 +2468,17 @@
   };
   tree-sitter-grammar-terraform = {
     pname = "tree-sitter-grammar-terraform";
-    version = "e135399cb31b95fac0760b094556d1d5ce84acf0";
+    version = "e936d3fef8bac884661472dce71ad82284761eb1";
     src = fetchgit {
       url = "https://github.com/MichaHoffmann/tree-sitter-hcl";
-      rev = "e135399cb31b95fac0760b094556d1d5ce84acf0";
+      rev = "e936d3fef8bac884661472dce71ad82284761eb1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Ylxpj+e9YGhyRRRCCVs0g/zhwHpwGELxG2i+E3SFmpQ=";
+      sha256 = "sha256-lcvs4auZrMb1f9ocrAnLVxX8JnvrPT18LsJBqoNG9Oo=";
     };
     location = "dialects/terraform";
-    date = "2023-11-18";
+    date = "2024-03-08";
   };
   tree-sitter-grammar-thrift = {
     pname = "tree-sitter-grammar-thrift";
