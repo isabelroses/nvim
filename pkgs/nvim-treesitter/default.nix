@@ -36,6 +36,7 @@
     go = {};
     gomod = {};
     gosum = {};
+    gotmpl = {};
     gpg = {};
     graphql = {};
     haskell = {};
