@@ -127,11 +127,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710223119,
-        "narHash": "sha256-Bqt28KUK2DDXdXz8LBbw6y8q0hzjpopX87F6ladlCNQ=",
+        "lastModified": 1710294792,
+        "narHash": "sha256-ee5sdZ+TmnWVHVavx1/Ywcn9gIJbRN4olbC2S5Gt/QI=",
         "owner": "willruggiano",
         "repo": "neovim.nix",
-        "rev": "8c7a0d7576a03bee8895d6aadcc787986aea9a3a",
+        "rev": "69a02707d32ed5a1d5d622b6f4bdc2739cde339f",
         "type": "github"
       },
       "original": {
