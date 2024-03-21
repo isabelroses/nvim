@@ -10,7 +10,7 @@ return function()
 				type = "text",
 				val = line,
 				opts = {
-					hl = "HeaderGradient" .. i,
+					hl = "AlphaHeaderGradient" .. i,
 					shrink_margin = false,
 					position = "center",
 				},

@@ -176,6 +176,10 @@ src.git = "https://github.com/mrcjkb/rustaceanvim"
 fetch.github = "b0o/schemastore.nvim"
 src.git = "https://github.com/b0o/schemastore.nvim"
 
+[tailwind-tools]
+fetch.github = "luckasRanarison/tailwind-tools.nvim"
+src.git = "https://github.com/luckasRanarison/tailwind-tools.nvim"
+
 [telescope]
 fetch.github = "nvim-telescope/telescope.nvim"
 src.git = "https://github.com/nvim-telescope/telescope.nvim"

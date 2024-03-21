@@ -10,10 +10,6 @@
           git
           gh
           ripgrep
-          wakatime
-          lazygit
-          direnv
-          silicon
 
           # python
           ruff
@@ -46,9 +42,6 @@
           nil
           statix
           deadnix
-
-          # go
-          repos.nekowinston.gonvim-tools
 
           # etc
           emmet-ls

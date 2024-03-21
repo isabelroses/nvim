@@ -216,6 +216,12 @@ in rec {
     };
   };
 
+  # tailwind but better
+  tailwind-tools = {
+    src = srcs.tailwind-tools;
+    config = ./tailwind.lua;
+  };
+
   nvim-lspconfig = {
     src = srcs.nvim-lspconfig;
     config = ./lsp.lua;
@@ -260,6 +266,7 @@ in rec {
 
       go-nvim = {
         src = srcs.go-nvim;
+        paths = [pkgs.repos.nekowinston.gonvim-tools];
         dependencies = {
           guihua-lua.src = srcs.guihua-lua;
         };
@@ -274,12 +281,21 @@ in rec {
   };
 
   # misc
-  wakatime.src = pkgs.vimPlugins.vim-wakatime; # track my time coding
-  direnv.src = srcs.direnv-vim; # direnv integration
   undotree.src = srcs.undotree; # undo tree
+
+  wakatime = {
+    src = pkgs.vimPlugins.vim-wakatime; # track my time coding
+    paths = [pkgs.wakatime];
+  };
+
+  direnv = {
+    src = srcs.direnv-vim; # direnv integration
+    paths = [pkgs.direnv];
+  };
 
   nvim-silicon = {
     src = srcs.nvim-silicon;
+    paths = [pkgs.silicon];
     config = ./silicon.lua;
   };
 
@@ -287,6 +303,7 @@ in rec {
   lazygit = {
     src = srcs.lazygit;
     dependencies = {inherit plenary;};
+    paths = [pkgs.lazygit];
   };
 
   # deps
