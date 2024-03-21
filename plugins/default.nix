@@ -216,12 +216,6 @@ in rec {
     };
   };
 
-  # tailwind but better
-  tailwind-tools = {
-    src = srcs.tailwind-tools;
-    config = ./tailwind.lua;
-  };
-
   nvim-lspconfig = {
     src = srcs.nvim-lspconfig;
     config = ./lsp.lua;
