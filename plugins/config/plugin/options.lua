@@ -18,7 +18,6 @@ vim.o.sidescrolloff = 15
 vim.o.laststatus = 3
 -- hide tab line
 vim.o.showtabline = 0
-vim.g.termguicolors = false
 -- completion height
 vim.o.pumheight = 15
 -- split directions
