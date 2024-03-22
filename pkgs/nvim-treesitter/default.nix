@@ -43,6 +43,7 @@
     hlsl = {};
     html = {};
     javascript = {};
+    just = ts-generate;
     jsdoc = {};
     json = {};
     jsonc = {};

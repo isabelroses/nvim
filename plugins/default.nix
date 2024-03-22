@@ -276,6 +276,7 @@ in rec {
 
   # misc
   undotree.src = srcs.undotree; # undo tree
+  vim-just.src = srcs.vim-just; # justfile support
 
   wakatime = {
     src = pkgs.vimPlugins.vim-wakatime; # track my time coding

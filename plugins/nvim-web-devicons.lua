@@ -1,6 +1,12 @@
 return function()
 	local C = require("catppuccin.palettes").get_palette()
 
+	local justfile = {
+		icon = "󱚣",
+		name = "Justfile",
+		color = C.peach,
+	}
+
 	local devicons = require("nvim-web-devicons")
 	devicons.setup({
 		override_by_filename = {
@@ -24,6 +30,10 @@ return function()
 				name = "LuacheckRC",
 				color = C.blue,
 			},
+			[".Justfile"] = justfile,
+			[".justfile"] = justfile,
+			["Justfile"] = justfile,
+			["justfile"] = justfile,
 		},
 	})
 end
