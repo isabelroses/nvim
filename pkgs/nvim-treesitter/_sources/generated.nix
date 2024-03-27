@@ -526,16 +526,16 @@
   };
   tree-sitter-grammar-elixir = {
     pname = "tree-sitter-grammar-elixir";
-    version = "511ea5e0088779e4bdd76e12963ab9a5fe99983a";
+    version = "868620e19f070a5e6b0b685dc6069a611a86259a";
     src = fetchgit {
       url = "https://github.com/elixir-lang/tree-sitter-elixir";
-      rev = "511ea5e0088779e4bdd76e12963ab9a5fe99983a";
+      rev = "868620e19f070a5e6b0b685dc6069a611a86259a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-gF+bhfaN45KmGGhLa4i2K8LiBLxY8n5fw2m6kYzx5xo=";
+      sha256 = "sha256-r+G0321T1+RwaqcJ+E/gfzm1iSLCIVGPdus7XZFK9So=";
     };
-    date = "2024-01-23";
+    date = "2024-03-27";
   };
   tree-sitter-grammar-elm = {
     pname = "tree-sitter-grammar-elm";
@@ -1765,16 +1765,16 @@
   };
   tree-sitter-grammar-perl = {
     pname = "tree-sitter-grammar-perl";
-    version = "a882a928d4930716896039d1c10e91b6d7444c48";
+    version = "83c57af2e6ce54e0209a2946806030f5b81822ba";
     src = fetchgit {
       url = "https://github.com/ganezdragon/tree-sitter-perl";
-      rev = "a882a928d4930716896039d1c10e91b6d7444c48";
+      rev = "83c57af2e6ce54e0209a2946806030f5b81822ba";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-JXyq2P5WdeGCDX5IhmruSG67IPhZxsWv2UQ2ekY3Qms=";
+      sha256 = "sha256-Nq2E/Gt0MUxmIboQjTh0HMXvH3ICQuVThyLa5J6NDSA=";
     };
-    date = "2024-03-03";
+    date = "2024-03-27";
   };
   tree-sitter-grammar-php = {
     pname = "tree-sitter-grammar-php";
@@ -2798,14 +2798,14 @@
   };
   tree-sitter-grammar-wing = {
     pname = "tree-sitter-grammar-wing";
-    version = "08ff90b4c9b2099f87d98ed848e16af5d8ee60ad";
+    version = "35b8e3a4f320355eaa60da7b035b487b90aa47a8";
     src = fetchgit {
       url = "https://github.com/winglang/wing";
-      rev = "08ff90b4c9b2099f87d98ed848e16af5d8ee60ad";
+      rev = "35b8e3a4f320355eaa60da7b035b487b90aa47a8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-8wmaVQaFeZfTqW/Y6S6wg9C8qLzz+R30zhgREktWixE=";
+      sha256 = "sha256-kT26Ctb5NfKwL6RqY1OLw9Q3it9eTCVFUjeQdYOdRE8=";
     };
     location = "libs/tree-sitter-wing";
     date = "2024-03-27";

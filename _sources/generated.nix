@@ -15,25 +15,25 @@
   };
   catppuccin = {
     pname = "catppuccin";
-    version = "07679af1af4f446655682ee2557b5840ac551504";
+    version = "f66654d5d5190865333e8e46474c1593302c558e";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "nvim";
-      rev = "07679af1af4f446655682ee2557b5840ac551504";
+      rev = "f66654d5d5190865333e8e46474c1593302c558e";
       fetchSubmodules = false;
-      sha256 = "sha256-zbp1XD7dNzg6XdDI2690HuhFabu801B7j1/4FB4Npgc=";
+      sha256 = "sha256-gJb3iEkp+l8lVeeSOI0TCrperJ5xgfTPJdp8O1b1OYo=";
     };
-    date = "2024-03-26";
+    date = "2024-03-27";
   };
   charm-freeze-nvim = {
     pname = "charm-freeze-nvim";
-    version = "9c2281a16935edf4fcdaf0cacd954b2ad9a2783d";
+    version = "f78c3e71ea50c700bc14a81d3d9e06fb75edee4f";
     src = fetchFromGitHub {
       owner = "isabelroses";
       repo = "charm-freeze.nvim";
-      rev = "9c2281a16935edf4fcdaf0cacd954b2ad9a2783d";
+      rev = "f78c3e71ea50c700bc14a81d3d9e06fb75edee4f";
       fetchSubmodules = false;
-      sha256 = "sha256-daqPWgGnWW+SMzZFwS6ycDOxebMOrxf7bbC8wXIA44s=";
+      sha256 = "sha256-HMTIxOERk7ZDwBF1ZLgLwZB61DtoTVmeJQtZ9qZ45w0=";
     };
     date = "2024-03-27";
   };
@@ -423,13 +423,13 @@
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "aa8d8bc600e00f84d11b9d40c6900d72d0f68fa3";
+    version = "07a404570f3d912afdfe92bbf74ff55886293369";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "aa8d8bc600e00f84d11b9d40c6900d72d0f68fa3";
+      rev = "07a404570f3d912afdfe92bbf74ff55886293369";
       fetchSubmodules = false;
-      sha256 = "sha256-Hfm7tnhJxHGI/a0dHdONhctJNsFq8a8DU9lkbt3efME=";
+      sha256 = "sha256-4bcTZM7nxsONqJLspTh7Bq06TN2rabVtYfb5jV6/5Uc=";
     };
     date = "2024-03-27";
   };
@@ -447,15 +447,15 @@
   };
   obsidian-nvim = {
     pname = "obsidian-nvim";
-    version = "df0c5cce68a02481c0d40d1b25433e368fd12a5a";
+    version = "f2eeb0a1e06f24e70bd36bf22eb45a7e21e2d63a";
     src = fetchFromGitHub {
       owner = "epwalsh";
       repo = "obsidian.nvim";
-      rev = "df0c5cce68a02481c0d40d1b25433e368fd12a5a";
+      rev = "f2eeb0a1e06f24e70bd36bf22eb45a7e21e2d63a";
       fetchSubmodules = false;
-      sha256 = "sha256-t1MSU1ufujdDI6ne6AOtIqnC45JjWXtOkmFloxsrfRU=";
+      sha256 = "sha256-f3Xrjx8XfYWjS8Uy1GzTQiXMFlAlb8Q28repY2wpFrk=";
     };
-    date = "2024-03-22";
+    date = "2024-03-27";
   };
   plenary = {
     pname = "plenary";
@@ -507,13 +507,13 @@
   };
   rustaceanvim = {
     pname = "rustaceanvim";
-    version = "513d2baa675d041470c1a70d6b8ef56de1fefa9f";
+    version = "c2cdbeca8674e1b1b66ba870ff502bdad55a6d8a";
     src = fetchFromGitHub {
       owner = "mrcjkb";
       repo = "rustaceanvim";
-      rev = "513d2baa675d041470c1a70d6b8ef56de1fefa9f";
+      rev = "c2cdbeca8674e1b1b66ba870ff502bdad55a6d8a";
       fetchSubmodules = false;
-      sha256 = "sha256-sJSkxCPJvobMIiAF54TKRuUapDlR18xyctZo1KttkRw=";
+      sha256 = "sha256-yOjlsbTTB7CxEO+kWhVb4JQD8LPEkJHUDSkYN52h4Is=";
     };
     date = "2024-03-27";
   };
@@ -579,15 +579,15 @@
   };
   todo-comments = {
     pname = "todo-comments";
-    version = "833d8dd8b07eeda37a09e99460f72a02616935cb";
+    version = "a7e39ae9e74f2c8c6dc4eea6d40c3971ae84752d";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "todo-comments.nvim";
-      rev = "833d8dd8b07eeda37a09e99460f72a02616935cb";
+      rev = "a7e39ae9e74f2c8c6dc4eea6d40c3971ae84752d";
       fetchSubmodules = false;
-      sha256 = "sha256-DiyieXXx7iYGWkpeOvduJf0n7dnpaQ7rXmaWvZQaCyE=";
+      sha256 = "sha256-BJNU01iTRDNrPv48fgiJRS+ouaHkoqw2AYXKDRgDzfw=";
     };
-    date = "2024-01-21";
+    date = "2024-03-27";
   };
   toggleterm = {
     pname = "toggleterm";
