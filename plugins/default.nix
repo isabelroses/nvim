@@ -288,10 +288,10 @@ in rec {
     paths = [pkgs.direnv];
   };
 
-  nvim-silicon = {
-    src = srcs.nvim-silicon;
-    paths = [pkgs.silicon];
-    config = ./silicon.lua;
+  charm-freeze = {
+    src = srcs.charm-freeze-nvim;
+    # paths = [pkgs.charm-freeze];
+    config = ./charm-freeze.lua;
   };
 
   # lazygit integration

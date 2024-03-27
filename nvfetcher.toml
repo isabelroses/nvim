@@ -6,6 +6,10 @@ src.git = "https://github.com/goolord/alpha-nvim"
 fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"
 
+[charm-freeze-nvim]
+fetch.github = "isabelroses/charm-freeze.nvim"
+src.git = "https://isabelroses/charm-freeze.nvim"
+
 [cloak]
 fetch.github = "laytan/cloak.nvim"
 src.git = "https://github.com/laytan/cloak.nvim"
@@ -131,10 +135,6 @@ src.git = "https://github.com/SmiteshP/nvim-navic"
 [nvim-notify]
 fetch.github = "rcarriga/nvim-notify"
 src.git = "https://github.com/rcarriga/nvim-notify"
-
-[nvim-silicon]
-fetch.github = "michaelrommel/nvim-silicon"
-src.git = "https://github.com/michaelrommel/nvim-silicon"
 
 [nvim-tree-lua]
 fetch.github = "nvim-tree/nvim-tree.lua"
