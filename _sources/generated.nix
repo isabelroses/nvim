@@ -27,13 +27,13 @@
   };
   charm-freeze-nvim = {
     pname = "charm-freeze-nvim";
-    version = "09dba79a870b7e6ed6761c5d168c96d327ac36a3";
+    version = "46139fbc3cb63bb6ed53c216ae0ed8f742a6b5d5";
     src = fetchFromGitHub {
       owner = "isabelroses";
       repo = "charm-freeze.nvim";
-      rev = "09dba79a870b7e6ed6761c5d168c96d327ac36a3";
+      rev = "46139fbc3cb63bb6ed53c216ae0ed8f742a6b5d5";
       fetchSubmodules = false;
-      sha256 = "sha256-bjiwvVrDCFW57yen3XpQ8IOOX/jibCH7pI1p9wOLKWs=";
+      sha256 = "sha256-Q9KEYcH7gWaIi44IzUtsF//FvhSqwRSqlBwx62s2sXo=";
     };
     date = "2024-03-28";
   };
