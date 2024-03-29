@@ -9,8 +9,9 @@ return function()
     output = function()
       return "./" .. os.date("%Y-%m-%d") .. "_freeze.png"
     end,
-    theme = "catppuccin-mocha",
-    window = true,
-    padding = { 20, 40, 20, 20 },
+    config = "user",
+    font = {
+      family = "JetBrains Mono",
+    },
   })
 end
