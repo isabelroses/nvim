@@ -1,6 +1,6 @@
 local map = function(mode, shortcut, command, opt)
-	opt = opt or { noremap = true, silent = true }
-	vim.keymap.set(mode, shortcut, command, opt)
+  opt = opt or { noremap = true, silent = true }
+  vim.keymap.set(mode, shortcut, command, opt)
 end
 
 -- move lines

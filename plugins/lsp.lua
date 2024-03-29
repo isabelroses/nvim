@@ -1,3 +1,3 @@
 return function()
-	require("isabel.lsp")
+  require("isabel.lsp")
 end

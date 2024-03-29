@@ -96,11 +96,11 @@ local borderchars = {
 -- my custom borderchars
 vim.g.bc = borderchars.rounded
 vim.opt.fillchars:append({
-	horiz = vim.g.bc.horiz,
-	horizup = vim.g.bc.horizup,
-	horizdown = vim.g.bc.horizdown,
-	vert = vim.g.bc.vert,
-	vertright = vim.g.bc.vertright,
-	vertleft = vim.g.bc.vertleft,
-	verthoriz = vim.g.bc.verthoriz,
+  horiz = vim.g.bc.horiz,
+  horizup = vim.g.bc.horizup,
+  horizdown = vim.g.bc.horizdown,
+  vert = vim.g.bc.vert,
+  vertright = vim.g.bc.vertright,
+  vertleft = vim.g.bc.vertleft,
+  verthoriz = vim.g.bc.verthoriz,
 })
