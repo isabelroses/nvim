@@ -2272,7 +2272,7 @@
     },
     "tree-sitter-grammar-mlir": {
         "cargoLocks": null,
-        "date": "2024-03-24",
+        "date": "2024-03-28",
         "extract": null,
         "name": "tree-sitter-grammar-mlir",
         "passthru": null,
@@ -2282,12 +2282,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d9a79cf19da13812e1a4fe1f816b68750ac65cb3",
-            "sha256": "sha256-YR/BWbuvsngRl1DkE3GEUkvumwtUhmz/678SC70qh3U=",
+            "rev": "a89a5f2bbcf7e82e46b106138977c99d6a644db2",
+            "sha256": "sha256-FIwyHvyIJziliEd+7CBMqUjJuT9G60CZGe73Ees0CRU=",
             "type": "git",
             "url": "https://github.com/artagnon/tree-sitter-mlir"
         },
-        "version": "d9a79cf19da13812e1a4fe1f816b68750ac65cb3"
+        "version": "a89a5f2bbcf7e82e46b106138977c99d6a644db2"
     },
     "tree-sitter-grammar-nickel": {
         "cargoLocks": null,
@@ -2580,7 +2580,7 @@
     },
     "tree-sitter-grammar-perl": {
         "cargoLocks": null,
-        "date": "2024-03-27",
+        "date": "2024-03-29",
         "extract": null,
         "name": "tree-sitter-grammar-perl",
         "passthru": null,
@@ -2590,12 +2590,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "83c57af2e6ce54e0209a2946806030f5b81822ba",
-            "sha256": "sha256-Nq2E/Gt0MUxmIboQjTh0HMXvH3ICQuVThyLa5J6NDSA=",
+            "rev": "309fb67b227851b7c354f6668352f9a0321c8ba4",
+            "sha256": "sha256-OiIL8U68BSmiGdTzUPT/VmNTubIn+HK9kyIqB/TV8AA=",
             "type": "git",
             "url": "https://github.com/ganezdragon/tree-sitter-perl"
         },
-        "version": "83c57af2e6ce54e0209a2946806030f5b81822ba"
+        "version": "309fb67b227851b7c354f6668352f9a0321c8ba4"
     },
     "tree-sitter-grammar-php": {
         "cargoLocks": null,

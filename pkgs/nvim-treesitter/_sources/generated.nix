@@ -1555,16 +1555,16 @@
   };
   tree-sitter-grammar-mlir = {
     pname = "tree-sitter-grammar-mlir";
-    version = "d9a79cf19da13812e1a4fe1f816b68750ac65cb3";
+    version = "a89a5f2bbcf7e82e46b106138977c99d6a644db2";
     src = fetchgit {
       url = "https://github.com/artagnon/tree-sitter-mlir";
-      rev = "d9a79cf19da13812e1a4fe1f816b68750ac65cb3";
+      rev = "a89a5f2bbcf7e82e46b106138977c99d6a644db2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-YR/BWbuvsngRl1DkE3GEUkvumwtUhmz/678SC70qh3U=";
+      sha256 = "sha256-FIwyHvyIJziliEd+7CBMqUjJuT9G60CZGe73Ees0CRU=";
     };
-    date = "2024-03-24";
+    date = "2024-03-28";
   };
   tree-sitter-grammar-nickel = {
     pname = "tree-sitter-grammar-nickel";
@@ -1765,16 +1765,16 @@
   };
   tree-sitter-grammar-perl = {
     pname = "tree-sitter-grammar-perl";
-    version = "83c57af2e6ce54e0209a2946806030f5b81822ba";
+    version = "309fb67b227851b7c354f6668352f9a0321c8ba4";
     src = fetchgit {
       url = "https://github.com/ganezdragon/tree-sitter-perl";
-      rev = "83c57af2e6ce54e0209a2946806030f5b81822ba";
+      rev = "309fb67b227851b7c354f6668352f9a0321c8ba4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Nq2E/Gt0MUxmIboQjTh0HMXvH3ICQuVThyLa5J6NDSA=";
+      sha256 = "sha256-OiIL8U68BSmiGdTzUPT/VmNTubIn+HK9kyIqB/TV8AA=";
     };
-    date = "2024-03-27";
+    date = "2024-03-29";
   };
   tree-sitter-grammar-php = {
     pname = "tree-sitter-grammar-php";
