@@ -501,7 +501,7 @@ fetch.git = "https://github.com/nvim-neorg/tree-sitter-norg"
 src.git = "https://github.com/nvim-neorg/tree-sitter-norg"
 src.branch = "main"
 
-[tree-sitter-grammer-nu]
+[tree-sitter-grammar-nu]
 fetch.git = "https://github.com/nushell/tree-sitter-nu"
 src.git = "https://github.com/nushell/tree-sitter-nu"
 src.branch = "main"
