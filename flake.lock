@@ -100,11 +100,11 @@
         "rust-overlay": []
       },
       "locked": {
-        "lastModified": 1711695782,
-        "narHash": "sha256-zkFSk8+vQz4XntiApZMYMZoySdjZiKD+qHlSeHl+pvE=",
+        "lastModified": 1711868903,
+        "narHash": "sha256-djTVTN0WGXUNgLSwl2qJW75TBACJwSQx5i3lJUNA/4Y=",
         "owner": "nekowinston",
         "repo": "nur",
-        "rev": "3cd938578bfa79efe16195dad8f282d7d825161d",
+        "rev": "73957b65a2c34d0f3b8a7a4f3a26f74388372dac",
         "type": "github"
       },
       "original": {
@@ -166,11 +166,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1711523803,
-        "narHash": "sha256-UKcYiHWHQynzj6CN/vTcix4yd1eCu1uFdsuarupdCQQ=",
+        "lastModified": 1711703276,
+        "narHash": "sha256-iMUFArF0WCatKK6RzfUJknjem0H9m4KgorO/p3Dopkk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2726f127c15a4cc9810843b96cad73c7eb39e443",
+        "rev": "d8fe5e6c92d0d190646fb9f1056741a229980089",
         "type": "github"
       },
       "original": {
@@ -229,11 +229,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1711519547,
-        "narHash": "sha256-Q7YmSCUJmDl71fJv/zD9lrOCJ1/SE/okZ2DsrmRjzhY=",
+        "lastModified": 1711981679,
+        "narHash": "sha256-pnbHEXJOdGkPrHBdkZLv/a2V09On+V3J4aPE/BfAJC8=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "7d47a32e5cd1ea481fab33c516356ce27c8cef4a",
+        "rev": "f3bb95498eaaa49a93bacaf196cdb6cf8e872cdf",
         "type": "github"
       },
       "original": {
