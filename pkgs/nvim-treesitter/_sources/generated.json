@@ -2403,6 +2403,25 @@
         },
         "version": "14e6da1627aaef21d2b2aa0c37d04269766dcc1d"
     },
+    "tree-sitter-grammar-nu": {
+        "cargoLocks": null,
+        "date": "2024-03-09",
+        "extract": null,
+        "name": "tree-sitter-grammar-nu",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "c5b7816043992b1cdc1462a889bc74dc08576fa6",
+            "sha256": "sha256-P+ixE359fAW7R5UJLwvMsmju7UFmJw5SN+kbMEw7Kz0=",
+            "type": "git",
+            "url": "https://github.com/nushell/tree-sitter-nu"
+        },
+        "version": "c5b7816043992b1cdc1462a889bc74dc08576fa6"
+    },
     "tree-sitter-grammar-objc": {
         "cargoLocks": null,
         "date": "2023-08-13",
@@ -4208,24 +4227,5 @@
             "url": "https://github.com/maxxnino/tree-sitter-zig"
         },
         "version": "0d08703e4c3f426ec61695d7617415fff97029bd"
-    },
-    "tree-sitter-grammer-nu": {
-        "cargoLocks": null,
-        "date": "2024-03-09",
-        "extract": null,
-        "name": "tree-sitter-grammer-nu",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "c5b7816043992b1cdc1462a889bc74dc08576fa6",
-            "sha256": "sha256-P+ixE359fAW7R5UJLwvMsmju7UFmJw5SN+kbMEw7Kz0=",
-            "type": "git",
-            "url": "https://github.com/nushell/tree-sitter-nu"
-        },
-        "version": "c5b7816043992b1cdc1462a889bc74dc08576fa6"
     }
 }
