@@ -89,14 +89,16 @@
 
         devShells.default = pkgs.mkShell {
           inherit (self'.checks.pre-commit-check) shellHook;
-          buildInputs = with pkgs; [nil statix deadnix nvfetcher nix-tree];
+          buildInputs = with pkgs; [self'.formatter nil statix deadnix nvfetcher nix-tree];
         };
 
         formatter = pkgs.alejandra;
 
-        packages = rec {
-          default = neovim;
+        packages = let
           neovim = config.neovim.final;
+        in {
+          inherit neovim;
+          default = neovim;
           nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter {};
         };
       };
