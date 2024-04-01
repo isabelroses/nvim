@@ -1800,6 +1800,7 @@
       leaveDotGit = false;
       sha256 = "sha256-5bFM2Hr6vgpLyv3phgBWFl5wk+mlCPJTqrkXJvjSvvM=";
     };
+    location = "php";
     date = "2024-03-22";
   };
   tree-sitter-grammar-phpdoc = {
