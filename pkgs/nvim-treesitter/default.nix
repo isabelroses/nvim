@@ -54,7 +54,6 @@
     norg = {};
     norg_meta = {};
     nix = {};
-    nu = {};
     php = {};
     pug = {};
     python = {};
