@@ -5,6 +5,15 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        flake-compat.follows = "flake-compat";
+      };
+    };
+
     pre-commit-nix = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs = {
@@ -68,6 +77,7 @@
           inherit system;
           config.allowUnfree = true;
           overlays = [
+            inputs.neovim-nightly-overlay.overlay
             (_: p: {
               repos = {
                 nekowinston = import inputs.nekowinston-nur {inherit (p) pkgs;};
