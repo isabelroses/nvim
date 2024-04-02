@@ -204,6 +204,11 @@ src.git = "https://github.com/akinsho/toggleterm.nvim"
 fetch.github = "folke/trouble.nvim"
 src.git = "https://github.com/folke/trouble.nvim"
 
+[tree-sitter-nu]
+fetch.git = "https://github.com/nushell/tree-sitter-nu"
+src.git = "https://github.com/nushell/tree-sitter-nu"
+src.branch = "main"
+
 [typescript-tools]
 fetch.github = "pmizio/typescript-tools.nvim"
 src.git = "https://github.com/pmizio/typescript-tools.nvim"

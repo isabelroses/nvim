@@ -203,6 +203,7 @@ in rec {
 
     dependencies = {
       rainbow-delimiters.src = srcs.rainbow-delimiters;
+      tree-sitter-nu.src = srcs.tree-sitter-nu;
     };
   };
 
