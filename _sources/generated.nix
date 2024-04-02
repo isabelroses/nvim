@@ -339,15 +339,15 @@
   };
   null-ls = {
     pname = "null-ls";
-    version = "e632688737b6b878e900ac69179a9aae734bb331";
+    version = "e8bbec069fc64e5b34f0365dd0f0d30fd73c3127";
     src = fetchFromGitHub {
       owner = "nvimtools";
       repo = "none-ls.nvim";
-      rev = "e632688737b6b878e900ac69179a9aae734bb331";
+      rev = "e8bbec069fc64e5b34f0365dd0f0d30fd73c3127";
       fetchSubmodules = false;
-      sha256 = "sha256-kZWFAjWYqbJ1+gmZA2y7u3OHDLnceEgOdrHXimwDPmM=";
+      sha256 = "sha256-w8z06e33YqR0wr2k3e4mXj0pdtYCAm9GBIPI62kADfw=";
     };
-    date = "2024-04-01";
+    date = "2024-04-02";
   };
   nvim-cmp = {
     pname = "nvim-cmp";
@@ -531,15 +531,15 @@
   };
   telescope = {
     pname = "telescope";
-    version = "1bb28df3cfc241b961331f00dcb8d5b45fe3e4f0";
+    version = "4626aaa2bcfdacf55fd6d44b430e2df81b2403ff";
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope.nvim";
-      rev = "1bb28df3cfc241b961331f00dcb8d5b45fe3e4f0";
+      rev = "4626aaa2bcfdacf55fd6d44b430e2df81b2403ff";
       fetchSubmodules = false;
-      sha256 = "sha256-qXs0vko57ZmPaS4YUw2uc3HFa2A4YMQmeelgGCU7vUw=";
+      sha256 = "sha256-8Bp1E9JY1MByjRCcON1HJLYRswLx63lmz20rGrJW7Wc=";
     };
-    date = "2024-03-30";
+    date = "2024-04-02";
   };
   telescope-file-browser = {
     pname = "telescope-file-browser";

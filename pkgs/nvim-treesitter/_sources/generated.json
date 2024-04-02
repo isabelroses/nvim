@@ -2403,6 +2403,25 @@
         },
         "version": "14e6da1627aaef21d2b2aa0c37d04269766dcc1d"
     },
+    "tree-sitter-grammar-nu": {
+        "cargoLocks": null,
+        "date": "2024-03-09",
+        "extract": null,
+        "name": "tree-sitter-grammar-nu",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "c5b7816043992b1cdc1462a889bc74dc08576fa6",
+            "sha256": "sha256-P+ixE359fAW7R5UJLwvMsmju7UFmJw5SN+kbMEw7Kz0=",
+            "type": "git",
+            "url": "https://github.com/nushell/tree-sitter-nu"
+        },
+        "version": "c5b7816043992b1cdc1462a889bc74dc08576fa6"
+    },
     "tree-sitter-grammar-objc": {
         "cargoLocks": null,
         "date": "2023-08-13",
@@ -3354,12 +3373,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "1f7a0ea83f87b90cd9251b4f16dbbcba6bc55ff0",
-            "sha256": "sha256-+VqBwiUi7oVnKrKFYeGezrU5X/pUiYEs9FlWCLcUbbk=",
+            "rev": "edde82aba7883e9ed6506a25f64644bab9713e01",
+            "sha256": "sha256-z0FDYQKJkX8Qj7ljaskSA9AAe4qBCHguC/Ohzi8SGIU=",
             "type": "git",
             "url": "https://github.com/JoranHonig/tree-sitter-solidity"
         },
-        "version": "1f7a0ea83f87b90cd9251b4f16dbbcba6bc55ff0"
+        "version": "edde82aba7883e9ed6506a25f64644bab9713e01"
     },
     "tree-sitter-grammar-sparql": {
         "cargoLocks": null,
