@@ -351,15 +351,15 @@
   };
   nvim-cmp = {
     pname = "nvim-cmp";
-    version = "2fb2a3cf78bbc1b0bea030e8c8728985af1cf302";
+    version = "ce16de5665c766f39c271705b17fff06f7bcb84f";
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "nvim-cmp";
-      rev = "2fb2a3cf78bbc1b0bea030e8c8728985af1cf302";
+      rev = "ce16de5665c766f39c271705b17fff06f7bcb84f";
       fetchSubmodules = false;
-      sha256 = "sha256-zeY7MAZJHS4qITPT5tdVGtb0A2/mbnyPZN9drkXAKck=";
+      sha256 = "sha256-DBxQTmwuEGj2g7LP7d1PJk/SyO0iJq2CIIHsFh0QJ4I=";
     };
-    date = "2024-04-01";
+    date = "2024-04-02";
   };
   nvim-colorizer-lua = {
     pname = "nvim-colorizer-lua";
@@ -423,15 +423,15 @@
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "30492e7e1c9e5af3642e8a74c2f88dc1f50ec305";
+    version = "54cf9180a36299265e217858e6e531245074c3f4";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "30492e7e1c9e5af3642e8a74c2f88dc1f50ec305";
+      rev = "54cf9180a36299265e217858e6e531245074c3f4";
       fetchSubmodules = false;
-      sha256 = "sha256-VrrJh65l0v/xQ7ghBXgX7ThTsXmMQOWJEfR9Xl4Gn4U=";
+      sha256 = "sha256-W6PK7OiyzQqaUgpFCtPvcs8OE0F5FyFhIb+pZW/HQC8=";
     };
-    date = "2024-04-01";
+    date = "2024-04-02";
   };
   nvim-web-devicons = {
     pname = "nvim-web-devicons";
@@ -507,13 +507,13 @@
   };
   rustaceanvim = {
     pname = "rustaceanvim";
-    version = "e74e0e5440a99e417402c4bbf5238d4659e51541";
+    version = "e2dbf91daed26d4dd7263affbecbf9a36e0096e5";
     src = fetchFromGitHub {
       owner = "mrcjkb";
       repo = "rustaceanvim";
-      rev = "e74e0e5440a99e417402c4bbf5238d4659e51541";
+      rev = "e2dbf91daed26d4dd7263affbecbf9a36e0096e5";
       fetchSubmodules = false;
-      sha256 = "sha256-RlZ8CW0BDQS2lRr55qsPq/19Gv542iDlzWhtbbv3QZY=";
+      sha256 = "sha256-H8mGJ9kEJgst/EhN7H+R/6jnzVnz+OvVTCv22WrYaNY=";
     };
     date = "2024-04-01";
   };
@@ -600,6 +600,19 @@
       sha256 = "sha256-FJyDxQm2vs9R4WkqAbh6ryCvEABfrLSKRrAGo/qI5jM=";
     };
     date = "2024-02-12";
+  };
+  tree-sitter-nu = {
+    pname = "tree-sitter-nu";
+    version = "c5b7816043992b1cdc1462a889bc74dc08576fa6";
+    src = fetchgit {
+      url = "https://github.com/nushell/tree-sitter-nu";
+      rev = "c5b7816043992b1cdc1462a889bc74dc08576fa6";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-P+ixE359fAW7R5UJLwvMsmju7UFmJw5SN+kbMEw7Kz0=";
+    };
+    date = "2024-03-09";
   };
   trouble = {
     pname = "trouble";
