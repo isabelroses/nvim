@@ -53,6 +53,7 @@
     markdown_inline = {};
     norg = {};
     norg_meta = {};
+    nu = {};
     nix = {};
     php = {};
     pug = {};
