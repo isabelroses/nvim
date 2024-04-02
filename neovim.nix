@@ -52,6 +52,7 @@
         shfmt
         taplo # toml
         nodePackages.yaml-language-server # yaml
+        nushell
       ];
 
       lazy = {

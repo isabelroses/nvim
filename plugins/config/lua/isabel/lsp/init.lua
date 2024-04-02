@@ -134,6 +134,7 @@ local common = { capabilities = capabilities }
 require("isabel.lsp.go").setup(common)
 require("isabel.lsp.ltex").setup(common)
 require("isabel.lsp.null-ls")
+require("isabel.lsp.nushell").setup(common)
 require("isabel.lsp.nix").setup(common)
 require("isabel.lsp.validation").setup(common)
 require("isabel.lsp.webdev").setup(common)
