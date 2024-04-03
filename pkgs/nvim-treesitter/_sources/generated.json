@@ -2329,7 +2329,7 @@
     },
     "tree-sitter-grammar-nix": {
         "cargoLocks": null,
-        "date": "2023-12-26",
+        "date": "2024-04-03",
         "extract": null,
         "name": "tree-sitter-grammar-nix",
         "passthru": null,
@@ -2339,12 +2339,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "763168fa916a333a459434f1424b5d30645f015d",
-            "sha256": "sha256-MarXhVPVmL505c57HkbUk0kHN7jez83mcGtyM5GMw1o=",
+            "rev": "b3cda619248e7dd0f216088bd152f59ce0bbe488",
+            "sha256": "sha256-Ib83CECi3hvm2GfeAJXIkapeN8rrpFQxCWWFFsIvB/Y=",
             "type": "git",
             "url": "https://github.com/cstrahan/tree-sitter-nix"
         },
-        "version": "763168fa916a333a459434f1424b5d30645f015d"
+        "version": "b3cda619248e7dd0f216088bd152f59ce0bbe488"
     },
     "tree-sitter-grammar-norg": {
         "cargoLocks": null,
@@ -4114,7 +4114,7 @@
     },
     "tree-sitter-grammar-wing": {
         "cargoLocks": null,
-        "date": "2024-04-02",
+        "date": "2024-04-03",
         "extract": null,
         "name": "tree-sitter-grammar-wing",
         "passthru": {
@@ -4126,12 +4126,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0cdff2bc50e3664049905e952746cadf4ac62f15",
-            "sha256": "sha256-ocHNpn7EKDdoBsanBf8XPhqZYM0wna9a+tDxy4gIO3o=",
+            "rev": "988593554b6b9f41666c0e7854920071e80a85b4",
+            "sha256": "sha256-vvfMN/AQP9WIc1kv9srmSukNoejYA2VlDxI6qgvY908=",
             "type": "git",
             "url": "https://github.com/winglang/wing"
         },
-        "version": "0cdff2bc50e3664049905e952746cadf4ac62f15"
+        "version": "988593554b6b9f41666c0e7854920071e80a85b4"
     },
     "tree-sitter-grammar-xml": {
         "cargoLocks": null,

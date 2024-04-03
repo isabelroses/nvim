@@ -1594,16 +1594,16 @@
   };
   tree-sitter-grammar-nix = {
     pname = "tree-sitter-grammar-nix";
-    version = "763168fa916a333a459434f1424b5d30645f015d";
+    version = "b3cda619248e7dd0f216088bd152f59ce0bbe488";
     src = fetchgit {
       url = "https://github.com/cstrahan/tree-sitter-nix";
-      rev = "763168fa916a333a459434f1424b5d30645f015d";
+      rev = "b3cda619248e7dd0f216088bd152f59ce0bbe488";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-MarXhVPVmL505c57HkbUk0kHN7jez83mcGtyM5GMw1o=";
+      sha256 = "sha256-Ib83CECi3hvm2GfeAJXIkapeN8rrpFQxCWWFFsIvB/Y=";
     };
-    date = "2023-12-26";
+    date = "2024-04-03";
   };
   tree-sitter-grammar-norg = {
     pname = "tree-sitter-grammar-norg";
@@ -2812,17 +2812,17 @@
   };
   tree-sitter-grammar-wing = {
     pname = "tree-sitter-grammar-wing";
-    version = "0cdff2bc50e3664049905e952746cadf4ac62f15";
+    version = "988593554b6b9f41666c0e7854920071e80a85b4";
     src = fetchgit {
       url = "https://github.com/winglang/wing";
-      rev = "0cdff2bc50e3664049905e952746cadf4ac62f15";
+      rev = "988593554b6b9f41666c0e7854920071e80a85b4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-ocHNpn7EKDdoBsanBf8XPhqZYM0wna9a+tDxy4gIO3o=";
+      sha256 = "sha256-vvfMN/AQP9WIc1kv9srmSukNoejYA2VlDxI6qgvY908=";
     };
     location = "libs/tree-sitter-wing";
-    date = "2024-04-02";
+    date = "2024-04-03";
   };
   tree-sitter-grammar-xml = {
     pname = "tree-sitter-grammar-xml";
