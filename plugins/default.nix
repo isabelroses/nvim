@@ -26,15 +26,6 @@ in rec {
     dependencies = {inherit plenary nvim-web-devicons;};
   };
 
-  # terminal within nvim
-  toggleterm = {
-    src = srcs.toggleterm;
-    config = {
-      open_mapping = "<C-t>";
-      shade_terminals = false;
-    };
-  };
-
   # markdown stuff
   obsidian-nvim = {
     src = srcs.obsidian-nvim;
@@ -132,6 +123,7 @@ in rec {
 
   nvim-colorizer = {
     src = srcs.nvim-colorizer-lua;
+
     config = {
       user_default_options = {
         RGB = true;
@@ -148,6 +140,7 @@ in rec {
         sass = {enable = true;};
         virtualtext = " ";
       };
+
       buftypes = [
         "*"
         "!dashboard"
@@ -156,12 +149,6 @@ in rec {
         "!prompt"
       ];
     };
-  };
-
-  # comments
-  comment = {
-    src = srcs.comment;
-    config = true;
   };
 
   todo-comments = {
@@ -239,9 +226,7 @@ in rec {
 
       luasnip = {
         src = srcs.luasnip;
-        dependencies = {
-          my-snippets.src = pkgs.callPackage ../pkgs/snippets {};
-        };
+        dependencies.my-snippets.src = pkgs.callPackage ../pkgs/snippets {};
       };
 
       trouble = {
@@ -262,9 +247,7 @@ in rec {
       go-nvim = {
         src = srcs.go-nvim;
         paths = [pkgs.repos.nekowinston.gonvim-tools];
-        dependencies = {
-          guihua-lua.src = srcs.guihua-lua;
-        };
+        dependencies.guihua-lua.src = srcs.guihua-lua;
       };
     };
   };
@@ -279,13 +262,15 @@ in rec {
   undotree.src = srcs.undotree; # undo tree
   vim-just.src = srcs.vim-just; # justfile support
 
+  # track my time coding
   wakatime = {
-    src = pkgs.vimPlugins.vim-wakatime; # track my time coding
+    src = pkgs.vimPlugins.vim-wakatime;
     paths = [pkgs.wakatime];
   };
 
+  # direnv integration
   direnv = {
-    src = srcs.direnv-vim; # direnv integration
+    src = srcs.direnv-vim;
     paths = [pkgs.direnv];
   };
 
