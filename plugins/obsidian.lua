@@ -10,7 +10,7 @@ return function()
         path = "~/documents/obsidian",
       },
       {
-        name = "default",
+        name = "cssuffering",
         path = "~/dev/cssuffering/notes",
       },
     },
