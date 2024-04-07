@@ -9,9 +9,6 @@ map("n", "<A-k>", "<cmd>m .-2<cr>==")
 map("v", "J", "<cmd>m '>+1<CR>gv=gv")
 map("v", "K", "<cmd>m '<-1<CR>gv=gv")
 
--- escape :terminal easier
-map("t", "<Esc>", "<C-\\><C-n>")
-
 -- vertical movment
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
