@@ -1,5 +1,6 @@
 return function()
   require("catppuccin").setup({
+    flavour = "auto",
     background = {
       light = "latte",
       dark = "mocha",
