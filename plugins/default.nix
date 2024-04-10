@@ -276,7 +276,7 @@ in rec {
 
   charm-freeze = {
     src = srcs.charm-freeze-nvim;
-    # paths = [pkgs.charm-freeze];
+    paths = [pkgs.charm-freeze];
     config = ./charm-freeze.lua;
   };
 
