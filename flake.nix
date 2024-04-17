@@ -44,8 +44,7 @@
       url = "github:nekowinston/nur";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-        rust-overlay.follows = "";
+        fenix.follows = "";
       };
     };
 
