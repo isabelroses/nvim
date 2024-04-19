@@ -37,11 +37,11 @@ local sources = {
   null.builtins.diagnostics.proselint,
 }
 
-local golangci_lint = require("go.null_ls").golangci_lint()
+-- local golangci_lint = require("go.null_ls").golangci_lint()
 local gotest = require("go.null_ls").gotest()
 local gotest_codeaction = require("go.null_ls").gotest_action()
 table.insert(sources, gotest)
-table.insert(sources, golangci_lint)
+-- table.insert(sources, golangci_lint)
 table.insert(sources, gotest_codeaction)
 
 null.setup({
