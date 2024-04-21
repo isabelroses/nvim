@@ -37,6 +37,7 @@ return function()
       s = { "<cmd>SessionManager load_session<cr>", "Show sessions" },
       -- h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
       p = { "<cmd>Telescope project<cr>", "Project" },
+      t = { "<cmd>TodoTelescope<cr>", "Todo list" },
     },
 
     ["<leader>u"] = {
