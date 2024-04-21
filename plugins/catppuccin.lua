@@ -27,6 +27,9 @@ return function()
           information = { "undercurl" },
         },
       },
+      telescope = {
+        enabled = true,
+      },
       cmp = true,
       lsp_trouble = true,
       nvimtree = {
@@ -44,6 +47,7 @@ return function()
       },
       gitsigns = false,
       markdown = true,
+      harpoon = true,
       symbols_outline = true,
       ts_rainbow = true,
       notify = true,
