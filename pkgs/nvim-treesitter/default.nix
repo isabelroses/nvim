@@ -23,7 +23,7 @@
     beancount = {};
     c = {};
     cpp = {};
-    d = ts-generate;
+    # d = ts-generate;
     css = {};
     csv = {};
     diff = {};
