@@ -2,18 +2,19 @@
   lib,
   stdenvNoCC,
 }: let
-  snippets = builtins.readDir ./src;
+  snips = lib.filesystem.listFilesRecursive ./src;
   packageJSON = builtins.toJSON {
     name = "my-snippets";
     engines.vscode = ">=1.0.0";
+
     contributes.snippets =
-      builtins.mapAttrs (name: _: let
-        language = builtins.head (lib.splitString ".json" name);
+      builtins.map (name: let
+        base = builtins.baseNameOf name;
       in {
-        inherit language;
-        path = "./snippets/${name}";
+        language = lib.removeSuffix ".json" base;
+        path = "./src/${base}";
       })
-      snippets;
+      snips;
   };
 in
   stdenvNoCC.mkDerivation (_: {

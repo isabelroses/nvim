@@ -109,6 +109,7 @@
           inherit neovim;
           default = neovim;
           nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter {};
+          my-snippets = pkgs.callPackage ./pkgs/snippets {};
         };
       };
     };

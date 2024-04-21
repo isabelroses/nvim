@@ -9,6 +9,7 @@ if not (cmp_present and lsp_present and luasnip_present) then
 end
 
 vim.opt.completeopt = "menu,menuone,noselect"
+require("luasnip.loaders.from_vscode").lazy_load()
 vim.lsp.set_log_level("trace")
 
 -- border style

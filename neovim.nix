@@ -42,9 +42,6 @@
         statix
         deadnix
 
-        # go
-        revive
-
         # etc
         emmet-ls
         ltex-ls

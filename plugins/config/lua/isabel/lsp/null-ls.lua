@@ -18,7 +18,6 @@ local sources = {
   -- 	},
   -- }),
   null.builtins.formatting.gofumpt,
-  null.builtins.diagnostics.revive,
   null.builtins.formatting.prettier.with({
     filetypes = {
       "html",
@@ -36,13 +35,6 @@ local sources = {
   null.builtins.diagnostics.alex,
   null.builtins.diagnostics.proselint,
 }
-
--- local golangci_lint = require("go.null_ls").golangci_lint()
-local gotest = require("go.null_ls").gotest()
-local gotest_codeaction = require("go.null_ls").gotest_action()
-table.insert(sources, gotest)
--- table.insert(sources, golangci_lint)
-table.insert(sources, gotest_codeaction)
 
 null.setup({
   sources = sources,

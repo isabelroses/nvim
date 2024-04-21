@@ -22,7 +22,6 @@ return function()
   local project_actions = require("telescope._extensions.project.actions")
 
   telescope.load_extension("fzf")
-  telescope.load_extension("notify")
   telescope.load_extension("project")
   telescope.load_extension("ui-select")
 

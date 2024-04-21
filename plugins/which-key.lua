@@ -36,7 +36,6 @@ return function()
       g = { "<cmd>Telescope live_grep<cr>", "Live grep" },
       s = { "<cmd>SessionManager load_session<cr>", "Show sessions" },
       -- h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
-      -- n = { "<cmd>Telescope notify<cr>", "Show notifications" },
       p = { "<cmd>Telescope project<cr>", "Project" },
     },
 
