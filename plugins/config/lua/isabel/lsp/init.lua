@@ -13,7 +13,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 vim.lsp.set_log_level("trace")
 
 -- border style
-require("lspconfig.ui.windows").default_options.border = "rounded"
+require("lspconfig.ui.windows").default_options.border = vim.g.bc.style
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = vim.g.bc.style,
 })
@@ -115,6 +115,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
     if navic_present and client.server_capabilities.documentSymbolProvider then
       navic.attach(client, ev.buf)
+    end
+
+    if client.server_capabilities.inlayHintProvider then
+      vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
     end
 
     local opts = { buffer = ev.buf }
