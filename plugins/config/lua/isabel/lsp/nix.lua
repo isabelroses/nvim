@@ -7,7 +7,7 @@ end
 local M = {}
 
 M.setup = function(opts)
-  lspconfig.nil_ls.setup({
+  lspconfig.nixd.setup({
     capabilities = opts.capabilities,
     cmd = nixd,
     on_attach = opts.default_on_attach,
