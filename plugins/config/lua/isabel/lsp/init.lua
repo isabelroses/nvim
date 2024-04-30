@@ -140,6 +140,7 @@ require("isabel.lsp.go").setup(common)
 require("isabel.lsp.ltex").setup(common)
 require("isabel.lsp.null-ls")
 require("isabel.lsp.nushell").setup(common)
+require("isabel.lsp.nix").setup(common)
 require("isabel.lsp.validation").setup(common)
 require("isabel.lsp.webdev").setup(common)
 pcall(require("py_lsp").setup, common)
@@ -153,7 +154,6 @@ local servers = {
   "sourcekit",
   "taplo",
   "teal_ls",
-  "nixd",
 }
 
 for _, server in ipairs(servers) do
