@@ -30,8 +30,6 @@ local sources = {
   null.builtins.formatting.shfmt,
   null.builtins.formatting.stylua,
   -- null.builtins.formatting.taplo,
-  null.builtins.diagnostics.statix,
-  null.builtins.diagnostics.deadnix,
   null.builtins.diagnostics.alex,
   null.builtins.diagnostics.proselint,
 }

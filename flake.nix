@@ -23,14 +23,6 @@
       };
     };
 
-    nil = {
-      url = "github:oxalica/nil";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-      };
-    };
-
     neovim-nix = {
       url = "github:willruggiano/neovim.nix";
       inputs = {
@@ -98,7 +90,7 @@
 
         devShells.default = pkgs.mkShell {
           inherit (self'.checks.pre-commit-check) shellHook;
-          buildInputs = with pkgs; [self'.formatter nil statix deadnix nvfetcher nix-tree];
+          buildInputs = with pkgs; [self'.formatter nvfetcher nix-tree];
         };
 
         formatter = pkgs.alejandra;

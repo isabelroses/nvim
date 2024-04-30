@@ -37,10 +37,8 @@
         nodePackages.vscode-langservers-extracted
 
         # nix
+        nixd
         alejandra
-        nil
-        statix
-        deadnix
 
         # etc
         emmet-ls
