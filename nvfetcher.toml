@@ -168,6 +168,10 @@ src.git = "https://github.com/hiphish/rainbow-delimiters.nvim"
 fetch.github = "mrcjkb/rustaceanvim"
 src.git = "https://github.com/mrcjkb/rustaceanvim"
 
+[rust-vim]
+fetch.github = "rust-lang/rust.vim"
+src.git = "https://github.com/rust-lang/rust.vim"
+
 [schemastore]
 fetch.github = "b0o/schemastore.nvim"
 src.git = "https://github.com/b0o/schemastore.nvim"

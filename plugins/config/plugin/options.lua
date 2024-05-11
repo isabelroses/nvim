@@ -128,3 +128,6 @@ vim.opt.fillchars:append({
   vertleft = vim.g.bc.vertleft,
   verthoriz = vim.g.bc.verthoriz,
 })
+
+-- rust save
+vim.g.rustfmt_autosave = 1

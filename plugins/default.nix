@@ -194,7 +194,7 @@ in rec {
     };
   };
 
-  # rust lsp
+  # rust lsp + formmating
   rustaceanvim = {
     src = srcs.rustaceanvim;
     config = ./rust.lua;
@@ -202,6 +202,10 @@ in rec {
     dependencies = {
       inherit which-key;
     };
+  };
+  rust-vim = {
+    src = srcs.rust-vim;
+    ft = "rust";
   };
 
   nvim-lspconfig = {
@@ -275,7 +279,7 @@ in rec {
   };
 
   charm-freeze = {
-    src = srcs.charm-freeze-nvim;
+    src = pkgs.callPackage ../pkgs/charm-freeze.nvim {};
     paths = [pkgs.charm-freeze];
     config = ./charm-freeze.lua;
   };
