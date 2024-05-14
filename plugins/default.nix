@@ -18,7 +18,6 @@ rec {
   # tree view
   nvim-tree = {
     src = srcs.nvim-tree-lua;
-    event = "VeryLazy";
     config = {
       sync_root_with_cwd = true;
       diagnostics.enable = true;
@@ -177,7 +176,6 @@ rec {
   telescope = {
     src = srcs.telescope;
     config = ./telescope.lua;
-    event = "VeryLazy";
     dependencies = {
       inherit plenary nvim-web-devicons which-key;
       telescope-fzf-native.package = pkgs.vimPlugins.telescope-fzf-native-nvim;
