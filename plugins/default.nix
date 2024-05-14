@@ -1,6 +1,8 @@
-{pkgs}: let
-  srcs = builtins.mapAttrs (_: pkg: pkg.src) (pkgs.callPackage ../_sources/generated.nix {});
-in rec {
+{ pkgs }:
+let
+  srcs = builtins.mapAttrs (_: pkg: pkg.src) (pkgs.callPackage ../_sources/generated.nix { });
+in
+rec {
   config = {
     src = ./config;
     lazy = false;
@@ -16,6 +18,7 @@ in rec {
   # tree view
   nvim-tree = {
     src = srcs.nvim-tree-lua;
+    event = "VeryLazy";
     config = {
       sync_root_with_cwd = true;
       diagnostics.enable = true;
@@ -23,14 +26,19 @@ in rec {
       modified.enable = true;
       renderer.icons.web_devicons.folder.enable = true;
     };
-    dependencies = {inherit plenary nvim-web-devicons;};
+    dependencies = {
+      inherit plenary nvim-web-devicons;
+    };
   };
 
   # markdown stuff
   obsidian-nvim = {
     src = srcs.obsidian-nvim;
     config = ./obsidian.lua;
-    dependencies = {inherit plenary;};
+    event = "BufRead .obsidian";
+    dependencies = {
+      inherit plenary;
+    };
   };
 
   # rice
@@ -40,7 +48,9 @@ in rec {
     dependencies = {
       neovim-session-manager = {
         src = srcs.neovim-session-manager;
-        dependencies = {inherit plenary;};
+        dependencies = {
+          inherit plenary;
+        };
       };
     };
   };
@@ -85,7 +95,9 @@ in rec {
           };
         };
 
-        dependencies = {inherit nvim-web-devicons;};
+        dependencies = {
+          inherit nvim-web-devicons;
+        };
       };
     };
   };
@@ -98,6 +110,7 @@ in rec {
 
   fidget = {
     src = srcs.fidget;
+    event = "VeryLazy";
 
     config = {
       text = {
@@ -123,6 +136,7 @@ in rec {
 
   nvim-colorizer = {
     src = srcs.nvim-colorizer-lua;
+    event = "VeryLazy";
 
     config = {
       user_default_options = {
@@ -137,7 +151,9 @@ in rec {
         css_fn = false;
         mode = "background";
         tailwind = "both";
-        sass = {enable = true;};
+        sass = {
+          enable = true;
+        };
         virtualtext = " ";
       };
 
@@ -154,12 +170,14 @@ in rec {
   todo-comments = {
     src = srcs.todo-comments;
     config = true;
+    event = "VeryLazy";
   };
 
   # quicker movement
   telescope = {
     src = srcs.telescope;
     config = ./telescope.lua;
+    event = "VeryLazy";
     dependencies = {
       inherit plenary nvim-web-devicons which-key;
       telescope-fzf-native.package = pkgs.vimPlugins.telescope-fzf-native-nvim;
@@ -181,12 +199,14 @@ in rec {
   copilot-lua = {
     src = srcs.copilot-lua;
     config = ./copilot.lua;
+    event = "InsertEnter";
   };
 
   # lsp
   nvim-treesitter = {
-    package = pkgs.callPackage ../pkgs/nvim-treesitter {};
+    package = pkgs.callPackage ../pkgs/nvim-treesitter { };
     config = ./tree-sitter.lua;
+    event = "VeryLazy";
 
     dependencies = {
       rainbow-delimiters.src = srcs.rainbow-delimiters;
@@ -210,8 +230,13 @@ in rec {
 
   nvim-lspconfig = {
     src = srcs.nvim-lspconfig;
-    config = ./lsp.lua;
+    config = ''
+      function()
+        require("isabel.lsp")
+      end
+    '';
 
+    event = "VeryLazy";
     dependencies = {
       # inherit copilot-cmp;
       cmp.src = srcs.nvim-cmp;
@@ -230,7 +255,7 @@ in rec {
 
       luasnip = {
         src = srcs.luasnip;
-        dependencies.my-snippets.src = pkgs.callPackage ../pkgs/snippets {};
+        dependencies.my-snippets.src = pkgs.callPackage ../pkgs/snippets { };
       };
 
       trouble = {
@@ -246,11 +271,17 @@ in rec {
       crates = {
         src = srcs.crates;
         config = true;
+        event = "BufRead Cargo.toml";
       };
 
       go-nvim = {
         src = srcs.go-nvim;
-        paths = [pkgs.repos.nekowinston.gonvim-tools];
+        event = "CmdlineEnter";
+        ft = [
+          "go"
+          "gomod"
+        ];
+        paths = [ pkgs.nekowinston.gonvim-tools ];
         dependencies.guihua-lua.src = srcs.guihua-lua;
       };
     };
@@ -259,6 +290,7 @@ in rec {
   # hide my secrets
   cloak = {
     src = srcs.cloak;
+    event = "VeryLazy";
     config = ./cloak.lua;
   };
 
@@ -269,26 +301,32 @@ in rec {
   # track my time coding
   wakatime = {
     src = pkgs.vimPlugins.vim-wakatime;
-    paths = [pkgs.wakatime];
+    event = "VeryLazy";
+    paths = [ pkgs.wakatime ];
   };
 
   # direnv integration
   direnv = {
     src = srcs.direnv-vim;
-    paths = [pkgs.direnv];
+    event = "VeryLazy";
+    paths = [ pkgs.direnv ];
   };
 
   charm-freeze = {
-    src = pkgs.callPackage ../pkgs/charm-freeze.nvim {};
-    paths = [pkgs.charm-freeze];
+    src = pkgs.callPackage ../pkgs/charm-freeze.nvim { };
+    paths = [ pkgs.charm-freeze ];
+    event = "VeryLazy";
     config = ./charm-freeze.lua;
   };
 
   # lazygit integration
   lazygit = {
     src = srcs.lazygit;
-    dependencies = {inherit plenary;};
-    paths = [pkgs.lazygit];
+    event = "VeryLazy";
+    dependencies = {
+      inherit plenary;
+    };
+    paths = [ pkgs.lazygit ];
   };
 
   # deps
@@ -297,6 +335,9 @@ in rec {
   nvim-web-devicons = {
     src = srcs.nvim-web-devicons;
     config = ./nvim-web-devicons.lua;
-    dependencies = {inherit catppuccin;};
+    event = "VeryLazy";
+    dependencies = {
+      inherit catppuccin;
+    };
   };
 }

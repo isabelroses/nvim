@@ -24,7 +24,7 @@
     };
 
     neovim-nix = {
-      url = "github:willruggiano/neovim.nix";
+      url = "github:nekowinston/neovim.nix/feat/add-pluginspec-main-field";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -48,62 +48,75 @@
     };
   };
 
-  outputs = {flake-parts, ...} @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
+  outputs =
+    { flake-parts, ... }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
 
       imports = [
         inputs.neovim-nix.flakeModule
         ./neovim.nix
       ];
 
-      perSystem = {
-        config,
-        pkgs,
-        self',
-        system,
-        ...
-      }: {
-        _module.args.pkgs = import inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-          overlays = [
-            inputs.neovim-nightly-overlay.overlay
-            (_: p: {
-              repos = {
-                nekowinston = import inputs.nekowinston-nur {inherit (p) pkgs;};
-              };
-            })
-          ];
-        };
+      perSystem =
+        {
+          config,
+          pkgs,
+          self',
+          system,
+          ...
+        }:
+        {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+            overlays = [
+              inputs.neovim-nightly-overlay.overlay
+              (_: p: { nekowinston = import inputs.nekowinston-nur { inherit (p) pkgs; }; })
+            ];
+          };
 
-        checks = {
-          pre-commit-check = inputs.pre-commit-nix.lib.${system}.run {
-            src = ./.;
-            excludes = ["_sources/.+"];
-            hooks = {
-              alejandra.enable = true;
-              stylua.enable = true;
+          checks = {
+            pre-commit-check = inputs.pre-commit-nix.lib.${system}.run {
+              src = ./.;
+              excludes = [ "_sources/.+" ];
+              hooks = {
+                nixfmt = {
+                  enable = true;
+                  package = pkgs.nixfmt-rfc-style;
+                };
+                stylua.enable = true;
+              };
             };
           };
-        };
 
-        devShells.default = pkgs.mkShell {
-          inherit (self'.checks.pre-commit-check) shellHook;
-          buildInputs = with pkgs; [self'.formatter nvfetcher nix-tree];
-        };
+          devShells.default = pkgs.mkShell {
+            inherit (self'.checks.pre-commit-check) shellHook;
+            buildInputs = with pkgs; [
+              self'.formatter
+              nvfetcher
+              nix-tree
+            ];
+          };
 
-        formatter = pkgs.alejandra;
+          formatter = pkgs.nixfmt-rfc-style;
 
-        packages = let
-          neovim = config.neovim.final;
-        in {
-          inherit neovim;
-          default = neovim;
-          nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter {};
-          my-snippets = pkgs.callPackage ./pkgs/snippets {};
+          packages =
+            let
+              neovim = config.neovim.final;
+            in
+            {
+              inherit neovim;
+              default = neovim;
+              nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
+              my-snippets = pkgs.callPackage ./pkgs/snippets { };
+            };
         };
-      };
     };
 
   nixConfig = {

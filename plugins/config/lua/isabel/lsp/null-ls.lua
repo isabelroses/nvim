@@ -7,16 +7,8 @@ end
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local sources = {
-  null.builtins.formatting.alejandra,
+  null.builtins.formatting.nixfmt,
   null.builtins.formatting.dfmt,
-  -- null.builtins.formatting.deno_fmt.with({
-  -- 	filetypes = {
-  -- 		"javascript",
-  -- 		"javascriptreact",
-  -- 		"typescript",
-  -- 		"typescriptreact",
-  -- 	},
-  -- }),
   null.builtins.formatting.gofumpt,
   null.builtins.formatting.prettier.with({
     filetypes = {
@@ -25,11 +17,8 @@ local sources = {
       "vue",
     },
   }),
-  -- null.builtins.formatting.ruff,
-  -- null.builtins.formatting.rustfmt,
   null.builtins.formatting.shfmt,
   null.builtins.formatting.stylua,
-  -- null.builtins.formatting.taplo,
   null.builtins.diagnostics.alex,
   null.builtins.diagnostics.proselint,
 }

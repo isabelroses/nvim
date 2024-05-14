@@ -1,62 +1,64 @@
 {
-  config.perSystem = {pkgs, ...}: {
-    neovim = {
-      package = pkgs.neovim-unwrapped;
+  config.perSystem =
+    { pkgs, ... }:
+    {
+      neovim = {
+        package = pkgs.neovim-unwrapped;
 
-      paths = with pkgs; [
-        # external deps
-        fd
-        git
-        gh
-        ripgrep
+        paths = with pkgs; [
+          # external deps
+          fd
+          git
+          gh
+          ripgrep
 
-        # python
-        ruff
-        nodePackages.pyright
+          # python
+          ruff
+          nodePackages.pyright
 
-        # lua
-        stylua
-        lua-language-server
-        luaPackages.tl
-        luaPackages.teal-language-server
+          # lua
+          stylua
+          lua-language-server
+          luaPackages.tl
+          luaPackages.teal-language-server
 
-        # webdev
-        deno
-        nodePackages.nodejs
-        nodePackages.volar
-        nodePackages."@astrojs/language-server"
-        nodePackages."@tailwindcss/language-server"
-        nodePackages.alex
-        nodePackages.bash-language-server
-        nodePackages.dockerfile-language-server-nodejs
-        nodePackages.graphql
-        nodePackages.graphql-language-service-cli
-        nodePackages.intelephense
-        nodePackages.typescript
-        nodePackages.typescript-language-server
-        nodePackages.vscode-langservers-extracted
+          # webdev
+          deno
+          nodePackages.nodejs
+          nodePackages.volar
+          nodePackages."@astrojs/language-server"
+          nodePackages."@tailwindcss/language-server"
+          nodePackages.alex
+          nodePackages.bash-language-server
+          nodePackages.dockerfile-language-server-nodejs
+          nodePackages.graphql
+          nodePackages.graphql-language-service-cli
+          nodePackages.intelephense
+          nodePackages.typescript
+          nodePackages.typescript-language-server
+          nodePackages.vscode-langservers-extracted
 
-        # nix
-        nixd
-        alejandra
+          # nix
+          nixd
+          nixfmt-rfc-style
 
-        # etc
-        emmet-ls
-        ltex-ls
-        nodePackages.prettier
-        proselint
-        shellcheck
-        marksman # markdown
-        shfmt
-        taplo # toml
-        nodePackages.yaml-language-server # yaml
-        nushell
-      ];
+          # etc
+          emmet-ls
+          ltex-ls
+          nodePackages.prettier
+          proselint
+          shellcheck
+          marksman # markdown
+          shfmt
+          taplo # toml
+          nodePackages.yaml-language-server # yaml
+          nushell
+        ];
 
-      lazy = {
-        settings.install.colorscheme = ["catppuccin"];
-        plugins = import ./plugins {inherit pkgs;};
+        lazy = {
+          settings.install.colorscheme = [ "catppuccin" ];
+          plugins = import ./plugins { inherit pkgs; };
+        };
       };
     };
-  };
 }
