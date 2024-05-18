@@ -298,20 +298,37 @@ rec {
 
   # track my time coding
   wakatime = {
+    enabled = ''
+      function()
+        return vim.fn.glob("~/.wakatime.cfg") ~= "" or vim.fn.glob("~/.config/wakatime/.wakatime.cfg") ~= ""
+      end
+    '';
     src = pkgs.vimPlugins.vim-wakatime;
     event = "VeryLazy";
     paths = [ pkgs.wakatime ];
   };
 
-  # direnv integration
-  direnv = {
-    src = srcs.direnv-vim;
-    event = "VeryLazy";
-    paths = [ pkgs.direnv ];
-  };
+  # indent-blankline = {
+  #   src = srcs.indent-blankline;
+  #   main = "ibl";
+  #   config.exclude.filetypes = [
+  #     "alpha"
+  #     "fugitive"
+  #     "help"
+  #     "lazy"
+  #     "NvimTree"
+  #     "LazyGit"
+  #     "TelescopePrompt"
+  #     "prompt"
+  #     "code-action-menu-menu"
+  #     "code-action-menu-warning-message"
+  #     "Trouble"
+  #   ];
+  #   event = "VeryLazy";
+  # };
 
   charm-freeze = {
-    src = pkgs.callPackage ../pkgs/charm-freeze.nvim { };
+    src = srcs.charm-freeze-nvim;
     paths = [ pkgs.charm-freeze ];
     event = "VeryLazy";
     config = ./charm-freeze.lua;

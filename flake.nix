@@ -5,26 +5,16 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        flake-compat.follows = "flake-compat";
-      };
-    };
-
     pre-commit-nix = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs = {
         flake-compat.follows = "flake-compat";
-        flake-utils.follows = "flake-utils";
         nixpkgs.follows = "nixpkgs";
       };
     };
 
     neovim-nix = {
-      url = "github:nekowinston/neovim.nix/feat/add-pluginspec-main-field";
+      url = "github:nekowinston/neovim.nix/dev";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -75,10 +65,7 @@
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [
-              inputs.neovim-nightly-overlay.overlay
-              (_: p: { nekowinston = import inputs.nekowinston-nur { inherit (p) pkgs; }; })
-            ];
+            overlays = [ (_: p: { nekowinston = import inputs.nekowinston-nur { inherit (p) pkgs; }; }) ];
           };
 
           checks = {

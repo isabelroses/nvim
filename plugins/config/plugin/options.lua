@@ -65,6 +65,9 @@ vim.o.cmdheight = 0
 -- always show status
 vim.o.laststatus = 3
 
+-- indent blank line imporvments
+vim.opt.list = true
+
 -- disable swap, backup, and undo files
 vim.opt.swapfile = false
 vim.opt.backup = false
