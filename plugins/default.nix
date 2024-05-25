@@ -112,25 +112,16 @@ rec {
     event = "VeryLazy";
 
     config = {
-      text = {
-        spinner = "dots";
-        done = "󰗡";
-        commenced = "init";
-        completed = "done";
+      display.done_icon = "󰗡";
+      notification = {
+        override_vim_notify = true;
+        window.winblend = 0;
       };
-      window.blend = 0;
-      sources = {
-        "copilot".ignore = true;
-        "null-ls".ignore = true;
-      };
+      progress.ignore = [
+        "copilot"
+        "null-ls"
+      ];
     };
-  };
-
-  # nicer notfications
-  notify = {
-    src = srcs.nvim-notify;
-    config = ./notify.lua;
-    lazy = false;
   };
 
   nvim-colorizer = {
@@ -250,11 +241,7 @@ rec {
       schemastore.src = srcs.schemastore;
       py_lsp.src = srcs.py_lsp;
       typescript-tools.src = srcs.typescript-tools;
-
-      luasnip = {
-        src = srcs.luasnip;
-        dependencies.my-snippets.src = pkgs.callPackage ../pkgs/snippets { };
-      };
+      luasnip.src = srcs.luasnip;
 
       trouble = {
         src = srcs.trouble;
@@ -300,7 +287,7 @@ rec {
   wakatime = {
     enabled = ''
       function()
-        return vim.fn.glob("~/.wakatime.cfg") ~= "" or vim.fn.glob("~/.config/wakatime/.wakatime.cfg") ~= ""
+        return vim.fn.glob("~/.wakatime.cfg") ~= "" or vim.fn.glob("$WAKATIME_HOME/.wakatime.cfg") ~= ""
       end
     '';
     src = pkgs.vimPlugins.vim-wakatime;
