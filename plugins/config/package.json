@@ -1,0 +1,11 @@
+{
+  "name": "snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "nix",
+        "path": "./snippets/nix.json"
+      }
+    ]
+  }
+}
