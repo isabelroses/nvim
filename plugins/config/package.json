@@ -5,6 +5,20 @@
       {
         "language": "nix",
         "path": "./snippets/nix.json"
+      },
+      {
+        "language": [
+          "html",
+          "jade",
+          "pug",
+          "eruby",
+          "javascriptreact",
+          "htmldjango",
+          "astro",
+          "blade",
+          "gotexttmpl"
+        ],
+        "path": "./html.json"
       }
     ]
   }

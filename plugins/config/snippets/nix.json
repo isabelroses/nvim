@@ -1,6 +1,7 @@
 {
   "mks": {
     "prefix": "mkshell",
+    "description": "Nix development shell",
     "body": [
       "{ pkgs ? import <nixpkgs> {} }:",
       "pkgs.mkShell {",
@@ -8,7 +9,20 @@
       "    $1",
       "  ];",
       "}"
-    ],
-    "description": "Nix development shell"
+    ]
+  },
+  "mod": {
+    "prefix": "mod",
+    "description": "Nix module",
+    "body": [
+      "{ lib, pkgs, config ... }:",
+      "",
+      "  let cfg = config;",
+      "in {",
+      "  config = lib.mkIf cfg.enable {",
+      "    ${1:# code}",
+      "  };",
+      "}"
+    ]
   }
 }
