@@ -6,9 +6,9 @@ src.git = "https://github.com/goolord/alpha-nvim"
 fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"
 
-[charm-freeze-nvim]
-fetch.github = "isabelroses/charm-freeze.nvim"
-src.git = "https://github.com/isabelroses/charm-freeze.nvim"
+[freeze-nvim]
+fetch.github = "charm-community/freeze.nvim"
+src.git = "https://github.com/charm-community/freeze.nvim"
 
 [cloak]
 fetch.github = "laytan/cloak.nvim"
