@@ -25,18 +25,6 @@
     };
     date = "2024-05-26";
   };
-  charm-freeze-nvim = {
-    pname = "charm-freeze-nvim";
-    version = "5f43d2362ce6613f82e6a275871c30fdaadc4026";
-    src = fetchFromGitHub {
-      owner = "isabelroses";
-      repo = "charm-freeze.nvim";
-      rev = "5f43d2362ce6613f82e6a275871c30fdaadc4026";
-      fetchSubmodules = false;
-      sha256 = "sha256-JutNTRJDS+SDH7VnrH9pbyed7QYnNZf5CQoA/QVuH80=";
-    };
-    date = "2024-06-03";
-  };
   cloak = {
     pname = "cloak";
     version = "6e5bcd50bebc5cdb7cd3a00eb3d97ab7c4cc3b94";
@@ -168,6 +156,18 @@
       sha256 = "sha256-8Gl2Ck4YJGReSEq1Xeh1dpdRq4eImmrxvIHrfxdem3Q=";
     };
     date = "2023-11-09";
+  };
+  freeze-nvim = {
+    pname = "freeze-nvim";
+    version = "5f43d2362ce6613f82e6a275871c30fdaadc4026";
+    src = fetchFromGitHub {
+      owner = "charm-community";
+      repo = "freeze.nvim";
+      rev = "5f43d2362ce6613f82e6a275871c30fdaadc4026";
+      fetchSubmodules = false;
+      sha256 = "sha256-JutNTRJDS+SDH7VnrH9pbyed7QYnNZf5CQoA/QVuH80=";
+    };
+    date = "2024-06-03";
   };
   go-nvim = {
     pname = "go-nvim";
@@ -363,15 +363,15 @@
   };
   nvim-lspconfig = {
     pname = "nvim-lspconfig";
-    version = "74e14808cdb15e625449027019406e1ff6dda020";
+    version = "d1ab6b6051976b04948e127b0f302a465b1394d6";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "74e14808cdb15e625449027019406e1ff6dda020";
+      rev = "d1ab6b6051976b04948e127b0f302a465b1394d6";
       fetchSubmodules = false;
-      sha256 = "sha256-N5jrpM0l/4tH+XL2p1DpSu7T3Ks4icUl/Ye+GCCOWRU=";
+      sha256 = "sha256-4X8FBXSo/MSM5vJb3/8KCXzXzVJs0JIMKZqI5w3X0lo=";
     };
-    date = "2024-06-02";
+    date = "2024-06-05";
   };
   nvim-navic = {
     pname = "nvim-navic";
@@ -411,15 +411,15 @@
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "69e41a2c1405ad9626ed502b86e75245f8118531";
+    version = "49e4e2b4b62360677568c47b6467f31c809b391c";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "69e41a2c1405ad9626ed502b86e75245f8118531";
+      rev = "49e4e2b4b62360677568c47b6467f31c809b391c";
       fetchSubmodules = false;
-      sha256 = "sha256-n6LYiOG8zGi6MXs7EYdesxGF7SP4JxsNbL1w8BfZEJk=";
+      sha256 = "sha256-On0Dw+IjJht2JHx0tvyggZLRP8OanF8Yg43YOjfD068=";
     };
-    date = "2024-06-04";
+    date = "2024-06-05";
   };
   nvim-web-devicons = {
     pname = "nvim-web-devicons";
