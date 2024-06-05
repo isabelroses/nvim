@@ -1,6 +1,6 @@
 return function()
   require("session_manager").setup({
-    autoload_mode = "CurrentDir",
+    autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir,
   })
 
   local function apply_gradient_hl(text)
