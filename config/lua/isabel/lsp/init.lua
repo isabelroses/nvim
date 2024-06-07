@@ -153,6 +153,7 @@ local common = { capabilities = capabilities }
 
 require("isabel.lsp.go")
 require("isabel.lsp.ltex").setup(common)
+require("isabel.lsp.luals").setup(common)
 require("isabel.lsp.null-ls")
 require("isabel.lsp.nix").setup(common)
 require("isabel.lsp.validation").setup(common)
@@ -163,7 +164,6 @@ local servers = {
   "bashls",
   "dockerls",
   "jqls",
-  "lua_ls",
   "serve_d",
   "sourcekit",
   "taplo",
