@@ -7,8 +7,11 @@ return function()
     color = C.peach,
   }
 
-  local devicons = require("nvim-web-devicons")
-  devicons.setup({
+  require("tiny-devicons-auto-colors").setup({
+    colors = C,
+  })
+
+  require("nvim-web-devicons").setup({
     override_by_filename = {
       [".ecrc"] = {
         icon = "",

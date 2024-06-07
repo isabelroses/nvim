@@ -1,6 +1,8 @@
-{pkgs}: let
-  srcs = builtins.mapAttrs (_: pkg: pkg.src) (pkgs.callPackage ../_sources/generated.nix {});
-in rec {
+{ pkgs }:
+let
+  srcs = builtins.mapAttrs (_: pkg: pkg.src) (pkgs.callPackage ../_sources/generated.nix { });
+in
+rec {
   config = {
     src = ./config;
     lazy = false;
@@ -191,7 +193,7 @@ in rec {
 
   # lsp
   nvim-treesitter = {
-    package = pkgs.callPackage ../pkgs/nvim-treesitter {};
+    package = pkgs.callPackage ../pkgs/nvim-treesitter { };
     config = ./tree-sitter.lua;
     event = "VeryLazy";
 
@@ -264,7 +266,7 @@ in rec {
           "go"
           "gomod"
         ];
-        paths = [pkgs.nekowinston.gonvim-tools];
+        paths = [ pkgs.nekowinston.gonvim-tools ];
         dependencies.guihua-lua.src = srcs.guihua-lua;
       };
     };
@@ -290,7 +292,7 @@ in rec {
     '';
     src = pkgs.vimPlugins.vim-wakatime;
     event = "VeryLazy";
-    paths = [pkgs.wakatime];
+    paths = [ pkgs.wakatime ];
   };
 
   # indent-blankline = {
@@ -314,7 +316,7 @@ in rec {
 
   freeze = {
     src = srcs.freeze-nvim;
-    paths = [pkgs.charm-freeze];
+    paths = [ pkgs.charm-freeze ];
     event = "VeryLazy";
     config = ./freeze.lua;
   };
@@ -326,7 +328,7 @@ in rec {
     dependencies = {
       inherit plenary;
     };
-    paths = [pkgs.lazygit];
+    paths = [ pkgs.lazygit ];
   };
 
   # deps
@@ -337,6 +339,10 @@ in rec {
     config = ./nvim-web-devicons.lua;
     event = "VeryLazy";
     dependencies = {
+      tiny-devicons-auto-colors-nvim = {
+        src = srcs.tiny-devicons-auto-colors-nvim;
+        event = "VeryLazy";
+      };
       inherit catppuccin;
     };
   };

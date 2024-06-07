@@ -192,6 +192,10 @@ src.git = "https://github.com/nvim-telescope/telescope-project.nvim"
 fetch.github = "nvim-telescope/telescope-ui-select.nvim"
 src.git = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
 
+[tiny-devicons-auto-colors-nvim]
+fetch.github = "rachartier/tiny-devicons-auto-colors.nvim"
+src.git = "https://github.com/rachartier/tiny-devicons-auto-colors.nvim"
+
 [todo-comments]
 fetch.github = "folke/todo-comments.nvim"
 src.git = "https://github.com/folke/todo-comments.nvim"
