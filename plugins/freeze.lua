@@ -7,7 +7,7 @@ return function()
 
   require("freeze").setup({
     output = function()
-      return "./" .. os.date("%Y-%m-%d") .. "_freeze.png"
+      return vim.fn.getcwd() .. "/" .. os.date("%Y-%m-%d") .. "_freeze.png"
     end,
     config = "user",
     font = {
