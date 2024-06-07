@@ -8,11 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        package: 
-          - default
-          - nvim-treesitter
 
     steps:
       - name: Maximize build space
@@ -43,4 +38,4 @@ jobs:
           authToken: "${{ secrets.CACHIX_TOKEN }}"
 
       - name: Build from the matrix
-        run: nix build -L .#${{ matrix.package }}
+        run: nix build -L .
