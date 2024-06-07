@@ -4,7 +4,7 @@ let
 in
 rec {
   config = {
-    src = ./config;
+    src = ../config;
     lazy = false;
     priority = 1000;
   };
