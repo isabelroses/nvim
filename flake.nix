@@ -82,13 +82,22 @@
             };
           };
 
-          devShells.default = pkgs.mkShell {
-            inherit (self'.checks.pre-commit-check) shellHook;
-            buildInputs = with pkgs; [
-              self'.formatter
-              nvfetcher
-              nix-tree
-            ];
+          devShells = {
+            default = pkgs.mkShellNoCC {
+              inherit (self'.checks.pre-commit-check) shellHook;
+              buildInputs = with pkgs; [
+                self'.formatter
+                nvfetcher
+                nix-tree
+              ];
+            };
+
+            generate-treesitter = pkgs.mkShellNoCC {
+              packages = with pkgs; [
+                nvfetcher
+                (callPackage ./pkgs/nvim-treesitter/neovim.nix { })
+              ];
+            };
           };
 
           formatter = pkgs.nixfmt-rfc-style;
@@ -101,7 +110,6 @@
               inherit neovim;
               default = neovim;
               nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
-              my-snippets = pkgs.callPackage ./pkgs/snippets { };
             };
         };
     };

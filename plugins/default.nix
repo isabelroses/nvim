@@ -193,13 +193,62 @@ rec {
 
   # lsp
   nvim-treesitter = {
-    package = pkgs.callPackage ../pkgs/nvim-treesitter { };
     config = ./tree-sitter.lua;
     event = "VeryLazy";
-
-    dependencies = {
-      rainbow-delimiters.src = srcs.rainbow-delimiters;
-      tree-sitter-nu.src = srcs.tree-sitter-nu;
+    dependencies.rainbow-delimiters.src = srcs.rainbow-delimiters;
+    package = (pkgs.callPackage ../pkgs/nvim-treesitter { }).override {
+      grammars = [
+        "astro"
+        "awk"
+        "bash"
+        "c"
+        "cpp"
+        "css"
+        "csv"
+        "diff"
+        "dockerfile"
+        "git_config"
+        "git_rebase"
+        "gitattributes"
+        "gitcommit"
+        "gitignore"
+        "go"
+        "gomod"
+        "gosum"
+        "gotmpl"
+        "gpg"
+        "graphql"
+        "haskell"
+        "html"
+        "javascript"
+        "jsdoc"
+        "json"
+        "jsonc"
+        "just"
+        "lua"
+        "make"
+        "markdown"
+        "markdown_inline"
+        "nix"
+        "nu"
+        "php"
+        "php_only"
+        "pug"
+        "python"
+        "rust"
+        "scss"
+        "svelte"
+        "toml"
+        "tsv"
+        "tsx"
+        "typescript"
+        "vim"
+        "vimdoc"
+        "vue"
+        "yaml"
+        "yuck"
+        "zig"
+      ];
     };
   };
 
@@ -265,6 +314,10 @@ rec {
         ft = [
           "go"
           "gomod"
+          "gosum"
+          "gotmpl"
+          "gohtmltmpl"
+          "gotexttmpl"
         ];
         paths = [ pkgs.nekowinston.gonvim-tools ];
         dependencies.guihua-lua.src = srcs.guihua-lua;

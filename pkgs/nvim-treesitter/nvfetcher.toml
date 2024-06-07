@@ -1,904 +1,1182 @@
-[tree-sitter-grammar-ada]
+[nvim-treesitter]
+fetch.git = "https://github.com/nvim-treesitter/nvim-treesitter"
+src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
+
+[treesitter-grammar-ada]
 fetch.git = "https://github.com/briot/tree-sitter-ada"
 src.git = "https://github.com/briot/tree-sitter-ada"
 
-[tree-sitter-grammar-agda]
-fetch.git = "https://github.com/AusCyberman/tree-sitter-agda"
-src.git = "https://github.com/AusCyberman/tree-sitter-agda"
+[treesitter-grammar-agda]
+fetch.git = "https://github.com/tree-sitter/tree-sitter-agda"
+src.git = "https://github.com/tree-sitter/tree-sitter-agda"
 
-[tree-sitter-grammar-arduino]
+[treesitter-grammar-angular]
+fetch.git = "https://github.com/dlvandenberg/tree-sitter-angular"
+src.git = "https://github.com/dlvandenberg/tree-sitter-angular"
+
+[treesitter-grammar-apex]
+fetch.git = "https://github.com/aheber/tree-sitter-sfapex"
+src.git = "https://github.com/aheber/tree-sitter-sfapex"
+[treesitter-grammar-apex.passthru]
+location = "apex"
+
+[treesitter-grammar-arduino]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-arduino"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-arduino"
 
-[tree-sitter-grammar-astro]
+[treesitter-grammar-asm]
+fetch.git = "https://github.com/RubixDev/tree-sitter-asm"
+src.git = "https://github.com/RubixDev/tree-sitter-asm"
+
+[treesitter-grammar-astro]
 fetch.git = "https://github.com/virchau13/tree-sitter-astro"
 src.git = "https://github.com/virchau13/tree-sitter-astro"
 
-[tree-sitter-grammar-awk]
+[treesitter-grammar-authzed]
+fetch.git = "https://github.com/mleonidas/tree-sitter-authzed"
+src.git = "https://github.com/mleonidas/tree-sitter-authzed"
+
+[treesitter-grammar-awk]
 fetch.git = "https://github.com/Beaglefoot/tree-sitter-awk"
 src.git = "https://github.com/Beaglefoot/tree-sitter-awk"
 
-[tree-sitter-grammar-bash]
+[treesitter-grammar-bash]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-bash"
 src.git = "https://github.com/tree-sitter/tree-sitter-bash"
 
-[tree-sitter-grammar-bass]
-fetch.git = "https://github.com/amaanq/tree-sitter-bass"
-src.git = "https://github.com/amaanq/tree-sitter-bass"
+[treesitter-grammar-bass]
+fetch.git = "https://github.com/vito/tree-sitter-bass"
+src.git = "https://github.com/vito/tree-sitter-bass"
 
-[tree-sitter-grammar-beancount]
+[treesitter-grammar-beancount]
 fetch.git = "https://github.com/polarmutex/tree-sitter-beancount"
 src.git = "https://github.com/polarmutex/tree-sitter-beancount"
 
-[tree-sitter-grammar-bibtex]
+[treesitter-grammar-bibtex]
 fetch.git = "https://github.com/latex-lsp/tree-sitter-bibtex"
 src.git = "https://github.com/latex-lsp/tree-sitter-bibtex"
 
-[tree-sitter-grammar-bicep]
+[treesitter-grammar-bicep]
 fetch.git = "https://github.com/amaanq/tree-sitter-bicep"
 src.git = "https://github.com/amaanq/tree-sitter-bicep"
 
-[tree-sitter-grammar-bitbake]
+[treesitter-grammar-bitbake]
 fetch.git = "https://github.com/amaanq/tree-sitter-bitbake"
 src.git = "https://github.com/amaanq/tree-sitter-bitbake"
 
-[tree-sitter-grammar-blueprint]
+[treesitter-grammar-blueprint]
 fetch.git = "https://gitlab.com/gabmus/tree-sitter-blueprint.git"
 src.git = "https://gitlab.com/gabmus/tree-sitter-blueprint.git"
 
-[tree-sitter-grammar-c]
+[treesitter-grammar-bp]
+fetch.git = "https://github.com/ambroisie/tree-sitter-bp"
+src.git = "https://github.com/ambroisie/tree-sitter-bp"
+
+[treesitter-grammar-c]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-c"
 src.git = "https://github.com/tree-sitter/tree-sitter-c"
 
-[tree-sitter-grammar-c_sharp]
+[treesitter-grammar-c_sharp]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-c-sharp"
 src.git = "https://github.com/tree-sitter/tree-sitter-c-sharp"
 
-[tree-sitter-grammar-cairo]
+[treesitter-grammar-cairo]
 fetch.git = "https://github.com/amaanq/tree-sitter-cairo"
 src.git = "https://github.com/amaanq/tree-sitter-cairo"
 
-[tree-sitter-grammar-capnp]
+[treesitter-grammar-capnp]
 fetch.git = "https://github.com/amaanq/tree-sitter-capnp"
 src.git = "https://github.com/amaanq/tree-sitter-capnp"
 
-[tree-sitter-grammar-chatito]
+[treesitter-grammar-chatito]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-chatito"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-chatito"
 
-[tree-sitter-grammar-clojure]
+[treesitter-grammar-clojure]
 fetch.git = "https://github.com/sogaiu/tree-sitter-clojure"
 src.git = "https://github.com/sogaiu/tree-sitter-clojure"
 
-[tree-sitter-grammar-cmake]
+[treesitter-grammar-cmake]
 fetch.git = "https://github.com/uyha/tree-sitter-cmake"
 src.git = "https://github.com/uyha/tree-sitter-cmake"
 
-[tree-sitter-grammar-comment]
+[treesitter-grammar-comment]
 fetch.git = "https://github.com/stsewd/tree-sitter-comment"
 src.git = "https://github.com/stsewd/tree-sitter-comment"
 
-[tree-sitter-grammar-commonlisp]
+[treesitter-grammar-commonlisp]
 fetch.git = "https://github.com/theHamsta/tree-sitter-commonlisp"
 src.git = "https://github.com/theHamsta/tree-sitter-commonlisp"
 
-[tree-sitter-grammar-cooklang]
+[treesitter-grammar-cooklang]
 fetch.git = "https://github.com/addcninblue/tree-sitter-cooklang"
 src.git = "https://github.com/addcninblue/tree-sitter-cooklang"
 
-[tree-sitter-grammar-corn]
+[treesitter-grammar-corn]
 fetch.git = "https://github.com/jakestanger/tree-sitter-corn"
 src.git = "https://github.com/jakestanger/tree-sitter-corn"
 
-[tree-sitter-grammar-cpon]
+[treesitter-grammar-cpon]
 fetch.git = "https://github.com/amaanq/tree-sitter-cpon"
 src.git = "https://github.com/amaanq/tree-sitter-cpon"
 
-[tree-sitter-grammar-cpp]
+[treesitter-grammar-cpp]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-cpp"
 src.git = "https://github.com/tree-sitter/tree-sitter-cpp"
 
-[tree-sitter-grammar-css]
+[treesitter-grammar-css]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-css"
 src.git = "https://github.com/tree-sitter/tree-sitter-css"
 
-[tree-sitter-grammar-csv]
+[treesitter-grammar-csv]
 fetch.git = "https://github.com/amaanq/tree-sitter-csv"
 src.git = "https://github.com/amaanq/tree-sitter-csv"
-passthru.location = "csv"
+[treesitter-grammar-csv.passthru]
+location = "csv"
 
-[tree-sitter-grammar-cuda]
+[treesitter-grammar-cuda]
 fetch.git = "https://github.com/theHamsta/tree-sitter-cuda"
 src.git = "https://github.com/theHamsta/tree-sitter-cuda"
 
-[tree-sitter-grammar-cue]
+[treesitter-grammar-cue]
 fetch.git = "https://github.com/eonpatapon/tree-sitter-cue"
 src.git = "https://github.com/eonpatapon/tree-sitter-cue"
 
-[tree-sitter-grammar-d]
-fetch.git = "https://github.com/CyberShadow/tree-sitter-d"
-src.git = "https://github.com/CyberShadow/tree-sitter-d"
+[treesitter-grammar-d]
+fetch.git = "https://github.com/gdamore/tree-sitter-d"
+src.git = "https://github.com/gdamore/tree-sitter-d"
 
-[tree-sitter-grammar-dart]
+[treesitter-grammar-dart]
 fetch.git = "https://github.com/UserNobody14/tree-sitter-dart"
 src.git = "https://github.com/UserNobody14/tree-sitter-dart"
 
-[tree-sitter-grammar-devicetree]
+[treesitter-grammar-devicetree]
 fetch.git = "https://github.com/joelspadin/tree-sitter-devicetree"
 src.git = "https://github.com/joelspadin/tree-sitter-devicetree"
 
-[tree-sitter-grammar-dhall]
+[treesitter-grammar-dhall]
 fetch.git = "https://github.com/jbellerb/tree-sitter-dhall"
 src.git = "https://github.com/jbellerb/tree-sitter-dhall"
 
-[tree-sitter-grammar-diff]
+[treesitter-grammar-diff]
 fetch.git = "https://github.com/the-mikedavis/tree-sitter-diff"
 src.git = "https://github.com/the-mikedavis/tree-sitter-diff"
 
-[tree-sitter-grammar-dockerfile]
+[treesitter-grammar-disassembly]
+fetch.git = "https://github.com/ColinKennedy/tree-sitter-disassembly"
+src.git = "https://github.com/ColinKennedy/tree-sitter-disassembly"
+
+[treesitter-grammar-djot]
+fetch.git = "https://github.com/treeman/tree-sitter-djot"
+src.git = "https://github.com/treeman/tree-sitter-djot"
+
+[treesitter-grammar-dockerfile]
 fetch.git = "https://github.com/camdencheek/tree-sitter-dockerfile"
 src.git = "https://github.com/camdencheek/tree-sitter-dockerfile"
 
-[tree-sitter-grammar-dot]
+[treesitter-grammar-dot]
 fetch.git = "https://github.com/rydesun/tree-sitter-dot"
 src.git = "https://github.com/rydesun/tree-sitter-dot"
 
-[tree-sitter-grammar-doxygen]
+[treesitter-grammar-doxygen]
 fetch.git = "https://github.com/amaanq/tree-sitter-doxygen"
 src.git = "https://github.com/amaanq/tree-sitter-doxygen"
 
-[tree-sitter-grammar-dtd]
-fetch.git = "https://github.com/ObserverOfTime/tree-sitter-xml"
-src.git = "https://github.com/ObserverOfTime/tree-sitter-xml"
-passthru.location = "tree-sitter-dtd"
+[treesitter-grammar-dtd]
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-xml"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-xml"
+[treesitter-grammar-dtd.passthru]
+location = "dtd"
 
-[tree-sitter-grammar-ebnf]
+[treesitter-grammar-earthfile]
+fetch.git = "https://github.com/glehmann/tree-sitter-earthfile"
+src.git = "https://github.com/glehmann/tree-sitter-earthfile"
+
+[treesitter-grammar-ebnf]
 fetch.git = "https://github.com/RubixDev/ebnf"
 src.git = "https://github.com/RubixDev/ebnf"
-passthru.location = "crates/tree-sitter-ebnf"
+[treesitter-grammar-ebnf.passthru]
+location = "crates/tree-sitter-ebnf"
 
-[tree-sitter-grammar-eex]
+[treesitter-grammar-eds]
+fetch.git = "https://github.com/uyha/tree-sitter-eds"
+src.git = "https://github.com/uyha/tree-sitter-eds"
+
+[treesitter-grammar-eex]
 fetch.git = "https://github.com/connorlay/tree-sitter-eex"
 src.git = "https://github.com/connorlay/tree-sitter-eex"
 
-[tree-sitter-grammar-elixir]
+[treesitter-grammar-elixir]
 fetch.git = "https://github.com/elixir-lang/tree-sitter-elixir"
 src.git = "https://github.com/elixir-lang/tree-sitter-elixir"
 
-[tree-sitter-grammar-elm]
+[treesitter-grammar-elm]
 fetch.git = "https://github.com/elm-tooling/tree-sitter-elm"
 src.git = "https://github.com/elm-tooling/tree-sitter-elm"
 
-[tree-sitter-grammar-elsa]
+[treesitter-grammar-elsa]
 fetch.git = "https://github.com/glapa-grossklag/tree-sitter-elsa"
 src.git = "https://github.com/glapa-grossklag/tree-sitter-elsa"
 
-[tree-sitter-grammar-elvish]
+[treesitter-grammar-elvish]
 fetch.git = "https://github.com/elves/tree-sitter-elvish"
 src.git = "https://github.com/elves/tree-sitter-elvish"
 
-[tree-sitter-grammar-embedded_template]
+[treesitter-grammar-embedded_template]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-embedded-template"
 src.git = "https://github.com/tree-sitter/tree-sitter-embedded-template"
 
-[tree-sitter-grammar-erlang]
+[treesitter-grammar-erlang]
 fetch.git = "https://github.com/WhatsApp/tree-sitter-erlang"
 src.git = "https://github.com/WhatsApp/tree-sitter-erlang"
 
-[tree-sitter-grammar-fennel]
-fetch.git = "https://github.com/travonted/tree-sitter-fennel"
-src.git = "https://github.com/travonted/tree-sitter-fennel"
+[treesitter-grammar-facility]
+fetch.git = "https://github.com/FacilityApi/tree-sitter-facility"
+src.git = "https://github.com/FacilityApi/tree-sitter-facility"
 
-[tree-sitter-grammar-firrtl]
+[treesitter-grammar-faust]
+fetch.git = "https://github.com/khiner/tree-sitter-faust"
+src.git = "https://github.com/khiner/tree-sitter-faust"
+
+[treesitter-grammar-fennel]
+fetch.git = "https://github.com/alexmozaidze/tree-sitter-fennel"
+src.git = "https://github.com/alexmozaidze/tree-sitter-fennel"
+
+[treesitter-grammar-fidl]
+fetch.git = "https://github.com/google/tree-sitter-fidl"
+src.git = "https://github.com/google/tree-sitter-fidl"
+
+[treesitter-grammar-firrtl]
 fetch.git = "https://github.com/amaanq/tree-sitter-firrtl"
 src.git = "https://github.com/amaanq/tree-sitter-firrtl"
 
-[tree-sitter-grammar-fish]
+[treesitter-grammar-fish]
 fetch.git = "https://github.com/ram02z/tree-sitter-fish"
 src.git = "https://github.com/ram02z/tree-sitter-fish"
 
-[tree-sitter-grammar-foam]
+[treesitter-grammar-foam]
 fetch.git = "https://github.com/FoamScience/tree-sitter-foam"
 src.git = "https://github.com/FoamScience/tree-sitter-foam"
 
-[tree-sitter-grammar-forth]
+[treesitter-grammar-forth]
 fetch.git = "https://github.com/AlexanderBrevig/tree-sitter-forth"
 src.git = "https://github.com/AlexanderBrevig/tree-sitter-forth"
 
-[tree-sitter-grammar-fortran]
+[treesitter-grammar-fortran]
 fetch.git = "https://github.com/stadelmanma/tree-sitter-fortran"
 src.git = "https://github.com/stadelmanma/tree-sitter-fortran"
 
-[tree-sitter-grammar-fsh]
+[treesitter-grammar-fsh]
 fetch.git = "https://github.com/mgramigna/tree-sitter-fsh"
 src.git = "https://github.com/mgramigna/tree-sitter-fsh"
 
-[tree-sitter-grammar-func]
+[treesitter-grammar-func]
 fetch.git = "https://github.com/amaanq/tree-sitter-func"
 src.git = "https://github.com/amaanq/tree-sitter-func"
 
-[tree-sitter-grammar-fusion]
+[treesitter-grammar-fusion]
 fetch.git = "https://gitlab.com/jirgn/tree-sitter-fusion.git"
 src.git = "https://gitlab.com/jirgn/tree-sitter-fusion.git"
 
-[tree-sitter-grammar-gdscript]
+[treesitter-grammar-gdscript]
 fetch.git = "https://github.com/PrestonKnopp/tree-sitter-gdscript"
 src.git = "https://github.com/PrestonKnopp/tree-sitter-gdscript"
 
-[tree-sitter-grammar-git_config]
+[treesitter-grammar-gdshader]
+fetch.git = "https://github.com/GodOfAvacyn/tree-sitter-gdshader"
+src.git = "https://github.com/GodOfAvacyn/tree-sitter-gdshader"
+
+[treesitter-grammar-git_config]
 fetch.git = "https://github.com/the-mikedavis/tree-sitter-git-config"
 src.git = "https://github.com/the-mikedavis/tree-sitter-git-config"
 
-[tree-sitter-grammar-git_rebase]
+[treesitter-grammar-git_rebase]
 fetch.git = "https://github.com/the-mikedavis/tree-sitter-git-rebase"
 src.git = "https://github.com/the-mikedavis/tree-sitter-git-rebase"
 
-[tree-sitter-grammar-gitattributes]
+[treesitter-grammar-gitattributes]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-gitattributes"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-gitattributes"
 
-[tree-sitter-grammar-gitcommit]
+[treesitter-grammar-gitcommit]
 fetch.git = "https://github.com/gbprod/tree-sitter-gitcommit"
 src.git = "https://github.com/gbprod/tree-sitter-gitcommit"
 
-[tree-sitter-grammar-gitignore]
+[treesitter-grammar-gitignore]
 fetch.git = "https://github.com/shunsambongi/tree-sitter-gitignore"
 src.git = "https://github.com/shunsambongi/tree-sitter-gitignore"
 
-[tree-sitter-grammar-gleam]
+[treesitter-grammar-gleam]
 fetch.git = "https://github.com/gleam-lang/tree-sitter-gleam"
 src.git = "https://github.com/gleam-lang/tree-sitter-gleam"
 
-[tree-sitter-grammar-glimmer]
+[treesitter-grammar-glimmer]
 fetch.git = "https://github.com/alexlafroscia/tree-sitter-glimmer"
 src.git = "https://github.com/alexlafroscia/tree-sitter-glimmer"
 
-[tree-sitter-grammar-glsl]
+[treesitter-grammar-glsl]
 fetch.git = "https://github.com/theHamsta/tree-sitter-glsl"
 src.git = "https://github.com/theHamsta/tree-sitter-glsl"
 
-[tree-sitter-grammar-go]
+[treesitter-grammar-gn]
+fetch.git = "https://github.com/amaanq/tree-sitter-gn"
+src.git = "https://github.com/amaanq/tree-sitter-gn"
+
+[treesitter-grammar-gnuplot]
+fetch.git = "https://github.com/dpezto/tree-sitter-gnuplot"
+src.git = "https://github.com/dpezto/tree-sitter-gnuplot"
+
+[treesitter-grammar-go]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-go"
 src.git = "https://github.com/tree-sitter/tree-sitter-go"
 
-[tree-sitter-grammar-godot_resource]
+[treesitter-grammar-godot_resource]
 fetch.git = "https://github.com/PrestonKnopp/tree-sitter-godot-resource"
 src.git = "https://github.com/PrestonKnopp/tree-sitter-godot-resource"
 
-[tree-sitter-grammar-gomod]
+[treesitter-grammar-gomod]
 fetch.git = "https://github.com/camdencheek/tree-sitter-go-mod"
 src.git = "https://github.com/camdencheek/tree-sitter-go-mod"
 
-[tree-sitter-grammar-gosum]
+[treesitter-grammar-gosum]
 fetch.git = "https://github.com/amaanq/tree-sitter-go-sum"
 src.git = "https://github.com/amaanq/tree-sitter-go-sum"
 
-[tree-sitter-grammar-gowork]
-fetch.git = "https://github.com/omertuc/tree-sitter-go-work"
-src.git = "https://github.com/omertuc/tree-sitter-go-work"
-
-[tree-sitter-grammar-gotmpl]
+[treesitter-grammar-gotmpl]
 fetch.git = "https://github.com/ngalaiko/tree-sitter-go-template"
 src.git = "https://github.com/ngalaiko/tree-sitter-go-template"
 
-[tree-sitter-grammar-gpg]
+[treesitter-grammar-gowork]
+fetch.git = "https://github.com/omertuc/tree-sitter-go-work"
+src.git = "https://github.com/omertuc/tree-sitter-go-work"
+
+[treesitter-grammar-gpg]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-gpg-config"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-gpg-config"
 
-[tree-sitter-grammar-graphql]
+[treesitter-grammar-graphql]
 fetch.git = "https://github.com/bkegley/tree-sitter-graphql"
 src.git = "https://github.com/bkegley/tree-sitter-graphql"
 
-[tree-sitter-grammar-groovy]
-fetch.git = "https://github.com/Decodetalkers/tree-sitter-groovy"
-src.git = "https://github.com/Decodetalkers/tree-sitter-groovy"
-src.branch = "gh-pages"
+[treesitter-grammar-groovy]
+fetch.git = "https://github.com/murtaza64/tree-sitter-groovy"
+src.git = "https://github.com/murtaza64/tree-sitter-groovy"
 
-[tree-sitter-grammar-hack]
+[treesitter-grammar-gstlaunch]
+fetch.git = "https://github.com/theHamsta/tree-sitter-gstlaunch"
+src.git = "https://github.com/theHamsta/tree-sitter-gstlaunch"
+
+[treesitter-grammar-hack]
 fetch.git = "https://github.com/slackhq/tree-sitter-hack"
 src.git = "https://github.com/slackhq/tree-sitter-hack"
 
-[tree-sitter-grammar-hare]
+[treesitter-grammar-hare]
 fetch.git = "https://github.com/amaanq/tree-sitter-hare"
 src.git = "https://github.com/amaanq/tree-sitter-hare"
 
-[tree-sitter-grammar-haskell]
+[treesitter-grammar-haskell]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-haskell"
 src.git = "https://github.com/tree-sitter/tree-sitter-haskell"
 
-[tree-sitter-grammar-haskell_persistent]
+[treesitter-grammar-haskell_persistent]
 fetch.git = "https://github.com/MercuryTechnologies/tree-sitter-haskell-persistent"
 src.git = "https://github.com/MercuryTechnologies/tree-sitter-haskell-persistent"
 
-[tree-sitter-grammar-hcl]
+[treesitter-grammar-hcl]
 fetch.git = "https://github.com/MichaHoffmann/tree-sitter-hcl"
 src.git = "https://github.com/MichaHoffmann/tree-sitter-hcl"
 
-[tree-sitter-grammar-heex]
+[treesitter-grammar-heex]
 fetch.git = "https://github.com/connorlay/tree-sitter-heex"
 src.git = "https://github.com/connorlay/tree-sitter-heex"
 
-[tree-sitter-grammar-hjson]
+[treesitter-grammar-helm]
+fetch.git = "https://github.com/ngalaiko/tree-sitter-go-template"
+src.git = "https://github.com/ngalaiko/tree-sitter-go-template"
+[treesitter-grammar-helm.passthru]
+location = "dialects/helm"
+
+[treesitter-grammar-hjson]
 fetch.git = "https://github.com/winston0410/tree-sitter-hjson"
 src.git = "https://github.com/winston0410/tree-sitter-hjson"
 
-[tree-sitter-grammar-hlsl]
+[treesitter-grammar-hlsl]
 fetch.git = "https://github.com/theHamsta/tree-sitter-hlsl"
 src.git = "https://github.com/theHamsta/tree-sitter-hlsl"
 
-[tree-sitter-grammar-hocon]
+[treesitter-grammar-hlsplaylist]
+fetch.git = "https://github.com/Freed-Wu/tree-sitter-hlsplaylist"
+src.git = "https://github.com/Freed-Wu/tree-sitter-hlsplaylist"
+
+[treesitter-grammar-hocon]
 fetch.git = "https://github.com/antosha417/tree-sitter-hocon"
 src.git = "https://github.com/antosha417/tree-sitter-hocon"
 
-[tree-sitter-grammar-hoon]
+[treesitter-grammar-hoon]
 fetch.git = "https://github.com/urbit-pilled/tree-sitter-hoon"
 src.git = "https://github.com/urbit-pilled/tree-sitter-hoon"
 
-[tree-sitter-grammar-html]
+[treesitter-grammar-html]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-html"
 src.git = "https://github.com/tree-sitter/tree-sitter-html"
 
-[tree-sitter-grammar-htmldjango]
+[treesitter-grammar-htmldjango]
 fetch.git = "https://github.com/interdependence/tree-sitter-htmldjango"
 src.git = "https://github.com/interdependence/tree-sitter-htmldjango"
 
-[tree-sitter-grammar-http]
+[treesitter-grammar-http]
 fetch.git = "https://github.com/rest-nvim/tree-sitter-http"
 src.git = "https://github.com/rest-nvim/tree-sitter-http"
 
-[tree-sitter-grammar-hurl]
+[treesitter-grammar-hurl]
 fetch.git = "https://github.com/pfeiferj/tree-sitter-hurl"
 src.git = "https://github.com/pfeiferj/tree-sitter-hurl"
 
-[tree-sitter-grammar-ini]
+[treesitter-grammar-hyprlang]
+fetch.git = "https://github.com/luckasRanarison/tree-sitter-hyprlang"
+src.git = "https://github.com/luckasRanarison/tree-sitter-hyprlang"
+
+[treesitter-grammar-idl]
+fetch.git = "https://github.com/cathaysia/tree-sitter-idl"
+src.git = "https://github.com/cathaysia/tree-sitter-idl"
+
+[treesitter-grammar-ini]
 fetch.git = "https://github.com/justinmk/tree-sitter-ini"
 src.git = "https://github.com/justinmk/tree-sitter-ini"
 
-[tree-sitter-grammar-ispc]
+[treesitter-grammar-inko]
+fetch.git = "https://github.com/inko-lang/tree-sitter-inko"
+src.git = "https://github.com/inko-lang/tree-sitter-inko"
+
+[treesitter-grammar-ispc]
 fetch.git = "https://github.com/fab4100/tree-sitter-ispc"
 src.git = "https://github.com/fab4100/tree-sitter-ispc"
 
-[tree-sitter-grammar-janet_simple]
+[treesitter-grammar-janet_simple]
 fetch.git = "https://github.com/sogaiu/tree-sitter-janet-simple"
 src.git = "https://github.com/sogaiu/tree-sitter-janet-simple"
 
-[tree-sitter-grammar-java]
+[treesitter-grammar-java]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-java"
 src.git = "https://github.com/tree-sitter/tree-sitter-java"
 
-[tree-sitter-grammar-javascript]
+[treesitter-grammar-javascript]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-javascript"
 src.git = "https://github.com/tree-sitter/tree-sitter-javascript"
 
-[tree-sitter-grammar-just]
-fetch.git = "https://github.com/IndianBoy42/tree-sitter-just"
-src.git = "https://github.com/IndianBoy42/tree-sitter-just"
-
-[tree-sitter-grammar-jq]
+[treesitter-grammar-jq]
 fetch.git = "https://github.com/flurie/tree-sitter-jq"
 src.git = "https://github.com/flurie/tree-sitter-jq"
 
-[tree-sitter-grammar-jsdoc]
+[treesitter-grammar-jsdoc]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-jsdoc"
 src.git = "https://github.com/tree-sitter/tree-sitter-jsdoc"
 
-[tree-sitter-grammar-json]
+[treesitter-grammar-json]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-json"
 src.git = "https://github.com/tree-sitter/tree-sitter-json"
 
-[tree-sitter-grammar-json5]
+[treesitter-grammar-json5]
 fetch.git = "https://github.com/Joakker/tree-sitter-json5"
 src.git = "https://github.com/Joakker/tree-sitter-json5"
 
-[tree-sitter-grammar-jsonc]
+[treesitter-grammar-jsonc]
 fetch.git = "https://gitlab.com/WhyNotHugo/tree-sitter-jsonc.git"
 src.git = "https://gitlab.com/WhyNotHugo/tree-sitter-jsonc.git"
 
-[tree-sitter-grammar-jsonnet]
+[treesitter-grammar-jsonnet]
 fetch.git = "https://github.com/sourcegraph/tree-sitter-jsonnet"
 src.git = "https://github.com/sourcegraph/tree-sitter-jsonnet"
 
-[tree-sitter-grammar-julia]
+[treesitter-grammar-julia]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-julia"
 src.git = "https://github.com/tree-sitter/tree-sitter-julia"
 
-[tree-sitter-grammar-kconfig]
+[treesitter-grammar-just]
+fetch.git = "https://github.com/IndianBoy42/tree-sitter-just"
+src.git = "https://github.com/IndianBoy42/tree-sitter-just"
+
+[treesitter-grammar-kconfig]
 fetch.git = "https://github.com/amaanq/tree-sitter-kconfig"
 src.git = "https://github.com/amaanq/tree-sitter-kconfig"
 
-[tree-sitter-grammar-kdl]
+[treesitter-grammar-kdl]
 fetch.git = "https://github.com/amaanq/tree-sitter-kdl"
 src.git = "https://github.com/amaanq/tree-sitter-kdl"
 
-[tree-sitter-grammar-kotlin]
+[treesitter-grammar-kotlin]
 fetch.git = "https://github.com/fwcd/tree-sitter-kotlin"
 src.git = "https://github.com/fwcd/tree-sitter-kotlin"
 
-[tree-sitter-grammar-lalrpop]
+[treesitter-grammar-koto]
+fetch.git = "https://github.com/koto-lang/tree-sitter-koto"
+src.git = "https://github.com/koto-lang/tree-sitter-koto"
+
+[treesitter-grammar-kusto]
+fetch.git = "https://github.com/Willem-J-an/tree-sitter-kusto"
+src.git = "https://github.com/Willem-J-an/tree-sitter-kusto"
+
+[treesitter-grammar-lalrpop]
 fetch.git = "https://github.com/traxys/tree-sitter-lalrpop"
 src.git = "https://github.com/traxys/tree-sitter-lalrpop"
 
-[tree-sitter-grammar-latex]
+[treesitter-grammar-latex]
 fetch.git = "https://github.com/latex-lsp/tree-sitter-latex"
 src.git = "https://github.com/latex-lsp/tree-sitter-latex"
+[treesitter-grammar-latex.passthru]
+generate = "true"
 
-[tree-sitter-grammar-ledger]
+[treesitter-grammar-ledger]
 fetch.git = "https://github.com/cbarrete/tree-sitter-ledger"
 src.git = "https://github.com/cbarrete/tree-sitter-ledger"
 
-[tree-sitter-grammar-llvm]
+[treesitter-grammar-leo]
+fetch.git = "https://github.com/r001/tree-sitter-leo"
+src.git = "https://github.com/r001/tree-sitter-leo"
+
+[treesitter-grammar-linkerscript]
+fetch.git = "https://github.com/amaanq/tree-sitter-linkerscript"
+src.git = "https://github.com/amaanq/tree-sitter-linkerscript"
+
+[treesitter-grammar-liquid]
+fetch.git = "https://github.com/hankthetank27/tree-sitter-liquid"
+src.git = "https://github.com/hankthetank27/tree-sitter-liquid"
+
+[treesitter-grammar-liquidsoap]
+fetch.git = "https://github.com/savonet/tree-sitter-liquidsoap"
+src.git = "https://github.com/savonet/tree-sitter-liquidsoap"
+
+[treesitter-grammar-llvm]
 fetch.git = "https://github.com/benwilliamgraham/tree-sitter-llvm"
 src.git = "https://github.com/benwilliamgraham/tree-sitter-llvm"
 
-[tree-sitter-grammar-lua]
+[treesitter-grammar-lua]
 fetch.git = "https://github.com/MunifTanjim/tree-sitter-lua"
 src.git = "https://github.com/MunifTanjim/tree-sitter-lua"
 
-[tree-sitter-grammar-luadoc]
+[treesitter-grammar-luadoc]
 fetch.git = "https://github.com/amaanq/tree-sitter-luadoc"
 src.git = "https://github.com/amaanq/tree-sitter-luadoc"
 
-[tree-sitter-grammar-luap]
+[treesitter-grammar-luap]
 fetch.git = "https://github.com/amaanq/tree-sitter-luap"
 src.git = "https://github.com/amaanq/tree-sitter-luap"
 
-[tree-sitter-grammar-luau]
+[treesitter-grammar-luau]
 fetch.git = "https://github.com/amaanq/tree-sitter-luau"
 src.git = "https://github.com/amaanq/tree-sitter-luau"
 
-[tree-sitter-grammar-m68k]
+[treesitter-grammar-m68k]
 fetch.git = "https://github.com/grahambates/tree-sitter-m68k"
 src.git = "https://github.com/grahambates/tree-sitter-m68k"
 
-[tree-sitter-grammar-make]
+[treesitter-grammar-make]
 fetch.git = "https://github.com/alemuller/tree-sitter-make"
 src.git = "https://github.com/alemuller/tree-sitter-make"
 
-[tree-sitter-grammar-markdown]
+[treesitter-grammar-markdown]
 fetch.git = "https://github.com/MDeiml/tree-sitter-markdown"
 src.git = "https://github.com/MDeiml/tree-sitter-markdown"
-passthru.location = "tree-sitter-markdown"
+[treesitter-grammar-markdown.passthru]
+location = "tree-sitter-markdown"
 
-[tree-sitter-grammar-markdown_inline]
+[treesitter-grammar-markdown_inline]
 fetch.git = "https://github.com/MDeiml/tree-sitter-markdown"
 src.git = "https://github.com/MDeiml/tree-sitter-markdown"
-passthru.location = "tree-sitter-markdown-inline"
+[treesitter-grammar-markdown_inline.passthru]
+location = "tree-sitter-markdown-inline"
 
-[tree-sitter-grammar-matlab]
+[treesitter-grammar-matlab]
 fetch.git = "https://github.com/acristoffers/tree-sitter-matlab"
 src.git = "https://github.com/acristoffers/tree-sitter-matlab"
 
-[tree-sitter-grammar-menhir]
+[treesitter-grammar-menhir]
 fetch.git = "https://github.com/Kerl13/tree-sitter-menhir"
 src.git = "https://github.com/Kerl13/tree-sitter-menhir"
 
-[tree-sitter-grammar-mermaid]
+[treesitter-grammar-mermaid]
 fetch.git = "https://github.com/monaqa/tree-sitter-mermaid"
 src.git = "https://github.com/monaqa/tree-sitter-mermaid"
 
-[tree-sitter-grammar-meson]
+[treesitter-grammar-meson]
 fetch.git = "https://github.com/Decodetalkers/tree-sitter-meson"
 src.git = "https://github.com/Decodetalkers/tree-sitter-meson"
 
-[tree-sitter-grammar-mlir]
+[treesitter-grammar-mlir]
 fetch.git = "https://github.com/artagnon/tree-sitter-mlir"
 src.git = "https://github.com/artagnon/tree-sitter-mlir"
+[treesitter-grammar-mlir.passthru]
+generate = "true"
 
-[tree-sitter-grammar-nickel]
+[treesitter-grammar-muttrc]
+fetch.git = "https://github.com/neomutt/tree-sitter-muttrc"
+src.git = "https://github.com/neomutt/tree-sitter-muttrc"
+
+[treesitter-grammar-nasm]
+fetch.git = "https://github.com/naclsn/tree-sitter-nasm"
+src.git = "https://github.com/naclsn/tree-sitter-nasm"
+
+[treesitter-grammar-nickel]
 fetch.git = "https://github.com/nickel-lang/tree-sitter-nickel"
 src.git = "https://github.com/nickel-lang/tree-sitter-nickel"
 
-[tree-sitter-grammar-ninja]
+[treesitter-grammar-nim]
+fetch.git = "https://github.com/alaviss/tree-sitter-nim"
+src.git = "https://github.com/alaviss/tree-sitter-nim"
+
+[treesitter-grammar-nim_format_string]
+fetch.git = "https://github.com/aMOPel/tree-sitter-nim-format-string"
+src.git = "https://github.com/aMOPel/tree-sitter-nim-format-string"
+
+[treesitter-grammar-ninja]
 fetch.git = "https://github.com/alemuller/tree-sitter-ninja"
 src.git = "https://github.com/alemuller/tree-sitter-ninja"
 
-[tree-sitter-grammar-nix]
+[treesitter-grammar-nix]
 fetch.git = "https://github.com/cstrahan/tree-sitter-nix"
 src.git = "https://github.com/cstrahan/tree-sitter-nix"
 
-[tree-sitter-grammar-norg]
+[treesitter-grammar-norg]
 fetch.git = "https://github.com/nvim-neorg/tree-sitter-norg"
 src.git = "https://github.com/nvim-neorg/tree-sitter-norg"
-src.branch = "main"
 
-[tree-sitter-grammar-norg_meta]
-fetch.git = "https://github.com/nvim-neorg/tree-sitter-norg-meta"
-src.git = "https://github.com/nvim-neorg/tree-sitter-norg-meta"
-src.branch = "main"
-
-[tree-sitter-grammar-nu]
-fetch.git = "https://github.com/nushell/tree-sitter-nu"
-src.git = "https://github.com/nushell/tree-sitter-nu"
-src.branch = "main"
-
-[tree-sitter-grammar-nqc]
+[treesitter-grammar-nqc]
 fetch.git = "https://github.com/amaanq/tree-sitter-nqc"
 src.git = "https://github.com/amaanq/tree-sitter-nqc"
 
-[tree-sitter-grammar-objc]
+[treesitter-grammar-nu]
+fetch.git = "https://github.com/nushell/tree-sitter-nu"
+src.git = "https://github.com/nushell/tree-sitter-nu"
+
+[treesitter-grammar-objc]
 fetch.git = "https://github.com/amaanq/tree-sitter-objc"
 src.git = "https://github.com/amaanq/tree-sitter-objc"
 
-[tree-sitter-grammar-ocaml]
+[treesitter-grammar-objdump]
+fetch.git = "https://github.com/ColinKennedy/tree-sitter-objdump"
+src.git = "https://github.com/ColinKennedy/tree-sitter-objdump"
+
+[treesitter-grammar-ocaml]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-ocaml"
 src.git = "https://github.com/tree-sitter/tree-sitter-ocaml"
-passthru.location = "ocaml"
+[treesitter-grammar-ocaml.passthru]
+location = "grammars/ocaml"
 
-[tree-sitter-grammar-ocaml_interface]
+[treesitter-grammar-ocaml_interface]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-ocaml"
 src.git = "https://github.com/tree-sitter/tree-sitter-ocaml"
-passthru.location = "interface"
+[treesitter-grammar-ocaml_interface.passthru]
+location = "grammars/interface"
 
-[tree-sitter-grammar-ocamllex]
+[treesitter-grammar-ocamllex]
 fetch.git = "https://github.com/atom-ocaml/tree-sitter-ocamllex"
 src.git = "https://github.com/atom-ocaml/tree-sitter-ocamllex"
+[treesitter-grammar-ocamllex.passthru]
+generate = "true"
 
-[tree-sitter-grammar-odin]
+[treesitter-grammar-odin]
 fetch.git = "https://github.com/amaanq/tree-sitter-odin"
 src.git = "https://github.com/amaanq/tree-sitter-odin"
 
-[tree-sitter-grammar-org]
+[treesitter-grammar-org]
 fetch.git = "https://github.com/milisims/tree-sitter-org"
 src.git = "https://github.com/milisims/tree-sitter-org"
 
-[tree-sitter-grammar-pascal]
+[treesitter-grammar-pascal]
 fetch.git = "https://github.com/Isopod/tree-sitter-pascal.git"
 src.git = "https://github.com/Isopod/tree-sitter-pascal.git"
 
-[tree-sitter-grammar-passwd]
+[treesitter-grammar-passwd]
 fetch.git = "https://github.com/ath3/tree-sitter-passwd"
 src.git = "https://github.com/ath3/tree-sitter-passwd"
 
-[tree-sitter-grammar-pem]
+[treesitter-grammar-pem]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-pem"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-pem"
 
-[tree-sitter-grammar-perl]
-fetch.git = "https://github.com/ganezdragon/tree-sitter-perl"
-src.git = "https://github.com/ganezdragon/tree-sitter-perl"
+[treesitter-grammar-perl]
+fetch.git = "https://github.com/tree-sitter-perl/tree-sitter-perl"
+src.git = "https://github.com/tree-sitter-perl/tree-sitter-perl"
+src.branch = "release"
 
-[tree-sitter-grammar-php]
+[treesitter-grammar-php]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-php"
 src.git = "https://github.com/tree-sitter/tree-sitter-php"
-passthru.location = "php"
+[treesitter-grammar-php.passthru]
+location = "php"
 
-[tree-sitter-grammar-phpdoc]
+[treesitter-grammar-php_only]
+fetch.git = "https://github.com/tree-sitter/tree-sitter-php"
+src.git = "https://github.com/tree-sitter/tree-sitter-php"
+[treesitter-grammar-php_only.passthru]
+location = "php_only"
+
+[treesitter-grammar-phpdoc]
 fetch.git = "https://github.com/claytonrcarter/tree-sitter-phpdoc"
 src.git = "https://github.com/claytonrcarter/tree-sitter-phpdoc"
 
-[tree-sitter-grammar-pioasm]
+[treesitter-grammar-pioasm]
 fetch.git = "https://github.com/leo60228/tree-sitter-pioasm"
 src.git = "https://github.com/leo60228/tree-sitter-pioasm"
 
-[tree-sitter-grammar-po]
+[treesitter-grammar-po]
 fetch.git = "https://github.com/erasin/tree-sitter-po"
 src.git = "https://github.com/erasin/tree-sitter-po"
 
-[tree-sitter-grammar-poe_filter]
-fetch.git = "https://github.com/observeroftime/tree-sitter-poe-filter"
-src.git = "https://github.com/observeroftime/tree-sitter-poe-filter"
+[treesitter-grammar-pod]
+fetch.git = "https://github.com/tree-sitter-perl/tree-sitter-pod"
+src.git = "https://github.com/tree-sitter-perl/tree-sitter-pod"
+src.branch = "release"
 
-[tree-sitter-grammar-pony]
+[treesitter-grammar-poe_filter]
+fetch.git = "https://github.com/ObserverOfTime/tree-sitter-poe-filter"
+src.git = "https://github.com/ObserverOfTime/tree-sitter-poe-filter"
+
+[treesitter-grammar-pony]
 fetch.git = "https://github.com/amaanq/tree-sitter-pony"
 src.git = "https://github.com/amaanq/tree-sitter-pony"
 
-[tree-sitter-grammar-prisma]
+[treesitter-grammar-printf]
+fetch.git = "https://github.com/ObserverOfTime/tree-sitter-printf"
+src.git = "https://github.com/ObserverOfTime/tree-sitter-printf"
+
+[treesitter-grammar-prisma]
 fetch.git = "https://github.com/victorhqc/tree-sitter-prisma"
 src.git = "https://github.com/victorhqc/tree-sitter-prisma"
 
-[tree-sitter-grammar-promql]
+[treesitter-grammar-promql]
 fetch.git = "https://github.com/MichaHoffmann/tree-sitter-promql"
 src.git = "https://github.com/MichaHoffmann/tree-sitter-promql"
 
-[tree-sitter-grammar-proto]
+[treesitter-grammar-properties]
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-properties"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-properties"
+
+[treesitter-grammar-proto]
 fetch.git = "https://github.com/treywood/tree-sitter-proto"
 src.git = "https://github.com/treywood/tree-sitter-proto"
 
-[tree-sitter-grammar-prql]
+[treesitter-grammar-prql]
 fetch.git = "https://github.com/PRQL/tree-sitter-prql"
 src.git = "https://github.com/PRQL/tree-sitter-prql"
 
-[tree-sitter-grammar-psv]
+[treesitter-grammar-psv]
 fetch.git = "https://github.com/amaanq/tree-sitter-csv"
 src.git = "https://github.com/amaanq/tree-sitter-csv"
-passthru.location = "psv"
+[treesitter-grammar-psv.passthru]
+location = "psv"
 
-[tree-sitter-grammar-pug]
+[treesitter-grammar-pug]
 fetch.git = "https://github.com/zealot128/tree-sitter-pug"
 src.git = "https://github.com/zealot128/tree-sitter-pug"
 
-[tree-sitter-grammar-puppet]
+[treesitter-grammar-puppet]
 fetch.git = "https://github.com/amaanq/tree-sitter-puppet"
 src.git = "https://github.com/amaanq/tree-sitter-puppet"
 
-[tree-sitter-grammar-pymanifest]
+[treesitter-grammar-purescript]
+fetch.git = "https://github.com/postsolar/tree-sitter-purescript"
+src.git = "https://github.com/postsolar/tree-sitter-purescript"
+
+[treesitter-grammar-pymanifest]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-pymanifest"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-pymanifest"
 
-[tree-sitter-grammar-python]
+[treesitter-grammar-python]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-python"
 src.git = "https://github.com/tree-sitter/tree-sitter-python"
 
-[tree-sitter-grammar-ql]
+[treesitter-grammar-ql]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-ql"
 src.git = "https://github.com/tree-sitter/tree-sitter-ql"
 
-[tree-sitter-grammar-qmldir]
+[treesitter-grammar-qmldir]
 fetch.git = "https://github.com/Decodetalkers/tree-sitter-qmldir"
 src.git = "https://github.com/Decodetalkers/tree-sitter-qmldir"
 
-[tree-sitter-grammar-qmljs]
+[treesitter-grammar-qmljs]
 fetch.git = "https://github.com/yuja/tree-sitter-qmljs"
 src.git = "https://github.com/yuja/tree-sitter-qmljs"
 
-[tree-sitter-grammar-query]
+[treesitter-grammar-query]
 fetch.git = "https://github.com/nvim-treesitter/tree-sitter-query"
 src.git = "https://github.com/nvim-treesitter/tree-sitter-query"
 
-[tree-sitter-grammar-r]
+[treesitter-grammar-r]
 fetch.git = "https://github.com/r-lib/tree-sitter-r"
 src.git = "https://github.com/r-lib/tree-sitter-r"
 
-[tree-sitter-grammar-racket]
+[treesitter-grammar-racket]
 fetch.git = "https://github.com/6cdh/tree-sitter-racket"
 src.git = "https://github.com/6cdh/tree-sitter-racket"
 
-[tree-sitter-grammar-rasi]
+[treesitter-grammar-rasi]
 fetch.git = "https://github.com/Fymyte/tree-sitter-rasi"
 src.git = "https://github.com/Fymyte/tree-sitter-rasi"
 
-[tree-sitter-grammar-re2c]
+[treesitter-grammar-rbs]
+fetch.git = "https://github.com/joker1007/tree-sitter-rbs"
+src.git = "https://github.com/joker1007/tree-sitter-rbs"
+
+[treesitter-grammar-re2c]
 fetch.git = "https://github.com/amaanq/tree-sitter-re2c"
 src.git = "https://github.com/amaanq/tree-sitter-re2c"
 
-[tree-sitter-grammar-regex]
+[treesitter-grammar-readline]
+fetch.git = "https://github.com/ribru17/tree-sitter-readline"
+src.git = "https://github.com/ribru17/tree-sitter-readline"
+
+[treesitter-grammar-regex]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-regex"
 src.git = "https://github.com/tree-sitter/tree-sitter-regex"
 
-[tree-sitter-grammar-rego]
+[treesitter-grammar-rego]
 fetch.git = "https://github.com/FallenAngel97/tree-sitter-rego"
 src.git = "https://github.com/FallenAngel97/tree-sitter-rego"
 
-[tree-sitter-grammar-requirements]
+[treesitter-grammar-requirements]
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-requirements"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-requirements"
 
-[tree-sitter-grammar-rnoweb]
+[treesitter-grammar-rnoweb]
 fetch.git = "https://github.com/bamonroe/tree-sitter-rnoweb"
 src.git = "https://github.com/bamonroe/tree-sitter-rnoweb"
 
-[tree-sitter-grammar-robot]
+[treesitter-grammar-robot]
 fetch.git = "https://github.com/Hubro/tree-sitter-robot"
 src.git = "https://github.com/Hubro/tree-sitter-robot"
 
-[tree-sitter-grammar-ron]
+[treesitter-grammar-roc]
+fetch.git = "https://github.com/nat-418/tree-sitter-roc"
+src.git = "https://github.com/nat-418/tree-sitter-roc"
+
+[treesitter-grammar-ron]
 fetch.git = "https://github.com/amaanq/tree-sitter-ron"
 src.git = "https://github.com/amaanq/tree-sitter-ron"
 
-[tree-sitter-grammar-rst]
+[treesitter-grammar-rst]
 fetch.git = "https://github.com/stsewd/tree-sitter-rst"
 src.git = "https://github.com/stsewd/tree-sitter-rst"
 
-[tree-sitter-grammar-ruby]
+[treesitter-grammar-ruby]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-ruby"
 src.git = "https://github.com/tree-sitter/tree-sitter-ruby"
 
-[tree-sitter-grammar-rust]
+[treesitter-grammar-rust]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-rust"
 src.git = "https://github.com/tree-sitter/tree-sitter-rust"
 
-[tree-sitter-grammar-scala]
+[treesitter-grammar-scala]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-scala"
 src.git = "https://github.com/tree-sitter/tree-sitter-scala"
 
-[tree-sitter-grammar-scfg]
+[treesitter-grammar-scfg]
 fetch.git = "https://git.sr.ht/~rockorager/tree-sitter-scfg"
 src.git = "https://git.sr.ht/~rockorager/tree-sitter-scfg"
+[treesitter-grammar-scfg.passthru]
+generate = "true"
 
-[tree-sitter-grammar-scheme]
+[treesitter-grammar-scheme]
 fetch.git = "https://github.com/6cdh/tree-sitter-scheme"
 src.git = "https://github.com/6cdh/tree-sitter-scheme"
 
-[tree-sitter-grammar-scss]
+[treesitter-grammar-scss]
 fetch.git = "https://github.com/serenadeai/tree-sitter-scss"
 src.git = "https://github.com/serenadeai/tree-sitter-scss"
 
-[tree-sitter-grammar-slint]
-fetch.git = "https://github.com/jrmoulton/tree-sitter-slint"
-src.git = "https://github.com/jrmoulton/tree-sitter-slint"
+[treesitter-grammar-slang]
+fetch.git = "https://github.com/theHamsta/tree-sitter-slang"
+src.git = "https://github.com/theHamsta/tree-sitter-slang"
 
-[tree-sitter-grammar-smali]
-fetch.git = "https://git.sr.ht/~yotam/tree-sitter-smali"
-src.git = "https://git.sr.ht/~yotam/tree-sitter-smali"
+[treesitter-grammar-slint]
+fetch.git = "https://github.com/slint-ui/tree-sitter-slint"
+src.git = "https://github.com/slint-ui/tree-sitter-slint"
 
-[tree-sitter-grammar-smithy]
+[treesitter-grammar-smali]
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-smali"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-smali"
+
+[treesitter-grammar-smithy]
 fetch.git = "https://github.com/indoorvivants/tree-sitter-smithy"
 src.git = "https://github.com/indoorvivants/tree-sitter-smithy"
 
-[tree-sitter-grammar-solidity]
+[treesitter-grammar-snakemake]
+fetch.git = "https://github.com/osthomas/tree-sitter-snakemake"
+src.git = "https://github.com/osthomas/tree-sitter-snakemake"
+
+[treesitter-grammar-solidity]
 fetch.git = "https://github.com/JoranHonig/tree-sitter-solidity"
 src.git = "https://github.com/JoranHonig/tree-sitter-solidity"
 
-[tree-sitter-grammar-sparql]
+[treesitter-grammar-soql]
+fetch.git = "https://github.com/aheber/tree-sitter-sfapex"
+src.git = "https://github.com/aheber/tree-sitter-sfapex"
+[treesitter-grammar-soql.passthru]
+location = "soql"
+
+[treesitter-grammar-sosl]
+fetch.git = "https://github.com/aheber/tree-sitter-sfapex"
+src.git = "https://github.com/aheber/tree-sitter-sfapex"
+[treesitter-grammar-sosl.passthru]
+location = "sosl"
+
+[treesitter-grammar-sourcepawn]
+fetch.git = "https://github.com/nilshelmig/tree-sitter-sourcepawn"
+src.git = "https://github.com/nilshelmig/tree-sitter-sourcepawn"
+
+[treesitter-grammar-sparql]
 fetch.git = "https://github.com/BonaBeavis/tree-sitter-sparql"
 src.git = "https://github.com/BonaBeavis/tree-sitter-sparql"
 
-[tree-sitter-grammar-sql]
+[treesitter-grammar-sql]
 fetch.git = "https://github.com/derekstride/tree-sitter-sql"
 src.git = "https://github.com/derekstride/tree-sitter-sql"
 src.branch = "gh-pages"
 
-[tree-sitter-grammar-squirrel]
+[treesitter-grammar-squirrel]
 fetch.git = "https://github.com/amaanq/tree-sitter-squirrel"
 src.git = "https://github.com/amaanq/tree-sitter-squirrel"
 
-[tree-sitter-grammar-starlark]
+[treesitter-grammar-ssh_config]
+fetch.git = "https://github.com/ObserverOfTime/tree-sitter-ssh-config"
+src.git = "https://github.com/ObserverOfTime/tree-sitter-ssh-config"
+
+[treesitter-grammar-starlark]
 fetch.git = "https://github.com/amaanq/tree-sitter-starlark"
 src.git = "https://github.com/amaanq/tree-sitter-starlark"
 
-[tree-sitter-grammar-strace]
+[treesitter-grammar-strace]
 fetch.git = "https://github.com/sigmaSd/tree-sitter-strace"
 src.git = "https://github.com/sigmaSd/tree-sitter-strace"
 
-[tree-sitter-grammar-supercollider]
+[treesitter-grammar-styled]
+fetch.git = "https://github.com/mskelton/tree-sitter-styled"
+src.git = "https://github.com/mskelton/tree-sitter-styled"
+
+[treesitter-grammar-supercollider]
 fetch.git = "https://github.com/madskjeldgaard/tree-sitter-supercollider"
 src.git = "https://github.com/madskjeldgaard/tree-sitter-supercollider"
 
-[tree-sitter-grammar-surface]
+[treesitter-grammar-surface]
 fetch.git = "https://github.com/connorlay/tree-sitter-surface"
 src.git = "https://github.com/connorlay/tree-sitter-surface"
 
-[tree-sitter-grammar-svelte]
-fetch.git = "https://github.com/Himujjal/tree-sitter-svelte"
-src.git = "https://github.com/Himujjal/tree-sitter-svelte"
+[treesitter-grammar-svelte]
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-svelte"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-svelte"
 
-[tree-sitter-grammar-swift]
+[treesitter-grammar-swift]
 fetch.git = "https://github.com/alex-pinkus/tree-sitter-swift"
 src.git = "https://github.com/alex-pinkus/tree-sitter-swift"
+[treesitter-grammar-swift.passthru]
+generate = "true"
 
-[tree-sitter-grammar-sxhkdrc]
+[treesitter-grammar-sxhkdrc]
 fetch.git = "https://github.com/RaafatTurki/tree-sitter-sxhkdrc"
 src.git = "https://github.com/RaafatTurki/tree-sitter-sxhkdrc"
 
-[tree-sitter-grammar-systemtap]
+[treesitter-grammar-systemtap]
 fetch.git = "https://github.com/ok-ryoko/tree-sitter-systemtap"
 src.git = "https://github.com/ok-ryoko/tree-sitter-systemtap"
 
-[tree-sitter-grammar-t32]
+[treesitter-grammar-t32]
 fetch.git = "https://gitlab.com/xasc/tree-sitter-t32.git"
 src.git = "https://gitlab.com/xasc/tree-sitter-t32.git"
 
-[tree-sitter-grammar-tablegen]
+[treesitter-grammar-tablegen]
 fetch.git = "https://github.com/amaanq/tree-sitter-tablegen"
 src.git = "https://github.com/amaanq/tree-sitter-tablegen"
 
-[tree-sitter-grammar-teal]
+[treesitter-grammar-tact]
+fetch.git = "https://github.com/tact-lang/tree-sitter-tact"
+src.git = "https://github.com/tact-lang/tree-sitter-tact"
+
+[treesitter-grammar-tcl]
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-tcl"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-tcl"
+
+[treesitter-grammar-teal]
 fetch.git = "https://github.com/euclidianAce/tree-sitter-teal"
 src.git = "https://github.com/euclidianAce/tree-sitter-teal"
+[treesitter-grammar-teal.passthru]
+generate = "true"
 
-[tree-sitter-grammar-terraform]
+[treesitter-grammar-templ]
+fetch.git = "https://github.com/vrischmann/tree-sitter-templ"
+src.git = "https://github.com/vrischmann/tree-sitter-templ"
+
+[treesitter-grammar-terraform]
 fetch.git = "https://github.com/MichaHoffmann/tree-sitter-hcl"
 src.git = "https://github.com/MichaHoffmann/tree-sitter-hcl"
-passthru.location = "dialects/terraform"
+[treesitter-grammar-terraform.passthru]
+location = "dialects/terraform"
 
-[tree-sitter-grammar-thrift]
+[treesitter-grammar-textproto]
+fetch.git = "https://github.com/PorterAtGoogle/tree-sitter-textproto"
+src.git = "https://github.com/PorterAtGoogle/tree-sitter-textproto"
+
+[treesitter-grammar-thrift]
 fetch.git = "https://github.com/duskmoon314/tree-sitter-thrift"
 src.git = "https://github.com/duskmoon314/tree-sitter-thrift"
 
-[tree-sitter-grammar-tiger]
+[treesitter-grammar-tiger]
 fetch.git = "https://github.com/ambroisie/tree-sitter-tiger"
 src.git = "https://github.com/ambroisie/tree-sitter-tiger"
 
-[tree-sitter-grammar-tlaplus]
+[treesitter-grammar-tlaplus]
 fetch.git = "https://github.com/tlaplus-community/tree-sitter-tlaplus"
 src.git = "https://github.com/tlaplus-community/tree-sitter-tlaplus"
 
-[tree-sitter-grammar-todotxt]
+[treesitter-grammar-tmux]
+fetch.git = "https://github.com/Freed-Wu/tree-sitter-tmux"
+src.git = "https://github.com/Freed-Wu/tree-sitter-tmux"
+
+[treesitter-grammar-todotxt]
 fetch.git = "https://github.com/arnarg/tree-sitter-todotxt.git"
 src.git = "https://github.com/arnarg/tree-sitter-todotxt.git"
 
-[tree-sitter-grammar-toml]
-fetch.git = "https://github.com/ikatyang/tree-sitter-toml"
-src.git = "https://github.com/ikatyang/tree-sitter-toml"
+[treesitter-grammar-toml]
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-toml"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-toml"
 
-[tree-sitter-grammar-tsv]
+[treesitter-grammar-tsv]
 fetch.git = "https://github.com/amaanq/tree-sitter-csv"
 src.git = "https://github.com/amaanq/tree-sitter-csv"
-passthru.location = "tsv"
+[treesitter-grammar-tsv.passthru]
+location = "tsv"
 
-[tree-sitter-grammar-tsx]
+[treesitter-grammar-tsx]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-typescript"
 src.git = "https://github.com/tree-sitter/tree-sitter-typescript"
-passthru.location = "tsx"
+[treesitter-grammar-tsx.passthru]
+location = "tsx"
 
-[tree-sitter-grammar-turtle]
+[treesitter-grammar-turtle]
 fetch.git = "https://github.com/BonaBeavis/tree-sitter-turtle"
 src.git = "https://github.com/BonaBeavis/tree-sitter-turtle"
 
-[tree-sitter-grammar-twig]
+[treesitter-grammar-twig]
 fetch.git = "https://github.com/gbprod/tree-sitter-twig"
 src.git = "https://github.com/gbprod/tree-sitter-twig"
 
-[tree-sitter-grammar-typescript]
+[treesitter-grammar-typescript]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-typescript"
 src.git = "https://github.com/tree-sitter/tree-sitter-typescript"
-passthru.location = "typescript"
+[treesitter-grammar-typescript.passthru]
+location = "typescript"
 
-[tree-sitter-grammar-ungrammar]
+[treesitter-grammar-typespec]
+fetch.git = "https://github.com/happenslol/tree-sitter-typespec"
+src.git = "https://github.com/happenslol/tree-sitter-typespec"
+
+[treesitter-grammar-typoscript]
+fetch.git = "https://github.com/Teddytrombone/tree-sitter-typoscript"
+src.git = "https://github.com/Teddytrombone/tree-sitter-typoscript"
+
+[treesitter-grammar-typst]
+fetch.git = "https://github.com/uben0/tree-sitter-typst"
+src.git = "https://github.com/uben0/tree-sitter-typst"
+
+[treesitter-grammar-udev]
+fetch.git = "https://github.com/ObserverOfTime/tree-sitter-udev"
+src.git = "https://github.com/ObserverOfTime/tree-sitter-udev"
+
+[treesitter-grammar-ungrammar]
 fetch.git = "https://github.com/Philipp-M/tree-sitter-ungrammar"
 src.git = "https://github.com/Philipp-M/tree-sitter-ungrammar"
 
-[tree-sitter-grammar-unison]
+[treesitter-grammar-unison]
 fetch.git = "https://github.com/kylegoetz/tree-sitter-unison"
 src.git = "https://github.com/kylegoetz/tree-sitter-unison"
+[treesitter-grammar-unison.passthru]
+generate = "true"
 
-[tree-sitter-grammar-usd]
+[treesitter-grammar-usd]
 fetch.git = "https://github.com/ColinKennedy/tree-sitter-usd"
 src.git = "https://github.com/ColinKennedy/tree-sitter-usd"
 
-[tree-sitter-grammar-uxntal]
+[treesitter-grammar-uxntal]
 fetch.git = "https://github.com/amaanq/tree-sitter-uxntal"
 src.git = "https://github.com/amaanq/tree-sitter-uxntal"
 
-[tree-sitter-grammar-v]
-fetch.git = "https://github.com/v-analyzer/v-analyzer"
-src.git = "https://github.com/v-analyzer/v-analyzer"
-passthru.location = "tree_sitter_v"
+[treesitter-grammar-v]
+fetch.git = "https://github.com/vlang/v-analyzer"
+src.git = "https://github.com/vlang/v-analyzer"
+[treesitter-grammar-v.passthru]
+location = "tree_sitter_v"
 
-[tree-sitter-grammar-vala]
+[treesitter-grammar-vala]
 fetch.git = "https://github.com/vala-lang/tree-sitter-vala"
 src.git = "https://github.com/vala-lang/tree-sitter-vala"
 
-[tree-sitter-grammar-verilog]
+[treesitter-grammar-vento]
+fetch.git = "https://github.com/ventojs/tree-sitter-vento"
+src.git = "https://github.com/ventojs/tree-sitter-vento"
+
+[treesitter-grammar-verilog]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-verilog"
 src.git = "https://github.com/tree-sitter/tree-sitter-verilog"
 
-[tree-sitter-grammar-vhs]
+[treesitter-grammar-vhs]
 fetch.git = "https://github.com/charmbracelet/tree-sitter-vhs"
 src.git = "https://github.com/charmbracelet/tree-sitter-vhs"
 
-[tree-sitter-grammar-vim]
+[treesitter-grammar-vim]
 fetch.git = "https://github.com/neovim/tree-sitter-vim"
 src.git = "https://github.com/neovim/tree-sitter-vim"
 
-[tree-sitter-grammar-vimdoc]
+[treesitter-grammar-vimdoc]
 fetch.git = "https://github.com/neovim/tree-sitter-vimdoc"
 src.git = "https://github.com/neovim/tree-sitter-vimdoc"
 
-[tree-sitter-grammar-vue]
-fetch.git = "https://github.com/ikatyang/tree-sitter-vue"
-src.git = "https://github.com/ikatyang/tree-sitter-vue"
+[treesitter-grammar-vue]
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-vue"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-vue"
+src.branch = "main"
 
-[tree-sitter-grammar-wgsl]
+[treesitter-grammar-wgsl]
 fetch.git = "https://github.com/szebniok/tree-sitter-wgsl"
 src.git = "https://github.com/szebniok/tree-sitter-wgsl"
 
-[tree-sitter-grammar-wgsl_bevy]
+[treesitter-grammar-wgsl_bevy]
 fetch.git = "https://github.com/theHamsta/tree-sitter-wgsl-bevy"
 src.git = "https://github.com/theHamsta/tree-sitter-wgsl-bevy"
 
-[tree-sitter-grammar-wing]
-fetch.git = "https://github.com/winglang/wing"
-src.git = "https://github.com/winglang/wing"
-passthru.location = "libs/tree-sitter-wing"
+[treesitter-grammar-wing]
+fetch.git = "https://github.com/winglang/tree-sitter-wing"
+src.git = "https://github.com/winglang/tree-sitter-wing"
 
-[tree-sitter-grammar-xml]
-fetch.git = "https://github.com/ObserverOfTime/tree-sitter-xml"
-src.git = "https://github.com/ObserverOfTime/tree-sitter-xml"
-passthru.location = "tree-sitter-xml"
+[treesitter-grammar-wit]
+fetch.git = "https://github.com/liamwh/tree-sitter-wit"
+src.git = "https://github.com/liamwh/tree-sitter-wit"
 
-[tree-sitter-grammar-yaml]
-fetch.git = "https://github.com/ikatyang/tree-sitter-yaml"
-src.git = "https://github.com/ikatyang/tree-sitter-yaml"
+[treesitter-grammar-xcompose]
+fetch.git = "https://github.com/ObserverOfTime/tree-sitter-xcompose"
+src.git = "https://github.com/ObserverOfTime/tree-sitter-xcompose"
 
-[tree-sitter-grammar-yang]
+[treesitter-grammar-xml]
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-xml"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-xml"
+[treesitter-grammar-xml.passthru]
+location = "xml"
+
+[treesitter-grammar-yaml]
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-yaml"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-yaml"
+
+[treesitter-grammar-yang]
 fetch.git = "https://github.com/Hubro/tree-sitter-yang"
 src.git = "https://github.com/Hubro/tree-sitter-yang"
 
-[tree-sitter-grammar-yuck]
+[treesitter-grammar-yuck]
 fetch.git = "https://github.com/Philipp-M/tree-sitter-yuck"
 src.git = "https://github.com/Philipp-M/tree-sitter-yuck"
 
-[tree-sitter-grammar-zig]
+[treesitter-grammar-zathurarc]
+fetch.git = "https://github.com/Freed-Wu/tree-sitter-zathurarc"
+src.git = "https://github.com/Freed-Wu/tree-sitter-zathurarc"
+
+[treesitter-grammar-zig]
 fetch.git = "https://github.com/maxxnino/tree-sitter-zig"
 src.git = "https://github.com/maxxnino/tree-sitter-zig"
+

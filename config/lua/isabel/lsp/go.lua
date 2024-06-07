@@ -1,16 +1,20 @@
-local M = {}
+require("go").setup({
+  disable_defaults = false,
+  icons = {
+    breakpoint = " ",
+    currentpos = " ",
+  },
+  trouble = true,
+  luasnip = true,
+  dap_debug_keymap = false,
+  lsp_cfg = false,
+  lsp_keymaps = false,
+  lsp_inlay_hints = {
+    enable = true,
+    -- hint style, set to 'eol' for end-of-line hints, 'inlay' for inline hints
+    -- inlay only avalible for 0.10.x
+    style = "inlay",
+  },
+})
 
-M.setup = function(opts)
-  require("go").setup({
-    disable_defaults = false,
-    icons = {
-      breakpoint = " ",
-      currentpos = " ",
-    },
-    lsp_cfg = opts,
-    trouble = true,
-    luasnip = true,
-  })
-end
-
-return M
+require("lspconfig").gopls.setup(require("go.lsp").config())

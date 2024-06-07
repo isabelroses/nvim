@@ -1,128 +1,97 @@
 {
   callPackage,
   lib,
-  stdenv,
-  symlinkJoin,
+  runCommand,
   tree-sitter,
-  pkgs,
+  vimUtils,
+  wrapNeovimUnstable,
+  neovimUtils,
+  neovim-unwrapped,
+  grammars ? [ ],
 }:
 let
-  nvplugins = callPackage ../../_sources/generated.nix { };
-  nvgrammars = callPackage ./_sources/generated.nix { };
-  inherit (nvplugins) nvim-treesitter;
+  nv = callPackage ./_sources/generated.nix { };
+  grammarOverrides = callPackage ./grammar-overrides.nix { };
 
-  ts-generate = {
-    overrides.buildInputs = [ pkgs.nodejs ];
-    overrides.preBuild = "${tree-sitter}/bin/tree-sitter generate";
-  };
+  # get all grammars from the nvfetcher output
+  allGrammars = builtins.map (name: lib.removePrefix "treesitter-grammar-" name) (
+    (builtins.attrNames (
+      builtins.removeAttrs nv [
+        "nvim-treesitter"
+        "override"
+        "overrideDerivation"
+      ]
+    ))
+  );
 
-  grammars = {
-    arduino = { };
-    astro = { };
-    awk = { };
-    bash = { };
-    beancount = { };
-    c = { };
-    cpp = { };
-    # d = ts-generate;
-    css = { };
-    csv = { };
-    diff = { };
-    dockerfile = { };
-    git_config = { };
-    git_rebase = { };
-    gitattributes = { };
-    gitcommit = { };
-    gitignore = { };
-    go = { };
-    gomod = { };
-    gosum = { };
-    gotmpl = { };
-    gpg = { };
-    graphql = { };
-    haskell = { };
-    hlsl = { };
-    html = { };
-    javascript = { };
-    just = ts-generate;
-    jsdoc = { };
-    json = { };
-    jsonc = { };
-    lua = { };
-    make = { };
-    markdown = { };
-    markdown_inline = { };
-    norg = { };
-    norg_meta = { };
-    nu = { };
-    nix = { };
-    php = { };
-    pug = { };
-    python = { };
-    rust = { };
-    scss = { };
-    typescript = { };
-    tsv = { };
-    tsx = { };
-    svelte = { };
-    vue = { };
-    yaml = { };
-  };
+  grammarsToBuild = if grammars == [ ] then allGrammars else lib.intersectLists grammars allGrammars;
 
-  treesitterGrammars = lib.mapAttrsToList (
-    name: attrs:
-    stdenv.mkDerivation (
-      let
-        nvgrammar = nvgrammars."tree-sitter-grammar-${name}";
-        sourceRoot = if lib.hasAttr "location" nvgrammar then nvgrammar.location else ".";
-      in
+  # build each Grammar
+  treesitterGrammars = builtins.map (
+    name:
+    let
+      nvgrammar = nv."treesitter-grammar-${name}";
+    in
+    tree-sitter.buildGrammar (
       {
-        inherit (nvgrammar) pname version src;
-
-        buildInputs = [ tree-sitter ];
-
-        CFLAGS = [
-          "-Isrc"
-          "-O2"
-        ];
-        CXXFLAGS = [
-          "-Isrc"
-          "-O2"
-        ];
-
-        dontConfigure = true;
-
-        buildPhase = ''
-          runHook preBuild
-          cd ${sourceRoot}
-          if [[ -e "src/scanner.cc" ]]; then
-            $CXX -c "src/scanner.cc" -o scanner.o $CXXFLAGS
-          elif [[ -e "src/scanner.c" ]]; then
-            $CC -c "src/scanner.c" -o scanner.o $CFLAGS
-          fi
-          $CC -c "src/parser.c" -o parser.o $CFLAGS
-          $CXX -shared -o parser *.o
-          runHook postBuild
-        '';
-
-        installPhase = ''
-          runHook preInstall
-          mkdir -p $out/parser
-          mv parser $out/parser/${name}.so
-          runHook postInstall
-        '';
-
-        fixupPhase = lib.optionalString stdenv.isLinux ''
-          runHook preFixup
-          $STRIP $out/parser/${name}.so
-          runHook postFixup
-        '';
+        inherit (nvgrammar) src version;
+        language = name;
+        generate = lib.hasAttr "generate" nvgrammar;
+        location = nvgrammar.location or null;
       }
-      // attrs.overrides or { }
+      // grammarOverrides.${name} or { }
     )
-  ) grammars;
+  ) grammarsToBuild;
+
+  linkCommands = builtins.map (
+    grammar:
+    let
+      name = lib.removeSuffix "-grammar" grammar.pname;
+    in
+    ''
+      ln -sf ${grammar}/parser ./parser/${name}.so
+
+      # link queries when they only exist in the grammar repo
+      if [[ -d ${grammar}/queries ]] && [[ ! -d ./queries/${name} ]]; then
+        ln -sf ${grammar}/queries ./queries/${name}
+      fi
+    ''
+  ) treesitterGrammars;
+
+  # test config for Neovim with the derivation installed as a plugin
+  neovim = wrapNeovimUnstable neovim-unwrapped (
+    neovimUtils.makeNeovimConfig { plugins = [ nvim-treesitter ]; }
+  );
+
+  check-queries =
+    runCommand "check-queries"
+      {
+        nativeBuildInputs = [ neovim ];
+        env.CI = true;
+      }
+      ''
+        touch $out
+        export HOME=$(mktemp -d)
+        ln -s ${nvim-treesitter}/CONTRIBUTING.md .
+
+        nvim --headless "+luafile ${nvim-treesitter}/scripts/check-queries.lua" | tee log
+
+        if grep -q Warning log || grep -q Error log; then
+          echo "Error: warnings were emitted by the check"
+          exit 1
+        fi
+      '';
+
+  nvim-treesitter = vimUtils.buildVimPlugin {
+    inherit (nv.nvim-treesitter) pname version src;
+    postPatch = lib.concatStrings linkCommands;
+
+    passthru = {
+      grammars = treesitterGrammars;
+      tests = {
+        inherit check-queries;
+      };
+    };
+  };
 in
-symlinkJoin {
-  name = "nvim-tree-sitter";
-  paths = [ nvim-treesitter.src ] ++ treesitterGrammars;
-}
+(lib.checkListOfEnum "nvim-treesitter: grammars" allGrammars grammars) nvim-treesitter

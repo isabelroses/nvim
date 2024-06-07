@@ -151,7 +151,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 local common = { capabilities = capabilities }
 
-require("isabel.lsp.go").setup(common)
+require("isabel.lsp.go")
 require("isabel.lsp.ltex").setup(common)
 require("isabel.lsp.null-ls")
 require("isabel.lsp.nix").setup(common)
