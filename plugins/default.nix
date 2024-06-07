@@ -9,12 +9,6 @@ rec {
     priority = 1000;
   };
 
-  # what was that button again
-  which-key = {
-    src = srcs.which-key;
-    config = ./which-key.lua;
-  };
-
   # tree view
   nvim-tree = {
     src = srcs.nvim-tree-lua;
@@ -169,7 +163,7 @@ rec {
     src = srcs.telescope;
     config = ./telescope.lua;
     dependencies = {
-      inherit plenary nvim-web-devicons which-key;
+      inherit plenary nvim-web-devicons;
       telescope-fzf-native.package = pkgs.vimPlugins.telescope-fzf-native-nvim;
       telescope-project.src = srcs.telescope-project;
       telescope-ui-select.src = srcs.telescope-ui-select;
@@ -258,9 +252,6 @@ rec {
     src = srcs.rustaceanvim;
     config = ./rust.lua;
     ft = "rust";
-    dependencies = {
-      inherit which-key;
-    };
   };
   rust-vim = {
     src = srcs.rust-vim;
@@ -334,8 +325,12 @@ rec {
   };
 
   # misc
-  undotree.src = srcs.undotree; # undo tree
-  vim-just.src = srcs.vim-just; # justfile support
+  undotree = {
+    src = srcs.undotree;
+    config = ''
+      vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+    '';
+  };
 
   # track my time coding
   wakatime = {
@@ -377,7 +372,7 @@ rec {
   freeze = {
     src = srcs.freeze-nvim;
     paths = [ pkgs.charm-freeze ];
-    lazy = true;
+    event = "VeryLazy";
     config = ./freeze.lua;
   };
 

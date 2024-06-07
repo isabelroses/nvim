@@ -1,21 +1,11 @@
 vim.g.rustaceanvim = {
   on_attach = function(client, bufnr)
-    -- register which-key mappings
-    local wk = require("which-key")
-    wk.register({
-      ["<leader>cR"] = {
-        function()
-          vim.cmd.RustLsp("codeAction")
-        end,
-        "Code Action",
-      },
-      ["<leader>dr"] = {
-        function()
-          vim.cmd.RustLsp("debuggables")
-        end,
-        "Rust debuggables",
-      },
-    }, { mode = "n", buffer = bufnr })
+    vim.keymap.set("n", "<leader>cR", function()
+      vim.cmd.RustLsp("codeAction")
+    end)
+    vim.keymap.set("n", "<leader>dr", function()
+      vim.cmd.RustLsp("debuggables")
+    end, { buffer = bufnr })
   end,
   settings = {
     -- rust-analyzer language server configuration

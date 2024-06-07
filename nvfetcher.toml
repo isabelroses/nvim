@@ -228,7 +228,3 @@ src.git = "https://github.com/tpope/vim-fugitive"
 [vim-just]
 fetch.github = "NoahTheDuke/vim-just"
 src.git = "https://github.com/NoahTheDuke/vim-just"
-
-[which-key]
-fetch.github = "folke/which-key.nvim"
-src.git = "https://github.com/folke/which-key.nvim"

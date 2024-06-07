@@ -1,9 +1,5 @@
 return function()
-  local wk = require("which-key")
-
-  wk.register({
-    ["<leader>sc"] = { ":Freeze<cr>", "Snapshot code" },
-  }, { mode = "v" })
+  vim.keymap.set("v", "<leader>sc", "<cmd>Freeze<cr>")
 
   require("freeze").setup({
     output = function()

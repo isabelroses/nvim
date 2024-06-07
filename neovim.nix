@@ -1,6 +1,6 @@
 {
   config.perSystem =
-    { pkgs, ... }:
+    { lib, pkgs, ... }:
     {
       neovim = {
         package = pkgs.neovim-unwrapped;
@@ -54,6 +54,28 @@
           nodePackages.yaml-language-server # yaml
           nushell
         ];
+
+        build =
+          let
+            env = pkgs.buildEnv {
+              name = "neovim-host-prog";
+              paths = [ pkgs.nodePackages.neovim ] ++ [ (pkgs.python3.withPackages (ps: with ps; [ pynvim ])) ];
+            };
+          in
+          lib.mkForce {
+            before = pkgs.writeTextFile {
+              name = "before.lua";
+              text = ''
+                -- set space as leader
+                vim.g.mapleader = " "
+                vim.g.maplocalleader = " "
+
+                -- this defaults to this and we want to keep it that way
+                vim.g.node_host_prog = "${env}/bin/neovim-node-host"
+                vim.g.python3_host_prog = "${env}/bin/python"
+              '';
+            };
+          };
 
         lazy = {
           settings.install.colorscheme = [ "catppuccin" ];

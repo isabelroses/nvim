@@ -36,7 +36,7 @@ return function()
         enabled = true,
         transparent_panel = true,
       },
-      which_key = true,
+      which_key = false,
       indent_blankline = {
         enabled = true,
         colored_indent_levels = true,
