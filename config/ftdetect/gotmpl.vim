@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead * if search('{{.\+}}', 'nw') | setlocal filetype=gohtmltmpl | endif
+au BufNewFile,BufRead *.tmpl :setl ft=gohtmltmpl
