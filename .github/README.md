@@ -11,3 +11,6 @@ nix run github:isabelroses/nvim
 ### Thanks to
 - [nekowinston](https://github.com/nekowinston/neovim.drv)
 - [notashelf](https://github.com/NotAShelf/neovim-flake)
+- [getchoo](https://github.com/getchoo)
+- [vdbe](https://github.com/vdbe)
+- [willruggiano](https://github.com/willruggiano)
