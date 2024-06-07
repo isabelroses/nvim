@@ -18,6 +18,7 @@ rec {
   # tree view
   nvim-tree = {
     src = srcs.nvim-tree-lua;
+    event = "VeryLazy";
     config = {
       sync_root_with_cwd = true;
       diagnostics.enable = true;
@@ -367,10 +368,16 @@ rec {
   #   event = "VeryLazy";
   # };
 
+  # cool snippets saving
+  sayama-nvim = {
+    src = srcs.sayama-nvim;
+    config.dir = "$XDG_DATA_HOME/zzz";
+  };
+
   freeze = {
     src = srcs.freeze-nvim;
     paths = [ pkgs.charm-freeze ];
-    event = "VeryLazy";
+    lazy = true;
     config = ./freeze.lua;
   };
 

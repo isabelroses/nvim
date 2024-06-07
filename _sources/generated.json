@@ -859,6 +859,26 @@
         },
         "version": "d69653afc99e9c0cb6be0d1f26499a787f00a78d"
     },
+    "sayama-nvim": {
+        "cargoLocks": null,
+        "date": "2024-05-30",
+        "extract": null,
+        "name": "sayama-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "comfysage",
+            "repo": "sayama.nvim",
+            "rev": "39175a766dfc80324d3130d27c3e7922f826226e",
+            "sha256": "sha256-Rxjg6RvcN5JOP5CTv7Jj7AQJv36zRMaHiFEwhiBVgfw=",
+            "type": "github"
+        },
+        "version": "39175a766dfc80324d3130d27c3e7922f826226e"
+    },
     "schemastore": {
         "cargoLocks": null,
         "date": "2024-06-05",

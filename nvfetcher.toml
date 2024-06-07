@@ -172,6 +172,10 @@ src.git = "https://github.com/mrcjkb/rustaceanvim"
 fetch.github = "rust-lang/rust.vim"
 src.git = "https://github.com/rust-lang/rust.vim"
 
+[sayama-nvim]
+fetch.github = "comfysage/sayama.nvim"
+src.git = "https://github.com/comfysage/sayama.nvim"
+
 [schemastore]
 fetch.github = "b0o/schemastore.nvim"
 src.git = "https://github.com/b0o/schemastore.nvim"

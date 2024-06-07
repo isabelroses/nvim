@@ -517,6 +517,18 @@
     };
     date = "2024-06-05";
   };
+  sayama-nvim = {
+    pname = "sayama-nvim";
+    version = "39175a766dfc80324d3130d27c3e7922f826226e";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "sayama.nvim";
+      rev = "39175a766dfc80324d3130d27c3e7922f826226e";
+      fetchSubmodules = false;
+      sha256 = "sha256-Rxjg6RvcN5JOP5CTv7Jj7AQJv36zRMaHiFEwhiBVgfw=";
+    };
+    date = "2024-05-30";
+  };
   schemastore = {
     pname = "schemastore";
     version = "d9fd6651b47b68bfc1b952f81a0fdded3cb205b2";
