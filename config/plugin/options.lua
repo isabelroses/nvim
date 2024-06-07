@@ -74,50 +74,49 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
 vim.opt.undofile = true
 
--- stylua: ignore
 local borderchars = {
-    single  = {
-        style = "single",
-        vert = "│",
-        vertleft = "┤",
-        vertright = "├",
-        horiz = "─",
-        horizup = "┴",
-        horizdown = "┬",
-        verthoriz = "┼",
-        topleft = "┌",
-        topright = "┐",
-        botleft = "└",
-        botright = "┘"
-    },
-    double  = {
-        style = "double",
-        vert = "║",
-        vertleft = "╣",
-        vertright = "╠",
-        horiz = "═",
-        horizup = "╩",
-        horizdown = "╦",
-        verthoriz = "╬",
-        topleft = "╔",
-        topright = "╗",
-        botleft = "╚",
-        botright = "╝"
-    },
-    rounded = {
-        style = "rounded",
-        vert = "│",
-        vertleft = "┤",
-        vertright = "├",
-        horiz = "─",
-        horizup = "┴",
-        horizdown = "┬",
-        verthoriz = "┼",
-        topleft = "╭",
-        topright = "╮",
-        botleft = "╰",
-        botright = "╯"
-    },
+  single = {
+    style = "single",
+    vert = "│",
+    vertleft = "┤",
+    vertright = "├",
+    horiz = "─",
+    horizup = "┴",
+    horizdown = "┬",
+    verthoriz = "┼",
+    topleft = "┌",
+    topright = "┐",
+    botleft = "└",
+    botright = "┘",
+  },
+  double = {
+    style = "double",
+    vert = "║",
+    vertleft = "╣",
+    vertright = "╠",
+    horiz = "═",
+    horizup = "╩",
+    horizdown = "╦",
+    verthoriz = "╬",
+    topleft = "╔",
+    topright = "╗",
+    botleft = "╚",
+    botright = "╝",
+  },
+  rounded = {
+    style = "rounded",
+    vert = "│",
+    vertleft = "┤",
+    vertright = "├",
+    horiz = "─",
+    horizup = "┴",
+    horizdown = "┬",
+    verthoriz = "┼",
+    topleft = "╭",
+    topright = "╮",
+    botleft = "╰",
+    botright = "╯",
+  },
 }
 
 -- my custom borderchars
