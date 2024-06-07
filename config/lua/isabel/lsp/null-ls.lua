@@ -8,7 +8,6 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local sources = {
   null.builtins.formatting.nixfmt,
-  null.builtins.formatting.dfmt,
   null.builtins.formatting.gofumpt,
   null.builtins.formatting.prettier.with({
     filetypes = {
