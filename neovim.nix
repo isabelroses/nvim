@@ -39,7 +39,9 @@
           nodePackages.vscode-langservers-extracted
 
           # nix
-          nixd
+          nil
+          statix
+          deadnix
           nixfmt-rfc-style
 
           # etc

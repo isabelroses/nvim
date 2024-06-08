@@ -8,8 +8,16 @@
     pre-commit-nix = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs = {
-        flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "flake-compat";
+      };
+    };
+
+    nil = {
+      url = "github:oxalica/nil";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
       };
     };
 
@@ -65,7 +73,10 @@
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [ (_: p: { nekowinston = import inputs.nekowinston-nur { inherit (p) pkgs; }; }) ];
+            overlays = [
+              inputs.nil.overlays.default
+              (_: p: { nekowinston = import inputs.nekowinston-nur { inherit (p) pkgs; }; })
+            ];
           };
 
           checks = {
@@ -87,6 +98,9 @@
               inherit (self'.checks.pre-commit-check) shellHook;
               buildInputs = with pkgs; [
                 self'.formatter
+                nil
+                statix
+                deadnix
                 nvfetcher
                 nix-tree
               ];

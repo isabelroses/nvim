@@ -7,8 +7,15 @@ end
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local sources = {
+  -- nix
   null.builtins.formatting.nixfmt,
+  null.builtins.diagnostics.statix,
+  null.builtins.diagnostics.deadnix,
+
+  -- go
   null.builtins.formatting.gofumpt,
+
+  -- webdev
   null.builtins.formatting.prettier.with({
     filetypes = {
       "html",
@@ -16,8 +23,14 @@ local sources = {
       "vue",
     },
   }),
+
+  -- shell
   null.builtins.formatting.shfmt,
+
+  -- lua
   null.builtins.formatting.stylua,
+
+  -- docs
   null.builtins.diagnostics.alex,
   null.builtins.diagnostics.proselint,
 }
