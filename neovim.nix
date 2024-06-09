@@ -14,7 +14,7 @@
 
           # python
           ruff
-          nodePackages.pyright
+          pyright
 
           # lua
           stylua
