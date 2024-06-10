@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "beapkgs": {
+      "inputs": {
+        "flake-compat": [],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1717978947,
+        "narHash": "sha256-JBDS0q6xiKMGbYZy1KYzpSmWNtWtXsl9CyasUdSestk=",
+        "owner": "isabelroses",
+        "repo": "beapkgs",
+        "rev": "795cbe7ff00d6c3e0a61e4beacddf8aa0d993262",
+        "type": "github"
+      },
+      "original": {
+        "owner": "isabelroses",
+        "repo": "beapkgs",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -86,27 +107,6 @@
       "original": {
         "owner": "folke",
         "repo": "lazy.nvim",
-        "type": "github"
-      }
-    },
-    "nekowinston-nur": {
-      "inputs": {
-        "fenix": [],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1717233163,
-        "narHash": "sha256-mTWAuqVKJtSuw7RFMeqXoLxh0A5tMGzzhzEpWkzD2UY=",
-        "owner": "nekowinston",
-        "repo": "nur",
-        "rev": "de24cf2ef1401f364ca5de736c551b9b90021d51",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nekowinston",
-        "repo": "nur",
         "type": "github"
       }
     },
@@ -233,10 +233,10 @@
     },
     "root": {
       "inputs": {
+        "beapkgs": "beapkgs",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",
-        "nekowinston-nur": "nekowinston-nur",
         "neovim-nix": "neovim-nix",
         "nil": "nil",
         "nixpkgs": "nixpkgs",
