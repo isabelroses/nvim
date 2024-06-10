@@ -35,6 +35,8 @@ map("n", "<leader>fs", "<cmd>SessionManager load_session<cr>") -- Show nvim sess
 -- map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- search help tags
 map("n", "<leader>fp", "<cmd>Telescope project<cr>") -- skip to project
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>") -- live grep but for TODOs and FIXMEs
+map("n", "<leader>fc", "<cmd>Telescope git_commits<cr>") -- git commits
+map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<cr>") -- fuzzy find in current buffer
 
 -- save file
 map("n", "<C-s>", "<cmd>w<cr>")

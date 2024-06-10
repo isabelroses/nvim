@@ -7,6 +7,13 @@ end
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local sources = {
+  -- general
+  null.builtins.formatting.treefmt.with({
+    condition = function(utils)
+      return utils.root_has_file("treefmt.toml")
+    end,
+  }),
+
   -- nix
   null.builtins.formatting.nixfmt,
   null.builtins.diagnostics.statix,

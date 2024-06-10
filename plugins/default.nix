@@ -253,10 +253,6 @@ rec {
     config = ./rust.lua;
     ft = "rust";
   };
-  rust-vim = {
-    src = srcs.rust-vim;
-    ft = "rust";
-  };
 
   nvim-lspconfig = {
     src = srcs.nvim-lspconfig;

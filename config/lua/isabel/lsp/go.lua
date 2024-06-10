@@ -13,7 +13,7 @@ require("go").setup({
     enable = true,
     -- hint style, set to 'eol' for end-of-line hints, 'inlay' for inline hints
     -- inlay only avalible for 0.10.x
-    style = "inlay",
+    style = "eol",
   },
 })
 
