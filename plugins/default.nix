@@ -311,7 +311,7 @@ rec {
           "gohtmltmpl"
           "gotexttmpl"
         ];
-        paths = [ pkgs.nekowinston.gonvim-tools ];
+        paths = [ pkgs.gonvim-tools ];
         dependencies.guihua-lua.src = srcs.guihua-lua;
       };
     };

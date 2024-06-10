@@ -30,12 +30,9 @@
       };
     };
 
-    nekowinston-nur = {
-      url = "github:nekowinston/nur";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        fenix.follows = "";
-      };
+    beapkgs = {
+      url = "github:isabelroses/beapkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # maintenance
@@ -75,7 +72,7 @@
             config.allowUnfree = true;
             overlays = [
               inputs.nil.overlays.default
-              (_: p: { nekowinston = import inputs.nekowinston-nur { inherit (p) pkgs; }; })
+              inputs.beapkgs.overlays.default
             ];
           };
 
@@ -131,12 +128,10 @@
   nixConfig = {
     extra-substituters = [
       "https://pre-commit-hooks.cachix.org"
-      "https://nekowinston.cachix.org"
       "https://isabelroses.cachix.org"
     ];
     extra-trusted-public-keys = [
       "pre-commit-hooks.cachix.org-1:Pkk3Panw5AW24TOv6kz3PvLhlH8puAsJTBbOPmBo7Rc="
-      "nekowinston.cachix.org-1:lucpmaO+JwtoZj16HCO1p1fOv68s/RL1gumpVzRHRDs="
       "isabelroses.cachix.org-1:mXdV/CMcPDaiTmkQ7/4+MzChpOe6Cb97njKmBQQmLPM="
     ];
   };
