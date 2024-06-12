@@ -102,6 +102,12 @@ rec {
     priority = 1000;
   };
 
+  # evergarden = {
+  #   src = srcs.evergarden;
+  #   config = ./evergarden.lua;
+  #   priority = 1000;
+  # };
+
   fidget = {
     src = srcs.fidget;
     event = "VeryLazy";
@@ -182,6 +188,11 @@ rec {
   # copilot-cmp.src = srcs.copilot-cmp;
   copilot-lua = {
     src = srcs.copilot-lua;
+    enabled = ''
+      function()
+        return vim.fn.glob("~/.config/gh/config.yml") ~= "" or vim.fn.glob("$XDG_CONFIG_HOME/gh/config.yml") ~= ""
+      end
+    '';
     config = ./copilot.lua;
     event = "InsertEnter";
   };

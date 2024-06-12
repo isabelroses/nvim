@@ -7,6 +7,11 @@ vim.g.rustaceanvim = {
       vim.cmd.RustLsp("debuggables")
     end, { buffer = bufnr })
   end,
+  tools = {
+    float_win_config = {
+      border = "rounded",
+    },
+  },
   settings = {
     -- rust-analyzer language server configuration
     ["rust-analyzer"] = {

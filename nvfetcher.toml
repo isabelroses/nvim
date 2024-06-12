@@ -50,6 +50,10 @@ src.git = "https://github.com/saecki/crates.nvim"
 fetch.github = "gpanders/editorconfig.nvim"
 src.git = "https://github.com/gpanders/editorconfig.nvim"
 
+[evergarden]
+fetch.github = "comfysage/evergarden"
+src.git = "https://github.com/comfysage/evergarden"
+
 [fidget]
 fetch.github = "j-hui/fidget.nvim"
 src.git = "https://github.com/j-hui/fidget.nvim"

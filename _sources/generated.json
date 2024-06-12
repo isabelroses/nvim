@@ -239,6 +239,26 @@
         },
         "version": "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf"
     },
+    "evergarden": {
+        "cargoLocks": null,
+        "date": "2024-06-11",
+        "extract": null,
+        "name": "evergarden",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "comfysage",
+            "repo": "evergarden",
+            "rev": "2bf81fda8da86fac55310255201728c49fe585bd",
+            "sha256": "sha256-oZIirTxFRRGn1f1jXOAZHi8ih4nQEgsTDVwYzWR2coM=",
+            "type": "github"
+        },
+        "version": "2bf81fda8da86fac55310255201728c49fe585bd"
+    },
     "fidget": {
         "cargoLocks": null,
         "date": "2023-11-09",

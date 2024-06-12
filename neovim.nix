@@ -28,8 +28,6 @@
           nodePackages.volar
           nodePackages."@astrojs/language-server"
           nodePackages."@tailwindcss/language-server"
-          nodePackages.alex
-          nodePackages.bash-language-server
           nodePackages.dockerfile-language-server-nodejs
           nodePackages.graphql
           nodePackages.graphql-language-service-cli
@@ -38,23 +36,29 @@
           nodePackages.typescript-language-server
           nodePackages.vscode-langservers-extracted
 
+          # markdown / latex
+          ltex-ls
+          nodePackages.alex
+          marksman
+
           # nix
           nil
           statix
           deadnix
           nixfmt-rfc-style
 
+          # shell
+          shfmt
+          shellcheck
+          nodePackages.bash-language-server
+
           # etc
           emmet-ls
-          ltex-ls
           nodePackages.prettier
           proselint
-          shellcheck
-          marksman # markdown
-          shfmt
+          jq-lsp # json
           taplo # toml
           nodePackages.yaml-language-server # yaml
-          nushell
         ];
 
         build =
@@ -80,7 +84,7 @@
           };
 
         lazy = {
-          settings.install.colorscheme = [ "catppuccin" ];
+          settings.dev.path = "~/dev/nvim";
           plugins = import ./plugins { inherit pkgs; };
         };
       };
