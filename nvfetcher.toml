@@ -6,10 +6,6 @@ src.git = "https://github.com/goolord/alpha-nvim"
 fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"
 
-[freeze-nvim]
-fetch.github = "charm-community/freeze.nvim"
-src.git = "https://github.com/charm-community/freeze.nvim"
-
 [cloak]
 fetch.github = "laytan/cloak.nvim"
 src.git = "https://github.com/laytan/cloak.nvim"
@@ -34,13 +30,13 @@ src.git = "https://github.com/hrsh7th/cmp-path"
 fetch.github = "saadparwaiz1/cmp_luasnip"
 src.git = "https://github.com/saadparwaiz1/cmp_luasnip"
 
-[copilot-lua]
-fetch.github = "zbirenbaum/copilot.lua"
-src.git = "https://github.com/zbirenbaum/copilot.lua"
-
 [copilot-cmp]
 fetch.github = "zbirenbaum/copilot-cmp"
 src.git = "https://github.com/zbirenbaum/copilot-cmp"
+
+[copilot-lua]
+fetch.github = "zbirenbaum/copilot.lua"
+src.git = "https://github.com/zbirenbaum/copilot.lua"
 
 [crates]
 fetch.github = "saecki/crates.nvim"
@@ -59,6 +55,10 @@ fetch.github = "j-hui/fidget.nvim"
 src.git = "https://github.com/j-hui/fidget.nvim"
 src.branch = "legacy"
 
+[freeze-nvim]
+fetch.github = "charm-community/freeze.nvim"
+src.git = "https://github.com/charm-community/freeze.nvim"
+
 [go-nvim]
 fetch.github = "ray-x/go.nvim"
 src.git = "https://github.com/ray-x/go.nvim"
@@ -71,6 +71,10 @@ src.git = "https://github.com/ray-x/guihua.lua"
 fetch.github = "ThePrimeagen/harpoon"
 src.git = "https://github.com/ThePrimeagen/harpoon"
 src.branch = "harpoon2"
+
+[indent-blankline]
+fetch.github = "lukas-reineke/indent-blankline.nvim"
+src.git = "https://github.com/lukas-reineke/indent-blankline.nvim"
 
 [lazy]
 fetch.github = "folke/lazy.nvim"
@@ -99,10 +103,6 @@ src.git = "https://github.com/nvim-lualine/lualine.nvim"
 [luasnip]
 fetch.github = "L3MON4D3/LuaSnip"
 src.git = "https://github.com/L3MON4D3/LuaSnip"
-
-[indent-blankline]
-fetch.github = "lukas-reineke/indent-blankline.nvim"
-src.git = "https://github.com/lukas-reineke/indent-blankline.nvim"
 
 [neodev]
 fetch.github = "folke/neodev.nvim"
@@ -204,14 +204,14 @@ src.git = "https://github.com/rachartier/tiny-devicons-auto-colors.nvim"
 fetch.github = "folke/todo-comments.nvim"
 src.git = "https://github.com/folke/todo-comments.nvim"
 
-[trouble]
-fetch.github = "folke/trouble.nvim"
-src.git = "https://github.com/folke/trouble.nvim"
-
 [tree-sitter-nu]
 fetch.git = "https://github.com/nushell/tree-sitter-nu"
 src.git = "https://github.com/nushell/tree-sitter-nu"
 src.branch = "main"
+
+[trouble]
+fetch.github = "folke/trouble.nvim"
+src.git = "https://github.com/folke/trouble.nvim"
 
 [typescript-tools]
 fetch.github = "pmizio/typescript-tools.nvim"
