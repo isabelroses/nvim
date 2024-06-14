@@ -267,11 +267,7 @@ rec {
 
   nvim-lspconfig = {
     src = srcs.nvim-lspconfig;
-    config = ''
-      function()
-        require("isabel.lsp")
-      end
-    '';
+    config = ./lsp.lua;
 
     event = "VeryLazy";
     dependencies = {
