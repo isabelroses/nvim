@@ -25,6 +25,7 @@
       url = "github:nekowinston/neovim.nix/dev";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        lazy-nvim.follows = "";
         flake-parts.follows = "flake-parts";
         pre-commit-nix.follows = "pre-commit-nix";
       };
