@@ -45,6 +45,7 @@ return function()
         "%.jpg",
         "%.jpeg",
         "%.png",
+        "%.age",
         "%.svg",
         "%.otf",
         "%.ttf",
