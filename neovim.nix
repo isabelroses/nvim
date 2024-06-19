@@ -1,8 +1,14 @@
 {
   config.perSystem =
-    { lib, pkgs, ... }:
+    {
+      lib,
+      pkgs,
+      # inputs',
+      ...
+    }:
     {
       neovim = {
+        # package = inputs'.neovim-nightly-overlay.packages.default;
         package = pkgs.neovim-unwrapped;
 
         paths = with pkgs; [

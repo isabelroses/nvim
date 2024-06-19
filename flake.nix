@@ -3,13 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
 
     pre-commit-nix = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "flake-compat";
+        flake-compat.follows = "";
       };
     };
 
@@ -20,6 +23,16 @@
         flake-utils.follows = "flake-utils";
       };
     };
+
+    # neovim-nightly-overlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    #   inputs = {
+    #     nixpkgs.follows = "nixpkgs";
+    #     flake-parts.follows = "flake-parts";
+    #     git-hooks.follows = "pre-commit-nix";
+    #     flake-compat.follows = "";
+    #   };
+    # };
 
     neovim-nix = {
       url = "github:nekowinston/neovim.nix/dev";
@@ -41,10 +54,6 @@
 
     # maintenance
     flake-utils.url = "github:numtide/flake-utils";
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
   };
 
   outputs =
