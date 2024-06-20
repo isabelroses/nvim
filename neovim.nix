@@ -30,6 +30,7 @@
 
           # webdev
           deno
+          emmet-language-server
           nodePackages.nodejs
           nodePackages.volar
           nodePackages."@astrojs/language-server"
