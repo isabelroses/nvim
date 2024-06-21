@@ -57,7 +57,7 @@
           # shell
           shfmt
           shellcheck
-          nodePackages.bash-language-server
+          bash-language-server
 
           # etc
           emmet-ls
