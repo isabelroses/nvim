@@ -66,6 +66,7 @@
           jq-lsp # json
           taplo # toml
           nodePackages.yaml-language-server # yaml
+          haskell-language-server
         ];
 
         build =
