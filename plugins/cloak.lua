@@ -9,7 +9,10 @@ return function()
         -- Match any file starting with ".env".
         -- This can be a table to match multiple file patterns.
         file_pattern = {
-          ".env*",
+          ".env",
+          ".env.local",
+          ".env.dev",
+          ".env.development",
           "wrangler.toml",
           ".dev.vars",
           "secrets.yaml",
