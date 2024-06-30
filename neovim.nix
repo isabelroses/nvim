@@ -31,8 +31,8 @@
           # webdev
           deno
           emmet-language-server
+          vue-language-server
           nodePackages.nodejs
-          nodePackages.volar
           nodePackages."@astrojs/language-server"
           nodePackages."@tailwindcss/language-server"
           nodePackages.dockerfile-language-server-nodejs
