@@ -396,12 +396,5 @@ rec {
     src = srcs.nvim-web-devicons;
     config = ./nvim-web-devicons.lua;
     event = "VeryLazy";
-    dependencies = {
-      tiny-devicons-auto-colors-nvim = {
-        src = srcs.tiny-devicons-auto-colors-nvim;
-        event = "VeryLazy";
-      };
-      inherit catppuccin;
-    };
   };
 }

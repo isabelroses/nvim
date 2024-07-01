@@ -1,42 +1,44 @@
 return function()
-  local C = require("catppuccin.palettes").get_palette()
+  local ctp_present, ctp_pallets = pcall(require, "catppuccin.palettes")
 
-  local justfile = {
-    icon = "󱚣",
-    name = "Justfile",
-    color = C.peach,
-  }
+  if ctp_present then
+    local C = ctp_pallets.get_palette()
 
-  require("tiny-devicons-auto-colors").setup({
-    colors = C,
-  })
+    local justfile = {
+      icon = "󱚣",
+      name = "Justfile",
+      color = C.peach,
+    }
 
-  require("nvim-web-devicons").setup({
-    override_by_filename = {
-      [".ecrc"] = {
-        icon = "",
-        name = "EditorConfigChecker",
-        color = C.green,
+    require("nvim-web-devicons").setup({
+      override_by_filename = {
+        [".ecrc"] = {
+          icon = "",
+          name = "EditorConfigChecker",
+          color = C.green,
+        },
+        [".envrc"] = {
+          icon = "",
+          name = "envrc",
+          color = C.yellow,
+        },
+        [".editorconfig"] = {
+          icon = "",
+          name = "EditorConfig",
+          color = C.green,
+        },
+        [".luacheckrc"] = {
+          icon = "󰢱",
+          name = "LuacheckRC",
+          color = C.blue,
+        },
+        [".Justfile"] = justfile,
+        [".justfile"] = justfile,
+        ["Justfile"] = justfile,
+        ["justfile"] = justfile,
       },
-      [".envrc"] = {
-        icon = "",
-        name = "envrc",
-        color = C.yellow,
-      },
-      [".editorconfig"] = {
-        icon = "",
-        name = "EditorConfig",
-        color = C.green,
-      },
-      [".luacheckrc"] = {
-        icon = "󰢱",
-        name = "LuacheckRC",
-        color = C.blue,
-      },
-      [".Justfile"] = justfile,
-      [".justfile"] = justfile,
-      ["Justfile"] = justfile,
-      ["justfile"] = justfile,
-    },
-  })
+    })
+  else
+    require("nvim-web-devicons").setup()
+  end
 end

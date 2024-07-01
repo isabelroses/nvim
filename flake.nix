@@ -137,15 +137,4 @@
             };
         };
     };
-
-  nixConfig = {
-    extra-substituters = [
-      "https://pre-commit-hooks.cachix.org"
-      "https://isabelroses.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "pre-commit-hooks.cachix.org-1:Pkk3Panw5AW24TOv6kz3PvLhlH8puAsJTBbOPmBo7Rc="
-      "isabelroses.cachix.org-1:mXdV/CMcPDaiTmkQ7/4+MzChpOe6Cb97njKmBQQmLPM="
-    ];
-  };
 }
