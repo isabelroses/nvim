@@ -15,16 +15,16 @@ let
 
   # get all grammars from the nvfetcher output
   allGrammars = builtins.map (name: lib.removePrefix "treesitter-grammar-" name) (
-    (builtins.attrNames (
+    builtins.attrNames (
       builtins.removeAttrs nv [
         "nvim-treesitter"
         "override"
         "overrideDerivation"
       ]
-    ))
+    )
   );
 
-  grammarsToBuild = if grammars == [ ] then allGrammars else lib.intersectLists grammars allGrammars;
+  grammarsToBuild = lib.intersectLists grammars allGrammars;
 
   # build each Grammar
   treesitterGrammars = builtins.map (
