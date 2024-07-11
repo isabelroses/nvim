@@ -9,11 +9,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1720571746,
-        "narHash": "sha256-b0dVoC3FQOmpkRAxYkGEiNySX/9APEYHRg/HuJT5qfg=",
+        "lastModified": 1720744498,
+        "narHash": "sha256-dzZ4TPjmeovu+EoFzupgkbeZcIgB1pgSFfsaBg2APG8=",
         "owner": "isabelroses",
         "repo": "beapkgs",
-        "rev": "3e9aa9974f3f75e65cff252fee63336f6b25f5d0",
+        "rev": "c3daf22f36ea5f5475ea1915fc467c8686e4dbd5",
         "type": "github"
       },
       "original": {
@@ -60,10 +60,33 @@
         "type": "github"
       }
     },
+    "git-hooks": {
+      "inputs": {
+        "flake-compat": [],
+        "gitignore": "gitignore",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": "nixpkgs-stable"
+      },
+      "locked": {
+        "lastModified": 1720524665,
+        "narHash": "sha256-ni/87oHPZm6Gv0ECYxr1f6uxB0UKBWJ6HvS7lwLU6oY=",
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "rev": "8d6a17d0cdf411c55f12602624df6368ad86fac1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
-          "pre-commit-nix",
+          "git-hooks",
           "nixpkgs"
         ]
       },
@@ -86,24 +109,23 @@
         "flake-parts": [
           "flake-parts"
         ],
-        "lazy-nvim": [],
+        "git-hooks": [
+          "git-hooks"
+        ],
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "pre-commit-nix": [
-          "pre-commit-nix"
         ]
       },
       "locked": {
-        "lastModified": 1716847783,
-        "narHash": "sha256-CVebsLDw+WWoM+bMefNpc1NZ6HSJnvKJtGemrRVohgI=",
-        "owner": "nekowinston",
+        "lastModified": 1720768802,
+        "narHash": "sha256-ct6u7Deyr69F/xNrd/WFP+D7qjZmnlNW122GiMb3bR0=",
+        "owner": "isabelroses",
         "repo": "neovim.nix",
-        "rev": "80cdf1480b9bfcd2c8b744a6fcb229b62fb2eb0a",
+        "rev": "381f8ab10e147a11c007fc53d6f39014462cdf6d",
         "type": "github"
       },
       "original": {
-        "owner": "nekowinston",
+        "owner": "isabelroses",
         "ref": "dev",
         "repo": "neovim.nix",
         "type": "github"
@@ -135,16 +157,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1718428119,
-        "narHash": "sha256-WdWDpNaq6u1IPtxtYHHWpl5BmabtpmLnMAx0RdJ/vo8=",
+        "lastModified": 1720542800,
+        "narHash": "sha256-ZgnNHuKV6h2+fQ5LuqnUaqZey1Lqqt5dTUAiAnqH0QQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e6cea36f83499eb4e9cd184c8a8e823296b50ad5",
+        "rev": "feb2849fdeb70028c70d73b848214b00d324a497",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -165,66 +187,30 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1720418205,
-        "narHash": "sha256-cPJoFPXU44GlhWg4pUk9oUPqurPlCFZ11ZQPk21GTPU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "655a58a72a6601292512670343087c2d75d859c1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "pre-commit-nix": {
-      "inputs": {
-        "flake-compat": [],
-        "gitignore": "gitignore",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nixpkgs-stable": "nixpkgs-stable"
-      },
-      "locked": {
-        "lastModified": 1720524665,
-        "narHash": "sha256-ni/87oHPZm6Gv0ECYxr1f6uxB0UKBWJ6HvS7lwLU6oY=",
-        "owner": "cachix",
-        "repo": "pre-commit-hooks.nix",
-        "rev": "8d6a17d0cdf411c55f12602624df6368ad86fac1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cachix",
-        "repo": "pre-commit-hooks.nix",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "beapkgs": "beapkgs",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",
+        "git-hooks": "git-hooks",
         "neovim-nix": "neovim-nix",
         "nil": "nil",
-        "nixpkgs": "nixpkgs_2",
-        "pre-commit-nix": "pre-commit-nix"
+        "nixpkgs": "nixpkgs"
       }
     },
     "rust-overlay": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "beapkgs",
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1720491570,
-        "narHash": "sha256-PHS2BcQ9kxBpu9GKlDg3uAlrX/ahQOoAiVmwGl6BjD4=",
+        "lastModified": 1720664424,
+        "narHash": "sha256-+odiMNHRYdvzL1ewl41UVFxsjmdoXfH+maQ8xvUoR4g=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "b970af40fdc4bd80fd764796c5f97c15e2b564eb",
+        "rev": "fec97e65fcbaab0decccba740ac8688f61dadd70",
         "type": "github"
       },
       "original": {

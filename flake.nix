@@ -8,8 +8,8 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
-    pre-commit-nix = {
-      url = "github:cachix/pre-commit-hooks.nix";
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "";
@@ -35,12 +35,11 @@
     # };
 
     neovim-nix = {
-      url = "github:nekowinston/neovim.nix/dev";
+      url = "github:isabelroses/neovim.nix/dev";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        lazy-nvim.follows = "";
         flake-parts.follows = "flake-parts";
-        pre-commit-nix.follows = "pre-commit-nix";
+        git-hooks.follows = "git-hooks";
       };
     };
 
@@ -57,7 +56,7 @@
   };
 
   outputs =
-    { flake-parts, ... }@inputs:
+    { nixpkgs, flake-parts, ... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
@@ -69,59 +68,25 @@
       imports = [
         inputs.neovim-nix.flakeModule
         ./neovim.nix
-      ];
+      ] ++ nixpkgs.lib.optional (inputs.git-hooks ? flakeModule) inputs.git-hooks.flakeModule;
 
       perSystem =
         {
-          config,
+          lib,
           pkgs,
           self',
+          config,
           system,
           ...
         }:
         {
-          _module.args.pkgs = import inputs.nixpkgs {
+          _module.args.pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
             overlays = [
               inputs.nil.overlays.default
               inputs.beapkgs.overlays.default
             ];
-          };
-
-          checks = {
-            pre-commit-check = inputs.pre-commit-nix.lib.${system}.run {
-              src = ./.;
-              excludes = [ "_sources/.+" ];
-              hooks = {
-                nixfmt = {
-                  enable = true;
-                  package = pkgs.nixfmt-rfc-style;
-                };
-                stylua.enable = true;
-              };
-            };
-          };
-
-          devShells = {
-            default = pkgs.mkShellNoCC {
-              inherit (self'.checks.pre-commit-check) shellHook;
-              buildInputs = with pkgs; [
-                self'.formatter
-                nil
-                statix
-                deadnix
-                nvfetcher
-                nix-tree
-              ];
-            };
-
-            generate-treesitter = pkgs.mkShellNoCC {
-              packages = with pkgs; [
-                nvfetcher
-                (callPackage ./pkgs/nvim-treesitter/neovim.nix { })
-              ];
-            };
           };
 
           formatter = pkgs.nixfmt-rfc-style;
@@ -135,6 +100,38 @@
               default = neovim;
               nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
             };
+
+          devShells.generate-treesitter = pkgs.mkShellNoCC {
+            packages = with pkgs; [
+              nvfetcher
+              (callPackage ./pkgs/nvim-treesitter/neovim.nix { })
+            ];
+          };
+        }
+        // lib.optionalAttrs (inputs.git-hooks ? flakeModule) {
+          checks.pre-commit-check = inputs.git-hooks.lib.${system}.run {
+            src = ./.;
+            excludes = [ "_sources/.+" ];
+            hooks = {
+              nixfmt = {
+                enable = true;
+                package = pkgs.nixfmt-rfc-style;
+              };
+              stylua.enable = true;
+            };
+          };
+
+          devShells.default = pkgs.mkShellNoCC {
+            inherit (self'.checks.pre-commit-check) shellHook;
+            buildInputs = with pkgs; [
+              self'.formatter
+              nil
+              statix
+              deadnix
+              nvfetcher
+              nix-tree
+            ];
+          };
         };
     };
 }
