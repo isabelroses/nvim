@@ -205,7 +205,6 @@ rec {
     package = (pkgs.callPackage ../pkgs/nvim-treesitter { }).override {
       grammars = [
         "astro"
-        "awk"
         "bash"
         "c"
         "cpp"
@@ -213,7 +212,6 @@ rec {
         "csv"
         "diff"
         "dockerfile"
-        "git_config"
         "git_rebase"
         "gitattributes"
         "gitcommit"
@@ -222,7 +220,6 @@ rec {
         "gomod"
         "gosum"
         "gotmpl"
-        "gpg"
         "graphql"
         "haskell"
         "html"
@@ -239,7 +236,6 @@ rec {
         "nu"
         "php"
         "php_only"
-        "pug"
         "python"
         "rust"
         "scss"
@@ -249,7 +245,6 @@ rec {
         "tsx"
         "typescript"
         "vim"
-        "vimdoc"
         "vue"
         "yaml"
         "yuck"
@@ -330,6 +325,7 @@ rec {
   # misc
   undotree = {
     src = srcs.undotree;
+    event = "VeryLazy";
     config = ''
       vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
     '';
@@ -363,19 +359,19 @@ rec {
   #     "code-action-menu-warning-message"
   #     "Trouble"
   #   ];
-  #   event = "VeryLazy";
   # };
 
   # cool snippets saving
   sayama-nvim = {
     src = srcs.sayama-nvim;
+    event = "VeryLazy";
     config.dir = "$XDG_DATA_HOME/zzz";
   };
 
   freeze = {
     src = srcs.freeze-nvim;
     paths = [ pkgs.charm-freeze ];
-    event = "VeryLazy";
+    lazy = true;
     config = ./freeze.lua;
   };
 
@@ -387,6 +383,13 @@ rec {
       inherit plenary;
     };
     paths = [ pkgs.lazygit ];
+  };
+
+  # discord integration
+  presence = {
+    src = srcs.presence;
+    event = "VeryLazy";
+    config = ./presence.lua;
   };
 
   # deps

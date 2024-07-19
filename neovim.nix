@@ -14,34 +14,19 @@
         paths = with pkgs; [
           # external deps
           fd
-          git
-          gh
           ripgrep
-
-          # python
-          ruff
-          pyright
 
           # lua
           stylua
           lua-language-server
-          luaPackages.tl
-          luaPackages.teal-language-server
 
           # webdev
-          deno
           emmet-language-server
-          vue-language-server
-          nodePackages.nodejs
           nodePackages."@astrojs/language-server"
           nodePackages."@tailwindcss/language-server"
-          nodePackages.dockerfile-language-server-nodejs
-          nodePackages.graphql
-          nodePackages.graphql-language-service-cli
-          nodePackages.intelephense
           nodePackages.typescript
-          nodePackages.typescript-language-server
           nodePackages.vscode-langservers-extracted
+          nodePackages.graphql-language-service-cli
 
           # markdown / latex
           ltex-ls
@@ -60,13 +45,11 @@
           bash-language-server
 
           # etc
-          emmet-ls
           nodePackages.prettier
           proselint
-          jq-lsp # json
           taplo # toml
           nodePackages.yaml-language-server # yaml
-          haskell-language-server
+          nodePackages.dockerfile-language-server-nodejs # docker
         ];
 
         build =

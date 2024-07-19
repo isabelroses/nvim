@@ -150,8 +150,7 @@ return function()
 
   local common = { capabilities = capabilities }
 
-  require("isabel.lsp.go")
-  require("isabel.lsp.null-ls")
+  -- setup python
   pcall(require("py_lsp").setup, common)
 
   require("typescript-tools").setup({
@@ -322,4 +321,96 @@ return function()
       lspconfig[server].setup(vim.tbl_extend("force", common, config))
     end
   end
+
+  -- null ls stuff
+  local null_present, null = pcall(require, "null-ls")
+
+  if not null_present then
+    return
+  end
+
+  local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+  local sources = {
+    -- general
+    null.builtins.formatting.treefmt.with({
+      condition = function(utils)
+        return utils.root_has_file("treefmt.toml")
+      end,
+    }),
+
+    -- nix
+    null.builtins.formatting.nixfmt,
+    null.builtins.diagnostics.statix,
+    null.builtins.diagnostics.deadnix,
+
+    -- go
+    null.builtins.formatting.gofumpt,
+
+    -- webdev
+    null.builtins.formatting.prettier.with({
+      filetypes = {
+        "html",
+        "astro",
+        "vue",
+      },
+    }),
+
+    -- shell
+    null.builtins.formatting.shfmt,
+
+    -- lua
+    null.builtins.formatting.stylua,
+
+    -- docs
+    null.builtins.diagnostics.alex,
+    null.builtins.diagnostics.proselint,
+  }
+
+  null.setup({
+    sources = sources,
+    on_attach = function(client, bufnr)
+      if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          group = augroup,
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.buf.format({
+              bufnr = bufnr,
+              filter = function(c)
+                return c.name == "null-ls"
+              end,
+            })
+          end,
+        })
+      end
+    end,
+  })
+
+  local toggle_formatters = function()
+    null.toggle({ methods = null.methods.FORMATTING })
+  end
+
+  vim.api.nvim_create_user_command("ToggleFormatters", toggle_formatters, {})
+
+  -- setup go stuff
+  require("go").setup({
+    disable_defaults = false,
+    icons = {
+      breakpoint = " ",
+      currentpos = " ",
+    },
+    trouble = true,
+    luasnip = true,
+    dap_debug_keymap = false,
+    lsp_cfg = false,
+    lsp_keymaps = false,
+    lsp_inlay_hints = {
+      enable = true,
+      style = "inlay",
+    },
+  })
+
+  require("lspconfig").gopls.setup(require("go.lsp").config())
 end
