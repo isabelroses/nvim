@@ -389,7 +389,10 @@ rec {
   neocord = {
     src = srcs.neocord;
     event = "VeryLazy";
-    config = ./neocord.lua;
+    config = {
+      logo = "https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp";
+      main_image = "logo";
+    };
   };
 
   # deps
