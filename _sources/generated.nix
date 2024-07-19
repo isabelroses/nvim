@@ -313,6 +313,18 @@
     };
     date = "2024-06-28";
   };
+  neocord = {
+    pname = "neocord";
+    version = "aa7a58023166533da83ca7b11c0d2569e45d7381";
+    src = fetchFromGitHub {
+      owner = "IogaMaster";
+      repo = "neocord";
+      rev = "aa7a58023166533da83ca7b11c0d2569e45d7381";
+      fetchSubmodules = false;
+      sha256 = "sha256-oVWdnQlgXIMzMiybMq7yR/WfEW+Fm5RmhWx0RWprlfQ=";
+    };
+    date = "2024-04-24";
+  };
   neodev = {
     pname = "neodev";
     version = "46aa467dca16cf3dfe27098042402066d2ae242d";
@@ -468,18 +480,6 @@
       sha256 = "sha256-5Jf2mWFVDofXBcXLbMa417mqlEPWLA+cQIZH/vNEV1g=";
     };
     date = "2024-05-20";
-  };
-  presence = {
-    pname = "presence";
-    version = "87c857a56b7703f976d3a5ef15967d80508df6e6";
-    src = fetchFromGitHub {
-      owner = "andweeb";
-      repo = "presence.nvim";
-      rev = "87c857a56b7703f976d3a5ef15967d80508df6e6";
-      fetchSubmodules = false;
-      sha256 = "sha256-ZpsunLsn//zYgUtmAm5FqKVueVd/Pa1r55ZDqxCimBk=";
-    };
-    date = "2023-01-29";
   };
   py_lsp = {
     pname = "py_lsp";

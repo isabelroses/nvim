@@ -386,10 +386,10 @@ rec {
   };
 
   # discord integration
-  presence = {
-    src = srcs.presence;
+  neocord = {
+    src = srcs.neocord;
     event = "VeryLazy";
-    config = ./presence.lua;
+    config = ./neocord.lua;
   };
 
   # deps

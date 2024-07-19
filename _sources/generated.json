@@ -519,6 +519,26 @@
         },
         "version": "ce0a05ab4e2839e1c48d072c5236cce846a387bc"
     },
+    "neocord": {
+        "cargoLocks": null,
+        "date": "2024-04-24",
+        "extract": null,
+        "name": "neocord",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "IogaMaster",
+            "repo": "neocord",
+            "rev": "aa7a58023166533da83ca7b11c0d2569e45d7381",
+            "sha256": "sha256-oVWdnQlgXIMzMiybMq7yR/WfEW+Fm5RmhWx0RWprlfQ=",
+            "type": "github"
+        },
+        "version": "aa7a58023166533da83ca7b11c0d2569e45d7381"
+    },
     "neodev": {
         "cargoLocks": null,
         "date": "2024-07-06",
@@ -778,26 +798,6 @@
             "type": "github"
         },
         "version": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683"
-    },
-    "presence": {
-        "cargoLocks": null,
-        "date": "2023-01-29",
-        "extract": null,
-        "name": "presence",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "andweeb",
-            "repo": "presence.nvim",
-            "rev": "87c857a56b7703f976d3a5ef15967d80508df6e6",
-            "sha256": "sha256-ZpsunLsn//zYgUtmAm5FqKVueVd/Pa1r55ZDqxCimBk=",
-            "type": "github"
-        },
-        "version": "87c857a56b7703f976d3a5ef15967d80508df6e6"
     },
     "py_lsp": {
         "cargoLocks": null,

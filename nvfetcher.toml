@@ -104,6 +104,10 @@ src.git = "https://github.com/nvim-lualine/lualine.nvim"
 fetch.github = "L3MON4D3/LuaSnip"
 src.git = "https://github.com/L3MON4D3/LuaSnip"
 
+[neocord]
+fetch.github = "IogaMaster/neocord"
+src.git = "https://github.com/IogaMaster/neocord"
+
 [neodev]
 fetch.github = "folke/neodev.nvim"
 src.git = "https://github.com/folke/neodev.nvim"
@@ -155,10 +159,6 @@ src.git = "https://github.com/epwalsh/obsidian.nvim"
 [plenary]
 fetch.github = "nvim-lua/plenary.nvim"
 src.git = "https://github.com/nvim-lua/plenary.nvim"
-
-[presence]
-fetch.github = "andweeb/presence.nvim"
-src.git = "https://github.com/andweeb/presence.nvim"
 
 [py_lsp]
 fetch.github = "hallerpatrick/py_lsp.nvim"
