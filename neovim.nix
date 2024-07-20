@@ -27,6 +27,7 @@
           nodePackages.typescript
           nodePackages.vscode-langservers-extracted
           nodePackages.graphql-language-service-cli
+          nodejs-slim
 
           # markdown / latex
           ltex-ls
