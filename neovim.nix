@@ -75,10 +75,7 @@
             };
           };
 
-        lazy = {
-          settings.dev.path = "~/dev/nvim";
-          plugins = import ./plugins { inherit pkgs; };
-        };
+        chaivim = import ./plugins { inherit pkgs; };
       };
     };
 }

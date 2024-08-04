@@ -1,406 +1,379 @@
 { pkgs }:
 let
   srcs = builtins.mapAttrs (_: pkg: pkg.src) (pkgs.callPackage ../_sources/generated.nix { });
+  inherit (pkgs) lib;
+  inherit (lib.generators) mkLuaInline;
 in
-rec {
+{
   config = {
-    src = ../config;
-    lazy = false;
-    priority = 1000;
-  };
-
-  # tree view
-  nvim-tree = {
-    src = srcs.nvim-tree-lua;
-    event = "VeryLazy";
-    config = {
-      sync_root_with_cwd = true;
-      diagnostics.enable = true;
-      renderer.indent_markers.enable = true;
-      modified.enable = true;
-      renderer.icons.web_devicons.folder.enable = true;
-    };
-    dependencies = {
-      inherit plenary nvim-web-devicons;
+    ui = {
+      colorscheme = "evergarden";
+      transparent_background = false;
     };
   };
 
-  # markdown stuff
-  obsidian-nvim = {
-    src = srcs.obsidian-nvim;
-    config = ./obsidian.lua;
-    event = "BufRead .obsidian";
-    dependencies = {
-      inherit plenary;
-    };
-  };
+  modules = {
+    ch = [
+      { name = "base"; }
+      { name = "options"; }
 
-  # rice
-  alpha = {
-    src = srcs.alpha-nvim;
-    config = ./alpha.lua;
-    dependencies = {
-      neovim-session-manager = {
-        src = srcs.neovim-session-manager;
-        dependencies = {
-          inherit plenary;
-        };
-      };
-    };
-  };
+      {
+        name = "lazy";
+        enabled = true;
+      }
+      {
+        name = "whichkey";
+        enabled = false;
+      }
 
-  lualine = {
-    src = srcs.lualine;
-    config = ./lualine.lua;
-    dependencies = {
-      navic = {
-        src = srcs.nvim-navic;
+      {
+        name = "keymaps";
+        opts = {
+          defaults = { };
+          qf_loaders = { };
+          leader = "SPC";
+          localleader = "SPC";
+          mappings = {
+            custom = [
+              [
+                "normal"
+                "<leader>q"
+                "<cmd>qall<cr>"
+                "quit all"
+              ]
+            ];
 
-        config = {
-          highlight = true;
-          separator = " ";
-          icons = {
-            File = " ";
-            Module = " ";
-            Namespace = " ";
-            Package = " ";
-            Class = " ";
-            Method = " ";
-            Property = " ";
-            Field = " ";
-            Constructor = " ";
-            Enum = " ";
-            Interface = " ";
-            Function = " ";
-            Variable = " ";
-            Constant = " ";
-            String = " ";
-            Number = " ";
-            Boolean = " ";
-            Array = " ";
-            Object = " ";
-            Key = " ";
-            Null = " ";
-            EnumMember = " ";
-            Struct = " ";
-            Event = " ";
-            Operator = " ";
-            TypeParameter = " ";
+            # quick fix list
+            qf_list = [
+              [
+                "normal"
+                "<c-n>"
+                ":cnext<cr>"
+                "goto next item in qf list"
+              ]
+              [
+                "normal"
+                "<c-b>"
+                ":cprev<cr>"
+                "goto prev item in qf list"
+              ]
+              [
+                "normal"
+                "<leader>qf"
+                (mkLuaInline ''
+                  function()
+                    local items = ch.lib.options:get('keymaps', 'qf_loaders')
+                    vim.ui.select(vim.tbl_keys(items), {}, function(item)
+                      if not item then
+                        return
+                      end
+                      local fn = items[item]
+                      if fn and type(fn) == 'function' then
+                        fn()
+                      end
+                    end)
+                  end
+                '')
+                "load qf list items"
+              ]
+              [
+                "normal"
+                "<leader>sq"
+                (mkLuaInline ''
+                  function()
+                    ch.lib.keymaps.open_qf_list()
+                  end
+                '')
+                "open qf list"
+              ]
+            ];
+
+            copy_paste = [
+              [
+                "normal"
+                "<leader>p"
+                "\"+p"
+                "paste from system clipboard"
+              ]
+              [
+                "visual"
+                "<leader>y"
+                "\"+y"
+                "copy to system clipboard"
+              ]
+            ];
           };
         };
+      }
 
-        dependencies = {
-          inherit nvim-web-devicons;
+      {
+        name = "telescope";
+        opts.mappings = {
+          find_files = "<leader><leader>";
+          live_grep = "<leader>fg";
+          simple_find_file = "<leader>ff";
+          git_files = "<leader>fG";
+          buffers = "<leader>fb";
+          keymaps = "<leader>fk";
+          mappings = "<leader>fm";
+          help_tags = "<leader>fh";
+          colorscheme = "<C-t>";
+          quickfix = "<leader>fq";
         };
-      };
-    };
-  };
+      }
 
-  catppuccin = {
-    src = srcs.catppuccin;
-    config = ./catppuccin.lua;
-    priority = 1000;
-  };
-
-  # evergarden = {
-  #   src = srcs.evergarden;
-  #   config = ./evergarden.lua;
-  #   priority = 1000;
-  # };
-
-  fidget = {
-    src = srcs.fidget;
-    event = "VeryLazy";
-
-    config = {
-      display.done_icon = "󰗡";
-      notification = {
-        override_vim_notify = true;
-        window.winblend = 0;
-      };
-      progress.ignore = [
-        "copilot"
-        "null-ls"
-      ];
-    };
-  };
-
-  nvim-colorizer = {
-    src = srcs.nvim-colorizer-lua;
-    event = "VeryLazy";
-
-    config = {
-      user_default_options = {
-        RGB = true;
-        RRGGBB = true;
-        names = false;
-        RRGGBBAA = true;
-        AARRGGBB = false;
-        rgb_fn = false;
-        hsl_fn = false;
-        css = false;
-        css_fn = false;
-        mode = "background";
-        tailwind = "both";
-        sass = {
-          enable = true;
+      {
+        name = "lsp";
+        enabled = true;
+        opts = {
+          servers = {
+            astro = { };
+            bashls = { };
+            cssls = { };
+            # denols = {
+            #   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+            #   single_file_support = false,
+            # };
+            dockerls = { };
+            emmet_language_server.filetypes = [
+              "astro"
+              "css"
+              "eruby"
+              "html"
+              "javascript"
+              "javascriptreact"
+              "less"
+              "sass"
+              "scss"
+              "pug"
+              "typescriptreact"
+            ];
+            graphql.filetypes = [
+              "graphql"
+              "typescriptreact"
+              "javascriptreact"
+              "typescript"
+            ];
+            helm_ls = { };
+            hls = { };
+            html = { };
+            intelephense = { };
+            jqls = { };
+            # jsonls.settings.json = {
+            #   schemas = mkLuaInline "require('schemastore').json.schemas()";
+            #   validate.enable = true;
+            # };
+            lua_ls.settings.Lua.diagnostics.globals = [ "vim" ];
+            # ltex = {
+            #   on_attach = mkLuaInline ''
+            #     function()
+            #       require("ltex_extra").setup({
+            #         load_langs = { "en-US", "en-GB" },
+            #         init_check = true,
+            #         path = vim.fn.stdpath("data") .. "/dictionary",
+            #       })
+            #     end
+            #   '';
+            #   settings.ltex = {
+            #     language = "en-US";
+            #     additionalRules = {
+            #       enablePickyRules = true;
+            #       motherTongue = "en_GB";
+            #     };
+            #   };
+            # };
+            marksman = { };
+            nil_ls = {
+              autostart = true;
+              cmd = [ "nil" ];
+              settings = {
+                "nil" = {
+                  formatting.command = [ "nixfmt" ];
+                  nix.maxMemoryMB = null;
+                };
+              };
+            };
+            nushell = { };
+            serve_d = { };
+            sourcekit = { };
+            taplo = { };
+            teal_ls = { };
+            tailwindcss.filetypes = [
+              "astro"
+              "javascriptreact"
+              "typescriptreact"
+              "html"
+              "css"
+            ];
+            volar = {
+              capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true;
+              # root_dir = mkLuaInline ''require("lspconfig.util").root_pattern("package.json")'';
+            };
+            # yamlls.settings = {
+            #   yaml = {
+            #     completion = true;
+            #     validate = true;
+            #     suggest.parentSkeletonSelectedFirst = true;
+            #     schemas = mkLuaInline ''
+            #       vim.tbl_extend("keep", {
+            #         ["https://json.schemastore.org/github-action"] = ".github/action.{yaml,yml}",
+            #         ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+            #         ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "*lab-ci.{yaml,yml}",
+            #         ["https://json.schemastore.org/helmfile"] = "helmfile.{yaml,yml}",
+            #         ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yml,yaml}",
+            #         ["https://goreleaser.com/static/schema.json"] = ".goreleaser.{yml,yaml}",
+            #       }, require("schemastore").yaml.schemas())
+            #     '';
+            #   };
+            #   redhat.telemetry.enabled = false;
+            # };
+          };
         };
-        virtualtext = " ";
-      };
+      }
 
-      buftypes = [
-        "*"
-        "!dashboard"
-        "!lazy"
-        "!popup"
-        "!prompt"
-      ];
-    };
+      {
+        name = "treesitter";
+        enabled = true;
+        opts.config = {
+          auto_install = false;
+          highlight.enable = true;
+          rainbow = {
+            extended_mode = true;
+            max_file_lines = 8192;
+            additional_vim_regex_highlighting = false;
+          };
+        };
+      }
+
+      {
+        name = "indent";
+        opts.config.indent = {
+          scope.enabled = true;
+          highlight = "IblIndent";
+        };
+      }
+
+      {
+        name = "dash";
+        opts = {
+          header = [
+            "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⡇⠀⠀⠀⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⢀⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣧⠀⠀⣸⣿⣿⢿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⢀⣤⣭⡵⣾⡏⠀⣰⣿⣿⣿⣷⣾⡭⣽⣿⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⡄⠀⠀⢀⣴⣿⣿⣧⣀⣸⠃⣰⣿⣿⣿⣿⣿⣧⣀⣼⣿⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣆⠀⢾⣿⣿⣿⣿⣿⣿⣴⣿⣿⢿⣿⣿⣿⣿⣿⣿⣯⡀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⣿⣿⣦⣸⣿⣿⡟⠉⠛⢻⣿⣿⣿⣶⡉⡿⠏⣹⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⠇⡇⡅⡎⣿⣿⣿⣿⠇⣓⣊⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠒⣿⣿⣿⣍⠄⢧⣧⣿⡙⣿⣿⣫⣾⣿⣿⠿⣛⣥⠎⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣤⡈⠛⢿⣿⡧⠨⣿⣿⣿⣎⠛⠋⠩⣷⣆⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⣠⣴⣦⣄⠀⠀⠀⠀⠀⠈⠙⠓⣼⠋⠀⠂⠈⠻⠿⡿⠀⠀⢀⣈⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⣼⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⢸⣿⡆⢀⣀⠲⢦⣤⣤⠄⣠⣄⣉⣙⠛⣡⡀⠀⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠘⠿⣡⣿⣿⣶⣤⣤⣤⡀⣿⣿⣿⣿⣿⣿⡧⠀⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⢱⣿⣿⣿⡿⢿⣛⣀⠀⠀⠀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⡗⣼⣿⣿⣿⣿⣿⣿⣿⣿⢇⣿⣿⢟⣭⣶⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⠟⣼⣿⣿⣿⣿⣿⣿⣿⣿⢏⡾⣫⣴⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⠃⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣡⣾⣿⣿⣿⣿⣿⣿⣿⡿⢹⣿⣿⣿⣿⣿⣆⠀⠀⠀"
+            "⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⡿⢏⣼⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⢿⣿⣿⣿⣿⣿⡄⠀⠀"
+          ];
+          buttons = [
+            [
+              "  New file"
+              "n"
+              "<cmd>ene <bar> startinsert <cr>"
+            ]
+            [
+              "  Find file"
+              "f"
+              "<cmd>Telescope find_files<cr>"
+            ]
+            [
+              "  Live grep"
+              "g"
+              "<cmd>Telescope live_grep<cr>"
+            ]
+            [
+              "  Show sessions"
+              "s"
+              "<cmd>SessionManager load_session<cr>"
+            ]
+            [
+              "  Projects"
+              "p"
+              "<cmd>Telescope project<CR>"
+            ]
+            [
+              "  Quit"
+              "q"
+              "<cmd>qa<CR>"
+            ]
+          ];
+        };
+      }
+    ];
   };
 
-  todo-comments = {
-    src = srcs.todo-comments;
-    config = true;
-    event = "VeryLazy";
-  };
-
-  # quicker movement
-  telescope = {
-    src = srcs.telescope;
-    config = ./telescope.lua;
-    dependencies = {
-      inherit plenary nvim-web-devicons;
-      telescope-fzf-native.package = pkgs.vimPlugins.telescope-fzf-native-nvim;
-      telescope-project.src = srcs.telescope-project;
-      telescope-ui-select.src = srcs.telescope-ui-select;
-    };
-  };
-
-  harpoon = {
-    src = srcs.harpoon;
-    config = ./harpoon.lua;
-    dependencies = {
-      inherit plenary;
-    };
-  };
-
-  # copilot
-  # copilot-cmp.src = srcs.copilot-cmp;
-  copilot-lua = {
-    src = srcs.copilot-lua;
-    enabled = ''
-      function()
-        return vim.fn.glob("~/.config/gh/config.yml") ~= "" or vim.fn.glob("$XDG_CONFIG_HOME/gh/config.yml") ~= ""
-      end
-    '';
-    config = ./copilot.lua;
-    event = "InsertEnter";
-  };
-
-  # lsp
-  nvim-treesitter = {
-    config = ./tree-sitter.lua;
-    event = "VeryLazy";
-    dependencies.rainbow-delimiters.src = srcs.rainbow-delimiters;
-    package = (pkgs.callPackage ../pkgs/nvim-treesitter { }).override {
-      grammars = [
-        "astro"
-        "bash"
-        "c"
-        "cpp"
-        "css"
-        "csv"
-        "diff"
-        "dockerfile"
-        "git_rebase"
-        "gitattributes"
-        "gitcommit"
-        "gitignore"
-        "go"
-        "gomod"
-        "gosum"
-        "gotmpl"
-        "graphql"
-        "haskell"
-        "html"
-        "javascript"
-        "jsdoc"
-        "json"
-        "jsonc"
-        "just"
-        "lua"
-        "make"
-        "markdown"
-        "markdown_inline"
-        "nix"
-        "nu"
-        "php"
-        "php_only"
-        "python"
-        "rust"
-        "scss"
-        "svelte"
-        "toml"
-        "tsv"
-        "tsx"
-        "typescript"
-        "vim"
-        "vue"
-        "yaml"
-        "yuck"
-        "zig"
-      ];
-    };
-  };
-
-  # rust lsp + formmating
-  rustaceanvim = {
-    src = srcs.rustaceanvim;
-    config = ./rust.lua;
-    ft = "rust";
-  };
-
-  nvim-lspconfig = {
-    src = srcs.nvim-lspconfig;
-    config = ./lsp.lua;
-
-    event = "VeryLazy";
-    dependencies = {
-      # inherit copilot-cmp;
-      cmp.src = srcs.nvim-cmp;
-      cmp-buffer.src = srcs.cmp-buffer;
-      cmp-cmdline.src = srcs.cmp-cmdline;
-      cmp-nvim-lsp.src = srcs.cmp-nvim-lsp;
-      cmp-path.src = srcs.cmp-path;
-      cmp_luasnip.src = srcs.cmp_luasnip;
-      lspkind.src = srcs.lspkind;
-      null-ls.src = srcs.null-ls;
-      lsp-status.src = srcs.lsp-status;
+  plugins = {
+    lspconfig.dependencies = {
       ltex-extra.src = srcs.ltex-extra;
       schemastore.src = srcs.schemastore;
-      py_lsp.src = srcs.py_lsp;
-      typescript-tools.src = srcs.typescript-tools;
-      luasnip.src = srcs.luasnip;
+    };
 
-      trouble = {
-        src = srcs.trouble;
-        config = ./trouble.lua;
-      };
+    "lazy.nvim".package = pkgs.vimPlugins.lazy-nvim;
 
-      neodev = {
-        src = srcs.neodev;
-        config = true;
-      };
-
-      crates = {
-        src = srcs.crates;
-        config = true;
-        event = "BufRead Cargo.toml";
-      };
-
-      go-nvim = {
-        src = srcs.go-nvim;
-        event = "CmdlineEnter";
-        ft = [
+    treesitter = {
+      dependencies.rainbow-delimiters.src = srcs.rainbow-delimiters;
+      package = (pkgs.callPackage ../pkgs/nvim-treesitter { }).override {
+        grammars = [
+          "astro"
+          "bash"
+          "c"
+          "cpp"
+          "css"
+          "csv"
+          "diff"
+          "dockerfile"
+          "git_rebase"
+          "gitattributes"
+          "gitcommit"
+          "gitignore"
           "go"
           "gomod"
           "gosum"
           "gotmpl"
-          "gohtmltmpl"
-          "gotexttmpl"
+          "graphql"
+          "haskell"
+          "html"
+          "javascript"
+          "jsdoc"
+          "json"
+          "jsonc"
+          "just"
+          "lua"
+          "make"
+          "markdown"
+          "markdown_inline"
+          "nix"
+          "nu"
+          "php"
+          "php_only"
+          "python"
+          "rust"
+          "scss"
+          "svelte"
+          "toml"
+          "tsv"
+          "tsx"
+          "typescript"
+          "vim"
+          "vue"
+          "yaml"
+          "yuck"
+          "zig"
         ];
-        paths = [ pkgs.gonvim-tools ];
-        dependencies.guihua-lua.src = srcs.guihua-lua;
       };
     };
-  };
-
-  # hide my secrets
-  cloak = {
-    src = srcs.cloak;
-    event = "VeryLazy";
-    config = ./cloak.lua;
-  };
-
-  # misc
-  undotree = {
-    src = srcs.undotree;
-    event = "VeryLazy";
-    config = ''
-      vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-    '';
-  };
-
-  # track my time coding
-  wakatime = {
-    enabled = ''
-      function()
-        return vim.fn.glob("~/.wakatime.cfg") ~= "" or vim.fn.glob("$WAKATIME_HOME/.wakatime.cfg") ~= ""
-      end
-    '';
-    src = pkgs.vimPlugins.vim-wakatime;
-    event = "VeryLazy";
-    paths = [ pkgs.wakatime ];
-  };
-
-  # indent-blankline = {
-  #   src = srcs.indent-blankline;
-  #   main = "ibl";
-  #   config.exclude.filetypes = [
-  #     "alpha"
-  #     "fugitive"
-  #     "help"
-  #     "lazy"
-  #     "NvimTree"
-  #     "LazyGit"
-  #     "TelescopePrompt"
-  #     "prompt"
-  #     "code-action-menu-menu"
-  #     "code-action-menu-warning-message"
-  #     "Trouble"
-  #   ];
-  # };
-
-  # cool snippets saving
-  sayama-nvim = {
-    src = srcs.sayama-nvim;
-    event = "VeryLazy";
-    config.dir = "$XDG_DATA_HOME/zzz";
-  };
-
-  freeze = {
-    src = srcs.freeze-nvim;
-    paths = [ pkgs.charm-freeze ];
-    lazy = true;
-    config = ./freeze.lua;
-  };
-
-  # lazygit integration
-  lazygit = {
-    src = srcs.lazygit;
-    event = "VeryLazy";
-    dependencies = {
-      inherit plenary;
-    };
-    paths = [ pkgs.lazygit ];
-  };
-
-  # discord integration
-  neocord = {
-    src = srcs.neocord;
-    event = "VeryLazy";
-    config = {
-      logo = "https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp";
-      main_image = "logo";
-    };
-  };
-
-  # deps
-  plenary.src = srcs.plenary;
-
-  nvim-web-devicons = {
-    src = srcs.nvim-web-devicons;
-    config = ./nvim-web-devicons.lua;
-    event = "VeryLazy";
   };
 }

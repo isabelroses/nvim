@@ -22,6 +22,32 @@
         "type": "github"
       }
     },
+    "chainix": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "git-hooks": [
+          "git-hooks"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1722931404,
+        "narHash": "sha256-lauMiiurjjGEqSogIu0smjNyZtK7wfewJpJgsPs/GVY=",
+        "owner": "catgardens",
+        "repo": "chainix",
+        "rev": "31bed62a14ed6e9da77369b11ad0e119dd3fb48d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catgardens",
+        "repo": "chainix",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -106,33 +132,6 @@
         "type": "github"
       }
     },
-    "neovim-nix": {
-      "inputs": {
-        "flake-parts": [
-          "flake-parts"
-        ],
-        "git-hooks": [
-          "git-hooks"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1720768802,
-        "narHash": "sha256-ct6u7Deyr69F/xNrd/WFP+D7qjZmnlNW122GiMb3bR0=",
-        "owner": "isabelroses",
-        "repo": "neovim.nix",
-        "rev": "381f8ab10e147a11c007fc53d6f39014462cdf6d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "isabelroses",
-        "ref": "dev",
-        "repo": "neovim.nix",
-        "type": "github"
-      }
-    },
     "nil": {
       "inputs": {
         "flake-utils": [
@@ -195,10 +194,10 @@
     "root": {
       "inputs": {
         "beapkgs": "beapkgs",
+        "chainix": "chainix",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",
         "git-hooks": "git-hooks",
-        "neovim-nix": "neovim-nix",
         "nil": "nil",
         "nixpkgs": "nixpkgs",
         "systems": "systems"

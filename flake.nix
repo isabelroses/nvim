@@ -38,13 +38,14 @@
     #   inputs = {
     #     nixpkgs.follows = "nixpkgs";
     #     flake-parts.follows = "flake-parts";
-    #     git-hooks.follows = "pre-commit-nix";
+    #     git-hooks.follows = "git-hooks";
     #     flake-compat.follows = "";
     #   };
     # };
 
-    neovim-nix = {
-      url = "github:isabelroses/neovim.nix/dev";
+    chainix = {
+      url = "github:catgardens/chainix";
+      # url = "git+file:///Users/isabel/dev/chainix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -67,7 +68,7 @@
       systems = import inputs.systems;
 
       imports = [
-        inputs.neovim-nix.flakeModule
+        inputs.chainix.flakeModule
         ./neovim.nix
       ] ++ inputs.nixpkgs.lib.optional (inputs.git-hooks ? flakeModule) inputs.git-hooks.flakeModule;
 
