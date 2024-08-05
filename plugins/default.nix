@@ -343,23 +343,26 @@ rec {
     paths = [ pkgs.wakatime ];
   };
 
-  # indent-blankline = {
-  #   src = srcs.indent-blankline;
-  #   main = "ibl";
-  #   config.exclude.filetypes = [
-  #     "alpha"
-  #     "fugitive"
-  #     "help"
-  #     "lazy"
-  #     "NvimTree"
-  #     "LazyGit"
-  #     "TelescopePrompt"
-  #     "prompt"
-  #     "code-action-menu-menu"
-  #     "code-action-menu-warning-message"
-  #     "Trouble"
-  #   ];
-  # };
+  ibl = {
+    src = srcs.indent-blankline;
+    main = "ibl";
+    config = {
+      scope.enabled = false;
+      exclude.filetypes = [
+        "alpha"
+        "fugitive"
+        "help"
+        "lazy"
+        "NvimTree"
+        "LazyGit"
+        "TelescopePrompt"
+        "prompt"
+        "code-action-menu-menu"
+        "code-action-menu-warning-message"
+        "Trouble"
+      ];
+    };
+  };
 
   # cool snippets saving
   sayama-nvim = {
