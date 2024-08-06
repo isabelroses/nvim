@@ -297,21 +297,6 @@ rec {
         config = true;
         event = "BufRead Cargo.toml";
       };
-
-      go-nvim = {
-        src = srcs.go-nvim;
-        event = "CmdlineEnter";
-        ft = [
-          "go"
-          "gomod"
-          "gosum"
-          "gotmpl"
-          "gohtmltmpl"
-          "gotexttmpl"
-        ];
-        paths = [ pkgs.gonvim-tools ];
-        dependencies.guihua-lua.src = srcs.guihua-lua;
-      };
     };
   };
 

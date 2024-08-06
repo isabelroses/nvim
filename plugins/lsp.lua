@@ -201,6 +201,40 @@ return function()
         "typescriptreact",
       },
     },
+    gopls = {
+      gofumpt = true,
+      codelenses = {
+        gc_details = false,
+        generate = true,
+        regenerate_cgo = true,
+        run_govulncheck = true,
+        test = true,
+        tidy = true,
+        upgrade_dependency = true,
+        vendor = true,
+      },
+      hints = {
+        assignVariableTypes = true,
+        compositeLiteralFields = true,
+        compositeLiteralTypes = true,
+        constantValues = true,
+        functionTypeParameters = true,
+        parameterNames = true,
+        rangeVariableTypes = true,
+      },
+      analyses = {
+        fieldalignment = true,
+        nilness = true,
+        unusedparams = true,
+        unusedwrite = true,
+        useany = true,
+      },
+      usePlaceholders = true,
+      completeUnimported = true,
+      staticcheck = true,
+      directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+      semanticTokens = true,
+    },
     graphql = {
       filetypes = {
         "graphql",
@@ -393,24 +427,4 @@ return function()
   end
 
   vim.api.nvim_create_user_command("ToggleFormatters", toggle_formatters, {})
-
-  -- setup go stuff
-  require("go").setup({
-    disable_defaults = false,
-    icons = {
-      breakpoint = " ",
-      currentpos = " ",
-    },
-    trouble = true,
-    luasnip = true,
-    dap_debug_keymap = false,
-    lsp_cfg = false,
-    lsp_keymaps = false,
-    lsp_inlay_hints = {
-      enable = true,
-      style = "inlay",
-    },
-  })
-
-  require("lspconfig").gopls.setup(require("go.lsp").config())
 end

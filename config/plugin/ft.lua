@@ -1,7 +1,8 @@
 vim.filetype.add({
   extension = {
     jq = "jq",
-    tmpl = "gohtmltmpl",
+    tmpl = "gotmpl",
+    gotmpl = "gotmpl",
     rasi = "css",
   },
   pattern = {

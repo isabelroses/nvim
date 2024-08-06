@@ -1,27 +1,5 @@
 {
   "nodes": {
-    "beapkgs": {
-      "inputs": {
-        "flake-compat": [],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "rust-overlay": "rust-overlay"
-      },
-      "locked": {
-        "lastModified": 1721391717,
-        "narHash": "sha256-nfHhJMu1JWpVpBBzlOJDYTIpjWR01lpWJWcB6nwV9OE=",
-        "owner": "isabelroses",
-        "repo": "beapkgs",
-        "rev": "4907078091cb42b68f89ed1e4854504f3ba2cace",
-        "type": "github"
-      },
-      "original": {
-        "owner": "isabelroses",
-        "repo": "beapkgs",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -141,7 +119,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "rust-overlay": "rust-overlay_2"
+        "rust-overlay": "rust-overlay"
       },
       "locked": {
         "lastModified": 1717086091,
@@ -191,7 +169,6 @@
     },
     "root": {
       "inputs": {
-        "beapkgs": "beapkgs",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",
         "git-hooks": "git-hooks",
@@ -202,27 +179,6 @@
       }
     },
     "rust-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "beapkgs",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1721269159,
-        "narHash": "sha256-eHrGuKZKQb762qdCkrfoyyxXLKumYhiXJca1ig0RftE=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "c3e217122ac55680606d69bc693bdf262f14f602",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_2": {
       "inputs": {
         "flake-utils": [
           "nil",

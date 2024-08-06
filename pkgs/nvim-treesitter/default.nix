@@ -11,7 +11,7 @@
 }:
 let
   nv = callPackage ./_sources/generated.nix { };
-  grammarOverrides = callPackage ./grammar-overrides.nix { };
+  grammarOverrides = import ./grammar-overrides.nix;
 
   # get all grammars from the nvfetcher output
   allGrammars = builtins.map (name: lib.removePrefix "treesitter-grammar-" name) (
@@ -74,7 +74,7 @@ let
         export HOME=$(mktemp -d)
         ln -s ${nvim-treesitter}/CONTRIBUTING.md .
 
-        nvim --headless "+luafile ${nvim-treesitter}/scripts/check-queries.lua" | tee log
+        nvim --headless -l "${nvim-treesitter}/scripts/check-queries.lua" | tee log
 
         if grep -q Warning log || grep -q Error log; then
           echo "Error: warnings were emitted by the check"

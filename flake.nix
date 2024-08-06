@@ -24,14 +24,6 @@
       };
     };
 
-    beapkgs = {
-      url = "github:isabelroses/beapkgs";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "";
-      };
-    };
-
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     #   inputs = {
@@ -83,10 +75,7 @@
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [
-              inputs.nil.overlays.nil
-              inputs.beapkgs.overlays.default
-            ];
+            overlays = [ inputs.nil.overlays.nil ];
           };
 
           formatter = pkgs.nixfmt-rfc-style;

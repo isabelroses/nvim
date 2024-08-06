@@ -1,4 +1,4 @@
-_: {
+{
   nu = {
     postPatch = ''
       mv queries/nu/* queries/
