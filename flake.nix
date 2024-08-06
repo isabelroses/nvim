@@ -16,15 +16,6 @@
       };
     };
 
-    nil = {
-      url = "github:oxalica/nil";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-        rust-overlay.follows = "beapkgs/rust-overlay";
-      };
-    };
-
     beapkgs = {
       url = "github:isabelroses/beapkgs";
       inputs = {
@@ -53,12 +44,6 @@
     };
 
     systems.url = "github:nix-systems/default";
-
-    # maintenance
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "systems";
-    };
   };
 
   outputs =
@@ -84,10 +69,7 @@
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [
-              inputs.nil.overlays.nil
-              inputs.beapkgs.overlays.default
-            ];
+            overlays = [ inputs.beapkgs.overlays.default ];
           };
 
           formatter = pkgs.nixfmt-rfc-style;
