@@ -22,10 +22,10 @@
 
           # webdev
           emmet-language-server
-          nodePackages."@astrojs/language-server"
-          nodePackages."@tailwindcss/language-server"
-          nodePackages.typescript
-          nodePackages.vscode-langservers-extracted
+          astro-language-server
+          tailwindcss-language-server
+          typescript
+          vscode-langservers-extracted
           nodePackages.graphql-language-service-cli
           nodejs-slim
 
@@ -49,8 +49,8 @@
           nodePackages.prettier
           proselint
           taplo # toml
-          nodePackages.yaml-language-server # yaml
-          nodePackages.dockerfile-language-server-nodejs # docker
+          yaml-language-server # yaml
+          dockerfile-language-server-nodejs
         ];
 
         build =
