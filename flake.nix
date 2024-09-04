@@ -35,11 +35,12 @@
     # };
 
     neovim-nix = {
-      url = "github:isabelroses/neovim.nix/dev";
+      url = "github:nekowinston/neovim.nix/feat/more-plugin-spec-fields";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
         git-hooks.follows = "git-hooks";
+        example.follows = "";
       };
     };
 

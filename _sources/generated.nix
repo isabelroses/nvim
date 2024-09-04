@@ -173,7 +173,7 @@
     pname = "freeze-nvim";
     version = "10c10613b4bb92c0d1cd78848ffe2ef258ff6e6c";
     src = fetchFromGitHub {
-      owner = "charm-and-friends";
+      owner = "charm-community";
       repo = "freeze.nvim";
       rev = "10c10613b4bb92c0d1cd78848ffe2ef258ff6e6c";
       fetchSubmodules = false;
@@ -435,15 +435,15 @@
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "5b8b126de02ebfd92e46ed5986b3e58e870b85de";
+    version = "3826d0c42ac635f560479b5b6ab522f6627a3466";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "5b8b126de02ebfd92e46ed5986b3e58e870b85de";
+      rev = "3826d0c42ac635f560479b5b6ab522f6627a3466";
       fetchSubmodules = false;
-      sha256 = "sha256-r1unao04iGQrgXIQraENe6Tx2MB5lYHcu5SwioC5VMI=";
+      sha256 = "sha256-6Q3Y4JLZhsXmDv9AQi70GfLmKhv6v5ziIAiJNbEqS+o=";
     };
-    date = "2024-09-03";
+    date = "2024-09-04";
   };
   nvim-web-devicons = {
     pname = "nvim-web-devicons";
@@ -673,5 +673,17 @@
       sha256 = "sha256-lFG5zmBPzmDda8LWJ4XjYEpA6QCLOq2hf14qvcHX7Ng=";
     };
     date = "2024-09-02";
+  };
+  wakatime = {
+    pname = "wakatime";
+    version = "53bba6bb8342de9cbdafc82142a9b5e82008d858";
+    src = fetchFromGitHub {
+      owner = "wakatime";
+      repo = "vim-wakatime";
+      rev = "53bba6bb8342de9cbdafc82142a9b5e82008d858";
+      fetchSubmodules = false;
+      sha256 = "sha256-CSngCT6nf00nOwwbfze1gsRs+sFjN+uAR9ldZaN3Ags=";
+    };
+    date = "2024-07-20";
   };
 }

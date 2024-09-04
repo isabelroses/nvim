@@ -188,11 +188,12 @@ rec {
   # copilot-cmp.src = srcs.copilot-cmp;
   copilot-lua = {
     src = srcs.copilot-lua;
-    enabled = ''
-      function()
-        return vim.fn.glob("~/.config/gh/config.yml") ~= "" or vim.fn.glob("$XDG_CONFIG_HOME/gh/config.yml") ~= ""
-      end
-    '';
+    enabled = # lua
+      ''
+        function()
+          return vim.fn.glob("~/.config/gh/config.yml") ~= "" or vim.fn.glob("$XDG_CONFIG_HOME/gh/config.yml") ~= ""
+        end
+      '';
     config = ./copilot.lua;
     event = "InsertEnter";
   };
@@ -333,14 +334,15 @@ rec {
 
   # track my time coding
   wakatime = {
-    enabled = ''
-      function()
-        return vim.fn.glob("~/.wakatime.cfg") ~= "" or vim.fn.glob("$WAKATIME_HOME/.wakatime.cfg") ~= ""
-      end
-    '';
-    src = pkgs.vimPlugins.vim-wakatime;
+    enabled = # lua
+      ''
+        function()
+          return vim.fn.glob("~/.wakatime.cfg") ~= "" or vim.fn.glob("$WAKATIME_HOME/.wakatime.cfg") ~= ""
+        end
+      '';
+    src = srcs.wakatime;
     event = "VeryLazy";
-    paths = [ pkgs.wakatime ];
+    paths = [ pkgs.wakatime-cli ];
   };
 
   ibl = {

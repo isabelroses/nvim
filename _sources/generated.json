@@ -291,7 +291,7 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "charm-and-friends",
+            "owner": "charm-community",
             "repo": "freeze.nvim",
             "rev": "10c10613b4bb92c0d1cd78848ffe2ef258ff6e6c",
             "sha256": "sha256-RULJ6Wg0h+vcEaOrY72xR1DlHZaSqJSvqdWNv9V76+E=",
@@ -721,7 +721,7 @@
     },
     "nvim-treesitter": {
         "cargoLocks": null,
-        "date": "2024-09-03",
+        "date": "2024-09-04",
         "extract": null,
         "name": "nvim-treesitter",
         "passthru": null,
@@ -733,11 +733,11 @@
             "name": null,
             "owner": "nvim-treesitter",
             "repo": "nvim-treesitter",
-            "rev": "5b8b126de02ebfd92e46ed5986b3e58e870b85de",
-            "sha256": "sha256-r1unao04iGQrgXIQraENe6Tx2MB5lYHcu5SwioC5VMI=",
+            "rev": "3826d0c42ac635f560479b5b6ab522f6627a3466",
+            "sha256": "sha256-6Q3Y4JLZhsXmDv9AQi70GfLmKhv6v5ziIAiJNbEqS+o=",
             "type": "github"
         },
-        "version": "5b8b126de02ebfd92e46ed5986b3e58e870b85de"
+        "version": "3826d0c42ac635f560479b5b6ab522f6627a3466"
     },
     "nvim-web-devicons": {
         "cargoLocks": null,
@@ -1117,5 +1117,25 @@
             "type": "github"
         },
         "version": "1d18c696c4284e9ce9467a5c04d3adf8af43f994"
+    },
+    "wakatime": {
+        "cargoLocks": null,
+        "date": "2024-07-20",
+        "extract": null,
+        "name": "wakatime",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "wakatime",
+            "repo": "vim-wakatime",
+            "rev": "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23",
+            "sha256": "0cikyb55z31jnh3zvm3xf8skfqdvdg3ihhb1z8xc1cxhx9gyc4hz",
+            "type": "github"
+        },
+        "version": "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23"
     }
 }

@@ -224,3 +224,8 @@ src.git = "https://github.com/mbbill/undotree"
 [vim-fugitive]
 fetch.github = "tpope/vim-fugitive"
 src.git = "https://github.com/tpope/vim-fugitive"
+
+[wakatime]
+fetch.github = "wakatime/vim-wakatime"
+src.git = "https://github.com/wakatime/vim-wakatime"
+pinned = true
