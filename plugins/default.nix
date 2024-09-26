@@ -26,6 +26,15 @@ rec {
   };
 
   # markdown stuff
+  markview = {
+    src = srcs.markview;
+    config = ./markview.lua;
+    event = "BufRead *.md";
+    dependencies = {
+      inherit nvim-web-devicons;
+    };
+  };
+
   obsidian-nvim = {
     src = srcs.obsidian-nvim;
     config = ./obsidian.lua;

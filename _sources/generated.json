@@ -519,6 +519,26 @@
         },
         "version": "e808bee352d1a6fcf902ca1a71cee76e60e24071"
     },
+    "markview": {
+        "cargoLocks": null,
+        "date": "2024-09-10",
+        "extract": null,
+        "name": "markview",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "OXY2DEV",
+            "repo": "markview.nvim",
+            "rev": "f16486e49561740f33b6773df43c9bc2c3c34c7b",
+            "sha256": "sha256-kfHpFGC0QyqdvIZVymdWTuORH/YXW0wey01OvCKttyE=",
+            "type": "github"
+        },
+        "version": "f16486e49561740f33b6773df43c9bc2c3c34c7b"
+    },
     "neocord": {
         "cargoLocks": null,
         "date": "2024-04-24",
