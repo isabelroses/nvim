@@ -282,6 +282,14 @@ src.git = "https://github.com/amaanq/tree-sitter-func"
 fetch.git = "https://gitlab.com/jirgn/tree-sitter-fusion.git"
 src.git = "https://gitlab.com/jirgn/tree-sitter-fusion.git"
 
+[treesitter-grammar-gap]
+fetch.git = "https://github.com/gap-system/tree-sitter-gap"
+src.git = "https://github.com/gap-system/tree-sitter-gap"
+
+[treesitter-grammar-gaptst]
+fetch.git = "https://github.com/gap-system/tree-sitter-gaptst"
+src.git = "https://github.com/gap-system/tree-sitter-gaptst"
+
 [treesitter-grammar-gdscript]
 fetch.git = "https://github.com/PrestonKnopp/tree-sitter-gdscript"
 src.git = "https://github.com/PrestonKnopp/tree-sitter-gdscript"
@@ -315,8 +323,16 @@ fetch.git = "https://github.com/gleam-lang/tree-sitter-gleam"
 src.git = "https://github.com/gleam-lang/tree-sitter-gleam"
 
 [treesitter-grammar-glimmer]
-fetch.git = "https://github.com/alexlafroscia/tree-sitter-glimmer"
-src.git = "https://github.com/alexlafroscia/tree-sitter-glimmer"
+fetch.git = "https://github.com/ember-tooling/tree-sitter-glimmer"
+src.git = "https://github.com/ember-tooling/tree-sitter-glimmer"
+
+[treesitter-grammar-glimmer_javascript]
+fetch.git = "https://github.com/NullVoxPopuli/tree-sitter-glimmer-javascript"
+src.git = "https://github.com/NullVoxPopuli/tree-sitter-glimmer-javascript"
+
+[treesitter-grammar-glimmer_typescript]
+fetch.git = "https://github.com/NullVoxPopuli/tree-sitter-glimmer-typescript"
+src.git = "https://github.com/NullVoxPopuli/tree-sitter-glimmer-typescript"
 
 [treesitter-grammar-glsl]
 fetch.git = "https://github.com/theHamsta/tree-sitter-glsl"
@@ -1235,6 +1251,6 @@ fetch.git = "https://github.com/Freed-Wu/tree-sitter-zathurarc"
 src.git = "https://github.com/Freed-Wu/tree-sitter-zathurarc"
 
 [treesitter-grammar-zig]
-fetch.git = "https://github.com/maxxnino/tree-sitter-zig"
-src.git = "https://github.com/maxxnino/tree-sitter-zig"
+fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-zig"
+src.git = "https://github.com/tree-sitter-grammars/tree-sitter-zig"
 
