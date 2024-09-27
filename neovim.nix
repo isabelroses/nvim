@@ -22,15 +22,13 @@
 
           # webdev
           emmet-language-server
-          astro-language-server
           tailwindcss-language-server
           typescript
           vscode-langservers-extracted
           nodePackages.graphql-language-service-cli
           nodejs-slim
 
-          # markdown / latex
-          ltex-ls
+          # markdown
           nodePackages.alex
           marksman
 
