@@ -327,13 +327,13 @@
   };
   markview = {
     pname = "markview";
-    version = "9f7ff72827e9a7d12f2662c9430245c02f3cc6f1";
+    version = "4d549f68b5d6d4edc2447bbbd0b650d5c8039942";
     src = fetchFromGitHub {
       owner = "OXY2DEV";
       repo = "markview.nvim";
-      rev = "9f7ff72827e9a7d12f2662c9430245c02f3cc6f1";
+      rev = "4d549f68b5d6d4edc2447bbbd0b650d5c8039942";
       fetchSubmodules = false;
-      sha256 = "sha256-rihJ+lFvAeCklZuWHTv8nv1yBDfOWrEsxQ01JWujDA8=";
+      sha256 = "sha256-Bkwhg4RstOSRx+Jmjq5n2xjEkvyZ4Mx85lWn0YqRHxY=";
     };
     date = "2024-10-05";
   };
