@@ -337,6 +337,30 @@
     };
     date = "2024-10-05";
   };
+  mini-pairs = {
+    pname = "mini-pairs";
+    version = "919a89ed3c9f4142215a44c9fffca72fa8c8e792";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.pairs";
+      rev = "919a89ed3c9f4142215a44c9fffca72fa8c8e792";
+      fetchSubmodules = false;
+      sha256 = "sha256-DfFalsPu3PmOEsZmRlBC4fRHpP0rjoGFAtI6ApkMtZE=";
+    };
+    date = "2024-09-27";
+  };
+  mini-surround = {
+    pname = "mini-surround";
+    version = "e1ac1ce5c7499aa4cc2ca9fb1adec9e730dd9394";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.surround";
+      rev = "e1ac1ce5c7499aa4cc2ca9fb1adec9e730dd9394";
+      fetchSubmodules = false;
+      sha256 = "sha256-HP5lvsrwwBViFIFiuichrKMUzA+DEx9nZ12GTmpmIgc=";
+    };
+    date = "2024-09-28";
+  };
   neocord = {
     pname = "neocord";
     version = "aa7a58023166533da83ca7b11c0d2569e45d7381";

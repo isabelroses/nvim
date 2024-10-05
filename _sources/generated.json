@@ -559,6 +559,46 @@
         },
         "version": "4d549f68b5d6d4edc2447bbbd0b650d5c8039942"
     },
+    "mini-pairs": {
+        "cargoLocks": null,
+        "date": "2024-09-27",
+        "extract": null,
+        "name": "mini-pairs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.pairs",
+            "rev": "919a89ed3c9f4142215a44c9fffca72fa8c8e792",
+            "sha256": "sha256-DfFalsPu3PmOEsZmRlBC4fRHpP0rjoGFAtI6ApkMtZE=",
+            "type": "github"
+        },
+        "version": "919a89ed3c9f4142215a44c9fffca72fa8c8e792"
+    },
+    "mini-surround": {
+        "cargoLocks": null,
+        "date": "2024-09-28",
+        "extract": null,
+        "name": "mini-surround",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.surround",
+            "rev": "e1ac1ce5c7499aa4cc2ca9fb1adec9e730dd9394",
+            "sha256": "sha256-HP5lvsrwwBViFIFiuichrKMUzA+DEx9nZ12GTmpmIgc=",
+            "type": "github"
+        },
+        "version": "e1ac1ce5c7499aa4cc2ca9fb1adec9e730dd9394"
+    },
     "neocord": {
         "cargoLocks": null,
         "date": "2024-04-24",

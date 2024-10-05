@@ -112,6 +112,10 @@ src.git = "https://github.com/L3MON4D3/LuaSnip"
 fetch.github = "OXY2DEV/markview.nvim"
 src.git = "https://github.com/OXY2DEV/markview.nvim"
 
+[mini-surround]
+fetch.github = "echasnovski/mini.surround"
+src.git = "https://github.com/echasnovski/mini.surround"
+
 [neocord]
 fetch.github = "IogaMaster/neocord"
 src.git = "https://github.com/IogaMaster/neocord"
