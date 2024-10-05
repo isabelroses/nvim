@@ -28,7 +28,8 @@
           nodePackages.graphql-language-service-cli
           nodejs-slim
 
-          # markdown
+          # markdown / latex
+          ltex-ls
           nodePackages.alex
           marksman
 
