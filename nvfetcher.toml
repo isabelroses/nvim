@@ -80,6 +80,10 @@ src.git = "https://github.com/lukas-reineke/indent-blankline.nvim"
 fetch.github = "folke/lazy.nvim"
 src.git = "https://github.com/folke/lazy.nvim"
 
+[lazydev]
+fetch.github = "folke/lazydev.nvim"
+src.git = "https://github.com/folke/lazydev.nvim"
+
 [lazygit]
 fetch.github = "kdheepak/lazygit.nvim"
 src.git = "https://github.com/kdheepak/lazygit.nvim"
@@ -111,10 +115,6 @@ src.git = "https://github.com/OXY2DEV/markview.nvim"
 [neocord]
 fetch.github = "IogaMaster/neocord"
 src.git = "https://github.com/IogaMaster/neocord"
-
-[neodev]
-fetch.github = "folke/neodev.nvim"
-src.git = "https://github.com/folke/neodev.nvim"
 
 [neovim-session-manager]
 fetch.github = "Shatur/neovim-session-manager"

@@ -297,8 +297,8 @@ rec {
         config = ./trouble.lua;
       };
 
-      neodev = {
-        src = srcs.neodev;
+      lazydev = {
+        src = srcs.lazydev;
         config = true;
       };
 

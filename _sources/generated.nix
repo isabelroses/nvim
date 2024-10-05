@@ -241,6 +241,18 @@
     };
     date = "2024-09-16";
   };
+  lazydev = {
+    pname = "lazydev";
+    version = "491452cf1ca6f029e90ad0d0368848fac717c6d2";
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "lazydev.nvim";
+      rev = "491452cf1ca6f029e90ad0d0368848fac717c6d2";
+      fetchSubmodules = false;
+      sha256 = "sha256-D5gP2rVPYoWc8hslTrH7Z90cE7XEu+tfkD6FZzY/iPk=";
+    };
+    date = "2024-07-25";
+  };
   lazygit = {
     pname = "lazygit";
     version = "56760339a81cd1540d5a72fd9d93010a2677b55d";
@@ -336,18 +348,6 @@
       sha256 = "sha256-oVWdnQlgXIMzMiybMq7yR/WfEW+Fm5RmhWx0RWprlfQ=";
     };
     date = "2024-04-24";
-  };
-  neodev = {
-    pname = "neodev";
-    version = "46aa467dca16cf3dfe27098042402066d2ae242d";
-    src = fetchFromGitHub {
-      owner = "folke";
-      repo = "neodev.nvim";
-      rev = "46aa467dca16cf3dfe27098042402066d2ae242d";
-      fetchSubmodules = false;
-      sha256 = "sha256-hOjzlo/IqmV8tYjGwfmcCPEmHYsWnEIwtHZdhpwA1kM=";
-    };
-    date = "2024-07-06";
   };
   neovim-session-manager = {
     pname = "neovim-session-manager";
