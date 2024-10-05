@@ -29,7 +29,7 @@ rec {
   markview = {
     src = srcs.markview;
     config = ./markview.lua;
-    event = "BufRead *.md";
+    lazy = false; # it handles lazy loading itself
     dependencies = {
       inherit nvim-web-devicons;
     };

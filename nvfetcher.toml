@@ -111,6 +111,7 @@ src.git = "https://github.com/L3MON4D3/LuaSnip"
 [markview]
 fetch.github = "OXY2DEV/markview.nvim"
 src.git = "https://github.com/OXY2DEV/markview.nvim"
+src.branch = "dev"
 
 [neocord]
 fetch.github = "IogaMaster/neocord"

@@ -327,15 +327,15 @@
   };
   markview = {
     pname = "markview";
-    version = "f16486e49561740f33b6773df43c9bc2c3c34c7b";
+    version = "9f7ff72827e9a7d12f2662c9430245c02f3cc6f1";
     src = fetchFromGitHub {
       owner = "OXY2DEV";
       repo = "markview.nvim";
-      rev = "f16486e49561740f33b6773df43c9bc2c3c34c7b";
+      rev = "9f7ff72827e9a7d12f2662c9430245c02f3cc6f1";
       fetchSubmodules = false;
-      sha256 = "sha256-kfHpFGC0QyqdvIZVymdWTuORH/YXW0wey01OvCKttyE=";
+      sha256 = "sha256-rihJ+lFvAeCklZuWHTv8nv1yBDfOWrEsxQ01JWujDA8=";
     };
-    date = "2024-09-10";
+    date = "2024-10-05";
   };
   neocord = {
     pname = "neocord";
