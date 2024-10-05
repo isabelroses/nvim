@@ -38,7 +38,6 @@ rec {
   obsidian-nvim = {
     src = srcs.obsidian-nvim;
     config = ./obsidian.lua;
-    event = "BufRead .obsidian";
     dependencies = {
       inherit plenary;
     };
