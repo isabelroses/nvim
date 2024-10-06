@@ -75,9 +75,9 @@ rec {
     };
   };
 
-  lualine = {
-    src = srcs.lualine;
-    config = ./lualine.lua;
+  feline = {
+    src = srcs.feline;
+    config = ./feline.lua;
     dependencies = {
       navic = {
         src = srcs.nvim-navic;

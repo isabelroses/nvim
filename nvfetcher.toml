@@ -50,6 +50,10 @@ src.git = "https://github.com/gpanders/editorconfig.nvim"
 fetch.github = "comfysage/evergarden"
 src.git = "https://github.com/comfysage/evergarden"
 
+[feline]
+fetch.github = "freddiehaddad/feline.nvim"
+src.git = "https://github.com/freddiehaddad/feline.nvim"
+
 [fidget]
 fetch.github = "j-hui/fidget.nvim"
 src.git = "https://github.com/j-hui/fidget.nvim"
@@ -99,10 +103,6 @@ src.git = "https://github.com/onsails/lspkind.nvim"
 [ltex-extra]
 fetch.github = "barreiroleo/ltex-extra.nvim"
 src.git = "https://github.com/barreiroleo/ltex-extra.nvim"
-
-[lualine]
-fetch.github = "nvim-lualine/lualine.nvim"
-src.git = "https://github.com/nvim-lualine/lualine.nvim"
 
 [luasnip]
 fetch.github = "L3MON4D3/LuaSnip"
@@ -234,6 +234,6 @@ fetch.github = "tpope/vim-fugitive"
 src.git = "https://github.com/tpope/vim-fugitive"
 
 [wakatime]
+pinned = true
 fetch.github = "wakatime/vim-wakatime"
 src.git = "https://github.com/wakatime/vim-wakatime"
-pinned = true

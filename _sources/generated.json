@@ -259,6 +259,26 @@
         },
         "version": "7e031b62f13d8b13eed5a2906d6bf4ea6d44759c"
     },
+    "feline": {
+        "cargoLocks": null,
+        "date": "2024-07-13",
+        "extract": null,
+        "name": "feline",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "freddiehaddad",
+            "repo": "feline.nvim",
+            "rev": "c97c17dc56ca3cf2b9b9192c3447fc59347e8c0d",
+            "sha256": "sha256-nFH6FA0nrUGWwaaAo9NRjFldcCYQgvsLMEQaI9iVczU=",
+            "type": "github"
+        },
+        "version": "c97c17dc56ca3cf2b9b9192c3447fc59347e8c0d"
+    },
     "fidget": {
         "cargoLocks": null,
         "date": "2023-11-09",
@@ -499,26 +519,6 @@
         },
         "version": "24acd044ce7a26b3cdb537cbd094de37c3e1ac45"
     },
-    "lualine": {
-        "cargoLocks": null,
-        "date": "2024-08-12",
-        "extract": null,
-        "name": "lualine",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-lualine",
-            "repo": "lualine.nvim",
-            "rev": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056",
-            "sha256": "sha256-gCm7m96PkZyrgjmt7Efc+NMZKStAq1zr7JRCYOgGDuE=",
-            "type": "github"
-        },
-        "version": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056"
-    },
     "luasnip": {
         "cargoLocks": null,
         "date": "2024-09-12",
@@ -558,26 +558,6 @@
             "type": "github"
         },
         "version": "4d549f68b5d6d4edc2447bbbd0b650d5c8039942"
-    },
-    "mini-pairs": {
-        "cargoLocks": null,
-        "date": "2024-09-27",
-        "extract": null,
-        "name": "mini-pairs",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "echasnovski",
-            "repo": "mini.pairs",
-            "rev": "919a89ed3c9f4142215a44c9fffca72fa8c8e792",
-            "sha256": "sha256-DfFalsPu3PmOEsZmRlBC4fRHpP0rjoGFAtI6ApkMtZE=",
-            "type": "github"
-        },
-        "version": "919a89ed3c9f4142215a44c9fffca72fa8c8e792"
     },
     "mini-surround": {
         "cargoLocks": null,

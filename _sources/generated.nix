@@ -157,6 +157,18 @@
     };
     date = "2024-07-15";
   };
+  feline = {
+    pname = "feline";
+    version = "c97c17dc56ca3cf2b9b9192c3447fc59347e8c0d";
+    src = fetchFromGitHub {
+      owner = "freddiehaddad";
+      repo = "feline.nvim";
+      rev = "c97c17dc56ca3cf2b9b9192c3447fc59347e8c0d";
+      fetchSubmodules = false;
+      sha256 = "sha256-nFH6FA0nrUGWwaaAo9NRjFldcCYQgvsLMEQaI9iVczU=";
+    };
+    date = "2024-07-13";
+  };
   fidget = {
     pname = "fidget";
     version = "2f7c08f45639a64a5c0abcf67321d52c3f499ae6";
@@ -301,18 +313,6 @@
     };
     date = "2024-06-15";
   };
-  lualine = {
-    pname = "lualine";
-    version = "b431d228b7bbcdaea818bdc3e25b8cdbe861f056";
-    src = fetchFromGitHub {
-      owner = "nvim-lualine";
-      repo = "lualine.nvim";
-      rev = "b431d228b7bbcdaea818bdc3e25b8cdbe861f056";
-      fetchSubmodules = false;
-      sha256 = "sha256-gCm7m96PkZyrgjmt7Efc+NMZKStAq1zr7JRCYOgGDuE=";
-    };
-    date = "2024-08-12";
-  };
   luasnip = {
     pname = "luasnip";
     version = "e808bee352d1a6fcf902ca1a71cee76e60e24071";
@@ -336,18 +336,6 @@
       sha256 = "sha256-Bkwhg4RstOSRx+Jmjq5n2xjEkvyZ4Mx85lWn0YqRHxY=";
     };
     date = "2024-10-05";
-  };
-  mini-pairs = {
-    pname = "mini-pairs";
-    version = "919a89ed3c9f4142215a44c9fffca72fa8c8e792";
-    src = fetchFromGitHub {
-      owner = "echasnovski";
-      repo = "mini.pairs";
-      rev = "919a89ed3c9f4142215a44c9fffca72fa8c8e792";
-      fetchSubmodules = false;
-      sha256 = "sha256-DfFalsPu3PmOEsZmRlBC4fRHpP0rjoGFAtI6ApkMtZE=";
-    };
-    date = "2024-09-27";
   };
   mini-surround = {
     pname = "mini-surround";
