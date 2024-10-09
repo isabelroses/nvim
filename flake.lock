@@ -108,8 +108,8 @@
       },
       "original": {
         "owner": "nekowinston",
-        "ref": "feat/more-plugin-spec-fields",
         "repo": "neovim.nix",
+        "rev": "36761e2fcd5e81fa3b39cb72d9fbcb92098edad8",
         "type": "github"
       }
     },

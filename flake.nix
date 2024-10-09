@@ -35,7 +35,7 @@
     # };
 
     neovim-nix = {
-      url = "github:nekowinston/neovim.nix/feat/more-plugin-spec-fields";
+      url = "github:nekowinston/neovim.nix/36761e2fcd5e81fa3b39cb72d9fbcb92098edad8";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -47,15 +47,25 @@
     systems.url = "github:nix-systems/default";
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import inputs.systems;
 
-      imports = [ inputs.neovim-nix.flakeModule ./neovim.nix ]
-        ++ inputs.nixpkgs.lib.optional (inputs.git-hooks ? flakeModule)
-        inputs.git-hooks.flakeModule;
+      imports = [
+        inputs.neovim-nix.flakeModule
+        ./neovim.nix
+      ] ++ inputs.nixpkgs.lib.optional (inputs.git-hooks ? flakeModule) inputs.git-hooks.flakeModule;
 
-      perSystem = { lib, pkgs, self', config, system, ... }:
+      perSystem =
+        {
+          lib,
+          pkgs,
+          self',
+          config,
+          system,
+          ...
+        }:
         {
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
@@ -65,17 +75,23 @@
 
           formatter = pkgs.nixfmt-rfc-style;
 
-          packages = let neovim = config.neovim.final;
-          in {
-            inherit neovim;
-            default = neovim;
-            nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
-          };
+          packages =
+            let
+              neovim = config.neovim.final;
+            in
+            {
+              inherit neovim;
+              default = neovim;
+              nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
+            };
 
           devShells = {
             default = pkgs.mkShellNoCC {
               inherit (self'.checks.pre-commit-check) shellHook;
-              buildInputs = with pkgs; [ self'.formatter nvfetcher ];
+              buildInputs = with pkgs; [
+                self'.formatter
+                nvfetcher
+              ];
             };
 
             generate-treesitter = pkgs.mkShellNoCC {
@@ -83,19 +99,17 @@
                 nvfetcher
                 (writeShellApplication {
                   name = "generate";
-                  runtimeInputs =
-                    [ (callPackage ./pkgs/nvim-treesitter/neovim.nix { }) ];
+                  runtimeInputs = [ (callPackage ./pkgs/nvim-treesitter/neovim.nix { }) ];
 
                   text = ''
-                    nvim --headless -l ${
-                      ./pkgs/nvim-treesitter/generate-nvfetcher.lua
-                    }
+                    nvim --headless -l ${./pkgs/nvim-treesitter/generate-nvfetcher.lua}
                   '';
                 })
               ];
             };
           };
-        } // lib.optionalAttrs (inputs.git-hooks ? flakeModule) {
+        }
+        // lib.optionalAttrs (inputs.git-hooks ? flakeModule) {
           checks.pre-commit-check = inputs.git-hooks.lib.${system}.run {
             src = ./.;
             excludes = [ "_sources/.+" ];
