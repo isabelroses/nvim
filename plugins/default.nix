@@ -417,12 +417,12 @@ rec {
   };
 
   # discord integration
-  neocord = {
-    src = srcs.neocord;
+  cord = {
+    src = pkgs.vimPlugins.cord-nvim;
     event = "VeryLazy";
     config = {
-      logo = "https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp";
-      main_image = "logo";
+      editor.image = "https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp";
+      display.swap_icons = true; # place the editor image as the main image
     };
   };
 
