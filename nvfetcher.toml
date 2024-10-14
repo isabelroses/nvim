@@ -42,6 +42,10 @@ src.git = "https://github.com/zbirenbaum/copilot.lua"
 fetch.github = "saecki/crates.nvim"
 src.git = "https://github.com/saecki/crates.nvim"
 
+[direnv-nvim]
+fetch.github = "NotAShelf/direnv.nvim"
+src.git = "https://github.com/NotAShelf/direnv.nvim"
+
 [editorconfig]
 fetch.github = "gpanders/editorconfig.nvim"
 src.git = "https://github.com/gpanders/editorconfig.nvim"

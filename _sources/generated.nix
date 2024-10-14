@@ -133,6 +133,18 @@
     };
     date = "2024-09-26";
   };
+  direnv-nvim = {
+    pname = "direnv-nvim";
+    version = "3e38d855c764bb1bec230130ed0e026fca54e4c8";
+    src = fetchFromGitHub {
+      owner = "NotAShelf";
+      repo = "direnv.nvim";
+      rev = "3e38d855c764bb1bec230130ed0e026fca54e4c8";
+      fetchSubmodules = false;
+      sha256 = "sha256-nWdAIchqGsWiF0cQ7NwePRa1fpugE8duZKqdBaisrAc=";
+    };
+    date = "2024-07-08";
+  };
   editorconfig = {
     pname = "editorconfig";
     version = "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf";

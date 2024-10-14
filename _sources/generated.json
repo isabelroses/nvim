@@ -219,6 +219,26 @@
         },
         "version": "8bf8358ee326d5d8c11dcd7ac0bcc9ff97dbc785"
     },
+    "direnv-nvim": {
+        "cargoLocks": null,
+        "date": "2024-07-08",
+        "extract": null,
+        "name": "direnv-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "NotAShelf",
+            "repo": "direnv.nvim",
+            "rev": "3e38d855c764bb1bec230130ed0e026fca54e4c8",
+            "sha256": "sha256-nWdAIchqGsWiF0cQ7NwePRa1fpugE8duZKqdBaisrAc=",
+            "type": "github"
+        },
+        "version": "3e38d855c764bb1bec230130ed0e026fca54e4c8"
+    },
     "editorconfig": {
         "cargoLocks": null,
         "date": "2023-01-10",

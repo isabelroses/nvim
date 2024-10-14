@@ -99,17 +99,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1725205441,
+        "lastModified": 1726122135,
         "narHash": "sha256-go26fmPdyBgwzHMostxKFAg23HekfD/L/U2Fnl00JN8=",
-        "owner": "nekowinston",
+        "owner": "willruggiano",
         "repo": "neovim.nix",
-        "rev": "36761e2fcd5e81fa3b39cb72d9fbcb92098edad8",
+        "rev": "867d08bf296925a35a217f1d90975d0522142b9c",
         "type": "github"
       },
       "original": {
-        "owner": "nekowinston",
+        "owner": "willruggiano",
         "repo": "neovim.nix",
-        "rev": "36761e2fcd5e81fa3b39cb72d9fbcb92098edad8",
         "type": "github"
       }
     },

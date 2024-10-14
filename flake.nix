@@ -35,7 +35,7 @@
     # };
 
     neovim-nix = {
-      url = "github:nekowinston/neovim.nix/36761e2fcd5e81fa3b39cb72d9fbcb92098edad8";
+      url = "github:willruggiano/neovim.nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
