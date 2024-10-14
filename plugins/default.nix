@@ -444,14 +444,7 @@ rec {
           return vim.fn.executable("direnv") == 1
         end
       '';
-    config = # lua
-      ''
-        function()
-          require("direnv").setup({
-            autoload_direnv = true,
-          })
-        end
-      '';
+    config.autoload_direnv = true;
   };
 
   # discord integration
