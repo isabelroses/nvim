@@ -79,6 +79,11 @@ return function()
         val = "neovim " .. vStr,
         opts = { hl = "Comment", position = "center" },
       },
+      -- {
+      --   type = "text",
+      --   val = "neovide " .. vim.g.neovide_version,
+      --   opts = { hl = "Comment", position = "center" },
+      -- },
       {
         type = "text",
         val = require("lazy").stats().count .. " plugins",
