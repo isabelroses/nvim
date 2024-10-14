@@ -10,8 +10,9 @@ return function()
       comments = { "italic" },
     },
     integrations = {
+      alpha = true,
       treesitter = true,
-      treesitter_context = true,
+      treesitter_context = false,
       native_lsp = {
         enabled = true,
         virtual_text = {
@@ -32,10 +33,7 @@ return function()
       },
       cmp = true,
       lsp_trouble = true,
-      nvimtree = {
-        enabled = true,
-        transparent_panel = true,
-      },
+      nvimtree = true,
       which_key = false,
       indent_blankline = {
         enabled = true,
@@ -47,6 +45,7 @@ return function()
       },
       gitsigns = false,
       markdown = true,
+      render_markdown = false,
       harpoon = true,
       symbols_outline = true,
       ts_rainbow = true,
