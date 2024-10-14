@@ -382,6 +382,7 @@ rec {
         "help"
         "lazy"
         "NvimTree"
+        "ToggleTerm"
         "LazyGit"
         "TelescopePrompt"
         "prompt"
@@ -407,13 +408,34 @@ rec {
   };
 
   # lazygit integration
-  lazygit = {
-    src = srcs.lazygit;
+  toggleterm = {
+    src = srcs.toggleterm-nvim;
     event = "VeryLazy";
-    dependencies = {
-      inherit plenary;
-    };
     paths = [ pkgs.lazygit ];
+    config = # lua
+      ''
+        function()
+          require("toggleterm").setup()
+
+          local Terminal = require('toggleterm.terminal').Terminal
+          local lazygit = Terminal:new({
+            cmd = "lazygit",
+            dir = "git_dir",
+            direction = "float",
+            on_open = function(t)
+              vim.keymap.set('t', 'q', vim.cmd.close, {buffer = t.bufnr, silent = true})
+            end,
+            float_opts = {
+              border = "rounded",
+              width = 1200,
+              height = 800,
+            },
+          })
+
+          vim.keymap.set("n", "<leader>gg", function() lazygit:toggle() end, {noremap = true, silent = true})
+          vim.keymap.set("n", "<c-t>", "<cmd>ToggleTerm<cr>", {noremap = true, silent = true})
+        end
+      '';
   };
 
   # discord integration

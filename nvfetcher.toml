@@ -84,10 +84,6 @@ src.git = "https://github.com/folke/lazy.nvim"
 fetch.github = "folke/lazydev.nvim"
 src.git = "https://github.com/folke/lazydev.nvim"
 
-[lazygit]
-fetch.github = "kdheepak/lazygit.nvim"
-src.git = "https://github.com/kdheepak/lazygit.nvim"
-
 [lsp-status]
 fetch.github = "nvim-lua/lsp-status.nvim"
 src.git = "https://github.com/nvim-lua/lsp-status.nvim"
@@ -208,14 +204,13 @@ src.git = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
 fetch.github = "rachartier/tiny-devicons-auto-colors.nvim"
 src.git = "https://github.com/rachartier/tiny-devicons-auto-colors.nvim"
 
+[toggleterm-nvim]
+fetch.github = "akinsho/toggleterm.nvim"
+src.git = "https://github.com/akinsho/toggleterm.nvim"
+
 [todo-comments]
 fetch.github = "folke/todo-comments.nvim"
 src.git = "https://github.com/folke/todo-comments.nvim"
-
-[tree-sitter-nu]
-fetch.git = "https://github.com/nushell/tree-sitter-nu"
-src.git = "https://github.com/nushell/tree-sitter-nu"
-src.branch = "main"
 
 [trouble]
 fetch.github = "folke/trouble.nvim"

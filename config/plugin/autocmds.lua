@@ -26,3 +26,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "gohtmltmpl"
   end,
 })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "term://*",
+  callback = function()
+    local opts = { buffer = 0 }
+    vim.cmd("startinsert!")
+    vim.keymap.set("t", "<esc><esc>", [[<C-\><C-n><C-w>]], opts)
+    vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
+  end,
+})

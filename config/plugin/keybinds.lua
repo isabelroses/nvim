@@ -22,9 +22,6 @@ map("n", "<C-N>", "<cmd>NvimTreeToggle<CR>")
 map({ "n", "v" }, "<leader>y", '"+y')
 map({ "n", "v" }, "<leader>p", '"+p')
 
--- open lazygit
-map({ "n", "v" }, "<leader>gg", "<cmd>LazyGit<cr>")
-
 -- quit all
 map({ "n", "v" }, "<leader>q", "<cmd>qall<cr>")
 

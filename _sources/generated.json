@@ -419,26 +419,6 @@
         },
         "version": "491452cf1ca6f029e90ad0d0368848fac717c6d2"
     },
-    "lazygit": {
-        "cargoLocks": null,
-        "date": "2024-10-01",
-        "extract": null,
-        "name": "lazygit",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "kdheepak",
-            "repo": "lazygit.nvim",
-            "rev": "56760339a81cd1540d5a72fd9d93010a2677b55d",
-            "sha256": "sha256-djAY6VwCLcIEHLyQX0KHOppZXIIn92AYduA1KBnbVkY=",
-            "type": "github"
-        },
-        "version": "56760339a81cd1540d5a72fd9d93010a2677b55d"
-    },
     "lsp-status": {
         "cargoLocks": null,
         "date": "2022-08-03",
@@ -1059,11 +1039,11 @@
         },
         "version": "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0"
     },
-    "tree-sitter-nu": {
+    "toggleterm-nvim": {
         "cargoLocks": null,
-        "date": "2024-09-26",
+        "date": "2024-08-08",
         "extract": null,
-        "name": "tree-sitter-nu",
+        "name": "toggleterm-nvim",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -1071,12 +1051,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e3b4c967937cad628dca09bd098cd780d8288750",
-            "sha256": "sha256-DlvBRKDXOJCqyJE0BJn8omqF50pQmnceiYsihJa/opg=",
-            "type": "git",
-            "url": "https://github.com/nushell/tree-sitter-nu"
+            "owner": "akinsho",
+            "repo": "toggleterm.nvim",
+            "rev": "137d06fb103952a0fb567882bb8527e2f92d327d",
+            "sha256": "sha256-VlHE5nFHDO6GRRM44TqtcWSk2k0NfeCndp7of/35ta4=",
+            "type": "github"
         },
-        "version": "e3b4c967937cad628dca09bd098cd780d8288750"
+        "version": "137d06fb103952a0fb567882bb8527e2f92d327d"
     },
     "trouble": {
         "cargoLocks": null,

@@ -253,18 +253,6 @@
     };
     date = "2024-07-25";
   };
-  lazygit = {
-    pname = "lazygit";
-    version = "56760339a81cd1540d5a72fd9d93010a2677b55d";
-    src = fetchFromGitHub {
-      owner = "kdheepak";
-      repo = "lazygit.nvim";
-      rev = "56760339a81cd1540d5a72fd9d93010a2677b55d";
-      fetchSubmodules = false;
-      sha256 = "sha256-djAY6VwCLcIEHLyQX0KHOppZXIIn92AYduA1KBnbVkY=";
-    };
-    date = "2024-10-01";
-  };
   lsp-status = {
     pname = "lsp-status";
     version = "54f48eb5017632d81d0fd40112065f1d062d0629";
@@ -637,18 +625,17 @@
     };
     date = "2024-09-16";
   };
-  tree-sitter-nu = {
-    pname = "tree-sitter-nu";
-    version = "e3b4c967937cad628dca09bd098cd780d8288750";
-    src = fetchgit {
-      url = "https://github.com/nushell/tree-sitter-nu";
-      rev = "e3b4c967937cad628dca09bd098cd780d8288750";
+  toggleterm-nvim = {
+    pname = "toggleterm-nvim";
+    version = "137d06fb103952a0fb567882bb8527e2f92d327d";
+    src = fetchFromGitHub {
+      owner = "akinsho";
+      repo = "toggleterm.nvim";
+      rev = "137d06fb103952a0fb567882bb8527e2f92d327d";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "sha256-DlvBRKDXOJCqyJE0BJn8omqF50pQmnceiYsihJa/opg=";
+      sha256 = "sha256-VlHE5nFHDO6GRRM44TqtcWSk2k0NfeCndp7of/35ta4=";
     };
-    date = "2024-09-26";
+    date = "2024-08-08";
   };
   trouble = {
     pname = "trouble";
