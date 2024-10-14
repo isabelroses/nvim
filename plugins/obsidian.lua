@@ -15,6 +15,7 @@ return function()
       },
     },
     completion = {
+      min_chars = 2,
       nvim_cmp = true,
     },
   })

@@ -79,11 +79,6 @@ return function()
         val = "neovim " .. vStr,
         opts = { hl = "Comment", position = "center" },
       },
-      -- {
-      --   type = "text",
-      --   val = "neovide " .. vim.g.neovide_version,
-      --   opts = { hl = "Comment", position = "center" },
-      -- },
       {
         type = "text",
         val = require("lazy").stats().count .. " plugins",
@@ -91,6 +86,14 @@ return function()
       },
     },
   }
+
+  if vim.g.neovide then
+    table.insert(footer.val, {
+      type = "text",
+      val = "neovide " .. vim.g.neovide_version,
+      opts = { hl = "Comment", position = "center" },
+    }, 2)
+  end
 
   theta.config.layout = {
     { type = "padding", val = 4 },
