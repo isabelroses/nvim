@@ -88,11 +88,11 @@ return function()
   }
 
   if vim.g.neovide then
-    table.insert(footer.val, {
+    table.insert(footer.val, 2, {
       type = "text",
       val = "neovide " .. vim.g.neovide_version,
       opts = { hl = "Comment", position = "center" },
-    }, 2)
+    })
   end
 
   theta.config.layout = {
