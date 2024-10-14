@@ -427,8 +427,6 @@ rec {
             end,
             float_opts = {
               border = "rounded",
-              width = 1200,
-              height = 800,
             },
           })
 
