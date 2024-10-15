@@ -342,6 +342,7 @@ return {
   },
   {
     "nvim-web-devicons",
+    priority = 100,
     after = rq("nvim-web-devicons"),
   },
 }
