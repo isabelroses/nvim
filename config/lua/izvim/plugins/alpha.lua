@@ -84,7 +84,7 @@ local footer = {
 if vim.g.neovide then
   table.insert(footer.val, 2, {
     type = "text",
-    val = "neovide " .. vim.g.neovide_version,
+    val = "neovide v" .. vim.g.neovide_version,
     opts = { hl = "Comment", position = "center" },
   })
 end
