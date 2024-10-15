@@ -52,27 +52,23 @@
           dockerfile-language-server-nodejs
         ];
 
-        build =
-          let
-            env = pkgs.buildEnv {
-              name = "neovim-host-prog";
-              paths = [ pkgs.nodePackages.neovim ] ++ [ (pkgs.python3.withPackages (ps: with ps; [ pynvim ])) ];
-            };
-          in
-          lib.mkForce {
-            before = pkgs.writeTextFile {
-              name = "before.lua";
-              text = ''
-                -- set space as leader
-                vim.g.mapleader = " "
-                vim.g.maplocalleader = " "
+        build = lib.mkForce {
+          before = pkgs.writeTextFile {
+            name = "before.lua";
+            text = ''
+              -- set space as leader
+              vim.g.mapleader = " "
+              vim.g.maplocalleader = " "
 
-                -- this defaults to this and we want to keep it that way
-                vim.g.node_host_prog = "${env}/bin/neovim-node-host"
-                vim.g.python3_host_prog = "${env}/bin/python"
-              '';
-            };
+              -- disable remote plugin providers
+              vim.g.loaded_node_provider = 0
+              vim.g.loaded_perl_provider = 0
+              vim.g.loaded_python_provider = 0
+              vim.g.loaded_python3_provider = 0
+              vim.g.loaded_ruby_provider = 0
+            '';
           };
+        };
 
         lazy = {
           settings.dev.path = "~/dev/nvim";
