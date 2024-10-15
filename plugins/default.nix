@@ -420,11 +420,7 @@ rec {
           local Terminal = require('toggleterm.terminal').Terminal
           local lazygit = Terminal:new({
             cmd = "lazygit",
-            dir = "git_dir",
             direction = "float",
-            on_open = function(t)
-              vim.keymap.set('t', 'q', vim.cmd.close, {buffer = t.bufnr, silent = true})
-            end,
             float_opts = {
               border = "rounded",
             },
