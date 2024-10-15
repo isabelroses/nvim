@@ -131,3 +131,10 @@ vim.opt.fillchars:append({
 
 -- rust save
 vim.g.rustfmt_autosave = 1
+
+-- disable remote plugin providers
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
