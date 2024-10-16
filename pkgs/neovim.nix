@@ -37,6 +37,7 @@
   dockerfile-language-server-nodejs,
   lazygit,
   nodePackages,
+  nodejs-slim,
 
   # for our extra plugins
   vimPlugins,
@@ -108,6 +109,9 @@ let
     # external deps
     fd
     ripgrep
+
+    # needed for copilot
+    nodejs-slim
 
     # lua
     stylua
