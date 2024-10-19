@@ -13,6 +13,12 @@ parsers.gotmpl = {
     files = { "src/parser.c" },
   },
 }
+parsers.tera = {
+  install_info = {
+    url = "https://github.com/uncenter/tree-sitter-tera",
+    files = { "src/parser.c" },
+  },
+}
 
 local keys = {}
 for lang, _ in pairs(parsers) do

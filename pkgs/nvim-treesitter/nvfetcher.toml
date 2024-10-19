@@ -274,6 +274,12 @@ src.git = "https://github.com/stadelmanma/tree-sitter-fortran"
 fetch.git = "https://github.com/mgramigna/tree-sitter-fsh"
 src.git = "https://github.com/mgramigna/tree-sitter-fsh"
 
+[treesitter-grammar-fsharp]
+fetch.git = "https://github.com/ionide/tree-sitter-fsharp"
+src.git = "https://github.com/ionide/tree-sitter-fsharp"
+[treesitter-grammar-fsharp.passthru]
+location = "fsharp"
+
 [treesitter-grammar-func]
 fetch.git = "https://github.com/amaanq/tree-sitter-func"
 src.git = "https://github.com/amaanq/tree-sitter-func"
@@ -381,6 +387,10 @@ src.git = "https://github.com/ObserverOfTime/tree-sitter-gpg-config"
 [treesitter-grammar-graphql]
 fetch.git = "https://github.com/bkegley/tree-sitter-graphql"
 src.git = "https://github.com/bkegley/tree-sitter-graphql"
+
+[treesitter-grammar-gren]
+fetch.git = "https://github.com/MaeBrooks/tree-sitter-gren"
+src.git = "https://github.com/MaeBrooks/tree-sitter-gren"
 
 [treesitter-grammar-groovy]
 fetch.git = "https://github.com/murtaza64/tree-sitter-groovy"
@@ -1019,6 +1029,12 @@ src.git = "https://github.com/mskelton/tree-sitter-styled"
 fetch.git = "https://github.com/madskjeldgaard/tree-sitter-supercollider"
 src.git = "https://github.com/madskjeldgaard/tree-sitter-supercollider"
 
+[treesitter-grammar-superhtml]
+fetch.git = "https://github.com/kristoff-it/superhtml"
+src.git = "https://github.com/kristoff-it/superhtml"
+[treesitter-grammar-superhtml.passthru]
+location = "tree-sitter-superhtml"
+
 [treesitter-grammar-surface]
 fetch.git = "https://github.com/connorlay/tree-sitter-surface"
 src.git = "https://github.com/connorlay/tree-sitter-surface"
@@ -1070,6 +1086,10 @@ generate = "true"
 [treesitter-grammar-templ]
 fetch.git = "https://github.com/vrischmann/tree-sitter-templ"
 src.git = "https://github.com/vrischmann/tree-sitter-templ"
+
+[treesitter-grammar-tera]
+fetch.git = "https://github.com/uncenter/tree-sitter-tera"
+src.git = "https://github.com/uncenter/tree-sitter-tera"
 
 [treesitter-grammar-terraform]
 fetch.git = "https://github.com/MichaHoffmann/tree-sitter-hcl"
@@ -1253,4 +1273,16 @@ src.git = "https://github.com/Freed-Wu/tree-sitter-zathurarc"
 [treesitter-grammar-zig]
 fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-zig"
 src.git = "https://github.com/tree-sitter-grammars/tree-sitter-zig"
+
+[treesitter-grammar-ziggy]
+fetch.git = "https://github.com/kristoff-it/ziggy"
+src.git = "https://github.com/kristoff-it/ziggy"
+[treesitter-grammar-ziggy.passthru]
+location = "tree-sitter-ziggy"
+
+[treesitter-grammar-ziggy_schema]
+fetch.git = "https://github.com/kristoff-it/ziggy"
+src.git = "https://github.com/kristoff-it/ziggy"
+[treesitter-grammar-ziggy_schema.passthru]
+location = "tree-sitter-ziggy-schema"
 
