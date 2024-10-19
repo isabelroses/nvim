@@ -4,6 +4,7 @@ vim.filetype.add({
     tmpl = "gohtmltmpl",
     rasi = "scss",
     envrc = "bash",
+    tera = "tera",
   },
   pattern = {
     [".*/hypr/.*%.conf"] = "hyprlang",

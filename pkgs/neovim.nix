@@ -81,6 +81,7 @@
       "rust"
       "scss"
       "svelte"
+      "tera"
       "toml"
       "tsv"
       "tsx"
