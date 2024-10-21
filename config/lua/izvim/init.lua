@@ -10,3 +10,5 @@ vim.api.nvim_cmd({
 }, {})
 
 require("lz.n").load(require("izvim.plugins"))
+
+require("izvim.health").loaded = true
