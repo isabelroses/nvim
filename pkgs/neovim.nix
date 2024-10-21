@@ -45,7 +45,6 @@
   # our custom treesitter plugin
   treesitter ? (callPackage ./nvim-treesitter { }).override {
     grammars = [
-      "astro"
       "bash"
       "c"
       "cpp"
@@ -80,13 +79,11 @@
       "python"
       "rust"
       "scss"
-      "svelte"
       "tera"
       "toml"
       "tsv"
       "tsx"
       "typescript"
-      "vim"
       "vue"
       "yaml"
       "yuck"
