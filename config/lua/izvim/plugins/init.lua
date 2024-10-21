@@ -75,6 +75,11 @@ return {
   },
 
   {
+    "evergarden",
+    after = rq("evergarden"),
+  },
+
+  {
     "fidget",
     after = function()
       require("fidget").setup({

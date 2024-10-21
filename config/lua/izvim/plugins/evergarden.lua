@@ -11,5 +11,3 @@ require("evergarden").setup({
   },
   overrides = {}, -- add custom overrides
 })
-
-vim.cmd.colorscheme("evergarden")
