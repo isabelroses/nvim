@@ -45,7 +45,7 @@ vim.o.signcolumn = "yes:1"
 vim.opt.shortmess:append("sI")
 
 -- hide extra text
-vim.opt.conceallevel = 2
+vim.opt.conceallevel = 1
 
 -- nice font icons or something
 vim.g.have_nerd_font = true
