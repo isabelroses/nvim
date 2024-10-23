@@ -70,7 +70,6 @@ return {
   {
     "catppuccin",
     priority = 1000,
-    event = "UIEnter",
     after = rq("catppuccin"),
   },
 
