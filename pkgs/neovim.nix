@@ -183,6 +183,7 @@ let
     # extra plugsns beacuse they often fail or need extra steps
     vimPlugins.cord-nvim
     vimPlugins.telescope-fzf-native-nvim
+    (callPackage ./fzy-lua-native.nix { })
   ];
 in
 symlinkJoin {

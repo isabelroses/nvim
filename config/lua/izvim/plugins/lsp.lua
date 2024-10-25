@@ -1,5 +1,6 @@
 local plugins = {
-  "cmp",
+  "care-nvim",
+  "fzy-lua-native",
   "cmp-buffer",
   "cmp-cmdline",
   "cmp-nvim-lsp",
@@ -23,7 +24,7 @@ for _, plugin in ipairs(plugins) do
 end
 
 local lsp_present, lspconfig = pcall(require, "lspconfig")
-local cmp_present, cmp = pcall(require, "cmp")
+local care_nvim_present, care_nvim = pcall(require, "care-nvim")
 local navic_present, navic = pcall(require, "nvim-navic")
 local luasnip_present, luasnip = pcall(require, "luasnip")
 
@@ -32,8 +33,8 @@ if not lsp_present then
   return
 end
 
-if not cmp_present then
-  vim.notify("cmp not present", vim.log.levels.ERROR)
+if not care_nvim_present then
+  vim.notify("care.nvim not present", vim.log.levels.ERROR)
   return
 end
 
@@ -50,103 +51,22 @@ require("lspconfig.ui.windows").default_options.border = vim.g.bc.style
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = vim.g.bc.style,
 })
-local cmp_borders = {
-  border = {
-    vim.g.bc.topleft,
-    vim.g.bc.horiz,
-    vim.g.bc.topright,
-    vim.g.bc.vert,
-    vim.g.bc.botright,
-    vim.g.bc.horiz,
-    vim.g.bc.botleft,
-    vim.g.bc.vert,
-  },
-  winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
-}
 
-cmp.setup({
+care_nvim.setup({
   snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
+    expand = function(body)
+      luasnip.lsp_expand(body)
     end,
   },
-  window = {
-    completion = cmp_borders,
-    documentation = cmp_borders,
+  ui = {
+    border = vim.g.bc.style,
   },
-  mapping = cmp.mapping.preset.insert({
-    ["<CR>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        if luasnip.expandable() then
-          luasnip.expand()
-        else
-          cmp.confirm({
-            select = true,
-          })
-        end
-      else
-        fallback()
-      end
-    end),
-
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.locally_jumpable(1) then
-        luasnip.jump(1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-  }),
-  sources = cmp.config.sources({
-    -- { name = "copilot" },
-    { name = "nvim_lsp" },
-    { name = "path" },
-    { name = "luasnip" },
-    { name = "buffer" },
-  }),
-  formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      local kind = require("lspkind").cmp_format({
-        mode = "symbol_text",
-        ellipsis_char = "…",
-        maxwidth = 50,
-        symbol_map = { Copilot = "" },
-      })(entry, vim_item)
-      local strings = vim.split(kind.kind, "%s", { trimempty = true })
-
-      kind.kind = " " .. (strings[1] or "") .. " "
-      kind.menu = "   (" .. (strings[2] or "") .. ")"
-
-      return kind
-    end,
-  },
-})
-
-vim.api.nvim_create_autocmd("BufRead", {
-  group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
-  pattern = "Cargo.toml",
-  callback = function()
-    cmp.setup.buffer({ sources = { { name = "crates" } } })
-  end,
-})
-
-cmp.setup.cmdline({ "/", "?" }, {
-  mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = "buffer" },
+    "nvim_lsp",
+    "path",
+    "luasnip",
+    "buffer",
   },
-})
-
-cmp.setup.cmdline(":", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = "path", option = { trailing_slash = true } },
-  }, {
-    { name = "cmdline" },
-  }),
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()

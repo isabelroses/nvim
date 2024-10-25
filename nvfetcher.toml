@@ -10,9 +10,9 @@ src.git = "https://github.com/catppuccin/nvim"
 fetch.github = "laytan/cloak.nvim"
 src.git = "https://github.com/laytan/cloak.nvim"
 
-[cmp]
-fetch.github = "hrsh7th/nvim-cmp"
-src.git = "https://github.com/hrsh7th/nvim-cmp"
+[care-nvim]
+fetch.github = "max397574/care.nvim"
+src.git = "https://github.com/max397574/care.nvim"
 
 [cmp-buffer]
 fetch.github = "hrsh7th/cmp-buffer"
