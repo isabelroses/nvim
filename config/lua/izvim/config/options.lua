@@ -45,7 +45,7 @@ vim.o.signcolumn = "yes:1"
 vim.opt.shortmess:append("sI")
 
 -- hide extra text
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 0
 
 -- nice font icons or something
 vim.g.have_nerd_font = true
@@ -63,8 +63,18 @@ vim.o.cmdheight = 0
 -- always show status
 vim.o.laststatus = 3
 
+-- use rg for grepping
+vim.opt.grepprg = "rg --vimgrep"
+
+-- let me have spelling checking for english
+vim.opt.spelllang = { "en" }
+vim.opt.spelloptions:append("noplainbuffer")
+
 -- indent blank line imporvments
 vim.opt.list = true
+
+-- use system clipboard when not in ssh
+vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 
 -- disable swap, backup, and undo files
 vim.opt.swapfile = false
@@ -138,3 +148,9 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+-- fix markfown stuff
+vim.g.markdown_recommended_style = 0
+
+-- disable plugins at this file size
+vim.g.bigfile_size = 1024 * 1024 * 1.5 -- 1.5 MB

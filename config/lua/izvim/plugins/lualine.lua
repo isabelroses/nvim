@@ -1,7 +1,11 @@
+local lualine_require = require("lualine_require")
+lualine_require.require = require
+
 require("lualine").setup({
   options = {
     icons_enabled = true,
     theme = "auto",
+    disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     always_divide_middle = true,
