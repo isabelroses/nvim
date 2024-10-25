@@ -315,15 +315,15 @@
   };
   lz-n = {
     pname = "lz-n";
-    version = "ffd9991400ba7137f4fa8560ff50bccd7f8fb3ee";
+    version = "f78f791e7be24c3ec59278c1c194ed3208f116dd";
     src = fetchFromGitHub {
       owner = "nvim-neorocks";
       repo = "lz.n";
-      rev = "ffd9991400ba7137f4fa8560ff50bccd7f8fb3ee";
+      rev = "f78f791e7be24c3ec59278c1c194ed3208f116dd";
       fetchSubmodules = false;
-      sha256 = "sha256-fk+ejqcqqOQz3q4D3VB2Q+U/6wCpCDk1tiDMp2YrPNE=";
+      sha256 = "sha256-0w/UmtI7qDpxEElMV7ycs2c37OXj9jJTYzyqYCKqZPY=";
     };
-    date = "2024-10-21";
+    date = "2024-10-24";
   };
   markview = {
     pname = "markview";

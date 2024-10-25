@@ -45,6 +45,7 @@ return {
   -- markdown stuff
   {
     "markview",
+    lazy = false,
     after = rq("markview"),
   },
   {
