@@ -293,6 +293,27 @@
         },
         "version": "d7adb7e8e1f803176e588a427d7d21e76840bb83"
     },
+    "feline": {
+        "cargoLocks": null,
+        "date": "2023-09-21",
+        "extract": null,
+        "name": "feline",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "feline-nvim",
+            "repo": "feline.nvim",
+            "rev": "3587f57480b88e8009df7b36dc84e9c7ff8f2c49",
+            "sha256": "sha256-u9TY9DrjDgBYJYG8RJtU+ZqFjsi2YknV2R6rL+ISb/M=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3587f57480b88e8009df7b36dc84e9c7ff8f2c49"
+    },
     "fidget": {
         "cargoLocks": null,
         "date": "2023-11-09",
@@ -502,27 +523,6 @@
             "type": "github"
         },
         "version": "24acd044ce7a26b3cdb537cbd094de37c3e1ac45"
-    },
-    "lualine": {
-        "cargoLocks": null,
-        "date": "2024-08-12",
-        "extract": null,
-        "name": "lualine",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-lualine",
-            "repo": "lualine.nvim",
-            "rev": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056",
-            "sha256": "sha256-gCm7m96PkZyrgjmt7Efc+NMZKStAq1zr7JRCYOgGDuE=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056"
     },
     "luasnip": {
         "cargoLocks": null,
