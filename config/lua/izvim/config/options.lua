@@ -73,9 +73,6 @@ vim.opt.spelloptions:append("noplainbuffer")
 -- indent blank line imporvments
 vim.opt.list = true
 
--- use system clipboard when not in ssh
-vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
-
 -- disable swap, backup, and undo files
 vim.opt.swapfile = false
 vim.opt.backup = false

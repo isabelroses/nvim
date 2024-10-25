@@ -27,12 +27,9 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd("TermOpen", {
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "BufWinEnter", "WinEnter" }, {
   pattern = "term://*",
   callback = function()
-    local opts = { buffer = 0 }
-    vim.cmd("startinsert!")
-    vim.keymap.set("t", "<esc><esc>", [[<C-\><C-n><C-w>]], opts)
-    vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
+    vim.api.nvim_command("startinsert")
   end,
 })
