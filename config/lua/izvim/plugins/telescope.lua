@@ -114,13 +114,6 @@ telescope.setup({
       search_by = { "path", "title" },
       hidden_files = true, -- default: false
       sync_with_nvim_tree = true, -- default false
-      base_dirs = {
-        { "~/dev/aur/", max_depth = 2 },
-        { "~/dev/ctp/", max_depth = 1 },
-        { "~/dev/cssuffering/", max_depth = 1 },
-        { "~/dev/public/", max_depth = 1 },
-        { "~/dev/private/", max_depth = 1 },
-      },
       on_project_selected = function(prompt_bufnr)
         project_actions.change_working_directory(prompt_bufnr, false)
       end,
