@@ -349,11 +349,7 @@ local servers = {
 }
 
 for server, config in pairs(servers) do
-  if config == {} then
-    lspconfig[server].setup(common)
-  else
-    lspconfig[server].setup(vim.tbl_extend("force", common, config))
-  end
+  lspconfig[server].setup(vim.tbl_extend("force", common, config))
 end
 
 -- null ls stuff
