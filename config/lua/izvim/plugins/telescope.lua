@@ -1,7 +1,7 @@
 -- so quircky but we need to load this before telescope
 local exts = {
-  "project",
-  "ui-select",
+  "project.nvim",
+  "ui-select.nvim",
   "fzf-native.nvim",
 }
 

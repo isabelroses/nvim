@@ -7,7 +7,7 @@ end
 return {
   -- tree view
   {
-    "nvim-tree",
+    "nvim-tree.lua",
     after = function()
       require("nvim-tree").setup({
         sync_root_with_cwd = true,
@@ -23,7 +23,7 @@ return {
 
   -- mini
   {
-    "mini-surround",
+    "mini.surround",
     event = "InsertEnter",
     after = function()
       require("mini.surround").setup({
@@ -44,18 +44,18 @@ return {
 
   -- markdown stuff
   {
-    "markview",
+    "markview.nvim",
     lazy = false,
     after = rq("markview"),
   },
   {
-    "obsidian-nvim",
+    "obsidian.nvim",
     after = rq("obsidian"),
   },
 
   -- rice
   {
-    "alpha",
+    "alpha-nvim",
     after = rq("alpha"),
   },
   {
@@ -64,7 +64,7 @@ return {
   },
 
   {
-    "lualine",
+    "lualine.nvim",
     after = rq("lualine"),
   },
 
@@ -80,7 +80,7 @@ return {
   },
 
   {
-    "fidget",
+    "fidget.nvim",
     after = function()
       require("fidget").setup({
         display = { done_icon = "󰗡" },
@@ -99,7 +99,7 @@ return {
   },
 
   {
-    "nvim-colorizer",
+    "nvim-colorizer.lua",
     after = function()
       require("colorizer").setup({
         user_default_options = {
@@ -132,7 +132,7 @@ return {
   },
 
   {
-    "todo-comments",
+    "todo-comments.nvim",
     after = function()
       require("todo-comments").setup()
     end,
@@ -140,7 +140,7 @@ return {
 
   -- quicker movement
   {
-    "telescope",
+    "telescope.nvim",
     after = rq("telescope"),
   },
 
@@ -150,7 +150,6 @@ return {
   },
 
   -- copilot
-  -- copilot-cmp
   {
     "copilot-lua",
     enabled = function()
@@ -165,7 +164,7 @@ return {
     "nvim-treesitter",
     after = rq("tree-sitter"),
   },
-  { "rainbow-delimiters" },
+  { "rainbow-delimiters.nvim" },
 
   -- rust lsp + formmating
   {
@@ -179,18 +178,18 @@ return {
   },
 
   {
-    "trouble",
+    "trouble.nvim",
     after = rq("trouble"),
   },
   {
-    "lazydev",
+    "lazydev.nvim",
     after = function()
       require("lazydev").setup()
     end,
   },
 
   {
-    "crates",
+    "crates.nvim",
     after = function()
       require("crates").setup({})
     end,
@@ -198,7 +197,7 @@ return {
   },
 
   {
-    "go-nvim",
+    "go.nvim",
     ft = {
       "go",
       "gomod",
@@ -229,11 +228,11 @@ return {
       require("lspconfig").gopls.setup(require("go.lsp").config())
     end,
   },
-  { "guihua-lua" },
+  { "guihua.lua" },
 
   -- hide my secrets
   {
-    "cloak",
+    "cloak.nvim",
     after = rq("cloak"),
   },
 
@@ -247,7 +246,7 @@ return {
 
   -- alow me to paste images really easy
   {
-    "img-clip-nvim",
+    "img-clip.nvim",
     after = function()
       require("img-clip").setup({
         filetypes = {
@@ -275,7 +274,7 @@ return {
   },
 
   {
-    "indent-blankline",
+    "indent-blankline.nvim",
     event = "DeferredUIEnter",
     after = function()
       require("ibl").setup({
@@ -302,7 +301,7 @@ return {
 
   -- cool snippets saving
   {
-    "sayama-nvim",
+    "sayama.nvim",
     after = function()
       require("sayama").setup({
         dir = vim.fn.glob("$XDG_DATA_HOME/zzz"),
@@ -311,13 +310,13 @@ return {
   },
 
   {
-    "freeze",
+    "freeze.nvim",
     after = rq("freeze"),
   },
 
   -- lazygit integration
   {
-    "toggleterm",
+    "toggleterm.nvim",
     after = function()
       require("toggleterm").setup({
         hide_numbers = true,
@@ -347,7 +346,7 @@ return {
   },
 
   {
-    "direnv",
+    "direnv.nvim",
     enabled = function()
       return vim.fn.executable("direnv") == 1
     end,
@@ -370,10 +369,6 @@ return {
   },
 
   -- deps
-  {
-    "plenary",
-    priority = 100,
-  },
   {
     "nvim-web-devicons",
     priority = 100,

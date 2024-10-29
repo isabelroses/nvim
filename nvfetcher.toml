@@ -5,12 +5,13 @@ src.git = "https://github.com/goolord/alpha-nvim"
 [catppuccin]
 fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"
+passthru.as = "catppuccin"
 
 [cloak]
 fetch.github = "laytan/cloak.nvim"
 src.git = "https://github.com/laytan/cloak.nvim"
 
-[cmp]
+[nvim-cmp]
 fetch.github = "hrsh7th/nvim-cmp"
 src.git = "https://github.com/hrsh7th/nvim-cmp"
 
@@ -45,10 +46,6 @@ src.git = "https://github.com/saecki/crates.nvim"
 [direnv]
 fetch.github = "NotAShelf/direnv.nvim"
 src.git = "https://github.com/NotAShelf/direnv.nvim"
-
-[editorconfig]
-fetch.github = "gpanders/editorconfig.nvim"
-src.git = "https://github.com/gpanders/editorconfig.nvim"
 
 [evergarden]
 fetch.github = "comfysage/evergarden"
@@ -111,6 +108,7 @@ src.git = "https://github.com/L3MON4D3/LuaSnip"
 [lz-n]
 fetch.github = "nvim-neorocks/lz.n"
 src.git = "https://github.com/nvim-neorocks/lz.n"
+passthru.start = "true"
 
 [markview]
 fetch.github = "OXY2DEV/markview.nvim"
@@ -124,7 +122,7 @@ src.git = "https://github.com/echasnovski/mini.surround"
 fetch.github = "Shatur/neovim-session-manager"
 src.git = "https://github.com/Shatur/neovim-session-manager"
 
-[null-ls]
+[none-ls]
 fetch.github = "nvimtools/none-ls.nvim"
 src.git = "https://github.com/nvimtools/none-ls.nvim"
 
@@ -163,6 +161,7 @@ src.git = "https://github.com/epwalsh/obsidian.nvim"
 [plenary]
 fetch.github = "nvim-lua/plenary.nvim"
 src.git = "https://github.com/nvim-lua/plenary.nvim"
+passthru.start = "true"
 
 [py_lsp]
 fetch.github = "hallerpatrick/py_lsp.nvim"
@@ -188,10 +187,6 @@ src.git = "https://github.com/b0o/schemastore.nvim"
 fetch.github = "nvim-telescope/telescope.nvim"
 src.git = "https://github.com/nvim-telescope/telescope.nvim"
 
-[telescope-file-browser]
-fetch.github = "nvim-telescope/telescope-file-browser.nvim"
-src.git = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
-
 [telescope-project]
 fetch.github = "nvim-telescope/telescope-project.nvim"
 src.git = "https://github.com/nvim-telescope/telescope-project.nvim"
@@ -199,10 +194,6 @@ src.git = "https://github.com/nvim-telescope/telescope-project.nvim"
 [telescope-ui-select]
 fetch.github = "nvim-telescope/telescope-ui-select.nvim"
 src.git = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
-
-[tiny-devicons-auto-colors-nvim]
-fetch.github = "rachartier/tiny-devicons-auto-colors.nvim"
-src.git = "https://github.com/rachartier/tiny-devicons-auto-colors.nvim"
 
 [todo-comments]
 fetch.github = "folke/todo-comments.nvim"

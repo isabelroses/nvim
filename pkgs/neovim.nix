@@ -99,6 +99,9 @@ let
     baseNameOf
     typeOf
     mapAttrs
+    readFile
+    fromTOML
+    fromJSON
     attrValues
     removeAttrs
     ;
@@ -150,25 +153,31 @@ let
     lazygit
   ];
 
-  mkPlugin =
-    pname: attrs:
-    vimUtils.buildVimPlugin {
-      inherit pname;
-      inherit (attrs) src version;
-    };
-
   nv = removeAttrs (callPackage ../_sources/generated.nix { }) [
     "override"
     "overrideDerivation"
   ];
 
+  toml = fromTOML (readFile ../nvfetcher.toml);
+
   nvPlugins = mapAttrs mkPlugin nv;
+
+  mkPlugin =
+    name: attrs:
+    let
+      old = toml.${name};
+    in
+    vimUtils.buildVimPlugin {
+      pname = old.passthru.as or (baseNameOf old.src.git);
+      inherit (attrs) src version;
+      passthru.start = if (attrs ? start) then fromJSON attrs.start else false;
+    };
 
   packDir = runCommandLocal "packdir" { } ''
     mkdir -pv $out/pack/${pname}/{start,opt}
 
     ${concatMapStringsSep "\n" (p: ''
-      ln -vsfT ${p} $out/pack/${pname}/opt/${
+      ln -vsfT ${p} $out/pack/${pname}/${if (p.passthru.start or false) then "start" else "opt"}/${
         if typeOf p == "path" then baseNameOf p else (p.pname or p.name)
       }
     '') plugins}
