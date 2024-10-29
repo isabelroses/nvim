@@ -76,6 +76,10 @@ fetch.github = "ThePrimeagen/harpoon"
 src.git = "https://github.com/ThePrimeagen/harpoon"
 src.branch = "harpoon2"
 
+[img-clip-nvim]
+fetch.github = "HakonHarnes/img-clip.nvim"
+src.git = "https://github.com/HakonHarnes/img-clip.nvim"
+
 [indent-blankline]
 fetch.github = "lukas-reineke/indent-blankline.nvim"
 src.git = "https://github.com/lukas-reineke/indent-blankline.nvim"

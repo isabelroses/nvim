@@ -398,6 +398,27 @@
         },
         "version": "0378a6c428a0bed6a2781d459d7943843f374bce"
     },
+    "img-clip-nvim": {
+        "cargoLocks": null,
+        "date": "2024-08-26",
+        "extract": null,
+        "name": "img-clip-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "HakonHarnes",
+            "repo": "img-clip.nvim",
+            "rev": "28a32d811d69042f4fa5c3d5fa35571df2bc1623",
+            "sha256": "sha256-TTfRow1rrRZ3+5YPeYAQc+2fsb42wUxTMEr6kfUiKXo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "28a32d811d69042f4fa5c3d5fa35571df2bc1623"
+    },
     "indent-blankline": {
         "cargoLocks": null,
         "date": "2024-10-07",

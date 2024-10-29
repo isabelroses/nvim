@@ -229,6 +229,18 @@
     };
     date = "2024-04-09";
   };
+  img-clip-nvim = {
+    pname = "img-clip-nvim";
+    version = "28a32d811d69042f4fa5c3d5fa35571df2bc1623";
+    src = fetchFromGitHub {
+      owner = "HakonHarnes";
+      repo = "img-clip.nvim";
+      rev = "28a32d811d69042f4fa5c3d5fa35571df2bc1623";
+      fetchSubmodules = false;
+      sha256 = "sha256-TTfRow1rrRZ3+5YPeYAQc+2fsb42wUxTMEr6kfUiKXo=";
+    };
+    date = "2024-08-26";
+  };
   indent-blankline = {
     pname = "indent-blankline";
     version = "e7a4442e055ec953311e77791546238d1eaae507";
