@@ -194,12 +194,9 @@ symlinkJoin {
   postBuild = ''
     wrapProgram $out/bin/nvim \
       --prefix PATH : ${makeBinPath externalDeps} \
-      --add-flags '-u' \
-      --add-flags 'NORC' \
-      --add-flags '--cmd' \
-      --add-flags '"lua vim.loader.enable()"' \
-      --add-flags '--cmd' \
-      --add-flags '"set packpath^=${packDir} | set runtimepath^=${packDir}"' \
+      --add-flags '-u NORC' \
+      --add-flags '--cmd "lua vim.loader.enable()"' \
+      --add-flags '--cmd "set packpath^=${packDir} | set runtimepath^=${packDir}"' \
       --set 'NVIM_APPNAME=${pname}'
 
     ln -s $out/bin/nvim $out/bin/${pname}

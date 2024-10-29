@@ -171,7 +171,6 @@ return {
   {
     "rustaceanvim",
     ft = "rust",
-    after = rq("rust"),
   },
 
   {
