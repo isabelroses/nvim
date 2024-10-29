@@ -391,6 +391,7 @@ local sources = {
 
   -- lua
   null.builtins.formatting.stylua,
+  null.builtins.diagnostics.selene,
 
   -- docs
   null.builtins.diagnostics.alex,
