@@ -59,8 +59,9 @@
         default = pkgs.mkShellNoCC {
           packages = [
             self.formatter.${pkgs.stdenv.hostPlatform.system}
-            pkgs.nvfetcher
-          ];
+            pkgs.selene
+            pkgs.stylua
+          ] ++ nixpkgs.lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
         };
 
         generate-treesitter = pkgs.mkShellNoCC {
