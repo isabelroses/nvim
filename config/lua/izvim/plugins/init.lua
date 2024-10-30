@@ -1,9 +1,3 @@
-local rq = function(plugin)
-  return function()
-    require("izvim.plugins." .. plugin)
-  end
-end
-
 return {
   -- tree view
   {
@@ -42,128 +36,7 @@ return {
     end,
   },
 
-  -- markdown stuff
-  {
-    "markview.nvim",
-    lazy = false,
-    after = rq("markview"),
-  },
-  {
-    "obsidian.nvim",
-    after = rq("obsidian"),
-  },
-
-  -- rice
-  {
-    "alpha-nvim",
-    after = rq("alpha"),
-  },
-  {
-    "neovim-session-manager",
-    priority = 60,
-  },
-
-  {
-    "lualine.nvim",
-    after = rq("lualine"),
-  },
-
-  {
-    "catppuccin",
-    priority = 1000,
-    after = rq("catppuccin"),
-  },
-
-  {
-    "evergarden",
-    after = rq("evergarden"),
-  },
-
-  {
-    "fidget.nvim",
-    after = function()
-      require("fidget").setup({
-        display = { done_icon = "󰗡" },
-        notification = {
-          override_vim_notify = true,
-          window = { winblend = 0 },
-        },
-        progress = {
-          ignore = {
-            "copilot",
-            "null-ls",
-          },
-        },
-      })
-    end,
-  },
-
-  {
-    "nvim-colorizer.lua",
-    after = function()
-      require("colorizer").setup({
-        user_default_options = {
-          RGB = true,
-          RRGGBB = true,
-          names = false,
-          RRGGBBAA = true,
-          AARRGGBB = false,
-          rgb_fn = false,
-          hsl_fn = false,
-          css = false,
-          css_fn = false,
-          mode = "background",
-          tailwind = "both",
-          sass = {
-            enable = true,
-          },
-          virtualtext = " ",
-        },
-
-        buftypes = {
-          "*",
-          "!dashboard",
-          "!lazy",
-          "!popup",
-          "!prompt",
-        },
-      })
-    end,
-  },
-
-  {
-    "todo-comments.nvim",
-    after = function()
-      require("todo-comments").setup()
-    end,
-  },
-
-  -- quicker movement
-  {
-    "telescope.nvim",
-    after = rq("telescope"),
-  },
-
-  {
-    "harpoon",
-    after = rq("harpoon"),
-  },
-
-  -- copilot
-  {
-    "copilot.lua",
-    enabled = function()
-      return vim.fn.glob("~/.config/gh/config.yml") ~= "" or vim.fn.glob("$XDG_CONFIG_HOME/gh/config.yml") ~= ""
-    end,
-    event = "InsertEnter",
-    after = rq("copilot"),
-  },
-
   -- lsp
-  {
-    "nvim-treesitter",
-    after = rq("tree-sitter"),
-  },
   { "rainbow-delimiters.nvim" },
 
   -- rust lsp + formmating
@@ -173,95 +46,17 @@ return {
   },
 
   {
-    "nvim-lspconfig",
-    after = rq("lsp"),
-  },
-
-  {
-    "trouble.nvim",
-    after = rq("trouble"),
-  },
-  {
     "lazydev.nvim",
     after = function()
       require("lazydev").setup()
     end,
   },
 
-  {
-    "crates.nvim",
-    after = function()
-      require("crates").setup({})
-    end,
-    event = "BufRead Cargo.toml",
-  },
-
-  {
-    "go.nvim",
-    ft = {
-      "go",
-      "gomod",
-      "gosum",
-      "gotmpl",
-      "gohtmltmpl",
-      "gotexttmpl",
-    },
-    after = function()
-      -- setup go stuff
-      require("go").setup({
-        disable_defaults = false,
-        icons = {
-          breakpoint = " ",
-          currentpos = " ",
-        },
-        trouble = true,
-        luasnip = true,
-        dap_debug_keymap = false,
-        lsp_cfg = false,
-        lsp_keymaps = false,
-        lsp_inlay_hints = {
-          enable = true,
-          style = "inlay",
-        },
-      })
-
-      require("lspconfig").gopls.setup(require("go.lsp").config())
-    end,
-  },
-  { "guihua.lua" },
-
-  -- hide my secrets
-  {
-    "cloak.nvim",
-    after = rq("cloak"),
-  },
-
-  -- misc
+  -- add better undo history
   {
     "undotree",
     after = function()
       vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-    end,
-  },
-
-  -- alow me to paste images really easy
-  {
-    "img-clip.nvim",
-    after = function()
-      require("img-clip").setup({
-        filetypes = {
-          markdown = {
-            template = function()
-              local root_dir = vim.fs.find({ ".obsidian" }, { upward = true })
-              if vim.tbl_isempty(root_dir) then
-                return "![$CURSOR]($FILE_PATH)"
-              else
-                return "![[$FILE_PATH]]"
-              end
-            end,
-          },
-        },
-      })
     end,
   },
 
@@ -273,48 +68,7 @@ return {
     end,
   },
 
-  {
-    "indent-blankline.nvim",
-    event = "DeferredUIEnter",
-    after = function()
-      require("ibl").setup({
-        scope = { enabled = false },
-        exclude = {
-          filetypes = {
-            "alpha",
-            "fugitive",
-            "help",
-            "lazy",
-            "NvimTree",
-            "ToggleTerm",
-            "LazyGit",
-            "TelescopePrompt",
-            "prompt",
-            "code-action-menu-menu",
-            "code-action-menu-warning-message",
-            "Trouble",
-          },
-        },
-      })
-    end,
-  },
-
-  -- cool snippets saving
-  {
-    "sayama.nvim",
-    after = function()
-      require("sayama").setup({
-        dir = vim.fn.glob("$XDG_DATA_HOME/zzz"),
-      })
-    end,
-  },
-
-  {
-    "freeze.nvim",
-    after = rq("freeze"),
-  },
-
-  -- lazygit integration
+  -- lazygit integration & terminal
   {
     "toggleterm.nvim",
     after = function()
@@ -366,12 +120,5 @@ return {
         display = { swap_icons = true }, -- place the editor image as the main image
       })
     end,
-  },
-
-  -- deps
-  {
-    "nvim-web-devicons",
-    priority = 100,
-    after = rq("nvim-web-devicons"),
   },
 }

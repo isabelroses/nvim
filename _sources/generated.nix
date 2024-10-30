@@ -300,6 +300,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-sNHVA70MsJQlbQRkJJAFhLBIdlAJwMsjzbBPrsDZfoA=";
     };
+    as = "luasnip";
     date = "2024-10-28";
   };
   lz-n = {
