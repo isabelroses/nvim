@@ -92,8 +92,7 @@ telescope.setup({
       "_sources/",
       "tmp/",
     },
-      -- stylua: ignore
-      borderchars = { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.topleft, bc.topright, bc.botright, bc.botleft },
+    borderchars = { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.topleft, bc.topright, bc.botright, bc.botleft },
   },
   pickers = {
     find_files = no_preview(),

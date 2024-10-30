@@ -151,7 +151,7 @@ return {
 
   -- copilot
   {
-    "copilot-lua",
+    "copilot.lua",
     enabled = function()
       return vim.fn.glob("~/.config/gh/config.yml") ~= "" or vim.fn.glob("$XDG_CONFIG_HOME/gh/config.yml") ~= ""
     end,
