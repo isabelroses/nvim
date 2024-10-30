@@ -3,14 +3,19 @@
   lib,
   callPackage,
   runCommandLocal,
-  symlinkJoin,
-  makeWrapper,
+  runCommand,
+  makeBinaryWrapper,
+  writeText,
 
   # neovim
   pname ? "izvim",
   basePackage ? neovim-unwrapped, # you can choose the base, i choose neovim-unwrapped
   neovim-unwrapped,
   vimUtils,
+
+  lua ? basePackage.lua,
+  luaEnv ? lua.withPackages extraLuaPackages,
+  extraLuaPackages ? lp: [ ],
 
   # path, see there explanation below
   fd,
@@ -94,7 +99,8 @@
 }:
 let
   inherit (lib.lists) flatten;
-  inherit (lib.strings) concatMapStringsSep makeBinPath;
+  inherit (lib.meta) getExe;
+  inherit (lib.strings) concatMapStringsSep makeBinPath escapeShellArgs;
   inherit (builtins)
     baseNameOf
     typeOf
@@ -193,23 +199,48 @@ let
     vimPlugins.cord-nvim
     vimPlugins.telescope-fzf-native-nvim
   ];
+
+  rc = writeText "rc.vim" ''
+    lua package.path = "${lua.pkgs.luaLib.genLuaPathAbsStr luaEnv}"; package.cpath = "${lua.pkgs.luaLib.genLuaCPathAbsStr luaEnv}"
+    set packpath^=${packDir} | set runtimepath^=${packDir}
+
+    lua vim.loader.enable()
+    lua vim.g.loaded_node_provider = 0
+    lua vim.g.loaded_perl_provider = 0
+    lua vim.g.loaded_python_provider = 0
+    lua vim.g.loaded_python3_provider = 0
+    lua vim.g.loaded_ruby_provider = 0
+  '';
 in
-symlinkJoin {
-  name = pname;
+runCommand pname
+  {
+    __structuredAttrs = true;
 
-  paths = [ basePackage ];
-  nativeBuildInputs = [ makeWrapper ];
+    nativeBuildInputs = [ makeBinaryWrapper ];
 
-  postBuild = ''
-    wrapProgram $out/bin/nvim \
-      --prefix PATH : ${makeBinPath externalDeps} \
-      --add-flags '-u NORC' \
-      --add-flags '--cmd "lua vim.loader.enable()"' \
-      --add-flags '--cmd "set packpath^=${packDir} | set runtimepath^=${packDir}"' \
-      --set 'NVIM_APPNAME=${pname}'
+    wrapperArgs = [
+      "--suffix"
+      "PATH"
+      ":"
+      (makeBinPath externalDeps)
+
+      "--add-flags"
+      (escapeShellArgs [
+        "-u"
+        (toString rc)
+      ])
+
+      "--set"
+      "NVIM_APPNAME"
+      pname
+    ];
+
+    meta = {
+      inherit (basePackage.meta) description mainProgram;
+    };
+  }
+  ''
+    makeWrapper ${getExe basePackage} $out/bin/nvim "''${wrapperArgs[@]}"
 
     ln -s $out/bin/nvim $out/bin/${pname}
-  '';
-
-  meta.mainProgram = "nvim";
-}
+  ''
