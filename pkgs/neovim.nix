@@ -74,6 +74,7 @@
       "jsonc"
       "just"
       "lua"
+      "latex"
       "make"
       "markdown"
       "markdown_inline"
