@@ -148,6 +148,3 @@ vim.g.loaded_ruby_provider = 0
 
 -- fix markfown stuff
 vim.g.markdown_recommended_style = 0
-
--- disable plugins at this file size
-vim.g.bigfile_size = 1024 * 1024 * 1.5 -- 1.5 MB

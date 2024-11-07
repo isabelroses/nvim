@@ -545,6 +545,18 @@
     };
     date = "2024-11-04";
   };
+  snacks-nvim = {
+    pname = "snacks-nvim";
+    version = "e8ea0910e0fdb020da06664ed9f5250e5d8fc43c";
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "snacks.nvim";
+      rev = "e8ea0910e0fdb020da06664ed9f5250e5d8fc43c";
+      fetchSubmodules = false;
+      sha256 = "sha256-UxytAq0PBLcV46/FKCjH2fhysoiaq6tdexaQ5pLZuWE=";
+    };
+    date = "2024-11-06";
+  };
   telescope = {
     pname = "telescope";
     version = "85922dde3767e01d42a08e750a773effbffaea3e";

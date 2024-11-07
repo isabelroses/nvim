@@ -184,6 +184,10 @@ src.git = "https://github.com/comfysage/sayama.nvim"
 fetch.github = "b0o/schemastore.nvim"
 src.git = "https://github.com/b0o/schemastore.nvim"
 
+[snacks-nvim]
+fetch.github = "folke/snacks.nvim"
+src.git = "https://github.com/folke/snacks.nvim"
+
 [telescope]
 fetch.github = "nvim-telescope/telescope.nvim"
 src.git = "https://github.com/nvim-telescope/telescope.nvim"
