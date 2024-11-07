@@ -1,7 +1,19 @@
 return {
   {
+    "neovim-session-manager",
+    lazy = false,
+    after = function()
+      require("session_manager").setup({
+        autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir,
+      })
+    end,
+  },
+
+  {
     "alpha-nvim",
     after = function()
+      require("lz.n").trigger_load({ "neovim-session-manager" })
+
       local function apply_gradient_hl(text)
         local lines = {}
         for i, line in ipairs(text) do
@@ -99,15 +111,6 @@ return {
       }
 
       alpha.setup(theta.config)
-    end,
-  },
-  {
-    "neovim-session-manager",
-    priority = 60,
-    after = function()
-      require("session_manager").setup({
-        autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir,
-      })
     end,
   },
 }

@@ -7,7 +7,6 @@ vim.filetype.add({
     tera = "tera",
   },
   pattern = {
-    [".*/hypr/.*%.conf"] = "hyprlang",
     ["flake.lock"] = "json",
   },
   filename = {

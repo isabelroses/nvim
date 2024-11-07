@@ -148,6 +148,7 @@ return {
 
   {
     "nvim-colorizer.lua",
+    event = "DeferredUIEnter",
     after = function()
       require("colorizer").setup({
         user_default_options = {
@@ -182,6 +183,7 @@ return {
   -- highlight TODO, FIXME, etc.
   {
     "todo-comments.nvim",
+    event = "DeferredUIEnter",
     after = function()
       require("todo-comments").setup()
     end,
