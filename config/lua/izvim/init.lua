@@ -1,3 +1,5 @@
+require("izvim.config.disable")
+
 require("izvim.config.autocmds")
 require("izvim.config.ft")
 require("izvim.config.keybinds")
