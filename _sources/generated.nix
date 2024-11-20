@@ -665,16 +665,16 @@
     };
     date = "2024-11-19";
   };
-  wakatime = {
-    pname = "wakatime";
-    version = "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23";
+  vim-wakatime = {
+    pname = "vim-wakatime";
+    version = "cf51327a9e08935569614d1cb24e779ee9f45519";
     src = fetchFromGitHub {
       owner = "wakatime";
       repo = "vim-wakatime";
-      rev = "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23";
+      rev = "cf51327a9e08935569614d1cb24e779ee9f45519";
       fetchSubmodules = false;
-      sha256 = "sha256-HxLmX+qws8A6+mFBGMdru2E3NXJ91P0HtDKMX8ryMzI=";
+      sha256 = "sha256-S7SymK/GR42abii9bkU8tDELn64GEJ4oIccGiAhPpYE=";
     };
-    date = "2024-04-29";
+    date = "2024-11-15";
   };
 }
