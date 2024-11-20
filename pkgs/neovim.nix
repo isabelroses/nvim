@@ -29,7 +29,7 @@
   ltex-ls,
   marksman,
   gonvim-tools,
-  nil,
+  # nil,
   statix,
   deadnix,
   nixfmt-rfc-style,
@@ -141,7 +141,7 @@ let
     gonvim-tools
 
     # nix
-    nil
+    (callPackage ./nil.nix { })
     statix
     deadnix
     nixfmt-rfc-style

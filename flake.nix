@@ -40,7 +40,6 @@
         );
     in
     {
-
       formatter = forAllSystems (pkgs: pkgs.nixfmt-rfc-style);
 
       packages = forAllSystems (
@@ -52,6 +51,7 @@
           inherit neovim;
           default = neovim;
           nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
+          nil = pkgs.callPackage ./pkgs/nil.nix { };
         }
       );
 
