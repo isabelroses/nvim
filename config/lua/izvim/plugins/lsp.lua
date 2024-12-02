@@ -442,7 +442,12 @@ return {
         null.toggle({ methods = null.methods.FORMATTING })
       end
 
+      local toggle_diagnostics = function()
+        null.toggle({ methods = null.methods.DIAGNOSTICS })
+      end
+
       vim.api.nvim_create_user_command("ToggleFormatters", toggle_formatters, {})
+      vim.api.nvim_create_user_command("ToggleDiagnostics", toggle_diagnostics, {})
     end,
   },
 
