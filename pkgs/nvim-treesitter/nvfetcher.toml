@@ -142,6 +142,10 @@ src.git = "https://github.com/theHamsta/tree-sitter-cuda"
 fetch.git = "https://github.com/eonpatapon/tree-sitter-cue"
 src.git = "https://github.com/eonpatapon/tree-sitter-cue"
 
+[treesitter-grammar-cylc]
+fetch.git = "https://github.com/elliotfontaine/tree-sitter-cylc"
+src.git = "https://github.com/elliotfontaine/tree-sitter-cylc"
+
 [treesitter-grammar-d]
 fetch.git = "https://github.com/gdamore/tree-sitter-d"
 src.git = "https://github.com/gdamore/tree-sitter-d"
@@ -149,6 +153,10 @@ src.git = "https://github.com/gdamore/tree-sitter-d"
 [treesitter-grammar-dart]
 fetch.git = "https://github.com/UserNobody14/tree-sitter-dart"
 src.git = "https://github.com/UserNobody14/tree-sitter-dart"
+
+[treesitter-grammar-desktop]
+fetch.git = "https://github.com/ValdezFOmar/tree-sitter-desktop"
+src.git = "https://github.com/ValdezFOmar/tree-sitter-desktop"
 
 [treesitter-grammar-devicetree]
 fetch.git = "https://github.com/joelspadin/tree-sitter-devicetree"
@@ -928,6 +936,10 @@ src.git = "https://github.com/stsewd/tree-sitter-rst"
 fetch.git = "https://github.com/tree-sitter/tree-sitter-ruby"
 src.git = "https://github.com/tree-sitter/tree-sitter-ruby"
 
+[treesitter-grammar-runescript]
+fetch.git = "https://github.com/2004Scape/tree-sitter-runescript"
+src.git = "https://github.com/2004Scape/tree-sitter-runescript"
+
 [treesitter-grammar-rust]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-rust"
 src.git = "https://github.com/tree-sitter/tree-sitter-rust"
@@ -1042,6 +1054,10 @@ src.git = "https://github.com/connorlay/tree-sitter-surface"
 [treesitter-grammar-svelte]
 fetch.git = "https://github.com/tree-sitter-grammars/tree-sitter-svelte"
 src.git = "https://github.com/tree-sitter-grammars/tree-sitter-svelte"
+
+[treesitter-grammar-sway]
+fetch.git = "https://github.com/FuelLabs/tree-sitter-sway.git"
+src.git = "https://github.com/FuelLabs/tree-sitter-sway.git"
 
 [treesitter-grammar-swift]
 fetch.git = "https://github.com/alex-pinkus/tree-sitter-swift"
