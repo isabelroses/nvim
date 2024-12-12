@@ -497,6 +497,18 @@
     };
     date = "2024-11-17";
   };
+  quill-nvim = {
+    pname = "quill-nvim";
+    version = "08103ea02643a93065fe7dbc4ed22275719fc338";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "quill.nvim";
+      rev = "08103ea02643a93065fe7dbc4ed22275719fc338";
+      fetchSubmodules = false;
+      sha256 = "sha256-SDMoqQwY3cKj5c5wHFdE+G0ZWVIeLjF6DU67tfDfi8w=";
+    };
+    date = "2024-12-10";
+  };
   rainbow-delimiters = {
     pname = "rainbow-delimiters";
     version = "dc788723f717bdd3041838b8db34cce53c9aa920";
