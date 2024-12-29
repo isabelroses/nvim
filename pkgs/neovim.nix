@@ -177,6 +177,7 @@ let
     vimUtils.buildVimPlugin {
       pname = old.passthru.as or (baseNameOf old.src.git);
       inherit (attrs) src version;
+      doCheck = false;
       passthru.start = if (attrs ? start) then fromJSON attrs.start else false;
     };
 
