@@ -92,6 +92,10 @@ src.git = "https://github.com/amaanq/tree-sitter-capnp"
 fetch.git = "https://github.com/ObserverOfTime/tree-sitter-chatito"
 src.git = "https://github.com/ObserverOfTime/tree-sitter-chatito"
 
+[treesitter-grammar-circom]
+fetch.git = "https://github.com/Decurity/tree-sitter-circom"
+src.git = "https://github.com/Decurity/tree-sitter-circom"
+
 [treesitter-grammar-clojure]
 fetch.git = "https://github.com/sogaiu/tree-sitter-clojure"
 src.git = "https://github.com/sogaiu/tree-sitter-clojure"
@@ -1100,8 +1104,9 @@ fetch.git = "https://github.com/vrischmann/tree-sitter-templ"
 src.git = "https://github.com/vrischmann/tree-sitter-templ"
 
 [treesitter-grammar-tera]
-fetch.git = "https://github.com/uncenter/tree-sitter-tera"
-src.git = "https://github.com/uncenter/tree-sitter-tera"
+fetch.git = "https://github.com/isabelroses/tree-sitter-tera"
+src.git = "https://github.com/isabelroses/tree-sitter-tera"
+src.branch = "patch-1"
 
 [treesitter-grammar-terraform]
 fetch.git = "https://github.com/MichaHoffmann/tree-sitter-hcl"
