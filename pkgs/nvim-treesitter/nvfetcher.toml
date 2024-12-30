@@ -1104,9 +1104,8 @@ fetch.git = "https://github.com/vrischmann/tree-sitter-templ"
 src.git = "https://github.com/vrischmann/tree-sitter-templ"
 
 [treesitter-grammar-tera]
-fetch.git = "https://github.com/isabelroses/tree-sitter-tera"
-src.git = "https://github.com/isabelroses/tree-sitter-tera"
-src.branch = "patch-1"
+fetch.git = "https://github.com/uncenter/tree-sitter-tera"
+src.git = "https://github.com/uncenter/tree-sitter-tera"
 
 [treesitter-grammar-terraform]
 fetch.git = "https://github.com/MichaHoffmann/tree-sitter-hcl"
