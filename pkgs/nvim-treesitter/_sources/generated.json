@@ -1,7 +1,7 @@
 {
     "nvim-treesitter": {
         "cargoLocks": null,
-        "date": "2024-12-30",
+        "date": "2024-12-31",
         "extract": null,
         "name": "nvim-treesitter",
         "passthru": null,
@@ -11,12 +11,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "34d78baa86a37e86fe64b642860144c28ab9f0c8",
-            "sha256": "sha256-JoY1LESMU1hf9lnn318eqnX0RPAkwytmKlawkott0kA=",
+            "rev": "5f78e989243f9fb0fb55e0cf54820920d86dfd30",
+            "sha256": "sha256-9A7/2y8ZviLNmu11e6Dx/SyFXLfO82Mnk5LZ8z+1qb4=",
             "type": "git",
             "url": "https://github.com/nvim-treesitter/nvim-treesitter"
         },
-        "version": "34d78baa86a37e86fe64b642860144c28ab9f0c8"
+        "version": "5f78e989243f9fb0fb55e0cf54820920d86dfd30"
     },
     "treesitter-grammar-ada": {
         "cargoLocks": null,
@@ -1339,7 +1339,7 @@
     },
     "treesitter-grammar-fsharp": {
         "cargoLocks": null,
-        "date": "2024-10-15",
+        "date": "2024-12-30",
         "extract": null,
         "name": "treesitter-grammar-fsharp",
         "passthru": {
@@ -1351,12 +1351,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "971da5ff0266bfe4a6ecfb94616548032d6d1ba0",
-            "sha256": "sha256-0jrbznAXcjXrbJ5jnxWMzPKxRopxKCtoQXGl80R1M0M=",
+            "rev": "207f1c988f4649e12fe207e4a7e4f83b9da037d1",
+            "sha256": "sha256-NKK83ZwhpFY3TtSxLlAbaY8bBaQ7TXcVT4wMMm4Zm0A=",
             "type": "git",
             "url": "https://github.com/ionide/tree-sitter-fsharp"
         },
-        "version": "971da5ff0266bfe4a6ecfb94616548032d6d1ba0"
+        "version": "207f1c988f4649e12fe207e4a7e4f83b9da037d1"
     },
     "treesitter-grammar-func": {
         "cargoLocks": null,
