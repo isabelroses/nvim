@@ -165,6 +165,7 @@ return {
           tailwind = "both",
           sass = {
             enable = true,
+            parsers = { css = true },
           },
           virtualtext = " ",
         },
