@@ -61,106 +61,6 @@
         },
         "version": "648aca6d33ec011dc3166e7af3b38820d01a71e4"
     },
-    "cmp-buffer": {
-        "cargoLocks": null,
-        "date": "2022-08-10",
-        "extract": null,
-        "name": "cmp-buffer",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "hrsh7th",
-            "repo": "cmp-buffer",
-            "rev": "3022dbc9166796b644a841a02de8dd1cc1d311fa",
-            "sha256": "sha256-dG4U7MtnXThoa/PD+qFtCt76MQ14V1wX8GMYcvxEnbM=",
-            "type": "github"
-        },
-        "version": "3022dbc9166796b644a841a02de8dd1cc1d311fa"
-    },
-    "cmp-cmdline": {
-        "cargoLocks": null,
-        "date": "2024-03-22",
-        "extract": null,
-        "name": "cmp-cmdline",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "hrsh7th",
-            "repo": "cmp-cmdline",
-            "rev": "d250c63aa13ead745e3a40f61fdd3470efde3923",
-            "sha256": "sha256-iBmXp+gUSMbgfkv7c7RDQAwPq02e07wEnBETP0dWBOo=",
-            "type": "github"
-        },
-        "version": "d250c63aa13ead745e3a40f61fdd3470efde3923"
-    },
-    "cmp-nvim-lsp": {
-        "cargoLocks": null,
-        "date": "2024-12-10",
-        "extract": null,
-        "name": "cmp-nvim-lsp",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "hrsh7th",
-            "repo": "cmp-nvim-lsp",
-            "rev": "99290b3ec1322070bcfb9e846450a46f6efa50f0",
-            "sha256": "sha256-iaihXNCF5bB5MdeoosD/kc3QtpA/QaIDZVLiLIurBSM=",
-            "type": "github"
-        },
-        "version": "99290b3ec1322070bcfb9e846450a46f6efa50f0"
-    },
-    "cmp-path": {
-        "cargoLocks": null,
-        "date": "2022-10-03",
-        "extract": null,
-        "name": "cmp-path",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "hrsh7th",
-            "repo": "cmp-path",
-            "rev": "91ff86cd9c29299a64f968ebb45846c485725f23",
-            "sha256": "sha256-thppiiV3wjIaZnAXmsh7j3DUc6ceSCvGzviwFUnoPaI=",
-            "type": "github"
-        },
-        "version": "91ff86cd9c29299a64f968ebb45846c485725f23"
-    },
-    "cmp_luasnip": {
-        "cargoLocks": null,
-        "date": "2024-11-04",
-        "extract": null,
-        "name": "cmp_luasnip",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "saadparwaiz1",
-            "repo": "cmp_luasnip",
-            "rev": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90",
-            "sha256": "sha256-86lKQPPyqFz8jzuLajjHMKHrYnwW6+QOcPyQEx6B+gw=",
-            "type": "github"
-        },
-        "version": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90"
-    },
     "copilot-lua": {
         "cargoLocks": null,
         "date": "2024-12-22",
@@ -604,26 +504,6 @@
             "type": "github"
         },
         "version": "caf85560cfcfa62ad3a4c15433db4a8f9ddf934a"
-    },
-    "nvim-cmp": {
-        "cargoLocks": null,
-        "date": "2024-12-20",
-        "extract": null,
-        "name": "nvim-cmp",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "hrsh7th",
-            "repo": "nvim-cmp",
-            "rev": "b555203ce4bd7ff6192e759af3362f9d217e8c89",
-            "sha256": "sha256-Z/Qy2ErbCa7dbjZVuJUkMmb4d24amNunNgRcbCGPfOg=",
-            "type": "github"
-        },
-        "version": "b555203ce4bd7ff6192e759af3362f9d217e8c89"
     },
     "nvim-colorizer": {
         "cargoLocks": null,

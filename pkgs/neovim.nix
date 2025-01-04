@@ -198,6 +198,7 @@ let
     treesitter
 
     # extra plugsns beacuse they often fail or need extra steps
+    vimPlugins.blink-cmp
     vimPlugins.cord-nvim
     vimPlugins.telescope-fzf-native-nvim
   ];

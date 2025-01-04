@@ -11,30 +11,6 @@ passthru.as = "catppuccin"
 fetch.github = "laytan/cloak.nvim"
 src.git = "https://github.com/laytan/cloak.nvim"
 
-[nvim-cmp]
-fetch.github = "hrsh7th/nvim-cmp"
-src.git = "https://github.com/hrsh7th/nvim-cmp"
-
-[cmp-buffer]
-fetch.github = "hrsh7th/cmp-buffer"
-src.git = "https://github.com/hrsh7th/cmp-buffer"
-
-[cmp-cmdline]
-fetch.github = "hrsh7th/cmp-cmdline"
-src.git = "https://github.com/hrsh7th/cmp-cmdline"
-
-[cmp-nvim-lsp]
-fetch.github = "hrsh7th/cmp-nvim-lsp"
-src.git = "https://github.com/hrsh7th/cmp-nvim-lsp"
-
-[cmp-path]
-fetch.github = "hrsh7th/cmp-path"
-src.git = "https://github.com/hrsh7th/cmp-path"
-
-[cmp_luasnip]
-fetch.github = "saadparwaiz1/cmp_luasnip"
-src.git = "https://github.com/saadparwaiz1/cmp_luasnip"
-
 [copilot-lua]
 fetch.github = "zbirenbaum/copilot.lua"
 src.git = "https://github.com/zbirenbaum/copilot.lua"

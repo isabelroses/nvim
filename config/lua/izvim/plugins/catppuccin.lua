@@ -43,7 +43,8 @@ return {
           telescope = {
             enabled = true,
           },
-          cmp = true,
+          cmp = false,
+          blink_cmp = true,
           lsp_trouble = true,
           nvimtree = true,
           which_key = false,

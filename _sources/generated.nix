@@ -38,66 +38,6 @@
     };
     date = "2024-06-12";
   };
-  cmp-buffer = {
-    pname = "cmp-buffer";
-    version = "3022dbc9166796b644a841a02de8dd1cc1d311fa";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-buffer";
-      rev = "3022dbc9166796b644a841a02de8dd1cc1d311fa";
-      fetchSubmodules = false;
-      sha256 = "sha256-dG4U7MtnXThoa/PD+qFtCt76MQ14V1wX8GMYcvxEnbM=";
-    };
-    date = "2022-08-10";
-  };
-  cmp-cmdline = {
-    pname = "cmp-cmdline";
-    version = "d250c63aa13ead745e3a40f61fdd3470efde3923";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-cmdline";
-      rev = "d250c63aa13ead745e3a40f61fdd3470efde3923";
-      fetchSubmodules = false;
-      sha256 = "sha256-iBmXp+gUSMbgfkv7c7RDQAwPq02e07wEnBETP0dWBOo=";
-    };
-    date = "2024-03-22";
-  };
-  cmp-nvim-lsp = {
-    pname = "cmp-nvim-lsp";
-    version = "99290b3ec1322070bcfb9e846450a46f6efa50f0";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-nvim-lsp";
-      rev = "99290b3ec1322070bcfb9e846450a46f6efa50f0";
-      fetchSubmodules = false;
-      sha256 = "sha256-iaihXNCF5bB5MdeoosD/kc3QtpA/QaIDZVLiLIurBSM=";
-    };
-    date = "2024-12-10";
-  };
-  cmp-path = {
-    pname = "cmp-path";
-    version = "91ff86cd9c29299a64f968ebb45846c485725f23";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-path";
-      rev = "91ff86cd9c29299a64f968ebb45846c485725f23";
-      fetchSubmodules = false;
-      sha256 = "sha256-thppiiV3wjIaZnAXmsh7j3DUc6ceSCvGzviwFUnoPaI=";
-    };
-    date = "2022-10-03";
-  };
-  cmp_luasnip = {
-    pname = "cmp_luasnip";
-    version = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90";
-    src = fetchFromGitHub {
-      owner = "saadparwaiz1";
-      repo = "cmp_luasnip";
-      rev = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90";
-      fetchSubmodules = false;
-      sha256 = "sha256-86lKQPPyqFz8jzuLajjHMKHrYnwW6+QOcPyQEx6B+gw=";
-    };
-    date = "2024-11-04";
-  };
   copilot-lua = {
     pname = "copilot-lua";
     version = "886ee73b6d464b2b3e3e6a7ff55ce87feac423a9";
@@ -363,18 +303,6 @@
       sha256 = "sha256-31u2Or4othYwUDBONpFnm//3NB6i5wPuBGdLfP8MHjE=";
     };
     date = "2024-12-31";
-  };
-  nvim-cmp = {
-    pname = "nvim-cmp";
-    version = "b555203ce4bd7ff6192e759af3362f9d217e8c89";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "nvim-cmp";
-      rev = "b555203ce4bd7ff6192e759af3362f9d217e8c89";
-      fetchSubmodules = false;
-      sha256 = "sha256-Z/Qy2ErbCa7dbjZVuJUkMmb4d24amNunNgRcbCGPfOg=";
-    };
-    date = "2024-12-20";
   };
   nvim-colorizer = {
     pname = "nvim-colorizer";
