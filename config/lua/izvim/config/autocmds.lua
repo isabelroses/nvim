@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "BufWinEnter", "WinEnter" }, {
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "BufWinEnter", "WinEnter", "TermOpen" }, {
   pattern = "term://*",
   callback = function()
     vim.api.nvim_command("startinsert")
@@ -37,7 +37,6 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "BufWinEnter", "WinEnte
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "term://*",
   callback = function()
-    vim.cmd("startinsert")
     vim.opt_local.number = false
   end,
 })

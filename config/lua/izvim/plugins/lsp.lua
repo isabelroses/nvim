@@ -34,7 +34,7 @@ return {
             max_height = vim.o.pumheight,
             scrolloff = 0,
             draw = {
-              align_to_component = "label", -- or 'none' to disable
+              -- align_to = "label", -- or 'none' to disable, or 'cursor' to align to the cursor
               padding = 1,
               gap = 1,
               treesitter = { "buffer", "lsp" },
