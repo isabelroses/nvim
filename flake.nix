@@ -24,11 +24,11 @@
       ...
     }:
     let
-      inherit (nixpkgs.lib) genAttrs;
+      inherit (nixpkgs) lib;
 
       forAllSystems =
         function:
-        genAttrs (import systems) (
+        lib.genAttrs (import systems) (
           system:
           function (
             import nixpkgs {
@@ -42,18 +42,24 @@
     {
       formatter = forAllSystems (pkgs: pkgs.nixfmt-rfc-style);
 
-      packages = forAllSystems (
-        pkgs:
-        let
-          neovim = pkgs.callPackage ./pkgs/neovim.nix { };
-        in
-        {
-          inherit neovim;
-          default = neovim;
-          nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
-          nil = pkgs.callPackage ./pkgs/nil.nix { };
-        }
-      );
+      packages = forAllSystems (pkgs: {
+        neovim = pkgs.callPackage ./pkgs/neovim.nix { };
+        default = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
+        nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
+        nil = pkgs.callPackage ./pkgs/nil.nix { };
+
+        generate-treesitter = pkgs.writeShellApplication {
+          name = "generate";
+          runtimeInputs = [
+            pkgs.nvfetcher
+            (pkgs.callPackage ./pkgs/nvim-treesitter/neovim.nix { })
+          ];
+
+          text = ''
+            nvim --headless -l ${./pkgs/nvim-treesitter/generate-nvfetcher.lua}
+          '';
+        };
+      });
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShellNoCC {
@@ -63,20 +69,33 @@
             pkgs.stylua
           ] ++ nixpkgs.lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
         };
+      });
 
-        generate-treesitter = pkgs.mkShellNoCC {
-          packages = [
-            pkgs.nvfetcher
-
-            (pkgs.writeShellApplication {
-              name = "generate";
-              runtimeInputs = [ (pkgs.callPackage ./pkgs/nvim-treesitter/neovim.nix { }) ];
+      apps = forAllSystems (pkgs: {
+        update = {
+          type = "app";
+          program = lib.getExe (
+            pkgs.writeShellApplication {
+              name = "update";
+              runtimeInputs = [
+                pkgs.nvfetcher
+                self.packages.${pkgs.stdenv.hostPlatform.system}.generate-treesitter
+              ];
 
               text = ''
-                nvim --headless -l ${./pkgs/nvim-treesitter/generate-nvfetcher.lua}
+                nvfetcher
+                pushd pkgs/nvim-treesitter
+                generate
+                nvfetcher
+                popd
               '';
-            })
-          ];
+            }
+          );
+        };
+
+        generate-treesitter = {
+          type = "app";
+          program = lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.generate-treesitter;
         };
       });
     };
