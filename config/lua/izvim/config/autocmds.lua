@@ -33,3 +33,11 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "BufWinEnter", "WinEnte
     vim.api.nvim_command("startinsert")
   end,
 })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "term://*",
+  callback = function()
+    vim.cmd("startinsert")
+    vim.opt_local.number = false
+  end,
+})

@@ -58,10 +58,12 @@ vim.opt.timeoutlen = 300
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
-vim.o.showtabline = 0
 vim.o.cmdheight = 0
 -- always show status
 vim.o.laststatus = 3
+
+-- ohhhh tabs
+vim.o.showtabline = 2
 
 -- use rg for grepping
 vim.opt.grepprg = "rg --vimgrep"

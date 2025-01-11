@@ -284,6 +284,30 @@ return {
           tsserver_path = vim.fn.resolve(
             vim.fn.exepath("tsserver") .. "/../../lib/node_modules/typescript/bin/tsserver"
           ),
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
         },
       })
 
@@ -294,6 +318,18 @@ return {
         denols = {
           root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
           single_file_support = false,
+          settings = {
+            deno = {
+              inlayHints = {
+                parameterNames = { enabled = "all", suppressWhenArgumentMatchesName = true },
+                parameterTypes = { enabled = true },
+                variableTypes = { enabled = true, suppressWhenTypeMatchesName = true },
+                propertyDeclarationTypes = { enabled = true },
+                functionLikeReturnTypes = { enable = true },
+                enumMemberValues = { enabled = true },
+              },
+            },
+          },
         },
         dockerls = {},
         emmet_language_server = {
@@ -337,6 +373,10 @@ return {
             Lua = {
               diagnostics = {
                 globals = { "vim" },
+              },
+              hint = {
+                enable = true,
+                arrayIndex = "Disable",
               },
             },
           },
