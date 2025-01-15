@@ -494,6 +494,10 @@ src.git = "https://github.com/justinmk/tree-sitter-ini"
 fetch.git = "https://github.com/inko-lang/tree-sitter-inko"
 src.git = "https://github.com/inko-lang/tree-sitter-inko"
 
+[treesitter-grammar-ipkg]
+fetch.git = "https://github.com/srghma/tree-sitter-ipkg"
+src.git = "https://github.com/srghma/tree-sitter-ipkg"
+
 [treesitter-grammar-ispc]
 fetch.git = "https://github.com/fab4100/tree-sitter-ispc"
 src.git = "https://github.com/fab4100/tree-sitter-ispc"
