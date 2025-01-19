@@ -156,7 +156,6 @@ return {
         null.builtins.diagnostics.selene,
 
         -- docs
-        null.builtins.diagnostics.alex,
         null.builtins.diagnostics.proselint,
       }
 

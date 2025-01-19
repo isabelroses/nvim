@@ -134,7 +134,6 @@ let
 
     # markdown / latex
     ltex-ls
-    nodePackages.alex
     marksman
 
     # go
