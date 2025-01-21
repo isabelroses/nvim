@@ -2,6 +2,10 @@
 fetch.github = "goolord/alpha-nvim"
 src.git = "https://github.com/goolord/alpha-nvim"
 
+[bufferline]
+fetch.github = "akinsho/bufferline.nvim"
+src.git = "https://github.com/akinsho/bufferline.nvim"
+
 [catppuccin]
 fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"

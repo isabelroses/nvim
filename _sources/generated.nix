@@ -13,6 +13,18 @@
     };
     date = "2024-11-14";
   };
+  bufferline = {
+    pname = "bufferline";
+    version = "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3";
+    src = fetchFromGitHub {
+      owner = "akinsho";
+      repo = "bufferline.nvim";
+      rev = "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3";
+      fetchSubmodules = false;
+      sha256 = "sha256-ae4MB6+6v3awvfSUWlau9ASJ147ZpwuX1fvJdfMwo1Q=";
+    };
+    date = "2025-01-14";
+  };
   catppuccin = {
     pname = "catppuccin";
     version = "f67b886d65a029f12ffa298701fb8f1efd89295d";
