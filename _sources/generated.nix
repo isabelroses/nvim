@@ -619,14 +619,14 @@
   };
   wakatime = {
     pname = "wakatime";
-    version = "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23";
+    version = "e46d7c4f98ee0f40782008dd60cb2a79c377fb1d";
     src = fetchFromGitHub {
       owner = "wakatime";
       repo = "vim-wakatime";
-      rev = "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23";
+      rev = "e46d7c4f98ee0f40782008dd60cb2a79c377fb1d";
       fetchSubmodules = false;
-      sha256 = "sha256-HxLmX+qws8A6+mFBGMdru2E3NXJ91P0HtDKMX8ryMzI=";
+      sha256 = "sha256-/Sgmj3LaodArqkIcAmxbNtBdqO5qQX9fU4fvANR+Ies=";
     };
-    date = "2024-04-29";
+    date = "2025-01-25";
   };
 }
