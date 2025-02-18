@@ -130,7 +130,6 @@ let
     tailwindcss-language-server
     typescript
     vscode-langservers-extracted
-    nodePackages.graphql-language-service-cli
 
     # markdown / latex
     ltex-ls
