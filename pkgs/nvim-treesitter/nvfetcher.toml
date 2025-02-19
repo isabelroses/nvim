@@ -242,6 +242,10 @@ src.git = "https://github.com/elves/tree-sitter-elvish"
 fetch.git = "https://github.com/tree-sitter/tree-sitter-embedded-template"
 src.git = "https://github.com/tree-sitter/tree-sitter-embedded-template"
 
+[treesitter-grammar-enforce]
+fetch.git = "https://github.com/simonvic/tree-sitter-enforce"
+src.git = "https://github.com/simonvic/tree-sitter-enforce"
+
 [treesitter-grammar-erlang]
 fetch.git = "https://github.com/WhatsApp/tree-sitter-erlang"
 src.git = "https://github.com/WhatsApp/tree-sitter-erlang"
@@ -517,6 +521,18 @@ src.git = "https://github.com/tree-sitter/tree-sitter-java"
 [treesitter-grammar-javascript]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-javascript"
 src.git = "https://github.com/tree-sitter/tree-sitter-javascript"
+
+[treesitter-grammar-jinja]
+fetch.git = "https://github.com/cathaysia/tree-sitter-jinja"
+src.git = "https://github.com/cathaysia/tree-sitter-jinja"
+[treesitter-grammar-jinja.passthru]
+location = "tree-sitter-jinja"
+
+[treesitter-grammar-jinja_inline]
+fetch.git = "https://github.com/cathaysia/tree-sitter-jinja"
+src.git = "https://github.com/cathaysia/tree-sitter-jinja"
+[treesitter-grammar-jinja_inline.passthru]
+location = "tree-sitter-jinja_inline"
 
 [treesitter-grammar-jq]
 fetch.git = "https://github.com/flurie/tree-sitter-jq"
