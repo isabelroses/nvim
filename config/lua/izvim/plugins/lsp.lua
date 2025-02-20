@@ -22,6 +22,9 @@ return {
         appearance = {},
 
         completion = {
+          trigger = {
+            show_on_keyword = true,
+          },
           list = {
             cycle = {
               from_top = false,
@@ -56,25 +59,29 @@ return {
           },
         },
 
+        cmdline = {
+          -- By default, we choose providers for the cmdline based on the current cmdtype
+          -- You may disable cmdline completions by replacing this with an empty table
+          sources = {
+            default = function()
+              local type = vim.fn.getcmdtype()
+              -- Search forward and backward
+              if type == "/" or type == "?" then
+                return { "buffer", "lsp" }
+              end
+              -- Commands
+              if type == ":" then
+                return { "cmdline" }
+              end
+              return {}
+            end,
+          },
+        },
+
         -- default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
           default = { "lsp", "path", "snippets", "buffer" },
-
-          -- -- By default, we choose providers for the cmdline based on the current cmdtype
-          -- You may disable cmdline completions by replacing this with an empty table
-          cmdline = function()
-            local type = vim.fn.getcmdtype()
-            -- Search forward and backward
-            if type == "/" or type == "?" then
-              return { "buffer", "lsp" }
-            end
-            -- Commands
-            if type == ":" then
-              return { "cmdline" }
-            end
-            return {}
-          end,
 
           transform_items = function(_, items)
             return vim
@@ -99,9 +106,9 @@ return {
         },
 
         fuzzy = {
-          -- when enabled, allows for a number of typos relative to the length of the query
-          -- disabling this matches the behavior of fzf
-          use_typo_resistance = false,
+          max_typos = function(_)
+            return 0
+          end,
           -- frecency tracks the most recently/frequently used items and boosts the score of the item
           use_frecency = false,
           -- proximity bonus boosts the score of items matching nearby words
