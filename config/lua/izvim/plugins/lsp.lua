@@ -200,19 +200,24 @@ return {
     end,
   },
 
+  { "lsp-status.nvim", lazy = false },
+  { "ltex-extra.nvim", lazy = false },
+  { "schemastore.nvim", lazy = false },
+  { "py_lsp.nvim", lazy = false },
+  { "typescript-tools.nvim", lazy = false },
+
   {
     "nvim-lspconfig",
     event = "DeferredUIEnter",
     after = function()
-      local plugins = {
-        { "blink.cmp" },
-        { "lsp-status.nvim" },
-        { "ltex-extra.nvim" },
-        { "schemastore.nvim" },
-        { "py_lsp.nvim" },
-        { "typescript-tools.nvim" },
-      }
-      require("lz.n").load(plugins)
+      require("lz.n").trigger_load({
+        "blink.cmp",
+        "lsp-status.nvim",
+        "ltex-extra.nvim",
+        "schemastore.nvim",
+        "py_lsp.nvim",
+        "typescript-tools.nvim",
+      })
 
       local lsp_present, lspconfig = pcall(require, "lspconfig")
       local navic_present, navic = pcall(require, "nvim-navic")
