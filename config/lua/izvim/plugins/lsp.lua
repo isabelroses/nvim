@@ -59,25 +59,6 @@ return {
           },
         },
 
-        cmdline = {
-          -- By default, we choose providers for the cmdline based on the current cmdtype
-          -- You may disable cmdline completions by replacing this with an empty table
-          sources = {
-            default = function()
-              local type = vim.fn.getcmdtype()
-              -- Search forward and backward
-              if type == "/" or type == "?" then
-                return { "buffer", "lsp" }
-              end
-              -- Commands
-              if type == ":" then
-                return { "cmdline" }
-              end
-              return {}
-            end,
-          },
-        },
-
         -- default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
