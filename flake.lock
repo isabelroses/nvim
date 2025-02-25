@@ -1,25 +1,5 @@
 {
   "nodes": {
-    "beapkgs": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1739839189,
-        "narHash": "sha256-WukKdzm/wNAgWKAew8Bip0j40TCOdyJqUAzmJXyD3uU=",
-        "owner": "isabelroses",
-        "repo": "beapkgs",
-        "rev": "a52e9ab94e8dc918a6b30432ddc8da669456b980",
-        "type": "github"
-      },
-      "original": {
-        "owner": "isabelroses",
-        "repo": "beapkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1739736696,
@@ -38,7 +18,6 @@
     },
     "root": {
       "inputs": {
-        "beapkgs": "beapkgs",
         "nixpkgs": "nixpkgs",
         "systems": "systems"
       }

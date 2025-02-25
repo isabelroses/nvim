@@ -28,7 +28,6 @@
   vscode-langservers-extracted,
   ltex-ls,
   marksman,
-  gonvim-tools,
   # nil,
   statix,
   deadnix,
@@ -134,9 +133,6 @@ let
     # markdown / latex
     ltex-ls
     marksman
-
-    # go
-    gonvim-tools
 
     # nix
     (callPackage ./nil.nix { })

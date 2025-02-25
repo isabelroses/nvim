@@ -330,15 +330,15 @@
   };
   nvim-lspconfig = {
     pname = "nvim-lspconfig";
-    version = "1110787f1b464888c59a044c48c5119d14078044";
+    version = "9e932edb0af4e20880685ddb96a231669fbe8091";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "1110787f1b464888c59a044c48c5119d14078044";
+      rev = "9e932edb0af4e20880685ddb96a231669fbe8091";
       fetchSubmodules = false;
-      sha256 = "sha256-p8vw+tp7phTFJL9uRyzMw9sZbANVYNswk9frigZQyaY=";
+      sha256 = "sha256-meyURDGVk4/QnVihqRDpC6cX1WUtClgJR0f6pMR4HCI=";
     };
-    date = "2025-02-18";
+    date = "2025-02-23";
   };
   nvim-navic = {
     pname = "nvim-navic";

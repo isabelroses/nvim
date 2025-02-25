@@ -347,6 +347,35 @@ return {
             "typescript",
           },
         },
+        gopls = {
+          single_file_support = true,
+          filetypes = { 'go', 'gomod', 'gosum', 'gotmpl', 'gohtmltmpl', 'gotexttmpl' },
+          cmd = {
+            'gopls', -- share the gopls instance if there is one already
+            '-remote.debug=:0',
+          },
+          settings = {
+            gopls = {
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              },
+              usePlaceholders = true,
+              completeUnimported = true,
+              staticcheck = true,
+              matcher = 'Fuzzy',
+              diagnosticsDelay = '500ms',
+              symbolMatcher = 'fuzzy',
+              semanticTokens = true,
+              gofumpt = true,
+            },
+          },
+        },
         helm_ls = {},
         hls = {},
         html = {},
@@ -467,40 +496,6 @@ return {
     end,
     event = "BufRead Cargo.toml",
   },
-
-  {
-    "go.nvim",
-    ft = {
-      "go",
-      "gomod",
-      "gosum",
-      "gotmpl",
-      "gohtmltmpl",
-      "gotexttmpl",
-    },
-    after = function()
-      -- setup go stuff
-      require("go").setup({
-        disable_defaults = false,
-        icons = {
-          breakpoint = " ",
-          currentpos = " ",
-        },
-        trouble = true,
-        luasnip = true,
-        dap_debug_keymap = false,
-        lsp_cfg = false,
-        lsp_keymaps = false,
-        lsp_inlay_hints = {
-          enable = true,
-          style = "inlay",
-        },
-      })
-
-      require("lspconfig").gopls.setup(require("go.lsp").config())
-    end,
-  },
-  { "guihua.lua" },
 
   {
     "quill.nvim",
