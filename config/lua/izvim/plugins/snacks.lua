@@ -5,7 +5,8 @@ return {
     config = function()
       local snacks = require("snacks")
 
-      snacks.setup({
+      ---@type snacks.Config
+      local opts = {
         bigfile = { enabled = true },
         quickfile = {
           enabled = true,
@@ -13,10 +14,19 @@ return {
         },
 
         -- undo defaults
+        dashboard = { enabled = false },
+        explorer = { enabled = false },
+        indent = { enabled = false },
+        input = { enabled = false },
+        picker = { enabled = false },
         notifier = { enabled = false },
+        scope = { enabled = false },
+        scroll = { enabled = false },
         statuscolumn = { enabled = false },
         words = { enabled = false },
-      })
+      }
+
+      snacks.setup(opts)
     end,
   },
 }
