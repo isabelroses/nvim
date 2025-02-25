@@ -40,14 +40,6 @@ src.branch = "legacy"
 fetch.github = "charm-community/freeze.nvim"
 src.git = "https://github.com/charm-community/freeze.nvim"
 
-[go-nvim]
-fetch.github = "ray-x/go.nvim"
-src.git = "https://github.com/ray-x/go.nvim"
-
-[guihua-lua]
-fetch.github = "ray-x/guihua.lua"
-src.git = "https://github.com/ray-x/guihua.lua"
-
 [harpoon]
 fetch.github = "ThePrimeagen/harpoon"
 src.git = "https://github.com/ThePrimeagen/harpoon"

@@ -122,30 +122,6 @@
     };
     date = "2024-12-28";
   };
-  go-nvim = {
-    pname = "go-nvim";
-    version = "a9efe436c5294fa24098e81859755ec755a94a60";
-    src = fetchFromGitHub {
-      owner = "ray-x";
-      repo = "go.nvim";
-      rev = "a9efe436c5294fa24098e81859755ec755a94a60";
-      fetchSubmodules = false;
-      sha256 = "sha256-t/pJ1KrVlVC3T9kzHij5O/Yem25vtvHGpYbOK0cRN9Q=";
-    };
-    date = "2025-02-18";
-  };
-  guihua-lua = {
-    pname = "guihua-lua";
-    version = "d783191eaa75215beae0c80319fcce5e6b3beeda";
-    src = fetchFromGitHub {
-      owner = "ray-x";
-      repo = "guihua.lua";
-      rev = "d783191eaa75215beae0c80319fcce5e6b3beeda";
-      fetchSubmodules = false;
-      sha256 = "sha256-XpUsbj1boDfbyE8C6SdOvZdkd97682VVC81fvQ5WA/4=";
-    };
-    date = "2024-11-02";
-  };
   harpoon = {
     pname = "harpoon";
     version = "ed1f853847ffd04b2b61c314865665e1dadf22c7";

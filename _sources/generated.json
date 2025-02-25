@@ -211,48 +211,6 @@
         },
         "version": "65c6e693a1d8ebd816bd3076350efa8e080c1c4a"
     },
-    "go-nvim": {
-        "cargoLocks": null,
-        "date": "2025-02-18",
-        "extract": null,
-        "name": "go-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ray-x",
-            "repo": "go.nvim",
-            "rev": "a9efe436c5294fa24098e81859755ec755a94a60",
-            "sha256": "sha256-t/pJ1KrVlVC3T9kzHij5O/Yem25vtvHGpYbOK0cRN9Q=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "a9efe436c5294fa24098e81859755ec755a94a60"
-    },
-    "guihua-lua": {
-        "cargoLocks": null,
-        "date": "2024-11-02",
-        "extract": null,
-        "name": "guihua-lua",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ray-x",
-            "repo": "guihua.lua",
-            "rev": "d783191eaa75215beae0c80319fcce5e6b3beeda",
-            "sha256": "sha256-XpUsbj1boDfbyE8C6SdOvZdkd97682VVC81fvQ5WA/4=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "d783191eaa75215beae0c80319fcce5e6b3beeda"
-    },
     "harpoon": {
         "cargoLocks": null,
         "date": "2025-02-10",
