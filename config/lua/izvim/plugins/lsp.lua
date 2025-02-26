@@ -181,11 +181,11 @@ return {
     end,
   },
 
-  { "lsp-status.nvim", lazy = false },
-  { "ltex-extra.nvim", lazy = false },
-  { "schemastore.nvim", lazy = false },
-  { "py_lsp.nvim", lazy = false },
-  { "typescript-tools.nvim", lazy = false },
+  { "lsp-status.nvim" },
+  { "ltex-extra.nvim" },
+  { "schemastore.nvim" },
+  { "py_lsp.nvim" },
+  { "typescript-tools.nvim" },
 
   {
     "nvim-lspconfig",
@@ -349,10 +349,10 @@ return {
         },
         gopls = {
           single_file_support = true,
-          filetypes = { 'go', 'gomod', 'gosum', 'gotmpl', 'gohtmltmpl', 'gotexttmpl' },
+          filetypes = { "go", "gomod", "gosum", "gotmpl", "gohtmltmpl", "gotexttmpl" },
           cmd = {
-            'gopls', -- share the gopls instance if there is one already
-            '-remote.debug=:0',
+            "gopls", -- share the gopls instance if there is one already
+            "-remote.debug=:0",
           },
           settings = {
             gopls = {
@@ -368,9 +368,9 @@ return {
               usePlaceholders = true,
               completeUnimported = true,
               staticcheck = true,
-              matcher = 'Fuzzy',
-              diagnosticsDelay = '500ms',
-              symbolMatcher = 'fuzzy',
+              matcher = "Fuzzy",
+              diagnosticsDelay = "500ms",
+              symbolMatcher = "fuzzy",
               semanticTokens = true,
               gofumpt = true,
             },
@@ -501,6 +501,20 @@ return {
     "quill.nvim",
     after = function()
       require("quill").setup()
+    end,
+  },
+
+  { "rainbow-delimiters.nvim" },
+
+  {
+    "rustaceanvim",
+    ft = "rust",
+  },
+
+  {
+    "lazydev.nvim",
+    after = function()
+      require("lazydev").setup()
     end,
   },
 }

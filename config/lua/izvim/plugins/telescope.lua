@@ -1,8 +1,8 @@
 return {
   -- we set these to lazy as we use another plugin to load them
-  { "telescope-project.nvim", lazy = false },
-  { "telescope-fzf-native.nvim", lazy = false },
-  { "telescope-ui-select.nvim", lazy = false },
+  { "telescope-project.nvim" },
+  { "telescope-fzf-native.nvim" },
+  { "telescope-ui-select.nvim" },
 
   {
     "telescope.nvim",

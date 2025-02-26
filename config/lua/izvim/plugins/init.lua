@@ -36,22 +36,6 @@ return {
     end,
   },
 
-  -- lsp
-  { "rainbow-delimiters.nvim" },
-
-  -- rust lsp + formmating
-  {
-    "rustaceanvim",
-    ft = "rust",
-  },
-
-  {
-    "lazydev.nvim",
-    after = function()
-      require("lazydev").setup()
-    end,
-  },
-
   -- add better undo history
   {
     "undotree",
