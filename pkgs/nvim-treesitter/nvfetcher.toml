@@ -752,10 +752,6 @@ generate = "true"
 fetch.git = "https://github.com/amaanq/tree-sitter-odin"
 src.git = "https://github.com/amaanq/tree-sitter-odin"
 
-[treesitter-grammar-org]
-fetch.git = "https://github.com/milisims/tree-sitter-org"
-src.git = "https://github.com/milisims/tree-sitter-org"
-
 [treesitter-grammar-pascal]
 fetch.git = "https://github.com/Isopod/tree-sitter-pascal"
 src.git = "https://github.com/Isopod/tree-sitter-pascal"
