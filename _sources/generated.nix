@@ -352,18 +352,6 @@
     };
     date = "2025-02-22";
   };
-  nvim-treesitter = {
-    pname = "nvim-treesitter";
-    version = "93ce9feb4fabbb37b3e7f47d80f27be778f4d956";
-    src = fetchFromGitHub {
-      owner = "nvim-treesitter";
-      repo = "nvim-treesitter";
-      rev = "93ce9feb4fabbb37b3e7f47d80f27be778f4d956";
-      fetchSubmodules = false;
-      sha256 = "sha256-SxfXYNnN9QEIax06+epyAfYD7fs2ReTLMXdNGglAywM=";
-    };
-    date = "2025-02-25";
-  };
   nvim-web-devicons = {
     pname = "nvim-web-devicons";
     version = "1020869742ecb191f260818234517f4a1515cfe8";

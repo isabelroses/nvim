@@ -119,10 +119,6 @@ src.git = "https://github.com/rcarriga/nvim-notify"
 fetch.github = "nvim-tree/nvim-tree.lua"
 src.git = "https://github.com/nvim-tree/nvim-tree.lua"
 
-[nvim-treesitter]
-fetch.github = "nvim-treesitter/nvim-treesitter"
-src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
-
 [nvim-web-devicons]
 fetch.github = "nvim-tree/nvim-web-devicons"
 src.git = "https://github.com/nvim-tree/nvim-web-devicons"

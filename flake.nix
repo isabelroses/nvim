@@ -33,20 +33,23 @@
       formatter = forAllSystems (pkgs: pkgs.nixfmt-rfc-style);
 
       packages = forAllSystems (pkgs: {
-        neovim = pkgs.callPackage ./pkgs/neovim.nix { };
+        neovim = pkgs.callPackage ./nix/neovim.nix { };
         default = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
 
-        nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
-        nil = pkgs.callPackage ./pkgs/nil.nix { };
+        # expose the wrapper for public consumption
+        wrapper = pkgs.callPackage ./nix/wrapper/package.nix { };
+
+        nvim-treesitter = pkgs.callPackage ./nix/extrapkgs/nvim-treesitter { };
+        nil = pkgs.callPackage ./nix/extrapkgs/nil.nix { };
 
         generate-treesitter = pkgs.writeShellApplication {
           name = "generate";
           runtimeInputs = [
-            (pkgs.callPackage ./pkgs/nvim-treesitter/neovim.nix { })
+            (pkgs.callPackage ./nix/extrapkgs/nvim-treesitter/neovim.nix { })
           ];
 
           text = ''
-            nvim --headless -l ${./pkgs/nvim-treesitter/generate-nvfetcher.lua}
+            nvim --headless -l ${./nix/extrapkgs/nvim-treesitter/generate-nvfetcher.lua}
           '';
         };
 
@@ -59,7 +62,7 @@
 
           text = ''
             nvfetcher
-            pushd pkgs/nvim-treesitter
+            pushd nix/extapkgs/nvim-treesitter
             generate
             nvfetcher
             popd
