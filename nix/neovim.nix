@@ -92,6 +92,7 @@ let
     fromJSON
     removeAttrs
     attrValues
+    replaceStrings
     ;
 
   wrapNeovim = callPackage ./wrapper/package.nix;
@@ -112,8 +113,12 @@ let
     in
     vimUtils.buildVimPlugin {
       pname = old.passthru.as or (baseNameOf old.src.git);
-      inherit (attrs) src version;
+      version = replaceStrings [ "-" ] [ "." ] attrs.date;
+
+      inherit (attrs) src;
+
       doCheck = false;
+
       passthru.start = if (attrs ? start) then fromJSON attrs.start else false;
     };
 in
