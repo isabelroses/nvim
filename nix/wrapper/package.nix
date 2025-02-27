@@ -1,6 +1,5 @@
 {
   lib,
-  callPackage,
 
   # builders
   runCommand,
@@ -34,19 +33,6 @@ let
   inherit (lib.strings) concatMapStringsSep makeBinPath escapeShellArgs;
   inherit (builtins) typeOf;
 
-  bytes = callPackage ./byte.nix { };
-
-  compiledPlugins = map bytes.byteCompileLuaDrv plugins;
-
-  compiledConfig = bytes.byteCompileLuaDrv (
-    runCommandLocal "nvim-config" { passthru.start = true; } ''
-      mkdir $out
-      cp -r ${userConfig}/* $out
-    ''
-  );
-
-  finalPlugins = compiledPlugins ++ [ compiledConfig ];
-
   packDir = runCommandLocal "packdir" { } ''
     mkdir -pv $out/pack/${pname}/{start,opt}
 
@@ -54,7 +40,9 @@ let
        ln -vsfT ${p} $out/pack/${pname}/${if (p.passthru.start or false) then "start" else "opt"}/${
          if typeOf p == "path" then baseNameOf p else (p.pname or p.name)
        }
-     '') finalPlugins}
+     '') plugins}
+
+    ln -vsfT ${userConfig} $out/pack/${pname}/start/init-plugin
   '';
 
   rc = writeText "rc.vim" ''
