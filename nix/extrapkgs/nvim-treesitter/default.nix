@@ -10,13 +10,20 @@
   grammars ? [ ],
 }:
 let
+  inherit (builtins)
+    map
+    replaceStrings
+    attrNames
+    removeAttrs
+    ;
+
   nv = callPackage ./_sources/generated.nix { };
-  grammarOverrides = callPackage ./grammar-overrides.nix { };
+  grammarOverrides = import ./grammar-overrides.nix;
 
   # get all grammars from the nvfetcher output
-  allGrammars = builtins.map (name: lib.removePrefix "treesitter-grammar-" name) (
-    builtins.attrNames (
-      builtins.removeAttrs nv [
+  allGrammars = map (name: lib.removePrefix "treesitter-grammar-" name) (
+    attrNames (
+      removeAttrs nv [
         "nvim-treesitter"
         "override"
         "overrideDerivation"
@@ -28,27 +35,29 @@ let
     if (grammars == [ ]) then allGrammars else lib.intersectLists grammars allGrammars;
 
   # build each Grammar
-  treesitterGrammars = builtins.map (
+  treesitterGrammars = map (
     name:
     let
       nvgrammar = nv."treesitter-grammar-${name}";
     in
     tree-sitter.buildGrammar (
       {
-        inherit (nvgrammar) src version;
+        inherit (nvgrammar) src;
+        version = replaceStrings [ "-" ] [ "." ] nvgrammar.date;
         language = name;
-        generate = lib.hasAttr "generate" nvgrammar;
+        generate = nvgrammar ? "generate";
         location = nvgrammar.location or null;
       }
       // grammarOverrides.${name} or { }
     )
   ) grammarsToBuild;
 
-  linkCommands = builtins.map (
+  linkCommands = map (
     grammar:
     let
       name = lib.removeSuffix "-grammar" grammar.pname;
     in
+    # bash
     ''
       ln -sf ${grammar}/parser ./parser/${name}.so
 
@@ -84,11 +93,15 @@ let
       '';
 
   nvim-treesitter = vimUtils.buildVimPlugin {
-    inherit (nv.nvim-treesitter) pname version src;
+    inherit (nv.nvim-treesitter) pname src;
+
+    version = replaceStrings [ "-" ] [ "." ] nv.nvim-treesitter.date;
+
     postPatch = lib.concatStrings linkCommands;
 
     passthru = {
       grammars = treesitterGrammars;
+      inherit neovim;
       tests = {
         inherit check-queries;
       };
