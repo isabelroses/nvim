@@ -62,7 +62,7 @@
 
           text = ''
             nvfetcher
-            pushd nix/extapkgs/nvim-treesitter
+            pushd nix/extrapkgs/nvim-treesitter
             generate
             nvfetcher
             popd
