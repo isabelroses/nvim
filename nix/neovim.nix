@@ -82,9 +82,12 @@
       "zig"
     ];
   },
+
+  # settings
+  includePerLanguageTooling ? true,
 }:
 let
-  inherit (lib.lists) flatten;
+  inherit (lib.lists) flatten optionals;
   inherit (lib.trivial) importTOML;
   inherit (builtins)
     baseNameOf
@@ -137,45 +140,47 @@ wrapNeovim {
     vimPlugins.telescope-fzf-native-nvim
   ];
 
-  extraPackages = [
-    # external deps
-    fd
-    ripgrep
+  extraPackages =
+    [
+      # external deps
+      fd
+      ripgrep
+    ]
+    ++ (optionals includePerLanguageTooling [
+      # needed for copilot
+      nodejs-slim
 
-    # needed for copilot
-    nodejs-slim
+      # lua
+      stylua
+      lua-language-server
 
-    # lua
-    stylua
-    lua-language-server
+      # webdev
+      emmet-language-server
+      tailwindcss-language-server
+      typescript
+      vscode-langservers-extracted
 
-    # webdev
-    emmet-language-server
-    tailwindcss-language-server
-    typescript
-    vscode-langservers-extracted
+      # markdown / latex
+      ltex-ls
+      marksman
 
-    # markdown / latex
-    ltex-ls
-    marksman
+      # nix
+      (callPackage ./extrapkgs/nil.nix { })
+      statix
+      deadnix
+      nixfmt-rfc-style
 
-    # nix
-    (callPackage ./extrapkgs/nil.nix { })
-    statix
-    deadnix
-    nixfmt-rfc-style
+      # shell
+      shfmt
+      shellcheck
+      bash-language-server
 
-    # shell
-    shfmt
-    shellcheck
-    bash-language-server
-
-    # etc
-    nodePackages.prettier
-    proselint
-    taplo # toml
-    yaml-language-server # yaml
-    dockerfile-language-server-nodejs
-    lazygit
-  ];
+      # etc
+      nodePackages.prettier
+      proselint
+      taplo # toml
+      yaml-language-server # yaml
+      dockerfile-language-server-nodejs
+      lazygit
+    ]);
 }
