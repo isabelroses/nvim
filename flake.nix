@@ -36,6 +36,10 @@
         neovim = pkgs.callPackage ./nix/neovim.nix { };
         default = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
 
+        neovimMinimal = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim.override {
+          includePerLanguageTooling = false;
+        };
+
         # expose the wrapper for public consumption
         wrapper = pkgs.callPackage ./nix/wrapper/package.nix { };
 
