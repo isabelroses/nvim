@@ -146,7 +146,7 @@ wrapNeovim {
       fd
       ripgrep
     ]
-    ++ (optionals includePerLanguageTooling [
+    ++ optionals includePerLanguageTooling [
       # needed for copilot
       nodejs-slim
 
@@ -182,5 +182,5 @@ wrapNeovim {
       yaml-language-server # yaml
       dockerfile-language-server-nodejs
       lazygit
-    ]);
+    ];
 }
