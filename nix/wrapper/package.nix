@@ -59,6 +59,8 @@ let
 in
 runCommand pname
   {
+    inherit pname;
+
     __structuredAttrs = true;
 
     nativeBuildInputs = [ makeBinaryWrapper ];
