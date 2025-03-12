@@ -2,7 +2,7 @@
   lib,
   rustPlatform,
   fetchFromGitHub,
-  nixVersions,
+  nix,
   fetchpatch,
   nix-update-script,
 }:
@@ -21,7 +21,7 @@ rustPlatform.buildRustPackage rec {
   cargoHash = "sha256-uZsLlFU9GKLvFllF7Kf5Q7HfN26KQojf4rvOb9p7Rjs=";
 
   nativeBuildInputs = [
-    (lib.getBin nixVersions.latest)
+    (lib.getBin nix)
   ];
 
   env.CFG_RELEASE = version;
