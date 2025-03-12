@@ -566,6 +566,10 @@ src.git = "https://github.com/tree-sitter/tree-sitter-julia"
 fetch.git = "https://github.com/IndianBoy42/tree-sitter-just"
 src.git = "https://github.com/IndianBoy42/tree-sitter-just"
 
+[treesitter-grammar-kcl]
+fetch.git = "https://github.com/kcl-lang/tree-sitter-kcl"
+src.git = "https://github.com/kcl-lang/tree-sitter-kcl"
+
 [treesitter-grammar-kconfig]
 fetch.git = "https://github.com/amaanq/tree-sitter-kconfig"
 src.git = "https://github.com/amaanq/tree-sitter-kconfig"
