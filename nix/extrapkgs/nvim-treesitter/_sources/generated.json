@@ -3642,7 +3642,7 @@
             "leaveDotGit": false,
             "name": null,
             "rev": "c5cf996c23e38a1537069fbe2d4bb83a75fc7b2f",
-            "sha256": "sha256-eDJRTLYKHcL7yAgFL8vZQh9zp5fBxcZRsWChp8y3Am0=",
+            "sha256": "sha256-UBGVc98lrtTCp/kYDEFM/8iG9n7Tekx+xbE7Wdyp2uQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/atom-ocaml/tree-sitter-ocamllex"
