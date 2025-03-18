@@ -20,6 +20,7 @@ return {
         -- },
         styles = {
           comments = { "italic" },
+          conditionals = { "italic" },
         },
         integrations = {
           alpha = true,
