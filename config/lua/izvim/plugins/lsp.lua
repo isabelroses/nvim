@@ -189,7 +189,7 @@ return {
 
   {
     "nvim-lspconfig",
-    event = "DeferredUIEnter",
+    event = { 'BufReadPre', 'BufNewFile' },
     after = function()
       require("lz.n").trigger_load({
         "blink.cmp",
