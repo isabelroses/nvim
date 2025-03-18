@@ -189,7 +189,7 @@ return {
 
   {
     "nvim-lspconfig",
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { "BufReadPre", "BufNewFile" },
     after = function()
       require("lz.n").trigger_load({
         "blink.cmp",
@@ -307,6 +307,9 @@ return {
         astro = {},
         bashls = {},
         cssls = {},
+        clangd = {
+          filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+        },
         denols = {
           root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
           single_file_support = false,
