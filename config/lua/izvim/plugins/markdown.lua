@@ -40,7 +40,7 @@ return {
   {
     "obsidian.nvim",
     after = function()
-      require("obsidian").setup({
+      pcall(require("obsidian").setup, {
         workspaces = {
           {
             name = "default",
