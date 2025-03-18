@@ -100,15 +100,15 @@
   };
   fidget = {
     pname = "fidget";
-    version = "2f7c08f45639a64a5c0abcf67321d52c3f499ae6";
+    version = "d9ba6b7bfe29b3119a610892af67602641da778e";
     src = fetchFromGitHub {
       owner = "j-hui";
       repo = "fidget.nvim";
-      rev = "2f7c08f45639a64a5c0abcf67321d52c3f499ae6";
+      rev = "d9ba6b7bfe29b3119a610892af67602641da778e";
       fetchSubmodules = false;
-      sha256 = "sha256-8Gl2Ck4YJGReSEq1Xeh1dpdRq4eImmrxvIHrfxdem3Q=";
+      sha256 = "sha256-AFUx/ZQVWV7s5Wlppjk6N9QXoJKNKqxtf990FFlTEhw=";
     };
-    date = "2023-11-09";
+    date = "2025-02-05";
   };
   freeze = {
     pname = "freeze";

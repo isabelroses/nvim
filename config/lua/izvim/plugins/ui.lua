@@ -56,16 +56,18 @@ return {
     "fidget.nvim",
     after = function()
       require("fidget").setup({
-        display = { done_icon = "󰗡" },
         notification = {
-          override_vim_notify = true,
           window = { winblend = 0 },
         },
         progress = {
+          display = { done_icon = "󰗡" },
           ignore = {
             "copilot",
             "null-ls",
           },
+        },
+        integration = {
+          ["nvim-tree"] = { enable = true },
         },
       })
     end,

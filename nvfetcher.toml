@@ -34,7 +34,6 @@ src.git = "https://github.com/comfysage/evergarden"
 [fidget]
 fetch.github = "j-hui/fidget.nvim"
 src.git = "https://github.com/j-hui/fidget.nvim"
-src.branch = "legacy"
 
 [freeze]
 fetch.github = "charm-community/freeze.nvim"

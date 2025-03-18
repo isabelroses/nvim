@@ -171,7 +171,7 @@
     },
     "fidget": {
         "cargoLocks": null,
-        "date": "2023-11-09",
+        "date": "2025-02-05",
         "extract": null,
         "name": "fidget",
         "passthru": null,
@@ -183,12 +183,12 @@
             "name": null,
             "owner": "j-hui",
             "repo": "fidget.nvim",
-            "rev": "2f7c08f45639a64a5c0abcf67321d52c3f499ae6",
-            "sha256": "sha256-8Gl2Ck4YJGReSEq1Xeh1dpdRq4eImmrxvIHrfxdem3Q=",
+            "rev": "d9ba6b7bfe29b3119a610892af67602641da778e",
+            "sha256": "sha256-AFUx/ZQVWV7s5Wlppjk6N9QXoJKNKqxtf990FFlTEhw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2f7c08f45639a64a5c0abcf67321d52c3f499ae6"
+        "version": "d9ba6b7bfe29b3119a610892af67602641da778e"
     },
     "freeze": {
         "cargoLocks": null,
