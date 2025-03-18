@@ -1,7 +1,6 @@
 return {
   {
     "blink.cmp",
-    event = "DeferredUIEnter",
     after = function()
       require("blink.cmp").setup({
         keymap = {
@@ -507,7 +506,13 @@ return {
     end,
   },
 
-  { "rainbow-delimiters.nvim" },
+  {
+    "blink.pairs",
+    event = { "BufRead", "BufNewFile" },
+    after = function()
+      require("blink.pairs").setup({})
+    end,
+  },
 
   {
     "rustaceanvim",

@@ -139,10 +139,6 @@ src.git = "https://github.com/hallerpatrick/py_lsp.nvim"
 fetch.github = "comfysage/quill.nvim"
 src.git = "https://github.com/comfysage/quill.nvim"
 
-[rainbow-delimiters]
-fetch.github = "hiphish/rainbow-delimiters.nvim"
-src.git = "https://github.com/hiphish/rainbow-delimiters.nvim"
-
 [rustaceanvim]
 fetch.github = "mrcjkb/rustaceanvim"
 src.git = "https://github.com/mrcjkb/rustaceanvim"

@@ -413,18 +413,6 @@
     };
     date = "2024-12-10";
   };
-  rainbow-delimiters = {
-    pname = "rainbow-delimiters";
-    version = "acb867e2c26104bb700cc660853d75690925cbe0";
-    src = fetchFromGitHub {
-      owner = "hiphish";
-      repo = "rainbow-delimiters.nvim";
-      rev = "acb867e2c26104bb700cc660853d75690925cbe0";
-      fetchSubmodules = false;
-      sha256 = "sha256-soGjOj/Zcg6hDmMAS1z1OK3auUf1YQZptj9BCDY64J0=";
-    };
-    date = "2025-03-11";
-  };
   rustaceanvim = {
     pname = "rustaceanvim";
     version = "88bd72511ab3f175d12a64b91ef1eba5c20b53e6";
