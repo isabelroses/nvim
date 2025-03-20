@@ -8,7 +8,7 @@ return {
           accent = "pink",
         },
         editor = {
-          transparent_background = true,
+          transparent_background = false,
           override_terminal = true,
         },
         style = {
