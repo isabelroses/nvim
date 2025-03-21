@@ -637,7 +637,7 @@
     },
     "obsidian-nvim": {
         "cargoLocks": null,
-        "date": "2024-08-01",
+        "date": "2025-03-13",
         "extract": null,
         "name": "obsidian-nvim",
         "passthru": null,
@@ -647,14 +647,14 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "epwalsh",
+            "owner": "obsidian-nvim",
             "repo": "obsidian.nvim",
-            "rev": "14e0427bef6c55da0d63f9a313fd9941be3a2479",
-            "sha256": "sha256-mbq7fAPmlwOAbWlN3lGX9WGBKTV8cAPZx8pnRCyszJc=",
+            "rev": "15b8c5fc730625a3f162817b13db144c5bba3a9f",
+            "sha256": "sha256-7hXMNKIbXK2Bw2VQEjSu/YUvOfME34AEi9yb83zwVQE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "14e0427bef6c55da0d63f9a313fd9941be3a2479"
+        "version": "15b8c5fc730625a3f162817b13db144c5bba3a9f"
     },
     "plenary": {
         "cargoLocks": null,

@@ -55,6 +55,13 @@ return {
             path = "~/dev/cssuffering/notes",
           },
         },
+
+        completion = {
+          nvim_cmp = false,
+          blink = true,
+          min_chars = 2,
+          default = true,
+        },
       })
     end,
   },

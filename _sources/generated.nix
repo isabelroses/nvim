@@ -366,15 +366,15 @@
   };
   obsidian-nvim = {
     pname = "obsidian-nvim";
-    version = "14e0427bef6c55da0d63f9a313fd9941be3a2479";
+    version = "15b8c5fc730625a3f162817b13db144c5bba3a9f";
     src = fetchFromGitHub {
-      owner = "epwalsh";
+      owner = "obsidian-nvim";
       repo = "obsidian.nvim";
-      rev = "14e0427bef6c55da0d63f9a313fd9941be3a2479";
+      rev = "15b8c5fc730625a3f162817b13db144c5bba3a9f";
       fetchSubmodules = false;
-      sha256 = "sha256-mbq7fAPmlwOAbWlN3lGX9WGBKTV8cAPZx8pnRCyszJc=";
+      sha256 = "sha256-7hXMNKIbXK2Bw2VQEjSu/YUvOfME34AEi9yb83zwVQE=";
     };
-    date = "2024-08-01";
+    date = "2025-03-13";
   };
   plenary = {
     pname = "plenary";

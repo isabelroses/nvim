@@ -123,8 +123,8 @@ fetch.github = "nvim-tree/nvim-web-devicons"
 src.git = "https://github.com/nvim-tree/nvim-web-devicons"
 
 [obsidian-nvim]
-fetch.github = "epwalsh/obsidian.nvim"
-src.git = "https://github.com/epwalsh/obsidian.nvim"
+fetch.github = "obsidian-nvim/obsidian.nvim"
+src.git = "https://github.com/obsidian-nvim/obsidian.nvim"
 
 [plenary]
 fetch.github = "nvim-lua/plenary.nvim"
