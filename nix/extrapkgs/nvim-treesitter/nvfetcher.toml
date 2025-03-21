@@ -64,6 +64,10 @@ src.git = "https://github.com/amaanq/tree-sitter-bicep"
 fetch.git = "https://github.com/amaanq/tree-sitter-bitbake"
 src.git = "https://github.com/amaanq/tree-sitter-bitbake"
 
+[treesitter-grammar-blade]
+fetch.git = "https://github.com/EmranMR/tree-sitter-blade"
+src.git = "https://github.com/EmranMR/tree-sitter-blade"
+
 [treesitter-grammar-blueprint]
 fetch.git = "https://gitlab.com/gabmus/tree-sitter-blueprint.git"
 src.git = "https://gitlab.com/gabmus/tree-sitter-blueprint.git"
