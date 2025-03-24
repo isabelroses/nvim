@@ -31,7 +31,7 @@ jobs:
         uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Setup Attic
-        uses: ryanccn/attic-action@v0.3.1
+        uses: ryanccn/attic-action@v0.3.2
         with:
           endpoint: https://cache.tgirl.cloud
           cache: tgirlcloud
