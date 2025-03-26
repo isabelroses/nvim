@@ -79,6 +79,18 @@ return {
             local default = 1
             return vim.bo.filetype == "markdown" and 2 or default
           end,
+
+          providers = {
+            snippets = {
+              opts = {
+                search_paths = {
+                  vim.iter(ipairs(vim.opt.rtp:get())):find(function(_, v)
+                    return v:match("packdir$")
+                  end) .. "/pack/izvim/start/init-plugin/snippets",
+                },
+              },
+            },
+          },
         },
 
         -- experimental signature help support

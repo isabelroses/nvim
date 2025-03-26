@@ -80,8 +80,6 @@
             self.formatter.${pkgs.stdenv.hostPlatform.system}
             pkgs.selene
             pkgs.stylua
-            self.packages.${pkgs.stdenv.hostPlatform.system}.update
-            self.packages.${pkgs.stdenv.hostPlatform.system}.generate-treesitter
           ] ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
         };
       });

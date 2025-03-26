@@ -218,19 +218,6 @@
     };
     date = "2025-03-19";
   };
-  luasnip = {
-    pname = "luasnip";
-    version = "c9b9a22904c97d0eb69ccb9bab76037838326817";
-    src = fetchFromGitHub {
-      owner = "L3MON4D3";
-      repo = "LuaSnip";
-      rev = "c9b9a22904c97d0eb69ccb9bab76037838326817";
-      fetchSubmodules = false;
-      sha256 = "sha256-3ecm5SDTcSOh256xSQPHhddQfMpepiEIpv58fHXrVg0=";
-    };
-    as = "luasnip";
-    date = "2025-01-04";
-  };
   lz-n = {
     pname = "lz-n";
     version = "136e315e0c1e2ac116cc0953dd41adfebfb4a695";

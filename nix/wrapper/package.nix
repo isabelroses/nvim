@@ -46,10 +46,13 @@ let
   '';
 
   rc = writeText "rc.vim" ''
-    lua package.path = "${lua.pkgs.luaLib.genLuaPathAbsStr luaEnv}"; package.cpath = "${lua.pkgs.luaLib.genLuaCPathAbsStr luaEnv}"
     set packpath^=${packDir} | set runtimepath^=${packDir}
 
+    lua package.path = "${lua.pkgs.luaLib.genLuaPathAbsStr luaEnv};" .. package.path
+    lua package.cpath = "${lua.pkgs.luaLib.genLuaCPathAbsStr luaEnv};" .. package.cpath
+
     lua vim.loader.enable()
+
     lua vim.g.loaded_node_provider = 0
     lua vim.g.loaded_perl_provider = 0
     lua vim.g.loaded_python_provider = 0
@@ -74,7 +77,7 @@ runCommand pname
       "--add-flags"
       (escapeShellArgs [
         "-u"
-        (toString rc)
+        rc
       ])
 
       "--set"

@@ -72,11 +72,6 @@ src.git = "https://github.com/barreiroleo/ltex-extra.nvim"
 fetch.github = "nvim-lualine/lualine.nvim"
 src.git = "https://github.com/nvim-lualine/lualine.nvim"
 
-[luasnip]
-fetch.github = "L3MON4D3/LuaSnip"
-src.git = "https://github.com/L3MON4D3/LuaSnip"
-passthru.as = "luasnip"
-
 [lz-n]
 fetch.github = "nvim-neorocks/lz.n"
 src.git = "https://github.com/nvim-neorocks/lz.n"

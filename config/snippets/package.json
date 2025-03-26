@@ -4,7 +4,7 @@
     "snippets": [
       {
         "language": "nix",
-        "path": "./snippets/nix.json"
+        "path": "./nix.json"
       },
       {
         "language": [
@@ -18,7 +18,7 @@
           "blade",
           "gotexttmpl"
         ],
-        "path": "./snippets/html.json"
+        "path": "./html.json"
       }
     ]
   }

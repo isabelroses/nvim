@@ -3,9 +3,9 @@
     "prefix": "mkshell",
     "description": "Nix development shell",
     "body": [
-      "{ pkgs ? import <nixpkgs> {} }:",
-      "pkgs.mkShell {",
-      "  buildInputs = with pkgs; [",
+      "{ mkShell }:",
+      "mkShell {",
+      "  buildInputs = [",
       "    $1",
       "  ];",
       "}"
