@@ -21,7 +21,6 @@ return {
         },
         overrides = {}, -- add custom overrides
       })
-      vim.cmd.colorscheme("evergarden")
     end,
   },
 }
