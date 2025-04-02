@@ -69,8 +69,8 @@ return {
     "cord.nvim",
     after = function()
       require("cord").setup({
-        editor = { image = "https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp" },
-        display = { swap_icons = true }, -- place the editor image as the main image
+        editor = { icon = "https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp" },
+        display = { swap_icons = true },
       })
     end,
   },
