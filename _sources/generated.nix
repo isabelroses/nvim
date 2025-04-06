@@ -122,6 +122,18 @@
     };
     date = "2025-03-25";
   };
+  gitsigns = {
+    pname = "gitsigns";
+    version = "17ab794b6fce6fce768430ebc925347e349e1d60";
+    src = fetchFromGitHub {
+      owner = "lewis6991";
+      repo = "gitsigns.nvim";
+      rev = "17ab794b6fce6fce768430ebc925347e349e1d60";
+      fetchSubmodules = false;
+      sha256 = "sha256-l1Iu4jG1rGopUaEbKugzAqqbrQtpwnaKNbiMpnjH1VU=";
+    };
+    date = "2025-04-04";
+  };
   harpoon = {
     pname = "harpoon";
     version = "ed1f853847ffd04b2b61c314865665e1dadf22c7";

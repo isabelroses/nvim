@@ -39,6 +39,10 @@ src.git = "https://github.com/j-hui/fidget.nvim"
 fetch.github = "charm-community/freeze.nvim"
 src.git = "https://github.com/charm-community/freeze.nvim"
 
+[gitsigns]
+fetch.github = "lewis6991/gitsigns.nvim"
+src.git = "https://github.com/lewis6991/gitsigns.nvim"
+
 [harpoon]
 fetch.github = "ThePrimeagen/harpoon"
 src.git = "https://github.com/ThePrimeagen/harpoon"

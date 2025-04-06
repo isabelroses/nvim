@@ -57,7 +57,7 @@ return {
             enabled = true,
             custom_bg = "NONE",
           },
-          gitsigns = false,
+          gitsigns = true,
           markdown = true,
           render_markdown = false,
           harpoon = true,

@@ -211,6 +211,27 @@
         },
         "version": "590fdb0d724485f578e4fee0e3ae2b32040dfb1a"
     },
+    "gitsigns": {
+        "cargoLocks": null,
+        "date": "2025-04-04",
+        "extract": null,
+        "name": "gitsigns",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "lewis6991",
+            "repo": "gitsigns.nvim",
+            "rev": "17ab794b6fce6fce768430ebc925347e349e1d60",
+            "sha256": "sha256-l1Iu4jG1rGopUaEbKugzAqqbrQtpwnaKNbiMpnjH1VU=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "17ab794b6fce6fce768430ebc925347e349e1d60"
+    },
     "harpoon": {
         "cargoLocks": null,
         "date": "2025-02-10",
