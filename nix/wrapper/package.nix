@@ -31,7 +31,7 @@
   userConfig,
 }:
 let
-  inherit (lib.meta) getExe;
+  inherit (lib.meta) getExe defaultPriority;
   inherit (lib.strings) concatMapStringsSep makeBinPath getVersion;
   inherit (builtins) typeOf baseNameOf;
 
@@ -64,6 +64,12 @@ let
     ln -vsfT ${userConfig} $out/pack/${pname}/start/init-plugin
 
     ${getExe envsubst} < '${init}' > "$out/init.lua"
+
+
+    mkdir $out/nix-support
+    for i in $(find -L $out -name propagated-build-inputs ); do
+      cat "$i" >> $out/nix-support/propagated-build-inputs
+    done
   '';
 in
 stdenvNoCC.mkDerivation {
@@ -90,21 +96,26 @@ stdenvNoCC.mkDerivation {
     pname
   ];
 
-  installPhase = ''
-    runHook preInstall
+  buildPhase = ''
+    runHook preBuild
 
     mkdir -p $out
     lndir -silent ${basePackage} $out
     rm -rf $out/share/applications
 
-    wrapProgram $out/bin/nvim "''${wrapperArgs[@]}"
+    runHook postBuild
+  '';
 
+  installPhase = ''
+    runHook preInstall
+
+    wrapProgram $out/bin/nvim "''${wrapperArgs[@]}"
     ln -s $out/bin/nvim $out/bin/${pname}
 
     runHook postInstall
   '';
 
   meta = basePackage.meta // {
-    priority = (basePackage.meta.priority or 0) - 2;
+    priority = (basePackage.meta.priority or defaultPriority) - 1;
   };
 }
