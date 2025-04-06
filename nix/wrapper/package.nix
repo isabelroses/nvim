@@ -52,7 +52,7 @@ let
     vim.g.loaded_ruby_provider = 0
   '';
 
-  finalConfig = runCommand "final-config" { } ''
+  finalConfig = runCommand "neovim-config" { } ''
     mkdir -pv $out/pack/${pname}/{start,opt}
 
     ${concatMapStringsSep "\n" (p: ''
@@ -64,7 +64,6 @@ let
     ln -vsfT ${userConfig} $out/pack/${pname}/start/init-plugin
 
     ${getExe envsubst} < '${init}' > "$out/init.lua"
-
 
     mkdir $out/nix-support
     for i in $(find -L $out -name propagated-build-inputs ); do
@@ -114,6 +113,8 @@ stdenvNoCC.mkDerivation {
 
     runHook postInstall
   '';
+
+  passthru.config = finalConfig;
 
   meta = basePackage.meta // {
     priority = (basePackage.meta.priority or defaultPriority) - 1;
