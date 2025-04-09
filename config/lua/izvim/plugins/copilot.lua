@@ -45,8 +45,11 @@ return {
           cvs = false,
           ["."] = false,
         },
-        copilot_node_command = "node",
         server_opts_overrides = {},
+        server = {
+          type = "binary",
+          custom_server_filepath = vim.fn.exepath("copilot-language-server"),
+        },
       })
     end,
   },

@@ -27,10 +27,9 @@
   proselint,
   taplo,
   yaml-language-server,
-  dockerfile-language-server-nodejs,
   lazygit,
   nodePackages,
-  nodejs-slim,
+  copilot-language-server,
 
   treesitter ? (callPackage ./extrapkgs/nvim-treesitter { }).override {
     grammars = [
@@ -145,9 +144,6 @@ wrapNeovim {
       ripgrep
     ]
     ++ optionals includePerLanguageTooling [
-      # needed for copilot
-      nodejs-slim
-
       # lua
       stylua
       lua-language-server
@@ -176,7 +172,7 @@ wrapNeovim {
       proselint
       taplo # toml
       yaml-language-server # yaml
-      dockerfile-language-server-nodejs
+      copilot-language-server
       lazygit
     ];
 }
