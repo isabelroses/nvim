@@ -405,7 +405,7 @@ return {
             },
           },
         },
-        ltex = {
+        ltex_plus = {
           on_attach = function()
             require("ltex_extra").setup({
               load_langs = { "en-US", "en-GB" },
