@@ -14,10 +14,8 @@
   stylua,
   lua-language-server,
   emmet-language-server,
-  tailwindcss-language-server,
-  typescript,
   vscode-langservers-extracted,
-  ltex-ls,
+  ltex-ls-plus,
   marksman,
   # nil,
   statix,
@@ -156,12 +154,10 @@ wrapNeovim {
 
       # webdev
       emmet-language-server
-      tailwindcss-language-server
-      typescript
       vscode-langservers-extracted
 
       # markdown / latex
-      ltex-ls
+      ltex-ls-plus
       marksman
 
       # nix
