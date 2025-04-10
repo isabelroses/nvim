@@ -125,10 +125,10 @@ lib.extendMkDerivation {
       } // args.passthru or { };
 
       meta =
-        {
+        basePackage.meta
+        // {
           priority = (basePackage.meta.priority or defaultPriority) - 1;
         }
-        // basePackage.meta
         // args.meta or { };
     };
 }
