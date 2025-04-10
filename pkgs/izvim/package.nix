@@ -1,6 +1,5 @@
 {
   lib,
-  callPackage,
 
   # get extra plugins we don't want to build
   vimPlugins,
@@ -27,6 +26,9 @@
   lazygit,
   nodePackages,
   copilot-language-server,
+  copilot-language-server-fhs,
+
+  stdenvNoCC,
 
   # our beatiful wrapper
   wrapNeovim,
@@ -145,7 +147,8 @@ wrapNeovim {
       proselint
       taplo # toml
       yaml-language-server # yaml
-      copilot-language-server
       lazygit
-    ];
+    ]
+    ++ optionals stdenvNoCC.hostPlatform.isDarwin [ copilot-language-server ]
+    ++ optionals stdenvNoCC.hostPlatform.isLinux [ copilot-language-server-fhs ];
 }

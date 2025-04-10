@@ -91,8 +91,9 @@ lib.extendMkDerivation {
       dontRewriteSymlinks = args.dontRewriteSymlinks or true;
 
       wrapperArgs = [
-        "--add-flags"
-        "-u ${config}/init.lua"
+        "--set-default"
+        "VIMINIT"
+        "source ${config}/init.lua"
 
         "--set-default"
         "NVIM_APPNAME"
