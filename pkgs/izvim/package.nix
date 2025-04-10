@@ -5,9 +5,6 @@
   # get extra plugins we don't want to build
   vimPlugins,
 
-  # we need to build some plugins
-  vimUtils,
-
   # path
   fd,
   ripgrep,
@@ -17,7 +14,7 @@
   vscode-langservers-extracted,
   ltex-ls-plus,
   marksman,
-  # nil,
+  nil,
   statix,
   deadnix,
   nixfmt-rfc-style,
@@ -31,7 +28,15 @@
   nodePackages,
   copilot-language-server,
 
-  treesitter ? (callPackage ./extrapkgs/nvim-treesitter { }).override {
+  # our beatiful wrapper
+  wrapNeovim,
+
+  # settings
+  includePerLanguageTooling ? true,
+  izvimPlugins,
+
+  nvim-treesitter,
+  treesitter ? nvim-treesitter.override {
     grammars = [
       "bash"
       "c"
@@ -79,56 +84,24 @@
       "zig"
     ];
   },
-
-  # settings
-  includePerLanguageTooling ? true,
 }:
 let
   inherit (lib.lists) flatten optionals;
-  inherit (lib.trivial) importTOML;
-  inherit (builtins)
-    baseNameOf
-    mapAttrs
-    fromJSON
-    removeAttrs
-    attrValues
-    replaceStrings
-    ;
-
-  wrapNeovim = callPackage ./wrapper/package.nix;
-
-  nv = removeAttrs (callPackage ../_sources/generated.nix { }) [
-    "override"
-    "overrideDerivation"
-  ];
-
-  toml = importTOML ../nvfetcher.toml;
-
-  nvPlugins = mapAttrs mkPlugin nv;
-
-  mkPlugin =
-    name: attrs:
-    let
-      old = toml.${name};
-    in
-    vimUtils.buildVimPlugin {
-      pname = old.passthru.as or (baseNameOf old.src.git);
-      version = replaceStrings [ "-" ] [ "." ] attrs.date;
-
-      inherit (attrs) src;
-
-      doCheck = false;
-
-      passthru.start = if (attrs ? start) then fromJSON attrs.start else false;
-    };
+  inherit (builtins) attrValues removeAttrs;
 in
 wrapNeovim {
   pname = "izvim";
 
-  userConfig = ../config;
+  userConfig = ../../config;
 
   plugins = flatten [
-    (attrValues nvPlugins)
+    (attrValues (
+      removeAttrs izvimPlugins [
+        "override"
+        "overrideDerivation"
+      ]
+    ))
+
     treesitter
 
     # extra plugsns beacuse they often fail or need extra steps
@@ -157,7 +130,7 @@ wrapNeovim {
       marksman
 
       # nix
-      (callPackage ./extrapkgs/nil.nix { })
+      nil
       statix
       deadnix
       nixfmt-rfc-style

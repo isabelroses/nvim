@@ -6,7 +6,7 @@
   fetchpatch,
   nix-update-script,
 }:
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "nil";
   version = "2024-08-06";
 
@@ -22,7 +22,7 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [ nix ];
 
-  env.CFG_RELEASE = version;
+  env.CFG_RELEASE = finalAttrs.version;
 
   patchs = [
     (fetchpatch {
@@ -60,4 +60,4 @@ rustPlatform.buildRustPackage rec {
     ];
     mainProgram = "nil";
   };
-}
+})
