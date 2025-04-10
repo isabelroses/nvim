@@ -88,7 +88,7 @@ lib.extendMkDerivation {
 
       dontUnpack = args.dontUnpack or true;
       strictDeps = args.strictDeps or true;
-      dontRewriteSymlinks = args.dontRewwriteSymlinks or true;
+      dontRewriteSymlinks = args.dontRewriteSymlinks or true;
 
       wrapperArgs = [
         "--add-flags"
