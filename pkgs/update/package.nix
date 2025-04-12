@@ -11,7 +11,7 @@ writeShellApplication {
   ];
 
   text = ''
-    pushd pkgs/plugins
+    pushd pkgs/izvimPlugins
     nvfetcher
     popd
 
