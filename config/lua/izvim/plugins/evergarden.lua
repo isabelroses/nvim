@@ -23,4 +23,14 @@ return {
       })
     end,
   },
+  {
+    "cuddlefish.nvim",
+    after = function()
+      require("cuddlefish").setup({
+        overrides = {},
+      })
+
+      vim.cmd.colorscheme [[cuddlefish]]
+    end
+  },
 }

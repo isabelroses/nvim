@@ -23,6 +23,10 @@ src.git = "https://github.com/zbirenbaum/copilot.lua"
 fetch.github = "saecki/crates.nvim"
 src.git = "https://github.com/saecki/crates.nvim"
 
+[cuddlefish]
+fetch.github = "comfysage/cuddlefish.nvim"
+src.git = "https://github.com/comfysage/cuddlefish.nvim"
+
 [direnv]
 fetch.github = "NotAShelf/direnv.nvim"
 src.git = "https://github.com/NotAShelf/direnv.nvim"
