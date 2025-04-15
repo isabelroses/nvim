@@ -439,6 +439,7 @@ return {
         nushell = {},
         serve_d = {},
         sourcekit = {},
+        stylelint_lsp = {},
         taplo = {},
         teal_ls = {},
         tailwindcss = {
