@@ -28,11 +28,27 @@ return {
     "cuddlefish.nvim",
     after = function()
       require("cuddlefish").setup({
-        overrides = {},
+        theme = {
+          accent = "pink",
+        },
+        editor = {
+          transparent_background = false,
+        },
+        style = {
+          tabline = { "reverse" },
+          search = { "italic", "reverse" },
+          incsearch = { "italic", "reverse" },
+          types = { "italic" },
+          keyword = { "italic" },
+          comment = { "italic" },
+        },
+        overrides = function(colors)
+          return {}
+        end,
       })
 
       vim.cmd.colorscheme("cuddlefish")
-    end
+    end,
   },
 
   {
