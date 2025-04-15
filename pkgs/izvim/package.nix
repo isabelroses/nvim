@@ -117,6 +117,7 @@ wrapNeovim {
       # external deps
       fd
       ripgrep
+      lazygit
     ]
     ++ optionals includePerLanguageTooling [
       # lua
@@ -147,7 +148,6 @@ wrapNeovim {
       proselint
       taplo # toml
       yaml-language-server # yaml
-      lazygit
     ]
     ++ optionals stdenvNoCC.hostPlatform.isDarwin [ copilot-language-server ]
     ++ optionals stdenvNoCC.hostPlatform.isLinux [ copilot-language-server-fhs ];
