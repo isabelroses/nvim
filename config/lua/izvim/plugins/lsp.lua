@@ -490,8 +490,10 @@ return {
         },
       }
 
+      vim.lsp.config("*", common)
       for server, config in pairs(servers) do
-        lspconfig[server].setup(vim.tbl_extend("force", common, config))
+        vim.lsp.config(server, config)
+        vim.lsp.enable(server)
       end
     end,
   },
