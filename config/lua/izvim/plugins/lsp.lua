@@ -425,9 +425,11 @@ return {
         },
         marksman = {},
         nil_ls = {
-          capabilities = {
-            semanticTokensProvider = false,
-          },
+          on_attach = function(client, bufnr)
+            if client.server_capabilities then
+              client.server_capabilities.semanticTokensProvider = false
+            end
+          end,
           autostart = true,
           cmd = { "nil" },
           settings = {
@@ -490,8 +492,9 @@ return {
         },
       }
 
+      vim.lsp.config("*", common)
       for server, config in pairs(servers) do
-        vim.lsp.config(server, vim.tbl_extend("force", common, config))
+        vim.lsp.config(server, config)
         vim.lsp.enable(server)
       end
     end,
