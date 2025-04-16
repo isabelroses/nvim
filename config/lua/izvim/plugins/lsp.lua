@@ -425,6 +425,9 @@ return {
         },
         marksman = {},
         nil_ls = {
+          capabilities = {
+            semanticTokensProvider = false,
+          },
           autostart = true,
           cmd = { "nil" },
           settings = {
