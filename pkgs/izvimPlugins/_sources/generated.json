@@ -129,7 +129,7 @@
     },
     "cuddlefish": {
         "cargoLocks": null,
-        "date": "2025-04-15",
+        "date": "2025-04-17",
         "extract": null,
         "name": "cuddlefish",
         "passthru": null,
@@ -141,12 +141,12 @@
             "name": null,
             "owner": "comfysage",
             "repo": "cuddlefish.nvim",
-            "rev": "0cb027aabbc1067d599209e9342bab067962874d",
-            "sha256": "sha256-zzKmnD3fpVgSPOrYUfoDth5vPtlfXL3gvv0F2gkjIS8=",
+            "rev": "6448a5f44628dbf8677d72bd3e9ad6e89bd6a7d8",
+            "sha256": "sha256-ZZ5kE/MikATxbtmhoXYvkxRaIgseCDAkfZse4NaWoes=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0cb027aabbc1067d599209e9342bab067962874d"
+        "version": "6448a5f44628dbf8677d72bd3e9ad6e89bd6a7d8"
     },
     "direnv": {
         "cargoLocks": null,
