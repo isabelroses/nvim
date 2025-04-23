@@ -76,6 +76,10 @@ src.git = "https://gitlab.com/gabmus/tree-sitter-blueprint.git"
 fetch.git = "https://github.com/ambroisie/tree-sitter-bp"
 src.git = "https://github.com/ambroisie/tree-sitter-bp"
 
+[treesitter-grammar-brightscript]
+fetch.git = "https://github.com/ajdelcimmuto/tree-sitter-brightscript"
+src.git = "https://github.com/ajdelcimmuto/tree-sitter-brightscript"
+
 [treesitter-grammar-c]
 fetch.git = "https://github.com/tree-sitter/tree-sitter-c"
 src.git = "https://github.com/tree-sitter/tree-sitter-c"
