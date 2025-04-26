@@ -443,7 +443,7 @@ return {
         },
         nushell = {},
         serve_d = {},
-        sourcekit = {},
+        -- sourcekit = {},
         stylelint_lsp = {},
         taplo = {},
         teal_ls = {},

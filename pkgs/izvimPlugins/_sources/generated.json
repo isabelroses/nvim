@@ -1017,7 +1017,7 @@
     },
     "undotree": {
         "cargoLocks": null,
-        "date": "2025-03-13",
+        "date": "2024-02-09",
         "extract": null,
         "name": "undotree",
         "passthru": null,
@@ -1027,14 +1027,14 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "mbbill",
+            "owner": "jiaoshijie",
             "repo": "undotree",
-            "rev": "b951b87b46c34356d44aa71886aecf9dd7f5788a",
-            "sha256": "sha256-HGf4Toe+12YZtIalvANDXAtksCsnxQkZbcevOAnl5G4=",
+            "rev": "eab459ab87dd249617b5f7187bb69e614a083047",
+            "sha256": "sha256-FIYDyfkaIS9C16ClWKLMdpSPv/OrcOalVVsyFJBU2eI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "b951b87b46c34356d44aa71886aecf9dd7f5788a"
+        "version": "eab459ab87dd249617b5f7187bb69e614a083047"
     },
     "vim-fugitive": {
         "cargoLocks": null,

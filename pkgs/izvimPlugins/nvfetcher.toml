@@ -196,8 +196,8 @@ fetch.github = "pmizio/typescript-tools.nvim"
 src.git = "https://github.com/pmizio/typescript-tools.nvim"
 
 [undotree]
-fetch.github = "mbbill/undotree"
-src.git = "https://github.com/mbbill/undotree"
+fetch.github = "jiaoshijie/undotree"
+src.git = "https://github.com/jiaoshijie/undotree"
 
 [vim-fugitive]
 fetch.github = "tpope/vim-fugitive"
