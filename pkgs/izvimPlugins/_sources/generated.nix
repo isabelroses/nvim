@@ -218,18 +218,6 @@
     };
     date = "2024-12-05";
   };
-  ltex-extra = {
-    pname = "ltex-extra";
-    version = "67dc3465af8d8caa49a00aaff066289a94eb753e";
-    src = fetchFromGitHub {
-      owner = "barreiroleo";
-      repo = "ltex-extra.nvim";
-      rev = "67dc3465af8d8caa49a00aaff066289a94eb753e";
-      fetchSubmodules = false;
-      sha256 = "sha256-a5gtIOIHm+Iqn07r768W0VViiZZkspR66D9FabjVhwI=";
-    };
-    date = "2025-03-04";
-  };
   lualine = {
     pname = "lualine";
     version = "15884cee63a8c205334ab13ab1c891cd4d27101a";

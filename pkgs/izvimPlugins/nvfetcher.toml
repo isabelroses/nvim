@@ -72,10 +72,6 @@ src.git = "https://github.com/nvim-lua/lsp-status.nvim"
 fetch.github = "onsails/lspkind.nvim"
 src.git = "https://github.com/onsails/lspkind.nvim"
 
-[ltex-extra]
-fetch.github = "barreiroleo/ltex-extra.nvim"
-src.git = "https://github.com/barreiroleo/ltex-extra.nvim"
-
 [lualine]
 fetch.github = "nvim-lualine/lualine.nvim"
 src.git = "https://github.com/nvim-lualine/lualine.nvim"

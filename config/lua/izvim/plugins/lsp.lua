@@ -182,7 +182,6 @@ return {
   },
 
   { "lsp-status.nvim" },
-  { "ltex-extra.nvim" },
   { "schemastore.nvim" },
   { "py_lsp.nvim" },
   { "typescript-tools.nvim" },
@@ -194,7 +193,6 @@ return {
       require("lz.n").trigger_load({
         "blink.cmp",
         "lsp-status.nvim",
-        "ltex-extra.nvim",
         "schemastore.nvim",
         "py_lsp.nvim",
         "typescript-tools.nvim",
@@ -405,20 +403,11 @@ return {
             },
           },
         },
-        ltex_plus = {
-          on_attach = function()
-            require("ltex_extra").setup({
-              load_langs = { "en-US", "en-GB" },
-              init_check = true,
-              path = vim.fn.stdpath("data") .. "/dictionary",
-            })
-          end,
+        harper_ls = {
           settings = {
-            ltex = {
-              language = "en-US",
-              additionalRules = {
-                enablePickyRules = true,
-                motherTongue = "en_GB",
+            ["harper-ls"] = {
+              linters = {
+                SentenceCapitalization = false,
               },
             },
           },

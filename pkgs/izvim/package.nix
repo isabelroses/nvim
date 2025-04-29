@@ -11,7 +11,7 @@
   lua-language-server,
   emmet-language-server,
   vscode-langservers-extracted,
-  ltex-ls-plus,
+  harper,
   marksman,
   nil,
   statix,
@@ -129,7 +129,7 @@ wrapNeovim {
       vscode-langservers-extracted
 
       # markdown / latex
-      ltex-ls-plus
+      harper
       marksman
 
       # nix
