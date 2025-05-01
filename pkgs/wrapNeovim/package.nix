@@ -23,7 +23,7 @@ lib.extendMkDerivation {
       # setup lua
       lua ? basePackage.lua,
       luaEnv ? lua.withPackages extraLuaPackages,
-      extraLuaPackages ? lp: [ ],
+      extraLuaPackages ? _: [ ],
 
       # path, see there explanation below
       extraPackages ? [ ],

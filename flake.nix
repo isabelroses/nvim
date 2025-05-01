@@ -28,13 +28,22 @@
             }
           )
         );
+
+      mkPackages =
+        default: pkgs:
+        let
+          generatedPackages = import ./default.nix { inherit pkgs; };
+          defaultPackage = lib.optionalAttrs default { default = generatedPackages.izvim; };
+        in
+        generatedPackages // defaultPackage;
     in
     {
       formatter = forAllSystems (pkgs: pkgs.nixfmt-rfc-style);
 
-      packages = forAllSystems (pkgs: import ./default.nix { inherit pkgs; });
+      legacyPackages = forAllSystems (mkPackages true);
+      packages = forAllSystems (mkPackages true);
 
-      overlays.default = _: prev: import ./default.nix { pkgs = prev; };
+      overlays.default = _: mkPackages false;
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShellNoCC {
@@ -43,6 +52,33 @@
             pkgs.selene
             pkgs.stylua
           ] ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
+        };
+      });
+
+      apps = forAllSystems (pkgs: {
+        update = {
+          type = "app";
+          program = lib.getExe (
+            pkgs.writeShellApplication {
+              name = "update";
+
+              runtimeInputs = [
+                pkgs.nvfetcher
+                pkgs.generate-treesitter
+              ];
+
+              text = ''
+                pushd pkgs/izvimPlugins
+                nvfetcher
+                popd
+
+                pushd pkgs/nvim-treesitter
+                generate
+                nvfetcher
+                popd
+              '';
+            }
+          );
         };
       });
     };

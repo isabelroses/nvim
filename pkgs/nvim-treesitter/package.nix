@@ -101,6 +101,7 @@ let
 
     passthru = {
       grammars = treesitterGrammars;
+      generate = callPackage ./generate-treesitter.nix { };
       inherit neovim;
       tests = {
         inherit check-queries;

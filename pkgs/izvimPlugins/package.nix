@@ -1,10 +1,12 @@
 {
   lib,
+  newScope,
   vimUtils,
   fetchpatch,
   callPackage,
 }:
 let
+  inherit (lib) makeScope;
   inherit (lib.trivial) importTOML;
   inherit (builtins)
     baseNameOf
@@ -64,4 +66,4 @@ let
 
   plugins = generatedPlugins // madePlugins;
 in
-plugins
+makeScope newScope (_: plugins)

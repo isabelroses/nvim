@@ -30,7 +30,7 @@
 
   stdenvNoCC,
 
-  # our beatiful wrapper
+  # our beautiful wrapper
   wrapNeovim,
 
   # settings
@@ -88,8 +88,19 @@
   },
 }:
 let
-  inherit (lib.lists) flatten optionals;
-  inherit (builtins) attrValues removeAttrs;
+
+  inherit (lib)
+    pipe
+    isDerivation
+    flatten
+    optionals
+    ;
+  inherit (builtins) attrValues filter;
+
+  izvimFilteredPlugins = pipe izvimPlugins [
+    attrValues
+    (filter isDerivation)
+  ];
 in
 wrapNeovim {
   pname = "izvim";
@@ -97,16 +108,11 @@ wrapNeovim {
   userConfig = ../../config;
 
   plugins = flatten [
-    (attrValues (
-      removeAttrs izvimPlugins [
-        "override"
-        "overrideDerivation"
-      ]
-    ))
+    izvimFilteredPlugins
 
     treesitter
 
-    # extra plugsns beacuse they often fail or need extra steps
+    # extra plugins because they often fail or need extra steps
     vimPlugins.blink-cmp
     vimPlugins.cord-nvim
     vimPlugins.telescope-fzf-native-nvim
@@ -124,11 +130,11 @@ wrapNeovim {
       stylua
       lua-language-server
 
-      # webdev
+      # web dev
       emmet-language-server
       vscode-langservers-extracted
 
-      # markdown / latex
+      # Markdown / latex
       harper
       marksman
 
@@ -143,7 +149,7 @@ wrapNeovim {
       shellcheck
       bash-language-server
 
-      # etc
+      # etc.
       nodePackages.prettier
       proselint
       taplo # toml
