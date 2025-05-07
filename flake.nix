@@ -64,7 +64,7 @@
 
               runtimeInputs = [
                 pkgs.nvfetcher
-                pkgs.generate-treesitter
+                self.packages.${pkgs.stdenv.hostPlatform.system}.nvim-treesitter.generate
               ];
 
               text = ''
