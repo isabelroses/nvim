@@ -1,3 +1,27 @@
+local obsidian_workspaces = {
+  {
+    name = "default",
+    path = "~/Documents/obsidian",
+  },
+  {
+    name = "default",
+    path = "~/documents/obsidian",
+  },
+  {
+    name = "cssuffering",
+    path = "~/dev/cssuffering/notes",
+  },
+}
+
+obsidian_workspaces = vim
+  .iter(ipairs(obsidian_workspaces))
+  :map(function(_, workspace)
+    if vim.uv.fs_stat(workspace.path) then
+      return workspace
+    end
+  end)
+  :totable()
+
 return {
   {
     "markview.nvim",
@@ -39,28 +63,18 @@ return {
 
   {
     "obsidian.nvim",
+    enabled = obsidian_workspaces ~= nil and #obsidian_workspaces > 0,
+    ft = { "markdown" },
     after = function()
-      pcall(require("obsidian").setup, {
-        workspaces = {
-          {
-            name = "default",
-            path = "~/Documents/obsidian",
-          },
-          {
-            name = "default",
-            path = "~/documents/obsidian",
-          },
-          {
-            name = "cssuffering",
-            path = "~/dev/cssuffering/notes",
-          },
-        },
+      require("obsidian").setup({
+        workspaces = obsidian_workspaces,
 
         completion = {
           nvim_cmp = false,
           blink = true,
           min_chars = 2,
           default = true,
+          match_case = false,
         },
       })
     end,
