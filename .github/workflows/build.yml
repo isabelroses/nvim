@@ -27,9 +27,6 @@ jobs:
         with:
           logger: pretty
 
-      - name: Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@main
-
       - name: Setup Attic
         uses: ryanccn/attic-action@v0.3.2
         with:
