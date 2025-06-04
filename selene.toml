@@ -1,4 +1,0 @@
-std="vim"
-
-[rules]
-mixed_table = "allow"
