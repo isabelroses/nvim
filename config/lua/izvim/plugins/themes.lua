@@ -1,6 +1,8 @@
 return {
   {
     "evergarden",
+    lazy = false,
+    priority = 1200,
     after = function()
       require("evergarden").setup({
         theme = {
@@ -26,6 +28,8 @@ return {
 
   {
     "cuddlefish.nvim",
+    lazy = false,
+    priority = 1200,
     after = function()
       require("cuddlefish").setup({
         theme = {
@@ -53,7 +57,8 @@ return {
 
   {
     "catppuccin",
-    priority = 1000,
+    lazy = false,
+    priority = 1200,
     after = function()
       require("catppuccin").setup({
         flavour = "auto",

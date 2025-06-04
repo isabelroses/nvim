@@ -2,7 +2,7 @@ return {
   {
     "snacks.nvim",
     priority = 1000,
-    config = function()
+    after = function()
       local snacks = require("snacks")
 
       ---@type snacks.Config

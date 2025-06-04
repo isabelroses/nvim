@@ -27,6 +27,7 @@
   nodePackages,
   copilot-language-server,
   copilot-language-server-fhs,
+  inotify-tools,
 
   stdenvNoCC,
 
@@ -124,6 +125,7 @@ wrapNeovim {
       fd
       ripgrep
       lazygit
+      inotify-tools # for file watching, the defaults kinda slow
     ]
     ++ optionals includePerLanguageTooling [
       # lua

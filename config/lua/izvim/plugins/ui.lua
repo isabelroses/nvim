@@ -1,6 +1,7 @@
 return {
   {
     "lualine.nvim",
+    event = "DeferredUIEnter",
     after = function()
       local lualine_require = require("lualine_require")
       lualine_require.require = require
@@ -54,6 +55,7 @@ return {
 
   {
     "fidget.nvim",
+    event = "DeferredUIEnter",
     after = function()
       require("fidget").setup({
         notification = {
@@ -101,6 +103,7 @@ return {
 
   {
     "nvim-web-devicons",
+    lazy = false,
     priority = 100,
     after = function()
       local ctp_present, ctp_pallets = pcall(require, "catppuccin.palettes")

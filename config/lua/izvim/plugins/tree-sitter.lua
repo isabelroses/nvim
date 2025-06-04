@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter",
+    event = "BufReadPre",
     after = function()
       ---@diagnostic disable: missing-fields
       require("nvim-treesitter.configs").setup({

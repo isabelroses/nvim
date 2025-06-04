@@ -2,6 +2,7 @@
 return {
   {
     "cloak.nvim",
+    event = "BufAdd",
     after = function()
       require("cloak").setup({
         enabled = true,

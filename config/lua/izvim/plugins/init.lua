@@ -2,6 +2,7 @@ return {
   -- tree view
   {
     "nvim-tree.lua",
+    event = "DeferredUIEnter",
     after = function()
       require("nvim-tree").setup({
         sync_root_with_cwd = true,
@@ -39,6 +40,7 @@ return {
   -- add better undo history
   {
     "undotree",
+    event = "BufReadPost",
     after = function()
       require("undotree").setup()
       vim.keymap.set("n", "<leader>u", require("undotree").toggle, { noremap = true, silent = true })
@@ -48,6 +50,7 @@ return {
   -- track my time coding
   {
     "vim-wakatime",
+    event = "VimEnter",
     enabled = function()
       return vim.fn.glob("~/.wakatime.cfg") ~= "" or vim.fn.glob("$WAKATIME_HOME/.wakatime.cfg") ~= ""
     end,
@@ -55,6 +58,7 @@ return {
 
   {
     "direnv.nvim",
+    event = "VimEnter",
     enabled = function()
       return vim.fn.executable("direnv") == 1
     end,
@@ -68,6 +72,7 @@ return {
   -- discord integration
   {
     "cord.nvim",
+    event = "VimEnter",
     after = function()
       require("cord").setup({
         editor = { icon = "https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp" },
@@ -78,6 +83,7 @@ return {
 
   {
     "gitsigns.nvim",
+    event = "BufReadPost",
     after = function()
       require("gitsigns").setup()
     end,

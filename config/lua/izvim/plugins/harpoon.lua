@@ -1,6 +1,7 @@
 return {
   {
     "harpoon",
+    event = "DeferredUIEnter",
     after = function()
       local harpoon = require("harpoon")
       harpoon:setup()

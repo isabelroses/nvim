@@ -499,6 +499,7 @@ return {
 
   {
     "quill.nvim",
+    event = "BufReadPost",
     after = function()
       require("quill").setup()
     end,
@@ -508,6 +509,7 @@ return {
 
   {
     "rustaceanvim",
+    lazy = false,
     after = function()
       vim.g.rustaceanvim = {
         on_attach = function(client, bufnr)
@@ -553,6 +555,7 @@ return {
 
   {
     "lazydev.nvim",
+    event = "DeferredUIEnter",
     after = function()
       require("lazydev").setup()
     end,

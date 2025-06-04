@@ -1,6 +1,7 @@
 return {
   {
     "trouble.nvim",
+    event = "DeferredUIEnter",
     after = function()
       local trouble = require("trouble")
       trouble.setup({})

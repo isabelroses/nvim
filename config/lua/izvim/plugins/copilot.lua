@@ -2,7 +2,7 @@ return {
   {
     "copilot.lua",
     enabled = function()
-      return vim.fn.glob("~/.config/gh/config.yml") ~= "" or vim.fn.glob("$XDG_CONFIG_HOME/gh/config.yml") ~= ""
+      return vim.fn.glob("$XDG_CONFIG_HOME/gh/config.yml") ~= "" or vim.fn.glob("~/.config/gh/config.yml") ~= ""
     end,
     event = "InsertEnter",
     after = function()

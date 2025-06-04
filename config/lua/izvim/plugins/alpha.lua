@@ -10,6 +10,7 @@ return {
 
   {
     "alpha-nvim",
+    event = "UIEnter",
     after = function()
       require("lz.n").trigger_load({ "neovim-session-manager" })
 
