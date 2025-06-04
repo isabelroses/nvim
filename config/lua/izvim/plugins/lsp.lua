@@ -445,16 +445,7 @@ return {
             "css",
           },
         },
-        volar = {
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = {
-                dynamicRegistration = true,
-              },
-            },
-          },
-          root_dir = require("lspconfig.util").root_pattern("package.json"),
-        },
+        vue_ls = {},
         yamlls = {
           settings = {
             yaml = {
