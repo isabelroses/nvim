@@ -125,6 +125,8 @@ wrapNeovim {
       fd
       ripgrep
       lazygit
+    ]
+    ++ lib.optionals stdenvNoCC.hostPlatform.isLinux [
       inotify-tools # for file watching, the defaults kinda slow
     ]
     ++ optionals includePerLanguageTooling [
