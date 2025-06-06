@@ -6,13 +6,21 @@ return {
       local lualine_require = require("lualine_require")
       lualine_require.require = require
 
-      require("lualine").setup({
+      local icons = {
+        default = "",
+        n = "",
+        i = "󰗧",
+        v = "󰫙",
+        c = "",
+      }
+
+      local config = {
         options = {
           icons_enabled = true,
           theme = "auto",
+          component_separators = "",
+          section_separators = "",
           disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
-          component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
           always_divide_middle = true,
           globalstatus = true,
           refresh = {
@@ -22,12 +30,32 @@ return {
           },
         },
         sections = {
-          lualine_a = { "mode" },
-          lualine_b = { "branch", "diff", "diagnostics" },
-          lualine_c = { "searchcount" },
+          lualine_a = {
+            {
+              "mode",
+              fmt = function(str)
+                local mode = vim.api.nvim_get_mode().mode:sub(0, 1)
+                local icon = icons[mode] or icons.default
+                return icon .. " " .. str
+              end,
+            },
+          },
+          lualine_b = {
+            { "branch", icon = "" },
+            "diff",
+          },
+          lualine_c = { "diagnostics", "searchcount" },
           lualine_x = { "filetype" },
           lualine_y = { "progress" },
           lualine_z = { "location" },
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_y = {},
+          lualine_z = {},
+          lualine_c = {},
+          lualine_x = {},
         },
         tabline = {},
         winbar = {
@@ -49,7 +77,9 @@ return {
         },
         inactive_winbar = {},
         extensions = {},
-      })
+      }
+
+      require("lualine").setup(config)
     end,
   },
 

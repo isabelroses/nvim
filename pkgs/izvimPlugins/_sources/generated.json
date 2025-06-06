@@ -211,6 +211,27 @@
         },
         "version": "d9ba6b7bfe29b3119a610892af67602641da778e"
     },
+    "formatter-nvim": {
+        "cargoLocks": null,
+        "date": "2025-05-29",
+        "extract": null,
+        "name": "formatter-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mhartington",
+            "repo": "formatter.nvim",
+            "rev": "b9d7f853da1197b83b8edb4cc4952f7ad3a42e41",
+            "sha256": "sha256-SzM2P5RvnYUXYud2ubGtqdTXfQ3rshEusRWckH8a2E4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b9d7f853da1197b83b8edb4cc4952f7ad3a42e41"
+    },
     "freeze": {
         "cargoLocks": null,
         "date": "2025-03-25",
@@ -509,27 +530,6 @@
         },
         "version": "3409dc920d40bec4c901c0a122a80bee03d6d1e1"
     },
-    "none-ls": {
-        "cargoLocks": null,
-        "date": "2025-05-24",
-        "extract": null,
-        "name": "none-ls",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvimtools",
-            "repo": "none-ls.nvim",
-            "rev": "db2a48b79cfcdab8baa5d3f37f21c78b6705c62e",
-            "sha256": "sha256-wPZ+NsNzYCGDbE/NgK8qJsJOkCaiMcInXwqOqE0TKUY=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "db2a48b79cfcdab8baa5d3f37f21c78b6705c62e"
-    },
     "nvim-colorizer": {
         "cargoLocks": null,
         "date": "2025-03-01",
@@ -550,6 +550,27 @@
             "type": "github"
         },
         "version": "517df88cf2afb36652830df2c655df2da416a0ae"
+    },
+    "nvim-lint": {
+        "cargoLocks": null,
+        "date": "2025-06-05",
+        "extract": null,
+        "name": "nvim-lint",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mfussenegger",
+            "repo": "nvim-lint",
+            "rev": "cc26ae6a620298bb3f33b0e0681f99a10ae57781",
+            "sha256": "sha256-+Ma1QG4CcAxHhXuBwIpFhv+uFC8hY0azTOfzj/jDV0s=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "cc26ae6a620298bb3f33b0e0681f99a10ae57781"
     },
     "nvim-lspconfig": {
         "cargoLocks": null,

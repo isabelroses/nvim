@@ -39,6 +39,10 @@ src.git = "https://github.com/comfysage/evergarden"
 fetch.github = "j-hui/fidget.nvim"
 src.git = "https://github.com/j-hui/fidget.nvim"
 
+[formatter-nvim]
+fetch.github = "mhartington/formatter.nvim"
+src.git = "https://github.com/mhartington/formatter.nvim"
+
 [freeze]
 fetch.github = "charm-community/freeze.nvim"
 src.git = "https://github.com/charm-community/freeze.nvim"
@@ -98,10 +102,6 @@ src.git = "https://github.com/echasnovski/mini.surround"
 fetch.github = "Shatur/neovim-session-manager"
 src.git = "https://github.com/Shatur/neovim-session-manager"
 
-[none-ls]
-fetch.github = "nvimtools/none-ls.nvim"
-src.git = "https://github.com/nvimtools/none-ls.nvim"
-
 [nvim-colorizer]
 fetch.github = "nvchad/nvim-colorizer.lua"
 src.git = "https://github.com/nvchad/nvim-colorizer.lua"
@@ -109,6 +109,10 @@ src.git = "https://github.com/nvchad/nvim-colorizer.lua"
 [nvim-lspconfig]
 fetch.github = "neovim/nvim-lspconfig"
 src.git = "https://github.com/neovim/nvim-lspconfig"
+
+[nvim-lint]
+fetch.github = "mfussenegger/nvim-lint"
+src.git = "https://github.com/mfussenegger/nvim-lint"
 
 [nvim-navic]
 fetch.github = "SmiteshP/nvim-navic"

@@ -122,6 +122,18 @@
     };
     date = "2025-02-05";
   };
+  formatter-nvim = {
+    pname = "formatter-nvim";
+    version = "b9d7f853da1197b83b8edb4cc4952f7ad3a42e41";
+    src = fetchFromGitHub {
+      owner = "mhartington";
+      repo = "formatter.nvim";
+      rev = "b9d7f853da1197b83b8edb4cc4952f7ad3a42e41";
+      fetchSubmodules = false;
+      sha256 = "sha256-SzM2P5RvnYUXYud2ubGtqdTXfQ3rshEusRWckH8a2E4=";
+    };
+    date = "2025-05-29";
+  };
   freeze = {
     pname = "freeze";
     version = "590fdb0d724485f578e4fee0e3ae2b32040dfb1a";
@@ -292,18 +304,6 @@
     };
     date = "2025-03-07";
   };
-  none-ls = {
-    pname = "none-ls";
-    version = "db2a48b79cfcdab8baa5d3f37f21c78b6705c62e";
-    src = fetchFromGitHub {
-      owner = "nvimtools";
-      repo = "none-ls.nvim";
-      rev = "db2a48b79cfcdab8baa5d3f37f21c78b6705c62e";
-      fetchSubmodules = false;
-      sha256 = "sha256-wPZ+NsNzYCGDbE/NgK8qJsJOkCaiMcInXwqOqE0TKUY=";
-    };
-    date = "2025-05-24";
-  };
   nvim-colorizer = {
     pname = "nvim-colorizer";
     version = "517df88cf2afb36652830df2c655df2da416a0ae";
@@ -315,6 +315,18 @@
       sha256 = "sha256-yOPUgqHe0WT437aX8kp0P/reNgjZUNNRG7hvDgaeXT0=";
     };
     date = "2025-03-01";
+  };
+  nvim-lint = {
+    pname = "nvim-lint";
+    version = "cc26ae6a620298bb3f33b0e0681f99a10ae57781";
+    src = fetchFromGitHub {
+      owner = "mfussenegger";
+      repo = "nvim-lint";
+      rev = "cc26ae6a620298bb3f33b0e0681f99a10ae57781";
+      fetchSubmodules = false;
+      sha256 = "sha256-+Ma1QG4CcAxHhXuBwIpFhv+uFC8hY0azTOfzj/jDV0s=";
+    };
+    date = "2025-06-05";
   };
   nvim-lspconfig = {
     pname = "nvim-lspconfig";

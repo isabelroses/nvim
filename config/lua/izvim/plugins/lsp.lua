@@ -103,84 +103,6 @@ return {
     end,
   },
 
-  {
-    "none-ls.nvim",
-    event = "DeferredUIEnter",
-    after = function()
-      local null = require("null-ls")
-
-      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-      local sources = {
-        -- general
-        null.builtins.formatting.treefmt.with({
-          condition = function(utils)
-            return utils.root_has_file("treefmt.toml")
-          end,
-        }),
-
-        -- nix
-        null.builtins.formatting.nixfmt,
-        null.builtins.diagnostics.statix,
-        null.builtins.diagnostics.deadnix,
-
-        -- go
-        null.builtins.formatting.gofumpt,
-
-        -- webdev
-        null.builtins.formatting.prettier.with({
-          filetypes = {
-            "html",
-            "astro",
-            "vue",
-          },
-        }),
-
-        -- shell
-        null.builtins.formatting.shfmt,
-
-        -- lua
-        null.builtins.formatting.stylua,
-        null.builtins.diagnostics.selene,
-
-        -- docs
-        null.builtins.diagnostics.proselint,
-      }
-
-      null.setup({
-        sources = sources,
-        on_attach = function(client, bufnr)
-          if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              group = augroup,
-              buffer = bufnr,
-              callback = function()
-                vim.lsp.buf.format({
-                  bufnr = bufnr,
-                  filter = function(c)
-                    return c.name == "null-ls"
-                  end,
-                })
-              end,
-            })
-          end
-        end,
-      })
-
-      local toggle_formatters = function()
-        null.toggle({ methods = null.methods.FORMATTING })
-      end
-
-      local toggle_diagnostics = function()
-        null.toggle({ methods = null.methods.DIAGNOSTICS })
-      end
-
-      vim.api.nvim_create_user_command("ToggleFormatters", toggle_formatters, {})
-      vim.api.nvim_create_user_command("ToggleDiagnostics", toggle_diagnostics, {})
-    end,
-  },
-
   { "lsp-status.nvim" },
   { "schemastore.nvim" },
   { "py_lsp.nvim" },
@@ -549,6 +471,64 @@ return {
     event = "DeferredUIEnter",
     after = function()
       require("lazydev").setup()
+    end,
+  },
+
+  {
+    "nvim-lint",
+    event = "DeferredUIEnter",
+    after = function()
+      require("lint").linters_by_ft = {
+        nix = { "nix", "statix", "deadnix" },
+        lua = { "selene" },
+        markdown = { "proselint" },
+        tex = { "proselint" },
+        sh = { "shellcheck" },
+        bash = { "shellcheck" },
+        yaml = { "yamllint" },
+      }
+    end,
+  },
+
+  {
+    "formatter.nvim",
+    event = "DeferredUIEnter",
+    after = function()
+      require("formatter").setup({
+        filetype = {
+          ["*"] = {
+            function()
+              if not vim.fs.root(0, "treefmt.toml") then
+                return nil
+              end
+
+              return {
+                exe = "treefmt",
+                args = {
+                  "--allow-missing-formatter",
+                },
+                stdin = true,
+              }
+            end,
+          },
+
+          lua = { require("formatter.filetypes.lua").stylua },
+          nix = { require("formatter.filetypes.nix").nixfmt },
+          go = { require("formatter.filetypes.go").gofumpt },
+          sh = { require("formatter.filetypes.sh").shfmt },
+          bash = { require("formatter.filetypes.sh").shfmt },
+          toml = { require("formatter.filetypes.toml").taplo },
+        },
+      })
+
+      local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+augroup("__formatter__", { clear = true })
+autocmd("BufWritePost", {
+	group = "__formatter__",
+	command = ":FormatWrite",
+})
+
     end,
   },
 }
