@@ -37,6 +37,7 @@
   # settings
   includePerLanguageTooling ? true,
   izvimPlugins,
+  izvimVersion ? "unknown",
 
   nvim-treesitter,
   treesitter ? nvim-treesitter.override {
@@ -95,6 +96,7 @@ let
     isDerivation
     flatten
     optionals
+    concatLists
     ;
   inherit (builtins) attrValues filter;
 
@@ -105,6 +107,7 @@ let
 in
 wrapNeovim {
   pname = "izvim";
+  versionSuffix = izvimVersion;
 
   userConfig = ../../config;
 
@@ -119,21 +122,15 @@ wrapNeovim {
     vimPlugins.telescope-fzf-native-nvim
   ];
 
-  extraPackages =
+  extraPackages = concatLists [
     [
       # external deps
       fd
       ripgrep
       lazygit
     ]
-    ++ lib.optionals stdenvNoCC.hostPlatform.isLinux [
-      inotify-tools # for file watching, the defaults kinda slow
-    ]
-    ++ optionals includePerLanguageTooling [
-      # lua
-      stylua
-      lua-language-server
 
+    (optionals includePerLanguageTooling [
       # web dev
       emmet-language-server
       vscode-langservers-extracted
@@ -154,11 +151,20 @@ wrapNeovim {
       bash-language-server
 
       # etc.
-      nodePackages.prettier
       proselint
       taplo # toml
       yaml-language-server # yaml
-    ]
-    ++ optionals stdenvNoCC.hostPlatform.isDarwin [ copilot-language-server ]
-    ++ optionals stdenvNoCC.hostPlatform.isLinux [ copilot-language-server-fhs ];
+    ])
+
+    (optionals stdenvNoCC.hostPlatform.isLinux [
+      inotify-tools # for file watching, the defaults kinda slow
+    ])
+
+    (optionals (includePerLanguageTooling && stdenvNoCC.hostPlatform.isDarwin) [
+      copilot-language-server
+    ])
+    (optionals (includePerLanguageTooling && stdenvNoCC.hostPlatform.isLinux) [
+      copilot-language-server-fhs
+    ])
+  ];
 }

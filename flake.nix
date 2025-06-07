@@ -32,7 +32,7 @@
       mkPackages =
         default: pkgs:
         let
-          generatedPackages = import ./default.nix { inherit pkgs; };
+          generatedPackages = import ./default.nix { inherit pkgs self; };
           defaultPackage = lib.optionalAttrs default { default = generatedPackages.izvim; };
         in
         generatedPackages // defaultPackage;
@@ -51,6 +51,7 @@
             self.formatter.${pkgs.stdenv.hostPlatform.system}
             pkgs.selene
             pkgs.stylua
+            pkgs.lua-language-server
           ] ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
         };
       });

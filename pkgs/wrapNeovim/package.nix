@@ -16,6 +16,7 @@ lib.extendMkDerivation {
     {
       # neovim
       pname ? "neovim",
+      versionSuffix ? "unstable",
 
       # you can choose the base, i choose neovim-unwrapped
       basePackage ? neovim-unwrapped,
@@ -78,7 +79,9 @@ lib.extendMkDerivation {
     in
     {
       inherit pname;
-      version = args.version or (getVersion basePackage);
+      version = "${args.version or (getVersion basePackage)}${
+        if versionSuffix != "" then "-${versionSuffix}" else ""
+      }";
 
       __structuredAttrs = args.__structuredAttrs or true;
 
