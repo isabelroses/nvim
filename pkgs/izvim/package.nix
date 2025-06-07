@@ -7,8 +7,6 @@
   # path
   fd,
   ripgrep,
-  stylua,
-  lua-language-server,
   emmet-language-server,
   vscode-langservers-extracted,
   harper,
@@ -24,7 +22,6 @@
   taplo,
   yaml-language-server,
   lazygit,
-  nodePackages,
   copilot-language-server,
   copilot-language-server-fhs,
   inotify-tools,
@@ -40,57 +37,9 @@
   izvimVersion ? "unknown",
 
   nvim-treesitter,
-  treesitter ? nvim-treesitter.override {
-    grammars = [
-      "bash"
-      "c"
-      "cpp"
-      "css"
-      "csv"
-      "diff"
-      "dockerfile"
-      "git_rebase"
-      "gitattributes"
-      "gitcommit"
-      "gitignore"
-      "go"
-      "gomod"
-      "gosum"
-      "gotmpl"
-      "graphql"
-      "haskell"
-      "html"
-      "javascript"
-      "jsdoc"
-      "json"
-      "jsonc"
-      "just"
-      "lua"
-      "latex"
-      "make"
-      "markdown"
-      "markdown_inline"
-      "nix"
-      "nu"
-      "php"
-      "php_only"
-      "python"
-      "rust"
-      "scss"
-      "tera"
-      "toml"
-      "tsv"
-      "tsx"
-      "typescript"
-      "vue"
-      "yaml"
-      "yuck"
-      "zig"
-    ];
-  },
+  treesitter-grammars ? null,
 }:
 let
-
   inherit (lib)
     pipe
     isDerivation
@@ -104,6 +53,44 @@ let
     attrValues
     (filter isDerivation)
   ];
+
+  grammars =
+    if treesitter-grammars == null then
+      [
+        "bash"
+        "c"
+        "cpp"
+        "css"
+        "csv"
+        "diff"
+        "dockerfile"
+        "git_rebase"
+        "gitattributes"
+        "gitcommit"
+        "gitignore"
+        "go"
+        "gomod"
+        "gosum"
+        "gotmpl"
+        "graphql"
+        "haskell"
+        "html"
+        "javascript"
+        "jsdoc"
+        "json"
+        "jsonc"
+        "just"
+        "lua"
+        "latex"
+        "make"
+        "markdown"
+        "markdown_inline"
+        "nix"
+        "nu"
+        "php"
+      ]
+    else
+      treesitter-grammars;
 in
 wrapNeovim {
   pname = "izvim";
@@ -114,7 +101,7 @@ wrapNeovim {
   plugins = flatten [
     izvimFilteredPlugins
 
-    treesitter
+    (nvim-treesitter.override { inherit grammars; })
 
     # extra plugins because they often fail or need extra steps
     vimPlugins.blink-cmp
