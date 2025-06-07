@@ -15,7 +15,7 @@
     "prefix": "mod",
     "description": "Nix module",
     "body": [
-      "{ lib, pkgs, config ... }:",
+      "{ lib, pkgs, config, ... }:",
       "",
       "  let cfg = config;",
       "in {",
