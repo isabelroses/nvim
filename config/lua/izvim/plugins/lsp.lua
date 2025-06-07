@@ -64,6 +64,8 @@ return {
         sources = {
           default = { "lsp", "path", "snippets", "buffer" },
 
+          providers = { snippets = { opts = { search_paths = { vim.g.snippets_path } } } },
+
           transform_items = function(_, items)
             return vim
               .iter(ipairs(items))
@@ -522,13 +524,12 @@ return {
       })
 
       local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
-augroup("__formatter__", { clear = true })
-autocmd("BufWritePost", {
-	group = "__formatter__",
-	command = ":FormatWrite",
-})
-
+      local autocmd = vim.api.nvim_create_autocmd
+      augroup("__formatter__", { clear = true })
+      autocmd("BufWritePost", {
+        group = "__formatter__",
+        command = ":FormatWrite",
+      })
     end,
   },
 }
