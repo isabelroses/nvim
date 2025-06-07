@@ -45,6 +45,8 @@ return {
             local colours = require("cuddlefish.colors").get()
             local highlights = {
               buffer_selected = { fg = colours.base, bg = colours.purple, italic = false },
+              duplicate_selected = { fg = colours.base, bg = colours.purple, italic = false },
+              modified_selected = { fg = colours.base, bg = colours.purple },
             }
 
             bufferline.setup(vim.tbl_deep_extend("force", opts, {
