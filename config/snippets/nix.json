@@ -24,5 +24,87 @@
       "  };",
       "}"
     ]
+  },
+  "drv": {
+    "prefix": "drv",
+    "description": "Nix derivation",
+    "body": [
+      "{ stdenv, lib, fetchurl, $1 ... }:",
+      "",
+      "stdenv.mkDerivation (finalAttrs: {",
+      "  pname = \"$2\";",
+      "  version = \"$3\";",
+      "",
+      "  src = ",
+      "",
+      "  meta = $4;",
+      "})"
+    ]
+  },
+  "rustpkg": {
+    "prefix": "rustpkg",
+    "description": "Rust package derivation",
+    "body": [
+      "rustPlatform.buildRustPackage (finalAttrs: {",
+      "  pname = \"$1\";",
+      "  version = \"$2\";",
+      "",
+      "  src = $3;",
+      "",
+      "  cargoHash = \"${4:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";",
+      "",
+      "  meta = $5;",
+      "})"
+    ]
+  },
+  "gopkg": {
+    "prefix": "gopkg",
+    "description": "Go package derivation",
+    "body": [
+      "buildGoModule (finalAttrs: {",
+      "  pname = \"$1\";",
+      "  version = \"$2\";",
+      "",
+      "  src = $3;",
+      "",
+      "  vendorHash = \"${4:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";",
+      "",
+      "  meta = $5;",
+      "})"
+    ]
+  },
+  "fod": {
+    "prefix": "fod",
+    "description": "Fixed-Output Derivation",
+    "body": [
+      "outputHashMode = \"${2:recursive}\";",
+      "outputHash = \"${3:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";"
+    ]
+  },
+  "meta": {
+    "prefix": "meta",
+    "description": "Derivation meta section",
+    "body": [
+      "meta = {",
+      "  homepage = \"$1\";",
+      "  description = \"$2\";",
+      "  license = lib.licenses.${3:mit};",
+      "  maintainers = with lib.maintainers; [ ma27 ];",
+      "  platforms = lib.platforms.${4:linux};",
+      "  $5",
+      "};"
+    ]
+  },
+  "ffg": {
+    "prefix": "ffg",
+    "description": "Fetch from GitHub",
+    "body": [
+      "fetchFromGitHub {",
+      "  owner = \"$1\";",
+      "  repo = \"$2\";",
+      "  rev = \"${3:v${finalAttrs.version}}\";",
+      "  sha256 = \"${4:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";",
+      "}"
+    ]
   }
 }
