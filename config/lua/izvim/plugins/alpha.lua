@@ -1,18 +1,45 @@
 return {
   {
-    "neovim-session-manager",
+    "resession.nvim",
     after = function()
-      require("session_manager").setup({
-        autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir,
+      local resession = require("resession")
+      resession.setup()
+
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+          -- Only load the session if nvim was started with no args and without reading from stdin
+          if vim.fn.argc(-1) == 0 and not vim.g.using_stdin then
+            local dir = vim.fn.getcwd()
+
+            if not vim.iter(resession.list()):find(dir:gsub("/", "_")) then
+              return
+            end
+
+            -- Save these to a different directory, so our manual sessions don't get polluted
+            resession.load(dir, { silence_errors = true })
+          end
+        end,
+        nested = true,
+      })
+      vim.api.nvim_create_autocmd("VimLeavePre", {
+        callback = function()
+          resession.save(vim.fn.getcwd(), { notify = false })
+        end,
+      })
+      vim.api.nvim_create_autocmd("StdinReadPre", {
+        callback = function()
+          -- Store this for later
+          vim.g.using_stdin = true
+        end,
       })
     end,
   },
 
   {
     "alpha-nvim",
-    event = "UIEnter",
+    lazy = false,
     after = function()
-      require("lz.n").trigger_load({ "neovim-session-manager" })
+      require("lz.n").trigger_load({ "resession.nvim" })
 
       local function apply_gradient_hl(text)
         local lines = {}

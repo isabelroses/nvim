@@ -98,10 +98,6 @@ src.git = "https://github.com/OXY2DEV/markview.nvim"
 fetch.github = "echasnovski/mini.surround"
 src.git = "https://github.com/echasnovski/mini.surround"
 
-[neovim-session-manager]
-fetch.github = "Shatur/neovim-session-manager"
-src.git = "https://github.com/Shatur/neovim-session-manager"
-
 [nvim-colorizer]
 fetch.github = "nvchad/nvim-colorizer.lua"
 src.git = "https://github.com/nvchad/nvim-colorizer.lua"
@@ -151,6 +147,10 @@ src.git = "https://github.com/comfysage/quill.nvim"
 fetch.github = "hiphish/rainbow-delimiters.nvim"
 src.git = "https://github.com/hiphish/rainbow-delimiters.nvim"
 
+[resession]
+fetch.github = "stevearc/resession.nvim"
+src.git = "https://github.com/stevearc/resession.nvim"
+
 [rustaceanvim]
 fetch.github = "mrcjkb/rustaceanvim"
 src.git = "https://github.com/mrcjkb/rustaceanvim"
@@ -190,10 +190,6 @@ src.git = "https://github.com/akinsho/toggleterm.nvim"
 [trouble]
 fetch.github = "folke/trouble.nvim"
 src.git = "https://github.com/folke/trouble.nvim"
-
-[typescript-tools]
-fetch.github = "pmizio/typescript-tools.nvim"
-src.git = "https://github.com/pmizio/typescript-tools.nvim"
 
 [undotree]
 fetch.github = "jiaoshijie/undotree"

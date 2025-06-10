@@ -292,18 +292,6 @@
     };
     date = "2025-06-02";
   };
-  neovim-session-manager = {
-    pname = "neovim-session-manager";
-    version = "3409dc920d40bec4c901c0a122a80bee03d6d1e1";
-    src = fetchFromGitHub {
-      owner = "Shatur";
-      repo = "neovim-session-manager";
-      rev = "3409dc920d40bec4c901c0a122a80bee03d6d1e1";
-      fetchSubmodules = false;
-      sha256 = "sha256-k2akj/s6qJx/sCnz3UNHo5zbENTpw+OPuo2WPF1W7rg=";
-    };
-    date = "2025-03-07";
-  };
   nvim-colorizer = {
     pname = "nvim-colorizer";
     version = "517df88cf2afb36652830df2c655df2da416a0ae";
@@ -449,6 +437,18 @@
     };
     date = "2025-04-16";
   };
+  resession = {
+    pname = "resession";
+    version = "84c81e5fd8a94dc85a60b97089536174e558e288";
+    src = fetchFromGitHub {
+      owner = "stevearc";
+      repo = "resession.nvim";
+      rev = "84c81e5fd8a94dc85a60b97089536174e558e288";
+      fetchSubmodules = false;
+      sha256 = "sha256-Xck5ACTLKdUBHOZgVqSQ+jQ2AVLE0QOsE+fcH8UJG8o=";
+    };
+    date = "2025-06-01";
+  };
   rustaceanvim = {
     pname = "rustaceanvim";
     version = "a0c8e9698ef90bcfdf42806a38bf55b612b65b18";
@@ -568,18 +568,6 @@
       sha256 = "sha256-au9wp88a0CutEf2f8Bi0vFTUR0zvQKgFX1vMVg4myGI=";
     };
     date = "2025-02-12";
-  };
-  typescript-tools = {
-    pname = "typescript-tools";
-    version = "3c501d7c7f79457932a8750a2a1476a004c5c1a9";
-    src = fetchFromGitHub {
-      owner = "pmizio";
-      repo = "typescript-tools.nvim";
-      rev = "3c501d7c7f79457932a8750a2a1476a004c5c1a9";
-      fetchSubmodules = false;
-      sha256 = "sha256-roSEM3YGfKIoGQIlvaC0IFCIzkPLhJmnUMc+CBQmQE8=";
-    };
-    date = "2025-04-25";
   };
   undotree = {
     pname = "undotree";

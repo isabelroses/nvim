@@ -509,27 +509,6 @@
         },
         "version": "0d278217ca98ffa5b768701fb57f52a88b1e1f93"
     },
-    "neovim-session-manager": {
-        "cargoLocks": null,
-        "date": "2025-03-07",
-        "extract": null,
-        "name": "neovim-session-manager",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Shatur",
-            "repo": "neovim-session-manager",
-            "rev": "3409dc920d40bec4c901c0a122a80bee03d6d1e1",
-            "sha256": "sha256-k2akj/s6qJx/sCnz3UNHo5zbENTpw+OPuo2WPF1W7rg=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "3409dc920d40bec4c901c0a122a80bee03d6d1e1"
-    },
     "nvim-colorizer": {
         "cargoLocks": null,
         "date": "2025-03-01",
@@ -784,6 +763,27 @@
         },
         "version": "55ad4fb76ab68460f700599b7449385f0c4e858e"
     },
+    "resession": {
+        "cargoLocks": null,
+        "date": "2025-06-01",
+        "extract": null,
+        "name": "resession",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "stevearc",
+            "repo": "resession.nvim",
+            "rev": "84c81e5fd8a94dc85a60b97089536174e558e288",
+            "sha256": "sha256-Xck5ACTLKdUBHOZgVqSQ+jQ2AVLE0QOsE+fcH8UJG8o=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "84c81e5fd8a94dc85a60b97089536174e558e288"
+    },
     "rustaceanvim": {
         "cargoLocks": null,
         "date": "2025-06-01",
@@ -993,27 +993,6 @@
             "type": "github"
         },
         "version": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3"
-    },
-    "typescript-tools": {
-        "cargoLocks": null,
-        "date": "2025-04-25",
-        "extract": null,
-        "name": "typescript-tools",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "pmizio",
-            "repo": "typescript-tools.nvim",
-            "rev": "3c501d7c7f79457932a8750a2a1476a004c5c1a9",
-            "sha256": "sha256-roSEM3YGfKIoGQIlvaC0IFCIzkPLhJmnUMc+CBQmQE8=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "3c501d7c7f79457932a8750a2a1476a004c5c1a9"
     },
     "undotree": {
         "cargoLocks": null,
