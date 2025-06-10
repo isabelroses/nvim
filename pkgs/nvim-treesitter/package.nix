@@ -99,6 +99,8 @@ let
 
     postPatch = lib.concatStrings linkCommands;
 
+    doCheck = false; # we run our own check-queries test
+
     passthru = {
       grammars = treesitterGrammars;
       generate = callPackage ./generate-treesitter.nix { };

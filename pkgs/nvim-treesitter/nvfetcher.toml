@@ -1,6 +1,7 @@
 [nvim-treesitter]
 fetch.git = "https://github.com/nvim-treesitter/nvim-treesitter"
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
+src.branch = "main"
 
 [treesitter-grammar-ada]
 fetch.git = "https://github.com/briot/tree-sitter-ada"
@@ -1353,4 +1354,3 @@ fetch.git = "https://github.com/kristoff-it/ziggy"
 src.git = "https://github.com/kristoff-it/ziggy"
 [treesitter-grammar-ziggy_schema.passthru]
 location = "tree-sitter-ziggy-schema"
-

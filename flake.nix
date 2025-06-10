@@ -71,9 +71,9 @@
               ];
 
               text = ''
-                pushd pkgs/izvimPlugins
-                nvfetcher
-                popd
+                # pushd pkgs/izvimPlugins
+                # nvfetcher
+                # popd
 
                 pushd pkgs/nvim-treesitter
                 generate
