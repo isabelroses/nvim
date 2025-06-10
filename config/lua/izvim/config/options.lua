@@ -62,8 +62,8 @@ vim.o.cmdheight = 0
 -- always show status
 vim.o.laststatus = 3
 
--- ohhhh tabs
-vim.o.showtabline = 2
+-- ohhhh tabs, already have bufferline
+vim.o.showtabline = 0
 
 -- use rg for grepping
 vim.opt.grepprg = "rg --vimgrep"
@@ -150,3 +150,7 @@ vim.g.loaded_ruby_provider = 0
 
 -- fix markfown stuff
 vim.g.markdown_recommended_style = 0
+
+if vim.fn.has("unix") == 1 then
+  vim.o.shell = "/run/current-system/sw/bin/bash"
+end
