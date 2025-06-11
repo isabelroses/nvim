@@ -30,7 +30,8 @@ lib.extendMkDerivation {
       extraPackages ? [ ],
 
       # plugins
-      plugins ? [ ],
+      startPlugins ? [ ],
+      optPlugins ? [ ],
 
       # our config
       userConfig,
@@ -63,59 +64,82 @@ lib.extendMkDerivation {
         vim.g.loaded_ruby_provider = 0
       '';
 
-      config = runCommand "neovim-config" { } ''
-        mkdir -pv $out/parser
-        mkdir -pv $out/pack/${pname}/{start,opt}
+      mkResultingPath =
+        subdir: p:
+        "pack/${pname}/${subdir}/${if typeOf p == "path" then baseNameOf p else (p.pname or p.name)}";
 
-        echo "generating init.lua"
-        ${getExe envsubst} < '${init}' > "$out/init.lua"
+      config = stdenvNoCC.mkDerivation {
+        name = "neovim-config";
+        __structuredAttrs = true;
+        nativeBuildInputs = [ envsubst ];
+        dontUnpack = true;
 
-        echo "generating helptags"
-        ${getExe basePackage} \
-            -n -u NONE -i NONE \
-            --headless \
-            -c "set packpath=$out" \
-            -c "packloadall" \
-            -c "helptags ALL" \
-            "+quit!"
+        plugins = startPlugins ++ optPlugins;
+        resultingPaths =
+          map (mkResultingPath "start") startPlugins
+          ++ map (mkResultingPath "opt") optPlugins;
 
-        echo "linking plugins"
-        shopt -s extglob
-        ${concatMapStringsSep "\n" (p: ''
-          source=${p}
-          path="pack/${pname}/${if (p.passthru.start or false) then "start" else "opt"}/${
-            if typeOf p == "path" then baseNameOf p else (p.pname or p.name)
-          }"
+        buildPhase = ''
+          runHook preBuild
 
-          mkdir -p "$out/$path"
+          mkdir -pv $out/parser
+          mkdir -pv $out/pack/${pname}/{start,opt}
 
-          tolink=("$source/"!(doc|parser))
-          if (( ''${#tolink} )); then
-            ln -ns "''${tolink[@]}" -t "$out/$path"
-          fi
+          echo "generating init.lua"
+          envsubst < '${init}' > "$out/init.lua"
 
-          if [[ -e "$source/parser" && -n "$(ls -A "$source/parser")" ]]; then
-            ln -nsf "$source/parser" "$out/parser/${removeSuffix "-grammar" p.pname}.so"
-          fi
+          echo "generating helptags"
+          ${getExe basePackage} \
+              -n -u NONE -i NONE \
+              --headless \
+              -c "set packpath=$out" \
+              -c "packloadall" \
+              -c "helptags ALL" \
+              "+quit!"
 
-          if [[ -e "$source/doc" && ! -e "$out/$path/doc" ]]; then
-            ln -ns "$source/doc" -t "$out/$path"
-          fi
+          echo "linking plugins"
+          shopt -s extglob
 
-          if [[ -d "$path" && -z "$(ls -A $path)" ]]; then
-            rmdir $path
-          fi
-        '') plugins}
-        shopt -u extglob
+          for (( i = 0; i < "''${#plugins[@]}"; i++ )); do
+            source="''${plugins["$i"]}";
+            path="''${resultingPaths["$i"]}";
+            mkdir -p "$out/$path"
 
-        echo "linkng user config"
-        ln -vsfT ${userConfig} $out/pack/${pname}/start/init-plugin
+            tolink=("$source/"!(doc|parser))
+            if (( ''${#tolink} )); then
+              ln -ns "''${tolink[@]}" -t "$out/$path"
+            fi
 
-        mkdir "$out/nix-support"
-        for i in $(find -L "$out" -name 'propagated-build-inputs'); do
-          cat "$i" >> "$out/nix-support/propagated-build-inputs"
-        done
-      '';
+            if [[ -e "$source/parser" && -n "$(ls -A "$source/parser")" ]]; then
+              # name=$(basename "$source" | sed -E 's/.*-([^-]+)-grammar-.*/\1/')
+              ln -nsf "$source/parser"/* -t "$out/parser"
+            fi
+
+            if [[ -e "$source/doc" && ! -e "$out/$path/doc" ]]; then
+              ln -ns "$source/doc" -t "$out/$path"
+            fi
+          done
+
+          shopt -u extglob
+
+          for path in "$out/pack/${pname}/"*/*
+          do
+            if [[ -d "$path" && -z "$(ls -A $path)" ]]; then
+              rmdir $path
+            fi
+          done
+
+          echo "linkng user config"
+          ln -vsfT ${userConfig} $out/pack/${pname}/start/init-plugin
+
+          mkdir "$out/nix-support"
+          for i in $(find -L "$out" -name 'propagated-build-inputs'); do
+            cat "$i" >> "$out/nix-support/propagated-build-inputs"
+          done
+
+          runHook postBuild
+        '';
+      };
     in
     {
       inherit pname;

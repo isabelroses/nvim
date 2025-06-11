@@ -1,5 +1,6 @@
 {
   lib,
+  neovimUtils,
 
   # get extra plugins we don't want to build
   vimPlugins,
@@ -46,12 +47,34 @@ let
     filter
     filterAttrs
     elem
+    foldl'
     ;
+
+  divide =
+    foldl'
+      (
+        acc: elem:
+        let
+          starplugin = elem.passthru.start or false;
+        in
+        {
+          start = acc.start ++ (if starplugin then [ elem ] else [ ]);
+          opt = acc.opt ++ (if !starplugin then [ elem ] else [ ]);
+        }
+      )
+      {
+        start = [ ];
+        opt = [ ];
+      };
 
   izvimFilteredPlugins = pipe izvimPlugins [
     attrValues
     (filter isDerivation)
+    divide
   ];
+
+  startPlugins = izvimFilteredPlugins.start;
+  optPlugins = izvimFilteredPlugins.opt;
 
   grammarsNames = [
     "bash"
@@ -87,15 +110,6 @@ let
     "nu"
     "php"
   ];
-
-  grammars = map (
-    p:
-    p.overrideAttrs (oa: {
-      passthru = oa.passthru or { } // {
-        start = true;
-      };
-    })
-  ) (attrValues (filterAttrs (n: _: elem n grammarsNames) vimPlugins.nvim-treesitter.builtGrammars));
 in
 wrapNeovim {
   pname = "izvim";
@@ -103,16 +117,20 @@ wrapNeovim {
 
   userConfig = ../../config;
 
-  plugins = flatten [
-    izvimFilteredPlugins
-
-    # install our treesitter grammars
-    grammars
+  optPlugins = flatten [
+    optPlugins
 
     # extra plugins because they often fail or need extra steps
     vimPlugins.blink-cmp
     vimPlugins.cord-nvim
     vimPlugins.telescope-fzf-native-nvim
+  ];
+
+  startPlugins = flatten [
+    startPlugins
+
+    # install our treesitter grammars
+    (attrValues (filterAttrs (n: _: elem n grammarsNames) vimPlugins.nvim-treesitter.grammarPlugins))
   ];
 
   extraPackages = flatten [
