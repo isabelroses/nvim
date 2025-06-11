@@ -37,7 +37,12 @@ lib.extendMkDerivation {
     }@args:
     let
       inherit (lib.meta) getExe defaultPriority;
-      inherit (lib.strings) concatMapStringsSep makeBinPath getVersion;
+      inherit (lib.strings)
+        concatMapStringsSep
+        makeBinPath
+        getVersion
+        removeSuffix
+        ;
       inherit (builtins) typeOf baseNameOf;
 
       inherit (lua.pkgs) luaLib;
@@ -59,21 +64,56 @@ lib.extendMkDerivation {
       '';
 
       config = runCommand "neovim-config" { } ''
+        mkdir -pv $out/parser
         mkdir -pv $out/pack/${pname}/{start,opt}
 
-        ${concatMapStringsSep "\n" (p: ''
-          ln -vsfT ${p} $out/pack/${pname}/${if (p.passthru.start or false) then "start" else "opt"}/${
-            if typeOf p == "path" then baseNameOf p else (p.pname or p.name)
-          }
-        '') plugins}
-
-        ln -vsfT ${userConfig} $out/pack/${pname}/start/init-plugin
-
+        echo "generating init.lua"
         ${getExe envsubst} < '${init}' > "$out/init.lua"
 
-        mkdir $out/nix-support
-        for i in $(find -L $out -name propagated-build-inputs ); do
-          cat "$i" >> $out/nix-support/propagated-build-inputs
+        echo "generating helptags"
+        ${getExe basePackage} \
+            -n -u NONE -i NONE \
+            --headless \
+            -c "set packpath=$out" \
+            -c "packloadall" \
+            -c "helptags ALL" \
+            "+quit!"
+
+        echo "linking plugins"
+        shopt -s extglob
+        ${concatMapStringsSep "\n" (p: ''
+          source=${p}
+          path="pack/${pname}/${if (p.passthru.start or false) then "start" else "opt"}/${
+            if typeOf p == "path" then baseNameOf p else (p.pname or p.name)
+          }"
+
+          mkdir -p "$out/$path"
+
+          tolink=("$source/"!(doc|parser))
+          if (( ''${#tolink} )); then
+            ln -ns "''${tolink[@]}" -t "$out/$path"
+          fi
+
+          if [[ -e "$source/parser" && -n "$(ls -A "$source/parser")" ]]; then
+            ln -nsf "$source/parser" "$out/parser/${removeSuffix "-grammar" p.pname}.so"
+          fi
+
+          if [[ -e "$source/doc" && ! -e "$out/$path/doc" ]]; then
+            ln -ns "$source/doc" -t "$out/$path"
+          fi
+
+          if [[ -d "$path" && -z "$(ls -A $path)" ]]; then
+            rmdir $path
+          fi
+        '') plugins}
+        shopt -u extglob
+
+        echo "linkng user config"
+        ln -vsfT ${userConfig} $out/pack/${pname}/start/init-plugin
+
+        mkdir "$out/nix-support"
+        for i in $(find -L "$out" -name 'propagated-build-inputs'); do
+          cat "$i" >> "$out/nix-support/propagated-build-inputs"
         done
       '';
     in
