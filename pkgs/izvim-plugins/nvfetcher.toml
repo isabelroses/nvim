@@ -1,7 +1,3 @@
-[alpha]
-fetch.github = "goolord/alpha-nvim"
-src.git = "https://github.com/goolord/alpha-nvim"
-
 [bufferline]
 fetch.github = "akinsho/bufferline.nvim"
 src.git = "https://github.com/akinsho/bufferline.nvim"
@@ -72,18 +68,9 @@ src.git = "https://github.com/folke/lazydev.nvim"
 fetch.github = "nvim-lua/lsp-status.nvim"
 src.git = "https://github.com/nvim-lua/lsp-status.nvim"
 
-[lspkind]
-fetch.github = "onsails/lspkind.nvim"
-src.git = "https://github.com/onsails/lspkind.nvim"
-
 [lualine]
 fetch.github = "nvim-lualine/lualine.nvim"
 src.git = "https://github.com/nvim-lualine/lualine.nvim"
-
-[luasnip]
-fetch.github = "L3MON4D3/LuaSnip"
-src.git = "https://github.com/L3MON4D3/LuaSnip"
-passthru.as = "luasnip"
 
 [lz-n]
 fetch.github = "nvim-neorocks/lz.n"
@@ -113,10 +100,6 @@ src.git = "https://github.com/mfussenegger/nvim-lint"
 [nvim-navic]
 fetch.github = "SmiteshP/nvim-navic"
 src.git = "https://github.com/SmiteshP/nvim-navic"
-
-[nvim-notify]
-fetch.github = "rcarriga/nvim-notify"
-src.git = "https://github.com/rcarriga/nvim-notify"
 
 [nvim-tree]
 fetch.github = "nvim-tree/nvim-tree.lua"

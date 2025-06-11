@@ -35,8 +35,6 @@
   includePerLanguageTooling ? true,
   izvimPlugins,
   izvimVersion ? "unknown",
-
-  nvim-treesitter,
   treesitter-grammars ? null,
 }:
 let
@@ -45,9 +43,13 @@ let
     isDerivation
     flatten
     optionals
-    concatLists
+    attrValues
+    filter
+    flip
+    filterAttrs
+    const
+    elem
     ;
-  inherit (builtins) attrValues filter;
 
   izvimFilteredPlugins = pipe izvimPlugins [
     attrValues
@@ -75,6 +77,7 @@ let
         "graphql"
         "haskell"
         "html"
+        "toml"
         "javascript"
         "jsdoc"
         "json"
@@ -101,7 +104,9 @@ wrapNeovim {
   plugins = flatten [
     izvimFilteredPlugins
 
-    (nvim-treesitter.override { inherit grammars; })
+    # i used to customize this but its quite unreasonable to do so
+    vimPlugins.nvim-treesitter
+    (attrValues (filterAttrs (n: _: elem n grammars) vimPlugins.nvim-treesitter.builtGrammars))
 
     # extra plugins because they often fail or need extra steps
     vimPlugins.blink-cmp
@@ -109,7 +114,7 @@ wrapNeovim {
     vimPlugins.telescope-fzf-native-nvim
   ];
 
-  extraPackages = concatLists [
+  extraPackages = flatten [
     [
       # external deps
       fd
