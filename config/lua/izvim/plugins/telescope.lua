@@ -8,18 +8,6 @@ return {
     "telescope.nvim",
     event = "DeferredUIEnter",
     after = function()
-      -- so quircky but we need to load this before telescope
-      local exts = {
-        "project",
-        "ui-select",
-        "fzf-native",
-      }
-
-      -- trigger the load of all the extensions we use
-      for _, ext in ipairs(exts) do
-        require("lz.n").trigger_load({ "telescope-" .. ext .. ".nvim" })
-      end
-
       local bc = vim.g.bc
 
       local no_preview = function(opts)

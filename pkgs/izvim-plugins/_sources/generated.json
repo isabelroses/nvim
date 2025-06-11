@@ -402,6 +402,29 @@
         },
         "version": "812f5aa9a248d0f70d474c675fc2c944ad8549ec"
     },
+    "lzn-auto-require": {
+        "cargoLocks": null,
+        "date": "2024-11-07",
+        "extract": null,
+        "name": "lzn-auto-require",
+        "passthru": {
+            "start": "true"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "horriblename",
+            "repo": "lzn-auto-require",
+            "rev": "ef746afb55467984ef3200d9709c8059ee0257d0",
+            "sha256": "sha256-KC1z+zC9vKODllZVpBu+udzM12oYJaS8e6LdXWtQ89U=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "ef746afb55467984ef3200d9709c8059ee0257d0"
+    },
     "markview": {
         "cargoLocks": null,
         "date": "2025-06-11",

@@ -113,13 +113,6 @@ return {
     "nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     after = function()
-      require("lz.n").trigger_load({
-        "blink.cmp",
-        "lsp-status.nvim",
-        "schemastore.nvim",
-        "py_lsp.nvim",
-      })
-
       local lsp_present, lspconfig = pcall(require, "lspconfig")
       local navic_present, navic = pcall(require, "nvim-navic")
 

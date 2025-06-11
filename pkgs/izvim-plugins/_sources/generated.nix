@@ -231,6 +231,19 @@
     start = "true";
     date = "2025-06-08";
   };
+  lzn-auto-require = {
+    pname = "lzn-auto-require";
+    version = "ef746afb55467984ef3200d9709c8059ee0257d0";
+    src = fetchFromGitHub {
+      owner = "horriblename";
+      repo = "lzn-auto-require";
+      rev = "ef746afb55467984ef3200d9709c8059ee0257d0";
+      fetchSubmodules = false;
+      sha256 = "sha256-KC1z+zC9vKODllZVpBu+udzM12oYJaS8e6LdXWtQ89U=";
+    };
+    start = "true";
+    date = "2024-11-07";
+  };
   markview = {
     pname = "markview";
     version = "41f98ce33b6145e191baa87442a869915a6e0040";

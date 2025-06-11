@@ -77,6 +77,11 @@ fetch.github = "nvim-neorocks/lz.n"
 src.git = "https://github.com/nvim-neorocks/lz.n"
 passthru.start = "true"
 
+[lzn-auto-require]
+fetch.github = "horriblename/lzn-auto-require"
+src.git = "https://github.com/horriblename/lzn-auto-require"
+passthru.start = "true"
+
 [markview]
 fetch.github = "OXY2DEV/markview.nvim"
 src.git = "https://github.com/OXY2DEV/markview.nvim"
