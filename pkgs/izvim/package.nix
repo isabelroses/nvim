@@ -35,7 +35,6 @@
   includePerLanguageTooling ? true,
   izvimPlugins,
   izvimVersion ? "unknown",
-  treesitter-grammars ? null,
 }:
 let
   inherit (lib)
@@ -45,9 +44,7 @@ let
     optionals
     attrValues
     filter
-    flip
     filterAttrs
-    const
     elem
     ;
 
@@ -56,44 +53,49 @@ let
     (filter isDerivation)
   ];
 
-  grammars =
-    if treesitter-grammars == null then
-      [
-        "bash"
-        "c"
-        "cpp"
-        "css"
-        "csv"
-        "diff"
-        "dockerfile"
-        "git_rebase"
-        "gitattributes"
-        "gitcommit"
-        "gitignore"
-        "go"
-        "gomod"
-        "gosum"
-        "gotmpl"
-        "graphql"
-        "haskell"
-        "html"
-        "toml"
-        "javascript"
-        "jsdoc"
-        "json"
-        "jsonc"
-        "just"
-        "lua"
-        "latex"
-        "make"
-        "markdown"
-        "markdown_inline"
-        "nix"
-        "nu"
-        "php"
-      ]
-    else
-      treesitter-grammars;
+  grammarsNames = [
+    "bash"
+    "c"
+    "cpp"
+    "css"
+    "csv"
+    "diff"
+    "dockerfile"
+    "git_rebase"
+    "gitattributes"
+    "gitcommit"
+    "gitignore"
+    "go"
+    "gomod"
+    "gosum"
+    "gotmpl"
+    "graphql"
+    "haskell"
+    "html"
+    "toml"
+    "javascript"
+    "jsdoc"
+    "json"
+    "jsonc"
+    "just"
+    "lua"
+    "latex"
+    "make"
+    "markdown"
+    "markdown_inline"
+    "nix"
+    "nu"
+    "php"
+  ];
+
+  grammars = map (
+    p:
+    p.overrideAttrs (oa: {
+      passthru = oa.passthru or { } // {
+        start = true;
+      };
+    })
+  ) (attrValues (filterAttrs (n: _: elem n grammarsNames) vimPlugins.nvim-treesitter.builtGrammars));
 in
 wrapNeovim {
   pname = "izvim";
@@ -104,9 +106,8 @@ wrapNeovim {
   plugins = flatten [
     izvimFilteredPlugins
 
-    # i used to customize this but its quite unreasonable to do so
-    vimPlugins.nvim-treesitter
-    (attrValues (filterAttrs (n: _: elem n grammars) vimPlugins.nvim-treesitter.builtGrammars))
+    # install our treesitter grammars
+    grammars
 
     # extra plugins because they often fail or need extra steps
     vimPlugins.blink-cmp

@@ -105,6 +105,12 @@ src.git = "https://github.com/SmiteshP/nvim-navic"
 fetch.github = "nvim-tree/nvim-tree.lua"
 src.git = "https://github.com/nvim-tree/nvim-tree.lua"
 
+[nvim-treesitter]
+fetch.github = "nvim-treesitter/nvim-treesitter"
+src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
+src.branch = "main"
+passthru.start = "true"
+
 [nvim-web-devicons]
 fetch.github = "nvim-tree/nvim-web-devicons"
 src.git = "https://github.com/nvim-tree/nvim-web-devicons"
@@ -130,10 +136,6 @@ src.git = "https://github.com/comfysage/quill.nvim"
 fetch.github = "hiphish/rainbow-delimiters.nvim"
 src.git = "https://github.com/hiphish/rainbow-delimiters.nvim"
 
-[resession]
-fetch.github = "stevearc/resession.nvim"
-src.git = "https://github.com/stevearc/resession.nvim"
-
 [rustaceanvim]
 fetch.github = "mrcjkb/rustaceanvim"
 src.git = "https://github.com/mrcjkb/rustaceanvim"
@@ -145,6 +147,10 @@ src.git = "https://github.com/comfysage/sayama.nvim"
 [schemastore]
 fetch.github = "b0o/schemastore.nvim"
 src.git = "https://github.com/b0o/schemastore.nvim"
+
+[shelf]
+fetch.github = "comfysage/shelf.nvim"
+src.git = "https://github.com/comfysage/shelf.nvim"
 
 [snacks-nvim]
 fetch.github = "folke/snacks.nvim"

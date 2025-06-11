@@ -14,3 +14,46 @@ vim.filetype.add({
     ["justfile"] = "just",
   },
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "bash",
+    "c",
+    "cpp",
+    "css",
+    "csv",
+    "diff",
+    "dockerfile",
+    "git_rebase",
+    "gitattributes",
+    "gitcommit",
+    "gitignore",
+    "go",
+    "gomod",
+    "gosum",
+    "gotmpl",
+    "graphql",
+    "haskell",
+    "html",
+    "toml",
+    "javascript",
+    "jsdoc",
+    "json",
+    "jsonc",
+    "just",
+    "lua",
+    "latex",
+    "make",
+    "markdown",
+    "markdown_inline",
+    "nix",
+    "nu",
+    "php",
+    "checkhealth",
+  },
+  callback = function(ev)
+    vim.api.nvim_buf_call(ev.buf, function()
+      vim.treesitter.start()
+    end)
+  end,
+})

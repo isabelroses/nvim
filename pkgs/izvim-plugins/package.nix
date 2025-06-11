@@ -62,6 +62,18 @@ let
         ];
       }
     );
+
+    nvim-treesitter = mkPlugin "nvim-treesitter" (
+      sources.nvim-treesitter
+      // {
+        postPatch = ''
+          shopt -s extglob
+          rm -rf -- !(runtime)
+          shopt -u extglob
+          mv runtime/queries queries
+        '';
+      }
+    );
   };
 
   plugins = generatedPlugins // madePlugins;
