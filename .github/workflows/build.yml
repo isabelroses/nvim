@@ -34,5 +34,5 @@ jobs:
           cache: tgirlcloud
           token: ${{ secrets.ATTIC_TOKEN }}
 
-      - name: Build from the matrix
+      - name: Build izvim
         run: nix build -L .

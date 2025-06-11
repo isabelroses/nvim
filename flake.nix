@@ -64,19 +64,10 @@
           program = lib.getExe (
             pkgs.writeShellApplication {
               name = "update";
-
-              runtimeInputs = [
-                pkgs.nvfetcher
-                self.packages.${pkgs.stdenv.hostPlatform.system}.nvim-treesitter.generate
-              ];
+              runtimeInputs = [ pkgs.nvfetcher ];
 
               text = ''
-                pushd pkgs/izvimPlugins
-                nvfetcher
-                popd
-
-                pushd pkgs/nvim-treesitter
-                generate
+                pushd pkgs/izvim-plugins
                 nvfetcher
                 popd
               '';
