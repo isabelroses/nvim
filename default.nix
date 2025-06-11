@@ -12,9 +12,11 @@
   izvimVersion ? self.shortRev or self.dirtyRev or "unknown",
 }:
 let
-  packages = lib.packagesFromDirectoryRecursive {
-    directory = ./pkgs;
-    callPackage = lib.callPackageWith (pkgs // packages // { inherit izvimVersion; });
-  };
+  packages = lib.makeScope pkgs.newScope (self: {
+    nil = self.callPackage ./pkgs/nil/package.nix { };
+    izvim = self.callPackage ./pkgs/izvim/package.nix { inherit izvimVersion; };
+    izvimPlugins = self.callPackage ./pkgs/izvim-plugins/package.nix { };
+    wrapNeovim = self.callPackage ./pkgs/wrap-neovim/package.nix { };
+  });
 in
 packages
