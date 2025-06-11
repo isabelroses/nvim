@@ -23,14 +23,6 @@ in
         description = "Whether to include per-language tooling in izvim.";
       };
 
-      treesitter-grammars = lib.mkOption {
-        type = lib.types.nullOr (lib.types.listOf lib.types.str);
-        description = ''
-          List of treesitter grammars to include in izvim.
-        '';
-        default = null;
-      };
-
       gui = {
         enable = lib.mkEnableOption "izvim GUI";
 
@@ -48,7 +40,7 @@ in
   config = lib.mkIf cfg.enable {
     programs.izvim = {
       package = pkgs'.izvim.override {
-        inherit (cfg) includePerLanguageTooling treesitter-grammars;
+        inherit (cfg) includePerLanguageTooling;
       };
 
       gui.package = pkgs.symlinkJoin {
