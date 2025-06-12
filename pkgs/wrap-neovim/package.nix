@@ -1,6 +1,5 @@
 {
   lib,
-  runCommand,
   stdenvNoCC,
   makeBinaryWrapper,
   writeText,
@@ -37,12 +36,13 @@ lib.extendMkDerivation {
       userConfig,
     }@args:
     let
-      inherit (lib.meta) getExe defaultPriority;
-      inherit (lib.strings)
-        concatMapStringsSep
+      inherit (lib)
+        getExe
         makeBinPath
         getVersion
-        removeSuffix
+        unique
+        subtractLists
+        concatLists
         ;
       inherit (builtins) typeOf baseNameOf;
 
@@ -64,6 +64,16 @@ lib.extendMkDerivation {
         vim.g.loaded_ruby_provider = 0
       '';
 
+      # find deps
+      # see https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/utils/vim-utils.nix#L159-L164
+      transitiveClosure =
+        plugin: [ plugin ] ++ (lib.unique (concatLists (map transitiveClosure plugin.dependencies or [ ])));
+      findDependenciesRecursively = plugins: lib.concatMap transitiveClosure plugins;
+
+      depsOfOptionalPlugins = subtractLists optPlugins (findDependenciesRecursively optPlugins);
+      startWithDeps = findDependenciesRecursively startPlugins;
+      startPlugins' = unique (startWithDeps ++ depsOfOptionalPlugins);
+
       mkResultingPath =
         subdir: p:
         "pack/${pname}/${subdir}/${if typeOf p == "path" then baseNameOf p else (p.pname or p.name)}";
@@ -72,73 +82,59 @@ lib.extendMkDerivation {
         name = "neovim-config";
         __structuredAttrs = true;
         nativeBuildInputs = [ envsubst ];
-        dontUnpack = true;
 
-        plugins = startPlugins ++ optPlugins;
+        plugins = startPlugins' ++ optPlugins;
         resultingPaths =
-          map (mkResultingPath "start") startPlugins
+          map (mkResultingPath "start") startPlugins'
           ++ map (mkResultingPath "opt") optPlugins;
 
-        buildPhase = ''
-          runHook preBuild
+        # didn't know you could do this. thanks getchiee
+        buildCommand =
+          # bash
+          ''
+            mkdir -pv $out/parser
+            mkdir -pv $out/pack/${pname}/{start,opt}
 
-          mkdir -pv $out/parser
-          mkdir -pv $out/pack/${pname}/{start,opt}
+            echo "generating init.lua"
+            envsubst < '${init}' > "$out/init.lua"
 
-          echo "generating init.lua"
-          envsubst < '${init}' > "$out/init.lua"
+            shopt -s extglob
+            for (( i = 0; i < "''${#plugins[@]}"; i++ )); do
+              source="''${plugins[$i]}"
+              path="''${resultingPaths[$i]}"
+              dest="$out/$path"
 
-          echo "generating helptags"
-          ${getExe basePackage} \
+              mkdir -pv "$dest"
+
+              tolink=("$source/"!(parser))
+              if (( "''${#tolink[@]}" )); then
+                ln -nsv "''${tolink[@]}" -t "$dest"
+              fi
+
+              if [[ -d "$source/parser" && -n "$(ls -A "$source/parser")" ]]; then
+                mkdir -pv "$out/parser"
+                ln -nsfv "$source/parser/"* -t "$out/parser"
+              fi
+            done
+            shopt -u extglob
+
+            ${getExe basePackage} \
               -n -u NONE -i NONE \
               --headless \
               -c "set packpath=$out" \
               -c "packloadall" \
               -c "helptags ALL" \
-              "+quit!"
+              +"quit!"
 
-          echo "linking plugins"
-          shopt -s extglob
+            find "$out/pack/${pname}" -type d -empty -print -delete
 
-          for (( i = 0; i < "''${#plugins[@]}"; i++ )); do
-            source="''${plugins["$i"]}";
-            path="''${resultingPaths["$i"]}";
-            mkdir -p "$out/$path"
+            ln -vsfT ${userConfig} $out/pack/${pname}/start/init-plugin
 
-            tolink=("$source/"!(doc|parser))
-            if (( ''${#tolink} )); then
-              ln -ns "''${tolink[@]}" -t "$out/$path"
-            fi
-
-            if [[ -e "$source/parser" && -n "$(ls -A "$source/parser")" ]]; then
-              # name=$(basename "$source" | sed -E 's/.*-([^-]+)-grammar-.*/\1/')
-              ln -nsf "$source/parser"/* -t "$out/parser"
-            fi
-
-            if [[ -e "$source/doc" && ! -e "$out/$path/doc" ]]; then
-              ln -ns "$source/doc" -t "$out/$path"
-            fi
-          done
-
-          shopt -u extglob
-
-          for path in "$out/pack/${pname}/"*/*
-          do
-            if [[ -d "$path" && -z "$(ls -A $path)" ]]; then
-              rmdir $path
-            fi
-          done
-
-          echo "linkng user config"
-          ln -vsfT ${userConfig} $out/pack/${pname}/start/init-plugin
-
-          mkdir "$out/nix-support"
-          for i in $(find -L "$out" -name 'propagated-build-inputs'); do
-            cat "$i" >> "$out/nix-support/propagated-build-inputs"
-          done
-
-          runHook postBuild
-        '';
+            mkdir "$out/nix-support"
+            for i in $(find -L "$out" -name 'propagated-build-inputs'); do
+              cat "$i" >> "$out/nix-support/propagated-build-inputs"
+            done
+          '';
       };
     in
     {
@@ -196,7 +192,7 @@ lib.extendMkDerivation {
       meta =
         basePackage.meta
         // {
-          priority = (basePackage.meta.priority or defaultPriority) - 1;
+          priority = (basePackage.meta.priority or lib.meta.defaultPriority) - 1;
         }
         // args.meta or { };
     };

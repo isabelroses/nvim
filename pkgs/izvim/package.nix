@@ -47,34 +47,24 @@ let
     filter
     filterAttrs
     elem
-    foldl'
+    partition
     ;
 
-  divide =
-    foldl'
-      (
-        acc: elem:
-        let
-          starplugin = elem.passthru.start or false;
-        in
-        {
-          start = acc.start ++ (if starplugin then [ elem ] else [ ]);
-          opt = acc.opt ++ (if !starplugin then [ elem ] else [ ]);
-        }
-      )
-      {
-        start = [ ];
-        opt = [ ];
-      };
+  partionPlugins =
+    plugins:
+    let
+      parts = partition (elem: elem.passthru.start or false) plugins;
+    in
+    {
+      start = parts.right;
+      opt = parts.wrong;
+    };
 
-  izvimFilteredPlugins = pipe izvimPlugins [
+  patrionedPlugins = pipe izvimPlugins [
     attrValues
     (filter isDerivation)
-    divide
+    partionPlugins
   ];
-
-  startPlugins = izvimFilteredPlugins.start;
-  optPlugins = izvimFilteredPlugins.opt;
 
   grammarsNames = [
     "bash"
@@ -118,7 +108,7 @@ wrapNeovim {
   userConfig = ../../config;
 
   optPlugins = flatten [
-    optPlugins
+    patrionedPlugins.opt
 
     # extra plugins because they often fail or need extra steps
     vimPlugins.blink-cmp
@@ -127,7 +117,7 @@ wrapNeovim {
   ];
 
   startPlugins = flatten [
-    startPlugins
+    patrionedPlugins.start
 
     # install our treesitter grammars
     (attrValues (filterAttrs (n: _: elem n grammarsNames) vimPlugins.nvim-treesitter.grammarPlugins))
