@@ -3,7 +3,6 @@
   rustPlatform,
   fetchFromGitHub,
   nix,
-  fetchpatch,
   nix-update-script,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
@@ -13,27 +12,16 @@ rustPlatform.buildRustPackage (finalAttrs: {
   src = fetchFromGitHub {
     owner = "oxalica";
     repo = "nil";
-    rev = "577d160da311cc7f5042038456a0713e9863d09e";
-    hash = "sha256-ggXU3RHv6NgWw+vc+HO4/9n0GPufhTIUjVuLci8Za8c=";
+    rev = "58b7742777037fd76fc244e1192433131e05f21c";
+    hash = "sha256-qNWrlp36tozupgOeELQ9N5c0nm0iVqufOt21s5GBV5o=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-uZsLlFU9GKLvFllF7Kf5Q7HfN26KQojf4rvOb9p7Rjs=";
+  cargoHash = "sha256-OZIajxv8xNfCGalVw/FUAwWdQzPqfGuDoeRg2E2RR7s=";
 
   nativeBuildInputs = [ nix ];
 
   env.CFG_RELEASE = finalAttrs.version;
-
-  patchs = [
-    (fetchpatch {
-      url = "https://patch-diff.githubusercontent.com/raw/oxalica/nil/pull/157.patch";
-      hash = "sha256-4Ex0oy6Hppg4uBZnlvJijDm39juJ7Q/mP1a2ujyy8Ho=";
-    })
-    (fetchpatch {
-      url = "https://patch-diff.githubusercontent.com/raw/oxalica/nil/pull/159.patch";
-      hash = "sha256-XcPxeMF6HynBG3zKsIHYbEzB0UHE2yXL9UHNLA5aRJo=";
-    })
-  ];
 
   preBuild = ''
     export NIX_STATE_DIR=$(mktemp -d)
