@@ -3,17 +3,18 @@
   rustPlatform,
   fetchFromGitHub,
   nix,
+  nixfmt-rfc-style,
   nix-update-script,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "nil";
-  version = "2024-08-06";
+  version = "2025-06-13";
 
   src = fetchFromGitHub {
     owner = "oxalica";
     repo = "nil";
-    rev = "58b7742777037fd76fc244e1192433131e05f21c";
-    hash = "sha256-qNWrlp36tozupgOeELQ9N5c0nm0iVqufOt21s5GBV5o=";
+    rev = "9e4cccb088440c20703d62db9de8d5ae06d4a449";
+    hash = "sha256-oxvVAFUO9husnRk6XZcLFLjLWL9z0pW25Fk6kVKwt1c=";
   };
 
   useFetchCargoVendor = true;
@@ -21,7 +22,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   nativeBuildInputs = [ nix ];
 
-  env.CFG_RELEASE = finalAttrs.version;
+  env = {
+    CFG_RELEASE = finalAttrs.version;
+    CFG_DEFAULT_FORMATTER = lib.getExe nixfmt-rfc-style;
+  };
 
   preBuild = ''
     export NIX_STATE_DIR=$(mktemp -d)
