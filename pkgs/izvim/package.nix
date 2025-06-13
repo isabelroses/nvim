@@ -1,6 +1,5 @@
 {
   lib,
-  neovimUtils,
 
   # get extra plugins we don't want to build
   vimPlugins,

@@ -1,10 +1,8 @@
 {
   lib,
+  lndir,
   stdenvNoCC,
   makeBinaryWrapper,
-  writeText,
-  envsubst,
-  xorg,
   neovim-unwrapped,
 }:
 lib.extendMkDerivation {
@@ -20,9 +18,7 @@ lib.extendMkDerivation {
       # you can choose the base, i choose neovim-unwrapped
       basePackage ? neovim-unwrapped,
 
-      # setup lua
-      lua ? basePackage.lua,
-      luaEnv ? lua.withPackages extraLuaPackages,
+      # extra lua packages
       extraLuaPackages ? _: [ ],
 
       # path, see there explanation below
@@ -34,6 +30,10 @@ lib.extendMkDerivation {
 
       # our config
       userConfig,
+
+      # other customisation
+      aliases ? [ ],
+      keepDesktopFiles ? false,
     }@args:
     let
       inherit (lib)
@@ -43,26 +43,14 @@ lib.extendMkDerivation {
         unique
         subtractLists
         concatLists
+        optionalString
+        concatMapStrings
         ;
       inherit (builtins) typeOf baseNameOf;
 
+      lua = basePackage.lua;
+      luaEnv = lua.withPackages extraLuaPackages;
       inherit (lua.pkgs) luaLib;
-
-      init = writeText "init.lua" ''
-        package.path = "${luaLib.genLuaPathAbsStr luaEnv};$LUA_PATH" .. package.path
-        package.cpath = "${luaLib.genLuaCPathAbsStr luaEnv};$LUA_CPATH" .. package.cpath
-        vim.env.PATH = vim.env.PATH .. ":${makeBinPath extraPackages}"
-        vim.g.snippets_path = "$out/pack/${pname}/start/init-plugin/snippets"
-        vim.opt.packpath:append('$out')
-        vim.opt.runtimepath:append('$out')
-
-        vim.loader.enable()
-        vim.g.loaded_node_provider = 0
-        vim.g.loaded_perl_provider = 0
-        vim.g.loaded_python_provider = 0
-        vim.g.loaded_python3_provider = 0
-        vim.g.loaded_ruby_provider = 0
-      '';
 
       # find deps
       # see https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/utils/vim-utils.nix#L159-L164
@@ -81,7 +69,6 @@ lib.extendMkDerivation {
       config = stdenvNoCC.mkDerivation {
         name = "neovim-config";
         __structuredAttrs = true;
-        nativeBuildInputs = [ envsubst ];
 
         plugins = startPlugins' ++ optPlugins;
         resultingPaths =
@@ -96,7 +83,21 @@ lib.extendMkDerivation {
             mkdir -pv $out/pack/${pname}/{start,opt}
 
             echo "generating init.lua"
-            envsubst < '${init}' > "$out/init.lua"
+            cat > $out/init.lua <<EOF
+            package.path = "${luaLib.genLuaPathAbsStr luaEnv};$LUA_PATH" .. package.path
+            package.cpath = "${luaLib.genLuaCPathAbsStr luaEnv};$LUA_CPATH" .. package.cpath
+            vim.env.PATH = vim.env.PATH .. ":${makeBinPath extraPackages}"
+            vim.g.snippets_path = "$out/pack/${pname}/start/init-plugin/snippets"
+            vim.opt.packpath:append('$out')
+            vim.opt.runtimepath:append('$out')
+
+            vim.loader.enable()
+            vim.g.loaded_node_provider = 0
+            vim.g.loaded_perl_provider = 0
+            vim.g.loaded_python_provider = 0
+            vim.g.loaded_python3_provider = 0
+            vim.g.loaded_ruby_provider = 0
+            EOF
 
             shopt -s extglob
             for (( i = 0; i < "''${#plugins[@]}"; i++ )); do
@@ -143,16 +144,22 @@ lib.extendMkDerivation {
         if versionSuffix != "" then "-${versionSuffix}" else ""
       }";
 
-      __structuredAttrs = args.__structuredAttrs or true;
+      # don't allow for simple arugments here these **should** remain this way
+      # so the wrapper works correctly
+      __structuredAttrs = true;
+      strictDeps = true;
+
+      # this won't really remove anything since we still are running fixup on basePackage and the config
+      # but it does speed up the build speed
+      dontUnpack = true;
+      dontFixup = true;
+      dontConfigure = true;
+      dontRewriteSymlinks = true;
 
       nativeBuildInputs = args.nativeBuildInputs or [ ] ++ [
         makeBinaryWrapper
-        xorg.lndir
+        lndir
       ];
-
-      dontUnpack = args.dontUnpack or true;
-      strictDeps = args.strictDeps or true;
-      dontRewriteSymlinks = args.dontRewriteSymlinks or true;
 
       wrapperArgs = [
         "--set-default"
@@ -164,26 +171,22 @@ lib.extendMkDerivation {
         pname
       ] ++ args.wrapperArgs or [ ];
 
-      buildPhase =
-        args.buildPhase or ''
-          runHook preBuild
+      installPhase = ''
+        runHook preInstall
 
-          mkdir -p $out
-          lndir -silent ${basePackage} $out
-          rm -rf $out/share/applications
+        mkdir -p $out
+        lndir -silent ${basePackage} $out
 
-          runHook postBuild
-        '';
+        ${optionalString (!keepDesktopFiles) "rm -rf $out/share/applications"}
 
-      installPhase =
-        args.installPhase or ''
-          runHook preInstall
+        wrapProgram $out/bin/nvim "''${wrapperArgs[@]}"
 
-          wrapProgram $out/bin/nvim "''${wrapperArgs[@]}"
-          ln -s $out/bin/nvim $out/bin/${pname}
+        ${concatMapStrings (alias: ''
+          ln -s $out/bin/nvim $out/bin/${alias}
+        '') aliases}
 
-          runHook postInstall
-        '';
+        runHook postInstall
+      '';
 
       passthru = {
         inherit config;
