@@ -84,20 +84,21 @@ let
     "graphql"
     "haskell"
     "html"
-    "toml"
     "javascript"
     "jsdoc"
     "json"
     "jsonc"
     "just"
-    "lua"
     "latex"
+    "lua"
     "make"
     "markdown"
     "markdown_inline"
     "nix"
     "nu"
     "php"
+    "toml"
+    "yaml"
   ];
 in
 wrapNeovim {
