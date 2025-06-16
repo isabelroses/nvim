@@ -22,7 +22,7 @@ jobs:
         run: |
           nix run .#update
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "Update Flake Inputs"
           commit_user_name: GitHub Actions
