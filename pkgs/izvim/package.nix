@@ -99,6 +99,7 @@ let
     "php"
     "toml"
     "yaml"
+    "yuck"
   ];
 in
 wrapNeovim {
