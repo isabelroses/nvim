@@ -97,6 +97,7 @@ let
     "nix"
     "nu"
     "php"
+    "qmljs"
     "toml"
     "yaml"
     "yuck"

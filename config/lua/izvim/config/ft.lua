@@ -49,6 +49,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "nu",
     "php",
     "toml",
+    "qmljs",
     "yaml",
     "yuck",
     "checkhealth",
