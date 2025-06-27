@@ -97,6 +97,7 @@ let
     "nix"
     "nu"
     "php"
+    "qmldir"
     "qmljs"
     "toml"
     "yaml"
