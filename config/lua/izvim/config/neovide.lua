@@ -3,7 +3,7 @@ if not vim.g.neovide then
 end
 
 -- background --
-vim.g.neovide_transparency = 1.0
+vim.g.neovide_opacity = 1.0
 
 function neovide_alpha()
   return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
