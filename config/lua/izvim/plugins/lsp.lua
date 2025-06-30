@@ -349,6 +349,9 @@ return {
             },
           },
         },
+        qmlls = {
+          cmd = { "qmlls", "-E" },
+        },
       }
 
       vim.lsp.config("*", common)
