@@ -71,6 +71,7 @@ let
           rm -rf -- !(runtime)
           shopt -u extglob
           mv runtime/queries queries
+          rm -rf runtime
         '';
       }
     );
