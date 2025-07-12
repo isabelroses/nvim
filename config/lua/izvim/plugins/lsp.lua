@@ -294,6 +294,7 @@ return {
             if client.server_capabilities then
               client.server_capabilities.semanticTokensProvider = false
             end
+            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
           end,
           autostart = true,
           cmd = { "nil" },
@@ -303,7 +304,7 @@ return {
                 command = { "nixfmt" },
               },
               diagnostics = {
-                bindingEndHintMinLines = 1,
+                bindingEndHintMinLines = 2,
               },
               nix = { maxMemoryMB = nil },
             },
