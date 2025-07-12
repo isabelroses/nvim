@@ -121,6 +121,17 @@ return {
         return
       end
 
+      vim.lsp.config("*", {
+        root_markers = { ".git" },
+        capabilities = {
+          textDocument = {
+            semanticTokens = {
+              multilineTokenSupport = true,
+            },
+          },
+        },
+      })
+
       -- border style
       require("lspconfig.ui.windows").default_options.border = vim.g.bc.style
 
@@ -290,6 +301,9 @@ return {
             ["nil"] = {
               formatting = {
                 command = { "nixfmt" },
+              },
+              diagnostics = {
+                bindingEndHintMinLines = 1,
               },
               nix = { maxMemoryMB = nil },
             },
