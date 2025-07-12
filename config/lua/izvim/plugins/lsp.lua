@@ -148,9 +148,7 @@ return {
             navic.attach(client, ev.buf)
           end
 
-          if client.server_capabilities.inlayHintProvider then
-            vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
-          end
+          vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
 
           local opts = { buffer = ev.buf }
           local function use_border(cb)
@@ -294,7 +292,6 @@ return {
             if client.server_capabilities then
               client.server_capabilities.semanticTokensProvider = false
             end
-            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
           end,
           autostart = true,
           cmd = { "nil" },
