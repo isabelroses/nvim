@@ -1,4 +1,4 @@
-std="vim"
+std = "vim"
 
 [rules]
 mixed_table = "allow"

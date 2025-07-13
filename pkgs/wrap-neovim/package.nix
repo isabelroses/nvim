@@ -48,7 +48,7 @@ lib.extendMkDerivation {
         ;
       inherit (builtins) typeOf baseNameOf;
 
-      lua = basePackage.lua;
+      inherit (basePackage) lua;
       luaEnv = lua.withPackages extraLuaPackages;
       inherit (lua.pkgs) luaLib;
 

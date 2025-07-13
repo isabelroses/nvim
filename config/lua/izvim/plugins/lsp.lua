@@ -176,12 +176,13 @@ return {
       pcall(require("py_lsp").setup, common)
 
       local servers = {
+        -- keep-sorted start block=yes
         astro = {},
         bashls = {},
-        cssls = {},
         clangd = {
           filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
         },
+        cssls = {},
         denols = {
           root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
           single_file_support = false,
@@ -214,14 +215,6 @@ return {
             "typescriptreact",
           },
         },
-        graphql = {
-          filetypes = {
-            "graphql",
-            "typescriptreact",
-            "javascriptreact",
-            "typescript",
-          },
-        },
         gopls = {
           single_file_support = true,
           filetypes = { "go", "gomod", "gosum", "gotmpl", "gohtmltmpl", "gotexttmpl" },
@@ -251,6 +244,23 @@ return {
             },
           },
         },
+        graphql = {
+          filetypes = {
+            "graphql",
+            "typescriptreact",
+            "javascriptreact",
+            "typescript",
+          },
+        },
+        harper_ls = {
+          settings = {
+            ["harper-ls"] = {
+              linters = {
+                SentenceCapitalization = false,
+              },
+            },
+          },
+        },
         helm_ls = {},
         hls = {},
         html = {},
@@ -277,15 +287,6 @@ return {
             },
           },
         },
-        harper_ls = {
-          settings = {
-            ["harper-ls"] = {
-              linters = {
-                SentenceCapitalization = false,
-              },
-            },
-          },
-        },
         marksman = {},
         nil_ls = {
           on_attach = function(client, bufnr)
@@ -308,11 +309,13 @@ return {
           },
         },
         nushell = {},
+        qmlls = {
+          cmd = { "qmlls", "-E" },
+        },
         serve_d = {},
+        statix = {},
         -- sourcekit = {},
         stylelint_lsp = {},
-        taplo = {},
-        teal_ls = {},
         tailwindcss = {
           filetypes = {
             "astro",
@@ -322,7 +325,8 @@ return {
             "css",
           },
         },
-        vue_ls = {},
+        taplo = {},
+        teal_ls = {},
         vtsls = {
           single_file_support = false,
           root_dir = function(fname)
@@ -337,6 +341,7 @@ return {
             return root_dir
           end,
         },
+        vue_ls = {},
         yamlls = {
           settings = {
             yaml = {
@@ -361,9 +366,7 @@ return {
             },
           },
         },
-        qmlls = {
-          cmd = { "qmlls", "-E" },
-        },
+        -- keep-sorted end
       }
 
       vim.lsp.config("*", common)
