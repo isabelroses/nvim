@@ -63,6 +63,16 @@ let
       }
     );
 
+    copilot-lua = mkPlugin "copilot-lua" (
+      sources.copilot-lua
+      // {
+        # remove the copilot binary and deps, we will bring our own
+        prePatch = ''
+          rm -rf copilot
+        '';
+      }
+    );
+
     nvim-treesitter = mkPlugin "nvim-treesitter" (
       sources.nvim-treesitter
       // {
