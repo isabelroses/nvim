@@ -14,7 +14,7 @@
   nil,
   statix,
   deadnix,
-  nixfmt-rfc-style,
+  nixfmt,
   shfmt,
   shellcheck,
   bash-language-server,
@@ -147,7 +147,7 @@ wrapNeovim {
       nil
       statix
       deadnix
-      nixfmt-rfc-style
+      nixfmt
 
       # shell
       shfmt
