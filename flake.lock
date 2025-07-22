@@ -1,12 +1,32 @@
 {
   "nodes": {
+    "gift-wrap": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753182651,
+        "narHash": "sha256-F2axI2EO6A9F+p9Pq61mLfhYtpGKakg5SNqYZ53Jtc0=",
+        "owner": "tgirlcloud",
+        "repo": "gift-wrap",
+        "rev": "d91c63539600129c2a99849618fbcd682d0dbd27",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tgirlcloud",
+        "repo": "gift-wrap",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 315532800,
-        "narHash": "sha256-X5WIcIkFxPhw7mS219TbEOgrugbMx/2cin09OlWobT8=",
-        "rev": "dab3a6e781554f965bde3def0aa2fda4eb8f1708",
+        "narHash": "sha256-adDRbaslHeTCzqJD7P3CQDCCfsCzSe6iGsFMfTT0gL0=",
+        "rev": "2baf8e1658cba84a032c3a8befb1e7b06629242a",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre830668.dab3a6e78155/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre832962.2baf8e1658cb/nixexprs.tar.xz?rev=2baf8e1658cba84a032c3a8befb1e7b06629242a"
       },
       "original": {
         "type": "tarball",
@@ -15,23 +35,8 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
-        "systems": "systems"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
+        "gift-wrap": "gift-wrap",
+        "nixpkgs": "nixpkgs"
       }
     }
   },

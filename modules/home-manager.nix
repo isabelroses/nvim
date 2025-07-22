@@ -1,4 +1,4 @@
-self:
+inputs:
 {
   lib,
   pkgs,
@@ -8,7 +8,7 @@ self:
 let
   cfg = config.programs.izvim;
 
-  pkgs' = import ../default.nix { inherit pkgs self; };
+  pkgs' = import ../default.nix { inherit pkgs inputs; };
 in
 {
   options = {

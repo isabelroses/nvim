@@ -3,24 +3,27 @@
 
   inputs = {
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
-    systems.url = "github:nix-systems/default";
+
+    gift-wrap = {
+      url = "github:tgirlcloud/gift-wrap";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    {
+    inputs@{
       self,
       nixpkgs,
-      systems,
       ...
     }:
     let
       inherit (nixpkgs) lib;
 
       forAllSystems =
-        function:
-        lib.genAttrs (import systems) (
+        f:
+        lib.genAttrs lib.systems.flakeExposed (
           system:
-          function (
+          f (
             import nixpkgs {
               inherit system;
               config.allowUnfree = true;
@@ -32,7 +35,7 @@
       mkPackages =
         default: pkgs:
         let
-          generatedPackages = import ./default.nix { inherit pkgs self; };
+          generatedPackages = import ./default.nix { inherit pkgs inputs; };
           defaultPackage = lib.optionalAttrs default { default = generatedPackages.izvim; };
         in
         generatedPackages // defaultPackage;
@@ -61,6 +64,10 @@
           settings = {
             on-unmatched = "info";
             tree-root-file = "flake.nix";
+
+            excludes = [
+              "pkgs/izvim-plugins/_sources/*"
+            ];
 
             formatter = {
               # keep-sorted start block=yes newline_separated=yes
@@ -103,7 +110,7 @@
       legacyPackages = forAllSystems (mkPackages true);
       packages = forAllSystems (mkPackages true);
 
-      homeModules.default = import ./modules/home-manager.nix self;
+      homeModules.default = import ./modules/home-manager.nix inputs;
 
       overlays.default = _: mkPackages false;
 
@@ -115,7 +122,8 @@
             pkgs.stylua
             pkgs.lua-language-server
             pkgs.taplo
-          ] ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
+          ]
+          ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
         };
       });
 
