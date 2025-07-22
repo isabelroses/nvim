@@ -467,6 +467,27 @@
         },
         "version": "d510a830e81a1b436e821c9a038eefb314b58b5d"
     },
+    "neovim-session-manager": {
+        "cargoLocks": null,
+        "date": "2025-03-07",
+        "extract": null,
+        "name": "neovim-session-manager",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Shatur",
+            "repo": "neovim-session-manager",
+            "rev": "3409dc920d40bec4c901c0a122a80bee03d6d1e1",
+            "sha256": "sha256-k2akj/s6qJx/sCnz3UNHo5zbENTpw+OPuo2WPF1W7rg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3409dc920d40bec4c901c0a122a80bee03d6d1e1"
+    },
     "nvim-colorizer": {
         "cargoLocks": null,
         "date": "2025-07-07",
@@ -514,7 +535,9 @@
         "date": "2025-07-16",
         "extract": null,
         "name": "nvim-lspconfig",
-        "passthru": null,
+        "passthru": {
+            "start": "true"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -785,27 +808,6 @@
             "type": "github"
         },
         "version": "d916dcfbc42dae61f8b17618b1e9e87dcbf5404a"
-    },
-    "shelf": {
-        "cargoLocks": null,
-        "date": "2025-06-11",
-        "extract": null,
-        "name": "shelf",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "comfysage",
-            "repo": "shelf.nvim",
-            "rev": "cce4c97d23ffca6817fd146310aa5e936f5884f5",
-            "sha256": "sha256-7DTY7C0wWyL2aA53Y6wYZJDzQpiuq6Mgzr1ecW7VaGY=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "cce4c97d23ffca6817fd146310aa5e936f5884f5"
     },
     "snacks-nvim": {
         "cargoLocks": null,

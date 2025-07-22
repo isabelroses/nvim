@@ -90,7 +90,11 @@ return {
   },
 
   {
-    "shelf.nvim",
-    lazy = false,
+    "neovim-session-manager",
+    after = function()
+      require("session_manager").setup({
+        autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir,
+      })
+    end,
   },
 }

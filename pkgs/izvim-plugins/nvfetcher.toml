@@ -90,6 +90,10 @@ src.git = "https://github.com/OXY2DEV/markview.nvim"
 fetch.github = "echasnovski/mini.surround"
 src.git = "https://github.com/echasnovski/mini.surround"
 
+[neovim-session-manager]
+fetch.github = "Shatur/neovim-session-manager"
+src.git = "https://github.com/Shatur/neovim-session-manager"
+
 [nvim-colorizer]
 fetch.github = "nvchad/nvim-colorizer.lua"
 src.git = "https://github.com/nvchad/nvim-colorizer.lua"
@@ -97,6 +101,7 @@ src.git = "https://github.com/nvchad/nvim-colorizer.lua"
 [nvim-lspconfig]
 fetch.github = "neovim/nvim-lspconfig"
 src.git = "https://github.com/neovim/nvim-lspconfig"
+passthru.start = "true"
 
 [nvim-lint]
 fetch.github = "mfussenegger/nvim-lint"
@@ -152,10 +157,6 @@ src.git = "https://github.com/comfysage/sayama.nvim"
 [schemastore]
 fetch.github = "b0o/schemastore.nvim"
 src.git = "https://github.com/b0o/schemastore.nvim"
-
-[shelf]
-fetch.github = "comfysage/shelf.nvim"
-src.git = "https://github.com/comfysage/shelf.nvim"
 
 [snacks-nvim]
 fetch.github = "folke/snacks.nvim"

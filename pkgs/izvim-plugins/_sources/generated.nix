@@ -268,6 +268,18 @@
     };
     date = "2025-07-15";
   };
+  neovim-session-manager = {
+    pname = "neovim-session-manager";
+    version = "3409dc920d40bec4c901c0a122a80bee03d6d1e1";
+    src = fetchFromGitHub {
+      owner = "Shatur";
+      repo = "neovim-session-manager";
+      rev = "3409dc920d40bec4c901c0a122a80bee03d6d1e1";
+      fetchSubmodules = false;
+      sha256 = "sha256-k2akj/s6qJx/sCnz3UNHo5zbENTpw+OPuo2WPF1W7rg=";
+    };
+    date = "2025-03-07";
+  };
   nvim-colorizer = {
     pname = "nvim-colorizer";
     version = "8a9b722257b5e6733c340c36f4bd8693e5f47de3";
@@ -302,6 +314,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-kxCjribEl35O4f1pUyhTLPj4AlP1NR0SH4GfJEeZt4A=";
     };
+    start = "true";
     date = "2025-07-16";
   };
   nvim-navic = {
@@ -449,18 +462,6 @@
       sha256 = "sha256-NsZKP1AGWorUz2BW2atgQ9aZZ0TOpueTj2DWoKWKn+M=";
     };
     date = "2025-07-15";
-  };
-  shelf = {
-    pname = "shelf";
-    version = "cce4c97d23ffca6817fd146310aa5e936f5884f5";
-    src = fetchFromGitHub {
-      owner = "comfysage";
-      repo = "shelf.nvim";
-      rev = "cce4c97d23ffca6817fd146310aa5e936f5884f5";
-      fetchSubmodules = false;
-      sha256 = "sha256-7DTY7C0wWyL2aA53Y6wYZJDzQpiuq6Mgzr1ecW7VaGY=";
-    };
-    date = "2025-06-11";
   };
   snacks-nvim = {
     pname = "snacks-nvim";
