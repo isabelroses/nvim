@@ -12,14 +12,14 @@ return {
           enabled = true,
           exclude = { "latex" },
         },
+        input = { enabled = true },
+        notifier = { enabled = true },
 
         -- undo defaults
         dashboard = { enabled = false },
         explorer = { enabled = false },
         indent = { enabled = false },
-        input = { enabled = false },
         picker = { enabled = false },
-        notifier = { enabled = false },
         scope = { enabled = false },
         scroll = { enabled = false },
         statuscolumn = { enabled = false },
