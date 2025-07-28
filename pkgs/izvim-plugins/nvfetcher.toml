@@ -4,8 +4,8 @@ src.git = "https://github.com/akinsho/bufferline.nvim"
 
 [catppuccin]
 fetch.github = "catppuccin/nvim"
-src.git = "https://github.com/catppuccin/nvim"
 passthru.as = "catppuccin"
+src.git = "https://github.com/catppuccin/nvim"
 
 [cloak]
 fetch.github = "laytan/cloak.nvim"
@@ -49,8 +49,8 @@ src.git = "https://github.com/lewis6991/gitsigns.nvim"
 
 [harpoon]
 fetch.github = "ThePrimeagen/harpoon"
-src.git = "https://github.com/ThePrimeagen/harpoon"
 src.branch = "harpoon2"
+src.git = "https://github.com/ThePrimeagen/harpoon"
 
 [img-clip-nvim]
 fetch.github = "HakonHarnes/img-clip.nvim"
@@ -74,13 +74,13 @@ src.git = "https://github.com/nvim-lualine/lualine.nvim"
 
 [lz-n]
 fetch.github = "nvim-neorocks/lz.n"
-src.git = "https://github.com/nvim-neorocks/lz.n"
 passthru.start = "true"
+src.git = "https://github.com/nvim-neorocks/lz.n"
 
 [lzn-auto-require]
 fetch.github = "horriblename/lzn-auto-require"
-src.git = "https://github.com/horriblename/lzn-auto-require"
 passthru.start = "true"
+src.git = "https://github.com/horriblename/lzn-auto-require"
 
 [markview]
 fetch.github = "OXY2DEV/markview.nvim"
@@ -100,8 +100,8 @@ src.git = "https://github.com/nvchad/nvim-colorizer.lua"
 
 [nvim-lspconfig]
 fetch.github = "neovim/nvim-lspconfig"
-src.git = "https://github.com/neovim/nvim-lspconfig"
 passthru.start = "true"
+src.git = "https://github.com/neovim/nvim-lspconfig"
 
 [nvim-lint]
 fetch.github = "mfussenegger/nvim-lint"
@@ -117,9 +117,9 @@ src.git = "https://github.com/nvim-tree/nvim-tree.lua"
 
 [nvim-treesitter]
 fetch.github = "nvim-treesitter/nvim-treesitter"
-src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
-src.branch = "main"
 passthru.start = "true"
+src.branch = "main"
+src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
 
 [nvim-web-devicons]
 fetch.github = "nvim-tree/nvim-web-devicons"
@@ -131,8 +131,8 @@ src.git = "https://github.com/obsidian-nvim/obsidian.nvim"
 
 [plenary]
 fetch.github = "nvim-lua/plenary.nvim"
-src.git = "https://github.com/nvim-lua/plenary.nvim"
 passthru.start = "true"
+src.git = "https://github.com/nvim-lua/plenary.nvim"
 
 [py_lsp]
 fetch.github = "hallerpatrick/py_lsp.nvim"
@@ -162,18 +162,6 @@ src.git = "https://github.com/b0o/schemastore.nvim"
 fetch.github = "folke/snacks.nvim"
 src.git = "https://github.com/folke/snacks.nvim"
 
-[telescope]
-fetch.github = "nvim-telescope/telescope.nvim"
-src.git = "https://github.com/nvim-telescope/telescope.nvim"
-
-[telescope-project]
-fetch.github = "nvim-telescope/telescope-project.nvim"
-src.git = "https://github.com/nvim-telescope/telescope-project.nvim"
-
-[telescope-ui-select]
-fetch.github = "nvim-telescope/telescope-ui-select.nvim"
-src.git = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
-
 [todo-comments]
 fetch.github = "folke/todo-comments.nvim"
 src.git = "https://github.com/folke/todo-comments.nvim"
@@ -197,3 +185,7 @@ src.git = "https://github.com/tpope/vim-fugitive"
 [wakatime]
 fetch.github = "wakatime/vim-wakatime"
 src.git = "https://github.com/wakatime/vim-wakatime"
+
+[fzf-lua]
+fetch.github = "ibhagwan/fzf-lua"
+src.git = "https://github.com/ibhagwan/fzf-lua"
