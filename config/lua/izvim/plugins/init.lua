@@ -8,6 +8,10 @@ return {
       require("neo-tree").setup({
         popup_border_style = "", -- use 'winborder'
         filesystem = {
+          filtered_items = {
+            visible = true,
+            hide_dotfiles = false,
+          },
           use_libuv_file_watcher = true,
         },
         default_component_configs = {
