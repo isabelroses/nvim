@@ -89,7 +89,7 @@ return {
     after = function()
       require("fidget").setup({
         notification = {
-          window = { winblend = 0 },
+          window = { normal_hl = "MsgArea", winblend = 100 },
         },
         progress = {
           display = { done_icon = "󰗡" },
