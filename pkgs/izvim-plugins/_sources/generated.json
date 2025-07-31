@@ -725,27 +725,6 @@
         },
         "version": "b9fd5226c2f76c951fc8ed5923d85e4de065e509"
     },
-    "py_lsp": {
-        "cargoLocks": null,
-        "date": "2025-03-11",
-        "extract": null,
-        "name": "py_lsp",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "hallerpatrick",
-            "repo": "py_lsp.nvim",
-            "rev": "63169f3c63896e1286ffdfe06642cab55eaa6b3c",
-            "sha256": "sha256-80zbogGoR1prFo0rHZEme3ILsBOJM9YcJkerylxDGEk=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "63169f3c63896e1286ffdfe06642cab55eaa6b3c"
-    },
     "quill-nvim": {
         "cargoLocks": null,
         "date": "2024-12-10",

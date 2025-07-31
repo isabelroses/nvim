@@ -138,10 +138,6 @@ fetch.github = "nvim-lua/plenary.nvim"
 passthru.start = "true"
 src.git = "https://github.com/nvim-lua/plenary.nvim"
 
-[py_lsp]
-fetch.github = "hallerpatrick/py_lsp.nvim"
-src.git = "https://github.com/hallerpatrick/py_lsp.nvim"
-
 [quill-nvim]
 fetch.github = "comfysage/quill.nvim"
 src.git = "https://github.com/comfysage/quill.nvim"

@@ -127,7 +127,7 @@ local borderchars = {
 }
 
 -- my custom borderchars
-vim.o.winborder = 'rounded'
+vim.o.winborder = "rounded"
 vim.g.bc = borderchars.rounded
 vim.opt.fillchars:append({
   horiz = vim.g.bc.horiz,

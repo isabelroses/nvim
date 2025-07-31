@@ -415,18 +415,6 @@
     start = "true";
     date = "2025-07-26";
   };
-  py_lsp = {
-    pname = "py_lsp";
-    version = "63169f3c63896e1286ffdfe06642cab55eaa6b3c";
-    src = fetchFromGitHub {
-      owner = "hallerpatrick";
-      repo = "py_lsp.nvim";
-      rev = "63169f3c63896e1286ffdfe06642cab55eaa6b3c";
-      fetchSubmodules = false;
-      sha256 = "sha256-80zbogGoR1prFo0rHZEme3ILsBOJM9YcJkerylxDGEk=";
-    };
-    date = "2025-03-11";
-  };
   quill-nvim = {
     pname = "quill-nvim";
     version = "08103ea02643a93065fe7dbc4ed22275719fc338";

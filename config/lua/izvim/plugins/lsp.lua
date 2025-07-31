@@ -107,7 +107,6 @@ return {
 
   { "lsp-status.nvim" },
   { "schemastore.nvim" },
-  { "py_lsp.nvim" },
 
   {
     "crates.nvim",

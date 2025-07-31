@@ -1,7 +1,6 @@
 require("lz.n").trigger_load({
   "lsp-status.nvim",
   "schemastore.nvim",
-  "py_lsp.nvim",
 })
 
 local lsp_present, lspconfig = pcall(require, "lspconfig")
@@ -46,15 +45,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end, opts)
   end,
 })
-
--- setup python
-do
-  local ok, py_lsp = pcall(require, "py_lsp")
-  if not ok then
-    return
-  end
-  py_lsp.setup()
-end
 
 local servers = {
   -- keep-sorted start block=yes
@@ -187,6 +177,7 @@ local servers = {
     },
   },
   nushell = {},
+  pyright = {},
   qmlls = {
     cmd = { "qmlls", "-E" },
   },
