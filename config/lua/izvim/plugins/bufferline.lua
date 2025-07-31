@@ -20,6 +20,12 @@ return {
                   text_align = "center",
                   separator = "",
                 },
+                {
+                  filetype = "neo-tree",
+                  text = "File Browser",
+                  text_align = "center",
+                  separator = "",
+                },
               },
               left_mouse_command = "buffer %d",
               middle_mouse_command = "bdelete! %d",

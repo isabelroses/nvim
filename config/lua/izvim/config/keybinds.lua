@@ -20,7 +20,7 @@ map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
 -- NvimTree
-map("n", "<C-N>", "<cmd>NvimTreeToggle<CR>")
+map("n", "<C-N>", "<Plug>(neotree-toggle)")
 
 -- improved clipboard
 map({ "n", "v" }, "<leader>y", '"+y')

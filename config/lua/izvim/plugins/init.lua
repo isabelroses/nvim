@@ -43,7 +43,7 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>n", vim.cmd.Neotree, { desc = "open tree view" })
+      vim.keymap.set("n", "<Plug>(neotree-toggle)", "<cmd>Neotree toggle action=show left<cr>", { desc = "open tree view" })
 
       vim.api.nvim_create_autocmd("WinEnter", {
         pattern = "neo-tree *",
