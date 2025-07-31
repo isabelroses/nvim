@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("VimResized", {
 vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   callback = function()
-    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
+    vim.highlight.on_yank({ higroup = "CurSearch", timeout = 200 })
   end,
   desc = "Highlight yanked text",
 })
@@ -31,12 +31,5 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "BufWinEnter", "WinEnte
   pattern = "term://*",
   callback = function()
     vim.api.nvim_command("startinsert")
-  end,
-})
-
-vim.api.nvim_create_autocmd("TermOpen", {
-  pattern = "term://*",
-  callback = function()
-    vim.opt_local.number = false
   end,
 })

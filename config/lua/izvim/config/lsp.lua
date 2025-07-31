@@ -1,5 +1,4 @@
 require("lz.n").trigger_load({
-  "blink.cmp",
   "lsp-status.nvim",
   "schemastore.nvim",
   "py_lsp.nvim",
@@ -24,9 +23,6 @@ vim.lsp.config("*", {
   },
 })
 
--- border style
-require("lspconfig.ui.windows").default_options.border = vim.g.bc.style
-
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
   callback = function(ev)
@@ -43,29 +39,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
 
     local opts = { buffer = ev.buf }
-    local function use_border(cb)
-      return function()
-        cb({ border = vim.g.bc.style })
-      end
-    end
+    --- see |lsp-defaults|
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "K", use_border(vim.lsp.buf.hover), opts)
-    vim.keymap.set("n", "<C-k>", use_border(vim.lsp.buf.signature_help), opts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "<leader>fm", function()
       vim.lsp.buf.format({ async = true })
     end, opts)
   end,
 })
 
-local capabilities = require("blink.cmp").get_lsp_capabilities({}, true)
-
-local common = { capabilities = capabilities }
-
 -- setup python
-pcall(require("py_lsp").setup, common)
+do
+  local ok, py_lsp = pcall(require, "py_lsp")
+  if not ok then
+    return
+  end
+  py_lsp.setup()
+end
 
 local servers = {
   -- keep-sorted start block=yes
@@ -181,12 +170,6 @@ local servers = {
   },
   marksman = {},
   nil_ls = {
-    on_attach = function(client, bufnr)
-      if client.server_capabilities then
-        client.server_capabilities.semanticTokensProvider = false
-      end
-    end,
-    autostart = true,
     cmd = { "nil" },
     settings = {
       ["nil"] = {
@@ -198,6 +181,9 @@ local servers = {
         },
         nix = { maxMemoryMB = nil },
       },
+    },
+    capabilities = {
+      semanticTokensProvider = false,
     },
   },
   nushell = {},
@@ -220,7 +206,6 @@ local servers = {
   taplo = {},
   teal_ls = {},
   vtsls = {
-    single_file_support = false,
     root_dir = function(fname)
       local root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json")(fname)
 
@@ -261,7 +246,6 @@ local servers = {
   -- keep-sorted end
 }
 
-vim.lsp.config("*", common)
 for server, config in pairs(servers) do
   vim.lsp.config(server, config)
   vim.lsp.enable(server)
