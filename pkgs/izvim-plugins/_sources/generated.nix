@@ -268,6 +268,18 @@
     };
     date = "2025-07-16";
   };
+  mini-icons = {
+    pname = "mini-icons";
+    version = "b8f6fa6f5a3fd0c56936252edcd691184e5aac0c";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.icons";
+      rev = "b8f6fa6f5a3fd0c56936252edcd691184e5aac0c";
+      fetchSubmodules = false;
+      sha256 = "sha256-NTmY4He0rC+/wrPJ+9FoDoPFKT/TtmqG5IQhpmNd9B8=";
+    };
+    date = "2025-07-24";
+  };
   mini-surround = {
     pname = "mini-surround";
     version = "b12fcfefd6b9b7c9e9a773bc0e3e07ae20c03351";
@@ -280,6 +292,18 @@
     };
     date = "2025-07-22";
   };
+  neo-tree = {
+    pname = "neo-tree";
+    version = "46fa0c22ca39e05fe15744102d21feb07fe9a94a";
+    src = fetchFromGitHub {
+      owner = "nvim-neo-tree";
+      repo = "neo-tree.nvim";
+      rev = "46fa0c22ca39e05fe15744102d21feb07fe9a94a";
+      fetchSubmodules = false;
+      sha256 = "sha256-RdrGoXN/R2ZrCsblEkOLpYsVd6SvBTzLxNg/hkmnx/E=";
+    };
+    date = "2025-07-29";
+  };
   neovim-session-manager = {
     pname = "neovim-session-manager";
     version = "3409dc920d40bec4c901c0a122a80bee03d6d1e1";
@@ -291,6 +315,18 @@
       sha256 = "sha256-k2akj/s6qJx/sCnz3UNHo5zbENTpw+OPuo2WPF1W7rg=";
     };
     date = "2025-03-07";
+  };
+  nui = {
+    pname = "nui";
+    version = "de740991c12411b663994b2860f1a4fd0937c130";
+    src = fetchFromGitHub {
+      owner = "MunifTanjim";
+      repo = "nui.nvim";
+      rev = "de740991c12411b663994b2860f1a4fd0937c130";
+      fetchSubmodules = false;
+      sha256 = "sha256-41slmnvt1z7sCxvpiVuFmQ9g7eCaxQi1dDCL3AxSL1A=";
+    };
+    date = "2025-06-08";
   };
   nvim-colorizer = {
     pname = "nvim-colorizer";
@@ -341,18 +377,6 @@
     };
     date = "2025-05-09";
   };
-  nvim-tree = {
-    pname = "nvim-tree";
-    version = "65bae449224b8a3bc149471b96587b23b13a9946";
-    src = fetchFromGitHub {
-      owner = "nvim-tree";
-      repo = "nvim-tree.lua";
-      rev = "65bae449224b8a3bc149471b96587b23b13a9946";
-      fetchSubmodules = false;
-      sha256 = "sha256-uoiPwURO0ATaYeLozG8X44cC4eWf1wANspljkjh/qeY=";
-    };
-    date = "2025-07-29";
-  };
   nvim-treesitter = {
     pname = "nvim-treesitter";
     version = "b26b4258294c742c2613a7d98fe53014d1c8fe49";
@@ -365,18 +389,6 @@
     };
     start = "true";
     date = "2025-07-26";
-  };
-  nvim-web-devicons = {
-    pname = "nvim-web-devicons";
-    version = "4a8369f4c78ef6f6f895f0cec349e48f74330574";
-    src = fetchFromGitHub {
-      owner = "nvim-tree";
-      repo = "nvim-web-devicons";
-      rev = "4a8369f4c78ef6f6f895f0cec349e48f74330574";
-      fetchSubmodules = false;
-      sha256 = "sha256-1IwOcdIUJuh7YC2YTw0VnGI2UIg7F/ipxLLfQdPzjFQ=";
-    };
-    date = "2025-07-28";
   };
   obsidian-nvim = {
     pname = "obsidian-nvim";

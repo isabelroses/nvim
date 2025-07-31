@@ -1,6 +1,6 @@
 -- set space as leader
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = " m"
 
 local map = function(mode, shortcut, command, opt)
   opt = opt or { noremap = true, silent = true }
@@ -20,7 +20,7 @@ map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
 -- NvimTree
-map("n", "<C-N>", "<cmd>NvimTreeToggle<CR>")
+map("n", "<C-N>", "<Plug>(neotree-toggle)")
 
 -- improved clipboard
 map({ "n", "v" }, "<leader>y", '"+y')

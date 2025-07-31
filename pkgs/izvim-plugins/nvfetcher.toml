@@ -86,9 +86,17 @@ src.git = "https://github.com/horriblename/lzn-auto-require"
 fetch.github = "OXY2DEV/markview.nvim"
 src.git = "https://github.com/OXY2DEV/markview.nvim"
 
+[mini-icons]
+fetch.github = "echasnovski/mini.icons"
+src.git = "https://github.com/echasnovski/mini.icons"
+
 [mini-surround]
 fetch.github = "echasnovski/mini.surround"
 src.git = "https://github.com/echasnovski/mini.surround"
+
+[neo-tree]
+fetch.github = "nvim-neo-tree/neo-tree.nvim"
+src.git = "https://github.com/nvim-neo-tree/neo-tree.nvim"
 
 [neovim-session-manager]
 fetch.github = "Shatur/neovim-session-manager"
@@ -111,19 +119,15 @@ src.git = "https://github.com/mfussenegger/nvim-lint"
 fetch.github = "SmiteshP/nvim-navic"
 src.git = "https://github.com/SmiteshP/nvim-navic"
 
-[nvim-tree]
-fetch.github = "nvim-tree/nvim-tree.lua"
-src.git = "https://github.com/nvim-tree/nvim-tree.lua"
-
 [nvim-treesitter]
 fetch.github = "nvim-treesitter/nvim-treesitter"
 passthru.start = "true"
 src.branch = "main"
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
 
-[nvim-web-devicons]
-fetch.github = "nvim-tree/nvim-web-devicons"
-src.git = "https://github.com/nvim-tree/nvim-web-devicons"
+[nui]
+fetch.github = "MunifTanjim/nui.nvim"
+src.git = "https://github.com/MunifTanjim/nui.nvim"
 
 [obsidian-nvim]
 fetch.github = "obsidian-nvim/obsidian.nvim"
