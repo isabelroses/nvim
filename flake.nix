@@ -122,8 +122,8 @@
             pkgs.stylua
             pkgs.lua-language-server
             pkgs.taplo
-          ]
-          ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
+            pkgs.nvfetcher
+          ];
         };
       });
 
