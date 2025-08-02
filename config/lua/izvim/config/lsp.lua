@@ -38,8 +38,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
 
     local opts = { buffer = ev.buf }
+    local function use_border(cb)
+      return function()
+        cb({ border = vim.g.bc.style })
+      end
+    end
+
     --- see |lsp-defaults|
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "K", use_border(vim.lsp.buf.hover), opts)
+    vim.keymap.set("n", "<C-k>", use_border(vim.lsp.buf.signature_help), opts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "<leader>fm", function()
       vim.lsp.buf.format({ async = true })
     end, opts)
