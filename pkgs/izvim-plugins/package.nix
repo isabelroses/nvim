@@ -51,18 +51,6 @@ let
   generatedPlugins = mapAttrs mkPlugin sources;
 
   madePlugins = {
-    catppuccin = mkPlugin "catppuccin" (
-      sources.catppuccin
-      // {
-        patches = [
-          (fetchpatch {
-            url = "https://patch-diff.githubusercontent.com/raw/catppuccin/nvim/pull/804.patch";
-            hash = "sha256-xhRz0mD2gkVuF9O4ndpZC0U6jzVbf0jAHGcxDuJM2T4=";
-          })
-        ];
-      }
-    );
-
     copilot-lua = mkPlugin "copilot-lua" (
       sources.copilot-lua
       // {

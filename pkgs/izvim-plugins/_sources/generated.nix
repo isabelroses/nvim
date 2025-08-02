@@ -15,16 +15,16 @@
   };
   catppuccin = {
     pname = "catppuccin";
-    version = "94f6e8a06b6bb7b8e5529cf9f93adb4654534241";
+    version = "f67971cd3e30dd94061da8d61ee34742d43c632a";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "nvim";
-      rev = "94f6e8a06b6bb7b8e5529cf9f93adb4654534241";
+      rev = "f67971cd3e30dd94061da8d61ee34742d43c632a";
       fetchSubmodules = false;
-      sha256 = "sha256-lnIlYUhUQXuoVWv000n5Ev4YNSZY+U70b3npZbMUDg4=";
+      sha256 = "sha256-KriR0YSo42n4RGKvVqF4TaQlSB9EEkef0aysRj1GvJI=";
     };
     as = "catppuccin";
-    date = "2025-07-29";
+    date = "2025-08-02";
   };
   cloak = {
     pname = "cloak";
