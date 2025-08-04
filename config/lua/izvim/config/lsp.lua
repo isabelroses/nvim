@@ -171,11 +171,6 @@ local servers = {
   },
   marksman = {},
   nil_ls = {
-    on_attach = function(client, bufnr)
-      if client.server_capabilities then
-        client.server_capabilities.semanticTokensProvider = false
-      end
-    end,
     cmd = { "nil" },
     settings = {
       ["nil"] = {

@@ -203,22 +203,6 @@ return {
     after = function()
       require("formatter").setup({
         filetype = {
-          ["*"] = {
-            function()
-              if not vim.fs.root(0, "treefmt.toml") then
-                return nil
-              end
-
-              return {
-                exe = "treefmt",
-                args = {
-                  "--allow-missing-formatter",
-                },
-                stdin = true,
-              }
-            end,
-          },
-
           lua = { require("formatter.filetypes.lua").stylua },
           nix = { require("formatter.filetypes.nix").nixfmt },
           go = { require("formatter.filetypes.go").gofumpt },
