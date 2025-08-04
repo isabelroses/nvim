@@ -13,9 +13,9 @@ return {
           exclude = { "latex" },
         },
         input = { enabled = true },
-        notifier = { enabled = true },
 
         -- undo defaults
+        notifier = { enabled = false },
         dashboard = { enabled = false },
         explorer = { enabled = false },
         indent = { enabled = false },

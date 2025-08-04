@@ -64,15 +64,15 @@
   };
   cuddlefish = {
     pname = "cuddlefish";
-    version = "05fff3dd7052d2b3481f51a534fd8df5a8280294";
+    version = "8381e244350e03b702422da97587d027ea1708fb";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "cuddlefish.nvim";
-      rev = "05fff3dd7052d2b3481f51a534fd8df5a8280294";
+      rev = "8381e244350e03b702422da97587d027ea1708fb";
       fetchSubmodules = false;
-      sha256 = "sha256-O9jxWSNDGNcPZrAZEHQhaIIQPDNiHdWw8Fmqeo1tmW0=";
+      sha256 = "sha256-Nx++ZAL82tvSb8f0pHg+fIDm1D0q/PlQ/OOrOZTBsVM=";
     };
-    date = "2025-07-31";
+    date = "2025-08-04";
   };
   direnv = {
     pname = "direnv";
