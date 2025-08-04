@@ -42,6 +42,11 @@ let
 
         doCheck = false;
 
+        # delete all binary files
+        preInstall = ''
+          grep -rIL . | xargs -I {} rm -f {}
+        '';
+
         passthru = args.passthru or { } // {
           start = if (args ? start) then fromJSON args.start else false;
         };
