@@ -2,7 +2,6 @@
   lib,
   newScope,
   vimUtils,
-  fetchpatch,
   callPackage,
 }:
 let
