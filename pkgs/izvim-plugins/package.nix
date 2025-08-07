@@ -65,6 +65,15 @@ let
       }
     );
 
+    cuddlefish = generatedPlugins.cuddlefish.overrideAttrs (oa: {
+      postInstall = ''
+        mkdir $out/.git
+        cat > $out/.git/HEAD <<EOF
+        ${oa.src.rev}
+        EOF
+      '';
+    });
+
     nvim-treesitter = mkPlugin "nvim-treesitter" (
       sources.nvim-treesitter
       // {
