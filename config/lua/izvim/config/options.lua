@@ -153,5 +153,20 @@ vim.g.loaded_ruby_provider = 0
 vim.g.markdown_recommended_style = 0
 
 if vim.fn.has("unix") == 1 then
-  vim.o.shell = "/run/current-system/sw/bin/bash"
+  vim.o.shell = "/run/current-system/sw/bin/sh"
+end
+
+if vim.fn.has("wsl") == 1 then
+  vim.g.clipboard = {
+    name = "win32yank-wsl",
+    copy = {
+      ["+"] = { "/mnt/c/Program Files/Neovim/bin/win32yank.exe", "-i", "--crlf" },
+      ["*"] = { "/mnt/c/Program Files/Neovim/bin/win32yank.exe", "-i", "--crlf" },
+    },
+    paste = {
+      ["+"] = { "/mnt/c/Program Files/Neovim/bin/win32yank.exe", "-o", "--lf" },
+      ["*"] = { "/mnt/c/Program Files/Neovim/bin/win32yank.exe", "-o", "--lf" },
+    },
+    cache_enabled = true,
+  }
 end
