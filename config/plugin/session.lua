@@ -41,7 +41,7 @@ function session.load()
   end
 end
 
-local group = vim.api.nvim_create_augroup("ivy:session", { clear = true })
+local group = vim.api.nvim_create_augroup("izvim:session", { clear = true })
 
 vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
   group = group,
