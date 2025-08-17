@@ -98,10 +98,6 @@ src.git = "https://github.com/echasnovski/mini.surround"
 fetch.github = "nvim-neo-tree/neo-tree.nvim"
 src.git = "https://github.com/nvim-neo-tree/neo-tree.nvim"
 
-[neovim-session-manager]
-fetch.github = "Shatur/neovim-session-manager"
-src.git = "https://github.com/Shatur/neovim-session-manager"
-
 [nvim-colorizer]
 fetch.github = "nvchad/nvim-colorizer.lua"
 src.git = "https://github.com/nvchad/nvim-colorizer.lua"
