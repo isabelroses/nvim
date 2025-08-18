@@ -28,7 +28,7 @@ jobs:
           logger: pretty
 
       - name: Setup Attic
-        uses: ryanccn/attic-action@v0.3.2
+        uses: ryanccn/attic-action@v0.4.0
         with:
           endpoint: https://cache.tgirl.cloud
           cache: tgirlcloud
