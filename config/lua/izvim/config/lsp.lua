@@ -204,6 +204,7 @@ local servers = {
   },
   taplo = {},
   teal_ls = {},
+  ts_ls = {},
   vtsls = {
     root_dir = function(fname)
       local root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json")(fname)
