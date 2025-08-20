@@ -7,8 +7,8 @@ vim.g.loaded_session = true
 local session = {}
 
 function session.get_uri()
-  return string.gsub(vim.fn.getcwd(), '[^a-zA-Z0-9_.-]', function(s)
-    return '<' .. vim.fn.char2nr(s)
+  return string.gsub(vim.fn.getcwd(), "[^a-zA-Z0-9_.-]", function(s)
+    return "<" .. vim.fn.char2nr(s)
   end)
 end
 
@@ -26,8 +26,16 @@ function session.save()
   vim.api.nvim_cmd({
     cmd = "mksession",
     bang = true,
-    args = { vim.fn.escape(session_file, '%') },
+    args = { vim.fn.escape(session_file, "%") },
   }, {})
+end
+
+function session.clean()
+  vim.iter(ipairs(vim.api.nvim_list_bufs())):each(function(_, bufnr)
+    if vim.bo[bufnr].buftype ~= "" then
+      vim.api.nvim_buf_delete(bufnr, { force = true })
+    end
+  end)
 end
 
 function session.load()
@@ -35,7 +43,7 @@ function session.load()
   if vim.uv.fs_stat(path) then
     vim.api.nvim_cmd({
       cmd = "source",
-      args = { vim.fn.escape(path, '%') },
+      args = { vim.fn.escape(path, "%") },
     }, {})
     vim.api.nvim_exec_autocmds("SessionLoadPost", {})
   end
@@ -46,6 +54,7 @@ local group = vim.api.nvim_create_augroup("izvim:session", { clear = true })
 vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
   group = group,
   callback = function()
+    session.clean()
     session.save()
   end,
 })
