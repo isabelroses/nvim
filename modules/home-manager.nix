@@ -17,10 +17,27 @@ in
 
       package = lib.mkPackageOption pkgs' "izvim" { };
 
-      includePerLanguageTooling = lib.mkOption {
+      bundleLSPs = lib.mkOption {
         type = lib.types.bool;
         default = true;
-        description = "Whether to include per-language tooling in izvim.";
+        description = "Whether to bundle LSPs in izvim.";
+      };
+
+      bundleGrammars = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Whether to bundle treesitter grammars in izvim.";
+      };
+
+      packageOverrides = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.anything;
+        default = { };
+        description = "Arguments to add to the package override";
+        example = lib.literalExpression ''
+          {
+            nil = pkgs.nil.override { nix = pkgs.lix; };
+          }
+        '';
       };
 
       gui = {
@@ -39,9 +56,12 @@ in
 
   config = lib.mkIf cfg.enable {
     programs.izvim = {
-      package = pkgs'.izvim.override {
-        inherit (cfg) includePerLanguageTooling;
-      };
+      package = pkgs'.izvim.override (
+        {
+          inherit (cfg) bundleLSPs bundleGrammars;
+        }
+        // cfg.packageOverrides
+      );
 
       gui.package = pkgs.symlinkJoin {
         name = "neovide-wrapped";

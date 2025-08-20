@@ -32,7 +32,8 @@
   wrapNeovim,
 
   # settings
-  includePerLanguageTooling ? true,
+  bundleLSPs ? true,
+  bundleGrammars ? true,
   izvimPlugins,
   izvimVersion ? "unknown",
 }:
@@ -123,7 +124,9 @@ wrapNeovim {
     patrionedPlugins.start
 
     # install our treesitter grammars
-    (attrValues (filterAttrs (n: _: elem n grammarsNames) vimPlugins.nvim-treesitter.grammarPlugins))
+    (lib.optionals bundleGrammars [
+      (attrValues (filterAttrs (n: _: elem n grammarsNames) vimPlugins.nvim-treesitter.grammarPlugins))
+    ])
   ];
 
   extraPackages = flatten [
@@ -134,7 +137,7 @@ wrapNeovim {
       lazygit
     ]
 
-    (optionals includePerLanguageTooling [
+    (optionals bundleLSPs [
       # web dev
       emmet-language-server
       vscode-langservers-extracted
@@ -164,10 +167,10 @@ wrapNeovim {
       inotify-tools # for file watching, the defaults kinda slow
     ])
 
-    (optionals (includePerLanguageTooling && stdenvNoCC.hostPlatform.isDarwin) [
+    (optionals (bundleLSPs && stdenvNoCC.hostPlatform.isDarwin) [
       copilot-language-server
     ])
-    (optionals (includePerLanguageTooling && stdenvNoCC.hostPlatform.isLinux) [
+    (optionals (bundleLSPs && stdenvNoCC.hostPlatform.isLinux) [
       copilot-language-server-fhs
     ])
   ];
