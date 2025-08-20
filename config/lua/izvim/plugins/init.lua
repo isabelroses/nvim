@@ -138,6 +138,11 @@ return {
   },
 
   {
+    "nivvie.nvim",
+    lazy = false,
+  },
+
+  {
     "nui.nvim",
   },
 }

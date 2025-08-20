@@ -304,6 +304,18 @@
     };
     date = "2025-08-17";
   };
+  nivvie-nvim = {
+    pname = "nivvie-nvim";
+    version = "f62ae577f18d1f1f497347c8a2833736c0804173";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "nivvie.nvim";
+      rev = "f62ae577f18d1f1f497347c8a2833736c0804173";
+      fetchSubmodules = false;
+      sha256 = "sha256-S8LOGI/r7dMInksoKAHj6qLM2q5JfLv52azGQ2LIOj8=";
+    };
+    date = "2025-08-20";
+  };
   nui = {
     pname = "nui";
     version = "de740991c12411b663994b2860f1a4fd0937c130";

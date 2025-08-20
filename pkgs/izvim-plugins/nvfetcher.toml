@@ -98,6 +98,10 @@ src.git = "https://github.com/echasnovski/mini.surround"
 fetch.github = "nvim-neo-tree/neo-tree.nvim"
 src.git = "https://github.com/nvim-neo-tree/neo-tree.nvim"
 
+[nivvie-nvim]
+fetch.github = "comfysage/nivvie.nvim"
+src.git = "https://github.com/comfysage/nivvie.nvim"
+
 [nvim-colorizer]
 fetch.github = "nvchad/nvim-colorizer.lua"
 src.git = "https://github.com/nvchad/nvim-colorizer.lua"
