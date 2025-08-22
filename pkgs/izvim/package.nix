@@ -45,8 +45,8 @@ let
     optionals
     attrValues
     filter
-    filterAttrs
-    elem
+    flip
+    getAttr
     partition
     ;
 
@@ -66,7 +66,9 @@ let
     partionPlugins
   ];
 
-  grammarsNames = [
+  # install our treesitter grammars
+  grammars = map (flip getAttr vimPlugins.nvim-treesitter.grammarPlugins) [
+    # keep-sorted start
     "bash"
     "c"
     "cpp"
@@ -98,11 +100,13 @@ let
     "nix"
     "nu"
     "php"
+    "python"
     "qmldir"
     "qmljs"
     "toml"
     "yaml"
     "yuck"
+    # keep-sorted end
   ];
 in
 wrapNeovim {
@@ -111,23 +115,14 @@ wrapNeovim {
 
   userConfig = ../../config;
 
-  optPlugins = flatten [
-    patrionedPlugins.opt
-
+  optPlugins = patrionedPlugins.opt ++ [
     # extra plugins because they often fail or need extra steps
     vimPlugins.blink-cmp
     vimPlugins.cord-nvim
     vimPlugins.telescope-fzf-native-nvim
   ];
 
-  startPlugins = flatten [
-    patrionedPlugins.start
-
-    # install our treesitter grammars
-    (lib.optionals bundleGrammars [
-      (attrValues (filterAttrs (n: _: elem n grammarsNames) vimPlugins.nvim-treesitter.grammarPlugins))
-    ])
-  ];
+  startPlugins = patrionedPlugins.start ++ lib.optionals bundleGrammars grammars;
 
   extraPackages = flatten [
     [
