@@ -17,8 +17,10 @@ vim.filetype.add({
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
+    -- keep-sorted start
     "bash",
     "c",
+    "checkhealth",
     "cpp",
     "css",
     "csv",
@@ -28,6 +30,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "gitattributes",
     "gitcommit",
     "gitignore",
+    "gleam",
     "go",
     "gomod",
     "gosum",
@@ -48,12 +51,13 @@ vim.api.nvim_create_autocmd("FileType", {
     "nix",
     "nu",
     "php",
-    "toml",
+    "python",
     "qmldir",
     "qmljs",
+    "toml",
     "yaml",
     "yuck",
-    "checkhealth",
+    -- keep-sorted end
   },
   callback = function(ev)
     vim.api.nvim_buf_call(ev.buf, function()
