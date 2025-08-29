@@ -97,6 +97,7 @@ local servers = {
       "typescriptreact",
     },
   },
+  gleam = {},
   gopls = {
     single_file_support = true,
     filetypes = { "go", "gomod", "gosum", "gotmpl", "gohtmltmpl", "gotexttmpl" },
