@@ -210,7 +210,6 @@ return {
         "nixfmt",
         "gofumpt",
         "shfmt",
-        "treefmt",
       })
       vim.keymap.set({ "n", "v" }, "<leader>fm", function()
         require("mossy").format()
