@@ -110,18 +110,6 @@
     };
     date = "2025-08-20";
   };
-  formatter-nvim = {
-    pname = "formatter-nvim";
-    version = "b9d7f853da1197b83b8edb4cc4952f7ad3a42e41";
-    src = fetchFromGitHub {
-      owner = "mhartington";
-      repo = "formatter.nvim";
-      rev = "b9d7f853da1197b83b8edb4cc4952f7ad3a42e41";
-      fetchSubmodules = false;
-      sha256 = "sha256-SzM2P5RvnYUXYud2ubGtqdTXfQ3rshEusRWckH8a2E4=";
-    };
-    date = "2025-05-29";
-  };
   freeze = {
     pname = "freeze";
     version = "590fdb0d724485f578e4fee0e3ae2b32040dfb1a";
@@ -292,6 +280,18 @@
     };
     date = "2025-08-12";
   };
+  mossy-nvim = {
+    pname = "mossy-nvim";
+    version = "ee5e5ddac267329db6499928bc1fe1b7f0d4a8a0";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "mossy.nvim";
+      rev = "ee5e5ddac267329db6499928bc1fe1b7f0d4a8a0";
+      fetchSubmodules = false;
+      sha256 = "sha256-JQdeyivlf3BQl4hoJ6ZloYhSWp4OcDL6fv7abPT4QM8=";
+    };
+    date = "2025-08-31";
+  };
   neo-tree = {
     pname = "neo-tree";
     version = "bbeda076c8a2e7d16614287cd70239f577e5bf55";
@@ -376,6 +376,18 @@
       sha256 = "sha256-7L1rww1Z6NfcaOV5LUjspfwDhOk0asii8DdHmTe3ulc=";
     };
     date = "2025-05-09";
+  };
+  nvim-nio = {
+    pname = "nvim-nio";
+    version = "21f5324bfac14e22ba26553caf69ec76ae8a7662";
+    src = fetchFromGitHub {
+      owner = "nvim-neotest";
+      repo = "nvim-nio";
+      rev = "21f5324bfac14e22ba26553caf69ec76ae8a7662";
+      fetchSubmodules = false;
+      sha256 = "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8=";
+    };
+    date = "2025-01-20";
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";

@@ -198,27 +198,23 @@ return {
   },
 
   {
-    "formatter.nvim",
-    event = "DeferredUIEnter",
+    "mossy.nvim",
+    event = "BufRead",
     after = function()
-      require("formatter").setup({
-        filetype = {
-          lua = { require("formatter.filetypes.lua").stylua },
-          nix = { require("formatter.filetypes.nix").nixfmt },
-          go = { require("formatter.filetypes.go").gofumpt },
-          sh = { require("formatter.filetypes.sh").shfmt },
-          bash = { require("formatter.filetypes.sh").shfmt },
-          toml = { require("formatter.filetypes.toml").taplo },
-        },
-      })
+      require("lz.n").trigger_load("nvim-nio")
 
-      local augroup = vim.api.nvim_create_augroup
-      local autocmd = vim.api.nvim_create_autocmd
-      augroup("__formatter__", { clear = true })
-      autocmd("BufWritePost", {
-        group = "__formatter__",
-        command = ":FormatWrite",
+      require("mossy").setup()
+      local sources = require("mossy.sources")
+      sources:setup({
+        "stylua",
+        "nixfmt",
+        "gofumpt",
+        "shfmt",
+        "treefmt",
       })
+      vim.keymap.set({ "n", "v" }, "<leader>fm", function()
+        require("mossy").format()
+      end)
     end,
   },
 }
