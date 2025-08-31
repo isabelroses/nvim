@@ -190,6 +190,27 @@
         },
         "version": "4d5858bd4c471c895060e1b9f3575f1551184dc5"
     },
+    "formatter-nvim": {
+        "cargoLocks": null,
+        "date": "2025-05-29",
+        "extract": null,
+        "name": "formatter-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mhartington",
+            "repo": "formatter.nvim",
+            "rev": "b9d7f853da1197b83b8edb4cc4952f7ad3a42e41",
+            "sha256": "sha256-SzM2P5RvnYUXYud2ubGtqdTXfQ3rshEusRWckH8a2E4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b9d7f853da1197b83b8edb4cc4952f7ad3a42e41"
+    },
     "freeze": {
         "cargoLocks": null,
         "date": "2025-03-25",
@@ -488,27 +509,6 @@
         },
         "version": "7a8606333affe7ce637a0ba91bbafc46fc42bfa0"
     },
-    "mossy-nvim": {
-        "cargoLocks": null,
-        "date": "2025-08-31",
-        "extract": null,
-        "name": "mossy-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "comfysage",
-            "repo": "mossy.nvim",
-            "rev": "ee5e5ddac267329db6499928bc1fe1b7f0d4a8a0",
-            "sha256": "sha256-JQdeyivlf3BQl4hoJ6ZloYhSWp4OcDL6fv7abPT4QM8=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "ee5e5ddac267329db6499928bc1fe1b7f0d4a8a0"
-    },
     "neo-tree": {
         "cargoLocks": null,
         "date": "2025-08-17",
@@ -657,27 +657,6 @@
             "type": "github"
         },
         "version": "f887d794a0f4594882814d7780980a949200a238"
-    },
-    "nvim-nio": {
-        "cargoLocks": null,
-        "date": "2025-01-20",
-        "extract": null,
-        "name": "nvim-nio",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-neotest",
-            "repo": "nvim-nio",
-            "rev": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
-            "sha256": "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "21f5324bfac14e22ba26553caf69ec76ae8a7662"
     },
     "nvim-treesitter": {
         "cargoLocks": null,

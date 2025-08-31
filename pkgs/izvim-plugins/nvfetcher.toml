@@ -35,6 +35,10 @@ src.git = "https://github.com/comfysage/evergarden"
 fetch.github = "j-hui/fidget.nvim"
 src.git = "https://github.com/j-hui/fidget.nvim"
 
+[formatter-nvim]
+fetch.github = "mhartington/formatter.nvim"
+src.git = "https://github.com/mhartington/formatter.nvim"
+
 [freeze]
 fetch.github = "charm-community/freeze.nvim"
 src.git = "https://github.com/charm-community/freeze.nvim"
@@ -90,10 +94,6 @@ src.git = "https://github.com/echasnovski/mini.icons"
 fetch.github = "echasnovski/mini.surround"
 src.git = "https://github.com/echasnovski/mini.surround"
 
-[mossy-nvim]
-fetch.github = "comfysage/mossy.nvim"
-src.git = "https://github.com/comfysage/mossy.nvim"
-
 [neo-tree]
 fetch.github = "nvim-neo-tree/neo-tree.nvim"
 src.git = "https://github.com/nvim-neo-tree/neo-tree.nvim"
@@ -118,10 +118,6 @@ src.git = "https://github.com/mfussenegger/nvim-lint"
 [nvim-navic]
 fetch.github = "SmiteshP/nvim-navic"
 src.git = "https://github.com/SmiteshP/nvim-navic"
-
-[nvim-nio]
-fetch.github = "nvim-neotest/nvim-nio"
-src.git = "https://github.com/nvim-neotest/nvim-nio"
 
 [nvim-treesitter]
 fetch.github = "nvim-treesitter/nvim-treesitter"
