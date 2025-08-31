@@ -145,8 +145,4 @@ return {
   {
     "nui.nvim",
   },
-
-  {
-    "nvim-nio",
-  },
 }
