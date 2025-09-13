@@ -23,7 +23,6 @@
   yaml-language-server,
   lazygit,
   copilot-language-server,
-  copilot-language-server-fhs,
   inotify-tools,
 
   stdenvNoCC,
@@ -157,17 +156,11 @@ wrapNeovim {
       proselint
       taplo # toml
       yaml-language-server # yaml
+      copilot-language-server
     ])
 
     (optionals stdenvNoCC.hostPlatform.isLinux [
       inotify-tools # for file watching, the defaults kinda slow
-    ])
-
-    (optionals (bundleLSPs && stdenvNoCC.hostPlatform.isDarwin) [
-      copilot-language-server
-    ])
-    (optionals (bundleLSPs && stdenvNoCC.hostPlatform.isLinux) [
-      copilot-language-server-fhs
     ])
   ];
 }
