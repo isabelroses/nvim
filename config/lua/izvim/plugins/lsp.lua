@@ -93,8 +93,6 @@ return {
           max_typos = function(_)
             return 0
           end,
-          -- frecency tracks the most recently/frequently used items and boosts the score of the item
-          use_frecency = false,
           -- proximity bonus boosts the score of items matching nearby words
           use_proximity = true,
 
