@@ -1,32 +1,5 @@
 return {
   {
-    "evergarden",
-    lazy = false,
-    priority = 1200,
-    after = function()
-      require("evergarden").setup({
-        theme = {
-          variant = "winter",
-          accent = "pink",
-        },
-        editor = {
-          transparent_background = false,
-          override_terminal = true,
-        },
-        style = {
-          tabline = { "reverse" },
-          search = { "reverse" },
-          incsearch = { "reverse" },
-          types = { "italic" },
-          keyword = {},
-          comment = { "italic" },
-        },
-        overrides = {}, -- add custom overrides
-      })
-    end,
-  },
-
-  {
     "cuddlefish.nvim",
     lazy = false,
     priority = 1200,
@@ -50,8 +23,6 @@ return {
           return {}
         end,
       })
-
-      vim.cmd.colorscheme("cuddlefish")
     end,
   },
 
@@ -123,6 +94,8 @@ return {
           notify = true,
         },
       })
+
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }

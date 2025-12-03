@@ -86,18 +86,6 @@
     };
     date = "2025-06-09";
   };
-  evergarden = {
-    pname = "evergarden";
-    version = "7b64cdecab6e867d6c16d91678dc5b20677ad254";
-    src = fetchFromGitHub {
-      owner = "comfysage";
-      repo = "evergarden";
-      rev = "7b64cdecab6e867d6c16d91678dc5b20677ad254";
-      fetchSubmodules = false;
-      sha256 = "sha256-wMymEXUx0r7eb4Bu6rna5RljJ6ldQP6e+loacLo/h2Q=";
-    };
-    date = "2025-11-20";
-  };
   fidget = {
     pname = "fidget";
     version = "e32b672d8fd343f9d6a76944fedb8c61d7d8111a";

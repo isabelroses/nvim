@@ -27,10 +27,6 @@ src.git = "https://github.com/comfysage/cuddlefish.nvim"
 fetch.github = "NotAShelf/direnv.nvim"
 src.git = "https://github.com/NotAShelf/direnv.nvim"
 
-[evergarden]
-fetch.github = "comfysage/evergarden"
-src.git = "https://github.com/comfysage/evergarden"
-
 [fidget]
 fetch.github = "j-hui/fidget.nvim"
 src.git = "https://github.com/j-hui/fidget.nvim"
