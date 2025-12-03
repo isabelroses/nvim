@@ -45,7 +45,7 @@ return {
 
           if (colorscheme):match("catppuccin") then
             bufferline.setup(vim.tbl_deep_extend("force", opts, {
-              highlights = require("catppuccin.groups.integrations.bufferline").get(),
+              highlights = require("catppuccin.special.bufferline").get_theme(),
             }))
           elseif (colorscheme):match("cuddlefish") then
             local colours = require("cuddlefish.colors").get()
