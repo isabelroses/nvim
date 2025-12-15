@@ -115,14 +115,6 @@ return {
     event = "BufRead Cargo.toml",
   },
 
-  {
-    "quill.nvim",
-    event = "BufReadPost",
-    after = function()
-      require("quill").setup()
-    end,
-  },
-
   { "rainbow-delimiters.nvim" },
 
   {

@@ -104,19 +104,6 @@ return {
     end,
   },
 
-  {
-    "direnv.nvim",
-    event = "VimEnter",
-    enabled = function()
-      return vim.fn.executable("direnv") == 1
-    end,
-    after = function()
-      require("direnv").setup({
-        autoload_direnv = true,
-      })
-    end,
-  },
-
   -- discord integration
   {
     "cord.nvim",
@@ -138,7 +125,7 @@ return {
   },
 
   {
-    "nivvie.nvim",
+    "nivvie-nvim",
     lazy = false,
   },
 

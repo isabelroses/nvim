@@ -14,8 +14,7 @@
 }:
 let
   packages = lib.makeScope pkgs.newScope (self: {
-    izvim = self.callPackage ./pkgs/izvim/package.nix { inherit izvimVersion; };
-    izvimPlugins = self.callPackage ./pkgs/izvim-plugins/package.nix { };
+    izvim = self.callPackage ./package.nix { inherit izvimVersion; };
     inherit (inputs.gift-wrap.legacyPackages.${pkgs.stdenv.hostPlatform.system}) wrapNeovim;
   });
 in

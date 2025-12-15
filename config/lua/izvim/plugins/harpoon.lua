@@ -1,6 +1,7 @@
 return {
   {
-    "harpoon",
+    -- lmao
+    "harpoon2",
     event = "DeferredUIEnter",
     after = function()
       local harpoon = require("harpoon")

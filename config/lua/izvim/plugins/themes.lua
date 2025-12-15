@@ -1,33 +1,6 @@
 return {
   {
-    "cuddlefish.nvim",
-    lazy = false,
-    priority = 1200,
-    after = function()
-      require("cuddlefish").setup({
-        theme = {
-          accent = "pink",
-        },
-        editor = {
-          transparent_background = false,
-        },
-        style = {
-          tabline = { "reverse" },
-          search = { "italic", "reverse" },
-          incsearch = { "italic", "reverse" },
-          types = { "italic" },
-          keyword = { "italic" },
-          comment = { "italic" },
-        },
-        overrides = function(colors)
-          return {}
-        end,
-      })
-    end,
-  },
-
-  {
-    "catppuccin",
+    "catppuccin-nvim",
     lazy = false,
     priority = 1200,
     after = function()

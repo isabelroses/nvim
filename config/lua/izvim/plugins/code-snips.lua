@@ -16,14 +16,4 @@ return {
       })
     end,
   },
-
-  {
-    "sayama.nvim",
-    event = "DeferredUIEnter",
-    after = function()
-      require("sayama").setup({
-        dir = vim.fn.glob("$XDG_DATA_HOME/zzz"),
-      })
-    end,
-  },
 }
