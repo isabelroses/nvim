@@ -116,32 +116,12 @@
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShellNoCC {
+          inputsFrom = [ self.formatter.${pkgs.stdenv.hostPlatform.system} ];
           packages = [
             self.formatter.${pkgs.stdenv.hostPlatform.system}
             pkgs.selene
-            pkgs.stylua
             pkgs.lua-language-server
-            pkgs.taplo
-            pkgs.nvfetcher
           ];
-        };
-      });
-
-      apps = forAllSystems (pkgs: {
-        update = {
-          type = "app";
-          program = lib.getExe (
-            pkgs.writeShellApplication {
-              name = "update";
-              runtimeInputs = [ pkgs.nvfetcher ];
-
-              text = ''
-                pushd pkgs/izvim-plugins
-                nvfetcher
-                popd
-              '';
-            }
-          );
         };
       });
     };
