@@ -33,62 +33,60 @@
 
   # settings
   bundleLSPs ? true,
-  bundleGrammars ? true,
   izvimVersion ? "unknown",
 }:
 let
   inherit (lib)
     flatten
     optionals
-    flip
-    getAttr
     ;
 
   # install our treesitter grammars
-  grammars = map (flip getAttr vimPlugins.nvim-treesitter.grammarPlugins) [
-    # keep-sorted start
-    "bash"
-    "c"
-    "cpp"
-    "css"
-    "csv"
-    "dhall"
-    "diff"
-    "dockerfile"
-    "git_rebase"
-    "gitattributes"
-    "gitcommit"
-    "gitignore"
-    "gleam"
-    "go"
-    "gomod"
-    "gosum"
-    "gotmpl"
-    "graphql"
-    "haskell"
-    "html"
-    "javascript"
-    "jsdoc"
-    "json"
-    "jsonc"
-    "just"
-    "latex"
-    "lua"
-    "make"
-    "markdown"
-    "markdown_inline"
-    "nix"
-    "nu"
-    "php"
-    "purescript"
-    "python"
-    "qmldir"
-    "qmljs"
-    "toml"
-    "yaml"
-    "yuck"
-    # keep-sorted end
-  ];
+  grammars = vimPlugins.nvim-treesitter.withPlugins (
+    p: with p; [
+      # keep-sorted start
+      bash
+      c
+      cpp
+      css
+      csv
+      dhall
+      diff
+      dockerfile
+      git_rebase
+      gitattributes
+      gitcommit
+      gitignore
+      gleam
+      go
+      gomod
+      gosum
+      gotmpl
+      graphql
+      haskell
+      html
+      javascript
+      jsdoc
+      json
+      just
+      latex
+      lua
+      make
+      markdown
+      markdown_inline
+      nix
+      nu
+      php
+      purescript
+      python
+      qmldir
+      qmljs
+      toml
+      yaml
+      yuck
+      # keep-sorted end
+    ]
+  );
 in
 wrapNeovim {
   pname = "izvim";
@@ -96,17 +94,17 @@ wrapNeovim {
 
   userConfig = ./config;
 
-  startPlugins =
-    (with vimPlugins; [
-      # keep-sorted start
-      lz-n
-      lzn-auto-require
-      nvim-lspconfig
-      nvim-treesitter
-      plenary-nvim
-      # keep-sorted end
-    ])
-    ++ lib.optionals bundleGrammars grammars;
+  startPlugins = [
+    grammars
+  ]
+  ++ (with vimPlugins; [
+    # keep-sorted start
+    lz-n
+    lzn-auto-require
+    nvim-lspconfig
+    plenary-nvim
+    # keep-sorted end
+  ]);
 
   optPlugins =
     with vimPlugins;

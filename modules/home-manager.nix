@@ -23,12 +23,6 @@ in
         description = "Whether to bundle LSPs in izvim.";
       };
 
-      bundleGrammars = lib.mkOption {
-        type = lib.types.bool;
-        default = true;
-        description = "Whether to bundle treesitter grammars in izvim.";
-      };
-
       packageOverrides = lib.mkOption {
         type = lib.types.lazyAttrsOf lib.types.anything;
         default = { };
@@ -58,7 +52,7 @@ in
     programs.izvim = {
       package = pkgs'.izvim.override (
         {
-          inherit (cfg) bundleLSPs bundleGrammars;
+          inherit (cfg) bundleLSPs;
         }
         // cfg.packageOverrides
       );
