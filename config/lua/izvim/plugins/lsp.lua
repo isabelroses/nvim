@@ -105,7 +105,7 @@ return {
   },
 
   { "lsp-status.nvim" },
-  { "schemastore.nvim" },
+  { "SchemaStore.nvim" },
 
   {
     "crates.nvim",

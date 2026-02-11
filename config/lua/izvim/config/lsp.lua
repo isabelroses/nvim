@@ -1,6 +1,6 @@
 require("lz.n").trigger_load({
   "lsp-status.nvim",
-  "schemastore.nvim",
+  "SchemaStore.nvim",
 })
 
 local lsp_present, lspconfig = pcall(require, "lspconfig")
