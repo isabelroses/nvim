@@ -91,6 +91,7 @@ in
 wrapNeovim {
   pname = "izvim";
   versionSuffix = izvimVersion;
+  cleanRuntimePath = true;
 
   userConfig = ./config;
 
