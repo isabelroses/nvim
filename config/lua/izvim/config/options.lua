@@ -68,6 +68,9 @@ vim.o.showtabline = 0
 -- use rg for grepping
 vim.opt.grepprg = "rg --vimgrep"
 
+-- enable project-local configs
+vim.opt.exrc = true
+
 -- let me have spelling checking for english
 vim.opt.spelllang = { "en" }
 vim.opt.spelloptions:append("noplainbuffer")

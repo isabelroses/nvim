@@ -91,7 +91,10 @@ in
 wrapNeovim {
   pname = "izvim";
   versionSuffix = izvimVersion;
+
   cleanRuntimePath = true;
+  # needed for https://neovim.io/doc/user/options/#'exrc'
+  additionalRuntimePaths = [ ".nvim" ];
 
   userConfig = ./config;
 
