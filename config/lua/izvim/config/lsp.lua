@@ -185,7 +185,6 @@ local servers = {
       },
     },
   },
-  nixd = {},
   nushell = {},
   pyright = {},
   qmlls = {
