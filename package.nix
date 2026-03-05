@@ -114,18 +114,19 @@ wrapNeovim {
     with vimPlugins;
     [
       # keep-sorted start
+      SchemaStore-nvim
+      blink-cmp
+      bufferline-nvim
       catppuccin-nvim
-      gitsigns-nvim
+      cloak-nvim
       copilot-lua
+      cord-nvim
       crates-nvim
       fidget-nvim
       formatter-nvim
       freeze-nvim
-      cloak-nvim
-      bufferline-nvim
-      blink-cmp
-      cord-nvim
-      telescope-fzf-native-nvim
+      fzf-lua
+      gitsigns-nvim
       harpoon2
       img-clip-nvim
       indent-blankline-nvim
@@ -136,21 +137,20 @@ wrapNeovim {
       mini-icons
       mini-surround
       neo-tree-nvim
+      nui-nvim
       nvim-colorizer-lua
       nvim-lint
       nvim-navic
-      nui-nvim
       obsidian-nvim
       rainbow-delimiters-nvim
       rustaceanvim
-      SchemaStore-nvim
       snacks-nvim
+      telescope-fzf-native-nvim
       todo-comments-nvim
       toggleterm-nvim
       trouble-nvim
       vim-fugitive
       vim-wakatime
-      fzf-lua
       # keep-sorted end
     ]
     ++ [
