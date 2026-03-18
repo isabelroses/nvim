@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772982525,
-        "narHash": "sha256-9nGdLm9Po/Rd9SHBpawPO1TaMlHn4jkwNxduxS/n1UE=",
+        "lastModified": 1773403464,
+        "narHash": "sha256-fckT48WShz/HqRgHgBKbVZCreC+Apfu3UqPZxFuL7Us=",
         "owner": "tgirlcloud",
         "repo": "gift-wrap",
-        "rev": "ee04ee893479cade8ebd4cce629b37c6ef6440bf",
+        "rev": "9499bc6e450d9959e2019f7122efd3b9077f333a",
         "type": "github"
       },
       "original": {
@@ -22,11 +22,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1772956932,
-        "narHash": "sha256-ng4mTBcXO6Nc1cTlXxCPkI49nDJbwFNg/DBhx7YkymE=",
-        "rev": "608d0cadfed240589a7eea422407a547ad626a14",
+        "lastModified": 1773628058,
+        "narHash": "sha256-YgVQzPaKa5eVf/rGA5Rn7BWJcP0T98JkE+2KuKVTyzA=",
+        "rev": "f8573b9c935cfaa162dd62cc9e75ae2db86f85df",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre960315.608d0cadfed2/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre963857.f8573b9c935c/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
