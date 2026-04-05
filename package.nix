@@ -122,10 +122,10 @@ wrapNeovim {
       copilot-lua
       cord-nvim
       crates-nvim
+      fff-nvim
       fidget-nvim
       formatter-nvim
       freeze-nvim
-      fzf-lua
       gitsigns-nvim
       harpoon2
       img-clip-nvim
@@ -145,7 +145,6 @@ wrapNeovim {
       rainbow-delimiters-nvim
       rustaceanvim
       snacks-nvim
-      telescope-fzf-native-nvim
       todo-comments-nvim
       toggleterm-nvim
       trouble-nvim
@@ -170,8 +169,8 @@ wrapNeovim {
         src = fetchFromGitHub {
           owner = "comfysage";
           repo = "nivvie.nvim";
-          rev = "5ca4fe448f1281ddcf4fb131b159772dcb1a18d3";
-          hash = "sha256-HQK0uXFjRVBdCzh3dHPxcu+kUAG00+fW2J6pe1qAwZM=";
+          rev = "1c94acc01b090ff1775956622ee6d7292f7dd84c";
+          hash = "sha256-n65wXJrw9yxNI7ieZFX5On9qmsBVDxzVK17HJnRss3k=";
         };
       })
     ];
