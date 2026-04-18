@@ -122,10 +122,10 @@ wrapNeovim {
       copilot-lua
       cord-nvim
       crates-nvim
-      fff-nvim
       fidget-nvim
       formatter-nvim
       freeze-nvim
+      fzf-lua
       gitsigns-nvim
       harpoon2
       img-clip-nvim
@@ -145,6 +145,7 @@ wrapNeovim {
       rainbow-delimiters-nvim
       rustaceanvim
       snacks-nvim
+      telescope-fzf-native-nvim
       todo-comments-nvim
       toggleterm-nvim
       trouble-nvim
