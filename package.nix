@@ -27,6 +27,7 @@
   vimUtils,
   vimPlugins,
   fetchFromGitHub,
+  catppuccin-whiskers,
 
   # our beautiful wrapper
   wrapNeovim,
@@ -117,7 +118,6 @@ wrapNeovim {
       SchemaStore-nvim
       blink-cmp
       bufferline-nvim
-      catppuccin-nvim
       cloak-nvim
       copilot-lua
       cord-nvim
@@ -154,6 +154,25 @@ wrapNeovim {
       # keep-sorted end
     ]
     ++ [
+      (vimPlugins.catppuccin-nvim.overrideAttrs (oa: {
+        nativeBuildInputs = [ catppuccin-whiskers ];
+
+        buildPhase = ''
+          whiskers nvim.tera \
+            --color-overrides ${
+              lib.escapeShellArg (
+                builtins.toJSON {
+                  mocha = {
+                    base = "000000";
+                    mantle = "010101";
+                    crust = "020202";
+                  };
+                }
+              )
+            }
+        '';
+      }))
+
       (vimPlugins.undotree.overrideAttrs (oa: {
         src = fetchFromGitHub {
           owner = "jiaoshijie";
