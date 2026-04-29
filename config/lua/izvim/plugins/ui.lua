@@ -94,7 +94,6 @@ return {
         progress = {
           display = { done_icon = "󰗡" },
           ignore = {
-            "copilot",
             "null-ls",
           },
         },

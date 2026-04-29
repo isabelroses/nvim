@@ -19,7 +19,6 @@
   taplo,
   yaml-language-server,
   lazygit,
-  copilot-language-server,
   inotify-tools,
 
   # builders n stuff
@@ -119,7 +118,6 @@ wrapNeovim {
       blink-cmp
       bufferline-nvim
       cloak-nvim
-      copilot-lua
       cord-nvim
       crates-nvim
       fidget-nvim
@@ -227,7 +225,6 @@ wrapNeovim {
       proselint
       taplo # toml
       yaml-language-server # yaml
-      copilot-language-server
     ])
 
     (optionals stdenvNoCC.hostPlatform.isLinux [
