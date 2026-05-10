@@ -20,6 +20,7 @@
   yaml-language-server,
   lazygit,
   inotify-tools,
+  tinymist,
 
   # builders n stuff
   stdenvNoCC,
@@ -47,6 +48,7 @@ let
       # keep-sorted start
       bash
       c
+      comment
       cpp
       css
       csv
@@ -82,6 +84,9 @@ let
       qmldir
       qmljs
       toml
+      tsx
+      typescript
+      typst
       yaml
       yuck
       # keep-sorted end
@@ -147,7 +152,7 @@ wrapNeovim {
       todo-comments-nvim
       toggleterm-nvim
       trouble-nvim
-      vim-fugitive
+      typst-preview-nvim
       vim-wakatime
       # keep-sorted end
     ]
@@ -206,9 +211,10 @@ wrapNeovim {
       emmet-language-server
       vscode-langservers-extracted
 
-      # Markdown / latex
+      # Markdown / latex / typst
       harper
       marksman
+      tinymist
 
       # nix
       nil

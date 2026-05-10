@@ -166,3 +166,5 @@ if vim.fn.has("wsl") == 1 then
     cache_enabled = true,
   }
 end
+
+require("vim._core.ui2").enable({ enable = true })

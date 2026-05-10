@@ -205,6 +205,7 @@ local servers = {
   },
   taplo = {},
   teal_ls = {},
+  tinymist = {},
   ts_ls = {},
   vtsls = {
     root_dir = function(fname)

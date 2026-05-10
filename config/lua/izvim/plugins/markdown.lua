@@ -101,4 +101,14 @@ return {
       })
     end,
   },
+
+  -- typst preview isn't actually markdown but ehhh close enough
+  {
+    "typst-preview-nvim",
+    ft = "typst",
+    after = function()
+      -- don't call setup since it does binary stuff SIGHHHHH
+      require("typst-preview.commands").create_commands()
+    end,
+  },
 }

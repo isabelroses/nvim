@@ -120,6 +120,7 @@
           packages = [
             self.formatter.${pkgs.stdenv.hostPlatform.system}
             pkgs.selene
+            pkgs.stylua
             pkgs.lua-language-server
           ];
         };

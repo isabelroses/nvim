@@ -21,6 +21,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "bash",
     "c",
     "checkhealth",
+    "comment",
     "cpp",
     "css",
     "csv",
@@ -57,6 +58,9 @@ vim.api.nvim_create_autocmd("FileType", {
     "qmldir",
     "qmljs",
     "toml",
+    "tsx",
+    "typescript",
+    "typst",
     "yaml",
     "yuck",
     -- keep-sorted end
