@@ -20,7 +20,7 @@ return {
           theme = "auto",
           component_separators = "",
           section_separators = "",
-          disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
+          disabled_filetypes = { statusline = { "snacks_dashboard", "dashboard", "alpha", "ministarter" } },
           always_divide_middle = true,
           globalstatus = true,
           refresh = {
