@@ -127,6 +127,11 @@ return {
   {
     "nivvie-nvim",
     lazy = false,
+    after = function()
+      -- don't auto restore beacuse i want to always show the dashboard, then
+      -- load it myself
+      require("nivvie").setup({ autorestore = false })
+    end,
   },
 
   {
