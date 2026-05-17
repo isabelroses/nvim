@@ -21,6 +21,30 @@ return {
         end,
       })
 
+      local quote_state = { text = nil, started = false }
+      local function quote_section()
+        if not quote_state.started then
+          quote_state.started = true
+          vim.system(
+            { "sh", "-c", "quoteit get --server https://evilbel.org | jq -r '\"\\(.quote)\\n  - \\(.author)\"'" },
+            { text = true },
+            function(out)
+              if out.code ~= 0 or out.stdout == "" then
+                return
+              end
+              quote_state.text = vim.trim(out.stdout)
+              vim.schedule(function()
+                snacks.dashboard.update()
+              end)
+            end
+          )
+        end
+        if not quote_state.text then
+          return nil
+        end
+        return { text = quote_state.text, align = "center", padding = 1 }
+      end
+
       ---@type snacks.Config
       local opts = {
         bigfile = { enabled = true },
@@ -71,17 +95,7 @@ return {
           },
           sections = {
             { section = "header" },
-            function()
-              local out = vim.fn.system({
-                "sh",
-                "-c",
-                "quoteit get --server https://evilbel.org | jq -r '\"\\(.quote)\\n  - \\(.author)\"'",
-              })
-              if vim.v.shell_error ~= 0 or out == "" then
-                return nil
-              end
-              return { text = vim.trim(out), align = "center", padding = 1 }
-            end,
+            quote_section,
           },
         },
         image = { enabled = true },
