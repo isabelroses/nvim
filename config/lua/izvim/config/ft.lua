@@ -5,6 +5,7 @@ vim.filetype.add({
     rasi = "scss",
     envrc = "bash",
     tera = "tera",
+    mdx = "mdx",
   },
   filename = {
     ["flake.lock"] = "json",
@@ -14,6 +15,9 @@ vim.filetype.add({
     ["justfile"] = "just",
   },
 })
+
+-- there's no dedicated mdx grammar, so reuse the markdown one
+vim.treesitter.language.register("markdown", "mdx")
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
@@ -50,6 +54,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "make",
     "markdown",
     "markdown_inline",
+    "mdx",
     "nix",
     "nu",
     "php",

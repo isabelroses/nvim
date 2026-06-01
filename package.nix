@@ -6,6 +6,7 @@
   ripgrep,
   emmet-language-server,
   vscode-langservers-extracted,
+  mdx-language-server,
   harper,
   marksman,
   nil,
@@ -210,6 +211,7 @@ wrapNeovim {
       # web dev
       emmet-language-server
       vscode-langservers-extracted
+      mdx-language-server
 
       # Markdown / latex / typst
       harper

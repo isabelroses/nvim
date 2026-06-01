@@ -171,6 +171,7 @@ local servers = {
     },
   },
   marksman = {},
+  mdx_analyzer = {},
   nil_ls = {
     cmd = { "nil" },
     settings = {

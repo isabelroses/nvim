@@ -32,6 +32,7 @@ return {
       require("markview").setup({
         -- allows us to use hybrid mode
         preview = {
+          filetypes = { "markdown", "quarto", "rmd", "typst", "asciidoc", "mdx" },
           modes = { "n", "i", "no", "c" },
           hybrid_modes = { "i" },
           callbacks = {
