@@ -1,3 +1,4 @@
+---@type lz.n.PluginSpec[]
 return {
   {
     "fzf-lua",
@@ -96,6 +97,23 @@ return {
       map("n", "<leader>fh", "<cmd>FzfLua help_tags<cr>") -- search help tags
       map("n", "<leader>ft", "<cmd>TodoFzfLua<cr>") -- live grep but for TODOs and FIXMEs
       map("n", "<leader>fz", "<cmd>FzfLua zoxide<cr>") -- list recent dirs
+    end,
+  },
+
+  -- project-wide find & replace (fzf greps, but can't replace)
+  {
+    "grug-far.nvim",
+    keys = {
+      {
+        "<leader>fr",
+        function()
+          require("grug-far").open()
+        end,
+        desc = "search and replace",
+      },
+    },
+    after = function()
+      require("grug-far").setup({})
     end,
   },
 }

@@ -1,3 +1,4 @@
+---@type lz.n.PluginSpec[]
 return {
   {
     "lualine.nvim",
@@ -97,9 +98,6 @@ return {
             "null-ls",
           },
         },
-        integration = {
-          ["nvim-tree"] = { enable = true },
-        },
       })
     end,
   },
@@ -108,25 +106,23 @@ return {
     "indent-blankline.nvim",
     event = "DeferredUIEnter",
     after = function()
-      require("ibl").setup({
+      ---@type ibl.config
+      local opts = {
         scope = { enabled = false },
         exclude = {
           filetypes = {
-            "alpha",
-            "fugitive",
             "help",
-            "lazy",
-            "NvimTree",
+            "neo-tree",
             "ToggleTerm",
             "LazyGit",
-            "TelescopePrompt",
             "prompt",
-            "code-action-menu-menu",
-            "code-action-menu-warning-message",
             "Trouble",
+            "snacks_dashboard",
           },
         },
-      })
+      }
+
+      require("ibl").setup(opts)
     end,
   },
 
@@ -199,6 +195,18 @@ return {
     event = "DeferredUIEnter",
     after = function()
       require("todo-comments").setup()
+    end,
+  },
+
+  -- sticky scroll: keep the enclosing function/class header pinned at the top
+  {
+    "nvim-treesitter-context",
+    event = "DeferredUIEnter",
+    after = function()
+      require("treesitter-context").setup({
+        max_lines = 1,
+        multiline_threshold = 1,
+      })
     end,
   },
 }

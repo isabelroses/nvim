@@ -1,9 +1,11 @@
+---@type lz.n.PluginSpec[]
 return {
   {
     "blink.cmp",
     event = "DeferredUIEnter",
     after = function()
-      require("blink.cmp").setup({
+      ---@type blink.cmp.Config
+      local opts = {
         keymap = {
           ["<c-space>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
           ["<C-e>"] = { "hide" },
@@ -100,11 +102,12 @@ return {
             download = false,
           },
         },
-      })
+      }
+
+      require("blink.cmp").setup(opts)
     end,
   },
 
-  { "lsp-status.nvim" },
   { "SchemaStore.nvim" },
 
   {
@@ -114,8 +117,6 @@ return {
     end,
     event = "BufRead Cargo.toml",
   },
-
-  { "rainbow-delimiters.nvim" },
 
   {
     "rustaceanvim",
@@ -188,27 +189,23 @@ return {
   },
 
   {
-    "formatter.nvim",
+    "conform.nvim",
     event = "DeferredUIEnter",
     after = function()
-      require("formatter").setup({
-        filetype = {
-          lua = { require("formatter.filetypes.lua").stylua },
-          nix = { require("formatter.filetypes.nix").nixfmt },
-          go = { require("formatter.filetypes.go").gofumpt },
-          sh = { require("formatter.filetypes.sh").shfmt },
-          bash = { require("formatter.filetypes.sh").shfmt },
-          toml = { require("formatter.filetypes.toml").taplo },
+      ---@type conform.setupOpts
+      local opts = {
+        formatters_by_ft = {
+          lua = { "stylua" },
+          nix = { "nixfmt" },
+          go = { "gofumpt" },
+          sh = { "shfmt" },
+          bash = { "shfmt" },
+          toml = { "taplo" },
         },
-      })
+        format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
+      }
 
-      local augroup = vim.api.nvim_create_augroup
-      local autocmd = vim.api.nvim_create_autocmd
-      augroup("__formatter__", { clear = true })
-      autocmd("BufWritePost", {
-        group = "__formatter__",
-        command = ":FormatWrite",
-      })
+      require("conform").setup(opts)
     end,
   },
 }

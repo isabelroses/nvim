@@ -1,3 +1,4 @@
+---@type lz.n.PluginSpec[]
 return {
   {
     "snacks.nvim",

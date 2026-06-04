@@ -124,18 +124,18 @@ wrapNeovim {
       blink-cmp
       bufferline-nvim
       cloak-nvim
+      conform-nvim
       cord-nvim
       crates-nvim
       fidget-nvim
-      formatter-nvim
       freeze-nvim
       fzf-lua
       gitsigns-nvim
+      grug-far-nvim
       harpoon2
       img-clip-nvim
       indent-blankline-nvim
       lazydev-nvim
-      lsp-status-nvim
       lualine-nvim
       markview-nvim
       mini-icons
@@ -145,8 +145,8 @@ wrapNeovim {
       nvim-colorizer-lua
       nvim-lint
       nvim-navic
+      nvim-treesitter-context
       obsidian-nvim
-      rainbow-delimiters-nvim
       rustaceanvim
       snacks-nvim
       telescope-fzf-native-nvim

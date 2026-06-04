@@ -1,4 +1,5 @@
 -- hide my secrets
+---@type lz.n.PluginSpec[]
 return {
   {
     "cloak.nvim",

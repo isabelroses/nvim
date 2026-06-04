@@ -1,3 +1,4 @@
+---@type lz.n.PluginSpec[]
 return {
   {
     "bufferline.nvim",
@@ -8,18 +9,13 @@ return {
         callback = function(ev)
           local bufferline = require("bufferline")
 
+          ---@type bufferline.UserConfig
           local opts = {
             options = {
               show_close_icon = false,
               show_buffer_close_icons = false,
               show_buffer_icons = false,
               offsets = {
-                {
-                  filetype = "NvimTree",
-                  text = "File Browser",
-                  text_align = "center",
-                  separator = "",
-                },
                 {
                   filetype = "neo-tree",
                   text = "File Browser",

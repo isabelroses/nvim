@@ -1,8 +1,17 @@
 {
-  "Lua.runtime.version": "Lua 5.1",
   "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
-  "workspace.checkThirdParty": false,
-    "diagnostics.globals": [
-        "vim"
-    ]
+  "runtime": {
+    "version": "LuaJIT"
+  },
+  "workspace": {
+    "checkThirdParty": false
+  },
+  "diagnostics": {
+    "globals": ["vim"],
+    "unusedLocalExclude": ["_*"]
+  },
+  "hint": {
+    "enable": true,
+    "arrayIndex": "Disable"
+  }
 }

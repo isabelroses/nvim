@@ -1,10 +1,12 @@
+---@type lz.n.PluginSpec[]
 return {
   {
     "catppuccin-nvim",
     lazy = false,
     priority = 1200,
     after = function()
-      require("catppuccin").setup({
+      ---@type CatppuccinOptions
+      local opts = {
         flavour = "auto",
         background = {
           light = "latte",
@@ -24,9 +26,8 @@ return {
           conditionals = { "italic" },
         },
         integrations = {
-          alpha = true,
           treesitter = true,
-          treesitter_context = false,
+          treesitter_context = true,
           native_lsp = {
             enabled = true,
             virtual_text = {
@@ -42,14 +43,9 @@ return {
               information = { "undercurl" },
             },
           },
-          telescope = {
-            enabled = true,
-          },
           cmp = false,
           blink_cmp = true,
           lsp_trouble = true,
-          nvimtree = true,
-          which_key = false,
           indent_blankline = {
             enabled = true,
             colored_indent_levels = true,
@@ -60,13 +56,11 @@ return {
           },
           gitsigns = true,
           markdown = true,
-          render_markdown = false,
           harpoon = true,
-          symbols_outline = true,
-          ts_rainbow = true,
-          notify = true,
         },
-      })
+      }
+
+      require("catppuccin").setup(opts)
 
       vim.cmd.colorscheme("catppuccin-nvim")
     end,

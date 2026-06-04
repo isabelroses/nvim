@@ -1,7 +1,3 @@
--- netrw is handled by nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- true colors
 vim.o.termguicolors = true
 
@@ -53,7 +49,6 @@ vim.g.have_nerd_font = true
 -- Decrease update time
 vim.opt.updatetime = 250
 -- Decrease mapped sequence wait time
--- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
 
 -- Don't show the mode, since it's already in the status line
@@ -84,54 +79,39 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
 vim.opt.undofile = true
 
+---@class izvim.BorderChars
+---@field style string
+---@field vert string
+---@field vertleft string
+---@field vertright string
+---@field horiz string
+---@field horizup string
+---@field horizdown string
+---@field verthoriz string
+---@field topleft string
+---@field topright string
+---@field botleft string
+---@field botright string
+
+---@type izvim.BorderChars
 local borderchars = {
-  single = {
-    style = "single",
-    vert = "│",
-    vertleft = "┤",
-    vertright = "├",
-    horiz = "─",
-    horizup = "┴",
-    horizdown = "┬",
-    verthoriz = "┼",
-    topleft = "┌",
-    topright = "┐",
-    botleft = "└",
-    botright = "┘",
-  },
-  double = {
-    style = "double",
-    vert = "║",
-    vertleft = "╣",
-    vertright = "╠",
-    horiz = "═",
-    horizup = "╩",
-    horizdown = "╦",
-    verthoriz = "╬",
-    topleft = "╔",
-    topright = "╗",
-    botleft = "╚",
-    botright = "╝",
-  },
-  rounded = {
-    style = "rounded",
-    vert = "│",
-    vertleft = "┤",
-    vertright = "├",
-    horiz = "─",
-    horizup = "┴",
-    horizdown = "┬",
-    verthoriz = "┼",
-    topleft = "╭",
-    topright = "╮",
-    botleft = "╰",
-    botright = "╯",
-  },
+  style = "rounded",
+  vert = "│",
+  vertleft = "┤",
+  vertright = "├",
+  horiz = "─",
+  horizup = "┴",
+  horizdown = "┬",
+  verthoriz = "┼",
+  topleft = "╭",
+  topright = "╮",
+  botleft = "╰",
+  botright = "╯",
 }
 
 -- my custom borderchars
 vim.o.winborder = "rounded"
-vim.g.bc = borderchars.rounded
+vim.g.bc = borderchars
 vim.opt.fillchars:append({
   horiz = vim.g.bc.horiz,
   horizup = vim.g.bc.horizup,
@@ -141,9 +121,6 @@ vim.opt.fillchars:append({
   vertleft = vim.g.bc.vertleft,
   verthoriz = vim.g.bc.verthoriz,
 })
-
--- rust save
-vim.g.rustfmt_autosave = 1
 
 -- fix markfown stuff
 vim.g.markdown_recommended_style = 0

@@ -22,6 +22,7 @@ obsidian_workspaces = vim
   end)
   :totable()
 
+---@type lz.n.PluginSpec[]
 return {
   {
     "markview.nvim",
