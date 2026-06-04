@@ -110,8 +110,6 @@
       legacyPackages = forAllSystems (mkPackages true);
       packages = forAllSystems (mkPackages true);
 
-      homeModules.default = import ./modules/home-manager.nix inputs;
-
       overlays.default = _: mkPackages false;
 
       devShells = forAllSystems (pkgs: {
