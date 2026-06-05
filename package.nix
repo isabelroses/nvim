@@ -127,6 +127,7 @@ wrapNeovim {
       conform-nvim
       cord-nvim
       crates-nvim
+      fastaction-nvim
       fidget-nvim
       freeze-nvim
       fzf-lua

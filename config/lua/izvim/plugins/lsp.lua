@@ -173,6 +173,14 @@ return {
   },
 
   {
+    "fastaction.nvim",
+    event = "LspAttach",
+    after = function()
+      require("fastaction").setup({})
+    end,
+  },
+
+  {
     "nvim-lint",
     event = "DeferredUIEnter",
     after = function()
