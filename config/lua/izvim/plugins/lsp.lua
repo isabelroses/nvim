@@ -172,13 +172,7 @@ return {
     end,
   },
 
-  {
-    "fastaction.nvim",
-    event = "LspAttach",
-    after = function()
-      require("fastaction").setup({})
-    end,
-  },
+  { "rainbow-delimiters.nvim" },
 
   {
     "nvim-lint",

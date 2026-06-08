@@ -127,7 +127,6 @@ wrapNeovim {
       conform-nvim
       cord-nvim
       crates-nvim
-      fastaction-nvim
       fidget-nvim
       freeze-nvim
       fzf-lua
@@ -148,6 +147,7 @@ wrapNeovim {
       nvim-navic
       nvim-treesitter-context
       obsidian-nvim
+      rainbow-delimiters-nvim
       rustaceanvim
       snacks-nvim
       telescope-fzf-native-nvim
