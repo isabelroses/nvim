@@ -35,7 +35,6 @@
 
   # settings
   bundleLSPs ? true,
-  izvimVersion ? "unknown",
 }:
 let
   inherit (lib)
@@ -96,7 +95,6 @@ let
 in
 wrapNeovim {
   pname = "izvim";
-  versionSuffix = izvimVersion;
 
   cleanRuntimePath = true;
   # needed for https://neovim.io/doc/user/options/#'exrc'

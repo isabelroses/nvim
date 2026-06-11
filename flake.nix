@@ -35,7 +35,10 @@
       mkPackages =
         default: pkgs:
         let
-          generatedPackages = import ./default.nix { inherit pkgs inputs; };
+          generatedPackages = import ./default.nix {
+            inherit pkgs;
+            gift-wrap = inputs.gift-wrap.packages.${pkgs.stdenv.hostPlatform.system};
+          };
           defaultPackage = lib.optionalAttrs default { default = generatedPackages.izvim; };
         in
         generatedPackages // defaultPackage;
