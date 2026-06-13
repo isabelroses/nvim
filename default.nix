@@ -14,11 +14,7 @@ in
 {
   sources ? sources',
 
-  pkgs ? import sources.nixpkgs {
-    inherit system;
-    overlays = [ ];
-    config.allowUnfree = true;
-  },
+  pkgs ? import sources.nixpkgs { inherit system; },
   lib ? pkgs.lib,
   system ? builtins.currentSystem,
 

@@ -20,17 +20,7 @@
       inherit (nixpkgs) lib;
 
       forAllSystems =
-        f:
-        lib.genAttrs lib.systems.flakeExposed (
-          system:
-          f (
-            import nixpkgs {
-              inherit system;
-              config.allowUnfree = true;
-              overlays = [ ];
-            }
-          )
-        );
+        f: lib.genAttrs lib.systems.flakeExposed (system: f nixpkgs.legacyPackages.${system});
 
       mkPackages =
         default: pkgs:
