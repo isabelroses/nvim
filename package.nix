@@ -76,7 +76,6 @@ let
       make
       markdown
       markdown_inline
-      nix
       nu
       php
       purescript
@@ -90,6 +89,17 @@ let
       yaml
       yuck
       # keep-sorted end
+
+      (nix.overrideAttrs (_: {
+        version = "0.0.0+rev=4a14c6";
+
+        src = fetchFromGitHub {
+          owner = "numtide";
+          repo = "tree-sitter-nix";
+          rev = "4a14c6732e5173431d6ef4ccd7cd6f6f9f7966bf";
+          hash = "sha256-CEwM39kEIW/24QpOWJp3bXb56YL1CZs1NDksKvJreCI=";
+        };
+      }))
     ]
   );
 in
