@@ -37,57 +37,58 @@
   bundleLSPs ? true,
 }:
 let
-  inherit (lib.lists) concatLists optionals;
-  inherit (lib.attrsets) attrValues mapAttrs' nameValuePair;
+  inherit (lib.lists) concatLists concatMap optionals;
+  inherit (lib.attrsets) attrValues getAttrs;
 
-  grammars = {
-    inherit (vimPlugins.nvim-treesitter.parsers)
-      # keep-sorted start
-      bash
-      c
-      comment
-      cpp
-      css
-      csv
-      dhall
-      diff
-      dockerfile
-      git_rebase
-      gitattributes
-      gitcommit
-      gitignore
-      gleam
-      go
-      gomod
-      gosum
-      gotmpl
-      graphql
-      haskell
-      html
-      javascript
-      jsdoc
-      json
-      just
-      latex
-      lua
-      make
-      markdown
-      markdown_inline
-      nu
-      php
-      purescript
-      python
-      qmldir
-      qmljs
-      toml
-      tsx
-      typescript
-      typst
-      yaml
-      yuck
-      # keep-sorted end
-      ;
+  grammars = [
+    # keep-sorted start
+    "bash"
+    "c"
+    "comment"
+    "cpp"
+    "css"
+    "csv"
+    "dhall"
+    "diff"
+    "dockerfile"
+    "git_rebase"
+    "gitattributes"
+    "gitcommit"
+    "gitignore"
+    "gleam"
+    "go"
+    "gomod"
+    "gosum"
+    "gotmpl"
+    "graphql"
+    "haskell"
+    "html"
+    "javascript"
+    "jsdoc"
+    "json"
+    "just"
+    "latex"
+    "lua"
+    "make"
+    "markdown"
+    "markdown_inline"
+    "nix"
+    "nu"
+    "php"
+    "purescript"
+    "python"
+    "qmldir"
+    "qmljs"
+    "toml"
+    "tsx"
+    "typescript"
+    "typst"
+    "yaml"
+    "yuck"
+    # keep-sorted end
+  ];
 
+  parsers = vimPlugins.nvim-treesitter.parsers // {
     nix = vimPlugins.nvim-treesitter.parsers.nix.overrideAttrs (_: {
       version = "0.0.0+rev=4a14c6";
 
@@ -100,8 +101,10 @@ let
     });
   };
 
-  # we have to rename these otherwise they clash with the grammars
-  queries = mapAttrs' (n: p: nameValuePair "queries-${n}" p.associatedQuery) grammars;
+  grammars-queries = concatMap (drv: [
+    drv
+    drv.associatedQuery
+  ]) (attrValues (getAttrs grammars parsers));
 in
 wrapNeovim {
   pname = "izvim";
@@ -112,10 +115,9 @@ wrapNeovim {
 
   userConfig = ./config;
 
-  startPlugins = attrValues (
-    grammars
-    // queries
-    // {
+  startPlugins =
+    grammars-queries
+    ++ attrValues {
       inherit (vimPlugins)
         # keep-sorted start
         lz-n
@@ -124,8 +126,7 @@ wrapNeovim {
         plenary-nvim
         # keep-sorted end
         ;
-    }
-  );
+    };
 
   optPlugins = attrValues {
     inherit (vimPlugins)
