@@ -71,10 +71,6 @@ vim.api.nvim_create_autocmd("FileType", {
     -- keep-sorted end
   },
   callback = function(ev)
-    vim.api.nvim_buf_call(ev.buf, function()
-      vim.treesitter.start()
-      vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-      vim.wo.foldmethod = "expr"
-    end)
+    vim.treesitter.start(ev.buf)
   end,
 })
