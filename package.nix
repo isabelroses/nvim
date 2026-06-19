@@ -37,14 +37,11 @@
   bundleLSPs ? true,
 }:
 let
-  inherit (lib)
-    flatten
-    optionals
-    ;
+  inherit (lib.lists) concatLists optionals;
+  inherit (lib.attrsets) attrValues mapAttrs' nameValuePair;
 
-  # install our treesitter grammars
-  grammars = vimPlugins.nvim-treesitter.withPlugins (
-    p: with p; [
+  grammars = {
+    inherit (vimPlugins.nvim-treesitter.parsers)
       # keep-sorted start
       bash
       c
@@ -89,19 +86,22 @@ let
       yaml
       yuck
       # keep-sorted end
+      ;
 
-      (nix.overrideAttrs (_: {
-        version = "0.0.0+rev=4a14c6";
+    nix = vimPlugins.nvim-treesitter.parsers.nix.overrideAttrs (_: {
+      version = "0.0.0+rev=4a14c6";
 
-        src = fetchFromGitHub {
-          owner = "numtide";
-          repo = "tree-sitter-nix";
-          rev = "4a14c6732e5173431d6ef4ccd7cd6f6f9f7966bf";
-          hash = "sha256-CEwM39kEIW/24QpOWJp3bXb56YL1CZs1NDksKvJreCI=";
-        };
-      }))
-    ]
-  );
+      src = fetchFromGitHub {
+        owner = "numtide";
+        repo = "tree-sitter-nix";
+        rev = "4a14c6732e5173431d6ef4ccd7cd6f6f9f7966bf";
+        hash = "sha256-CEwM39kEIW/24QpOWJp3bXb56YL1CZs1NDksKvJreCI=";
+      };
+    });
+  };
+
+  # we have to rename these otherwise they clash with the grammars
+  queries = mapAttrs' (n: p: nameValuePair "queries-${n}" p.associatedQuery) grammars;
 in
 wrapNeovim {
   pname = "izvim";
@@ -112,21 +112,23 @@ wrapNeovim {
 
   userConfig = ./config;
 
-  startPlugins = [
+  startPlugins = attrValues (
     grammars
-  ]
-  ++ (with vimPlugins; [
-    # keep-sorted start
-    lz-n
-    lzn-auto-require
-    nvim-lspconfig
-    plenary-nvim
-    # keep-sorted end
-  ]);
+    // queries
+    // {
+      inherit (vimPlugins)
+        # keep-sorted start
+        lz-n
+        lzn-auto-require
+        nvim-lspconfig
+        plenary-nvim
+        # keep-sorted end
+        ;
+    }
+  );
 
-  optPlugins =
-    with vimPlugins;
-    [
+  optPlugins = attrValues {
+    inherit (vimPlugins)
       # keep-sorted start
       SchemaStore-nvim
       blink-cmp
@@ -165,50 +167,50 @@ wrapNeovim {
       typst-preview-nvim
       vim-wakatime
       # keep-sorted end
-    ]
-    ++ [
-      (vimPlugins.catppuccin-nvim.overrideAttrs (oa: {
-        nativeBuildInputs = [ catppuccin-whiskers ];
+      ;
 
-        buildPhase = ''
-          whiskers nvim.tera \
-            --color-overrides ${
-              lib.escapeShellArg (
-                builtins.toJSON {
-                  mocha = {
-                    base = "000000";
-                    mantle = "010101";
-                    crust = "020202";
-                  };
-                }
-              )
-            }
-        '';
-      }))
+    catppuccin-nvim = vimPlugins.catppuccin-nvim.overrideAttrs (oa: {
+      nativeBuildInputs = [ catppuccin-whiskers ];
 
-      (vimPlugins.undotree.overrideAttrs (oa: {
-        src = fetchFromGitHub {
-          owner = "jiaoshijie";
-          repo = "undotree";
-          rev = "3976ed63d7fb0cc47f6a778e230a390a399df69c";
-          hash = "sha256-rrsVgewhIMrJ1FioFTDejzXQMPslPeq3ntpEOBze/DI=";
-        };
-      }))
+      buildPhase = ''
+        whiskers nvim.tera \
+          --color-overrides ${
+            lib.escapeShellArg (
+              builtins.toJSON {
+                mocha = {
+                  base = "000000";
+                  mantle = "010101";
+                  crust = "020202";
+                };
+              }
+            )
+          }
+      '';
+    });
 
-      (vimUtils.buildVimPlugin {
-        pname = "nivvie-nvim";
-        version = "2025.10.26";
+    undotree = vimPlugins.undotree.overrideAttrs (oa: {
+      src = fetchFromGitHub {
+        owner = "jiaoshijie";
+        repo = "undotree";
+        rev = "3976ed63d7fb0cc47f6a778e230a390a399df69c";
+        hash = "sha256-rrsVgewhIMrJ1FioFTDejzXQMPslPeq3ntpEOBze/DI=";
+      };
+    });
 
-        src = fetchFromGitHub {
-          owner = "comfysage";
-          repo = "nivvie.nvim";
-          rev = "1c94acc01b090ff1775956622ee6d7292f7dd84c";
-          hash = "sha256-n65wXJrw9yxNI7ieZFX5On9qmsBVDxzVK17HJnRss3k=";
-        };
-      })
-    ];
+    nivvie-nvim = vimUtils.buildVimPlugin {
+      pname = "nivvie-nvim";
+      version = "2025.10.26";
 
-  extraPackages = flatten [
+      src = fetchFromGitHub {
+        owner = "comfysage";
+        repo = "nivvie.nvim";
+        rev = "1c94acc01b090ff1775956622ee6d7292f7dd84c";
+        hash = "sha256-n65wXJrw9yxNI7ieZFX5On9qmsBVDxzVK17HJnRss3k=";
+      };
+    };
+  };
+
+  extraPackages = concatLists [
     [
       # external deps
       fd

@@ -73,6 +73,8 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function(ev)
     vim.api.nvim_buf_call(ev.buf, function()
       vim.treesitter.start()
+      vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+      vim.wo.foldmethod = "expr"
     end)
   end,
 })
