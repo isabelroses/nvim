@@ -167,20 +167,21 @@ local servers = {
   },
   marksman = {},
   mdx_analyzer = {},
-  nil_ls = {
-    cmd = { "nil" },
-    settings = {
-      ["nil"] = {
-        formatting = {
-          command = { "nixfmt" },
-        },
-        diagnostics = {
-          bindingEndHintMinLines = 2,
-        },
-        nix = { maxMemoryMB = nil },
-      },
-    },
-  },
+  -- nil_ls = {
+  --   cmd = { "nil" },
+  --   settings = {
+  --     ["nil"] = {
+  --       formatting = {
+  --         command = { "nixfmt" },
+  --       },
+  --       diagnostics = {
+  --         bindingEndHintMinLines = 2,
+  --       },
+  --       nix = { maxMemoryMB = nil },
+  --     },
+  --   },
+  -- },
+  nixd = {},
   nushell = {},
   pyright = {},
   qmlls = {

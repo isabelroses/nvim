@@ -9,7 +9,7 @@
   mdx-language-server,
   harper,
   marksman,
-  nil,
+  nixd,
   statix,
   deadnix,
   nixfmt,
@@ -231,7 +231,7 @@ wrapNeovim {
       tinymist
 
       # nix
-      nil
+      nixd
       statix
       deadnix
       nixfmt
