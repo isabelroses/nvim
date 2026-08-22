@@ -7,17 +7,16 @@ local obsidian_workspaces = {
     name = "default",
     path = "~/documents/obsidian",
   },
-  {
-    name = "cssuffering",
-    path = "~/dev/cssuffering/notes",
-  },
 }
 
+local seen = {}
 obsidian_workspaces = vim
-  .iter(ipairs(obsidian_workspaces))
-  :map(function(_, workspace)
-    if vim.uv.fs_stat(workspace.path) then
-      return workspace
+  .iter(obsidian_workspaces)
+  :map(function(workspace)
+    local path = vim.uv.fs_realpath(vim.fs.normalize(workspace.path))
+    if path and not seen[path] then
+      seen[path] = true
+      return vim.tbl_extend("force", workspace, { path = path })
     end
   end)
   :totable()
@@ -66,16 +65,14 @@ return {
   {
     "obsidian.nvim",
     enabled = obsidian_workspaces ~= nil and #obsidian_workspaces > 0,
-    ft = { "markdown" },
     after = function()
       require("obsidian").setup({
         workspaces = obsidian_workspaces,
+        legacy_commands = false,
+        picker = { name = "fzf-lua" },
 
         completion = {
-          nvim_cmp = false,
-          blink = true,
           min_chars = 2,
-          default = true,
           match_case = false,
         },
       })

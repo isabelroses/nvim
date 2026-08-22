@@ -20,6 +20,14 @@ vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
   desc = "Notify when recording macro",
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.wo.conceallevel = 2
+  end,
+  desc = "Conceal markup in markdown, obsidian.nvim's UI features require it",
+})
+
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.tmpl",
   callback = function()
