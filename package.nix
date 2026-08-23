@@ -29,6 +29,7 @@
   vimPlugins,
   fetchFromGitHub,
   catppuccin-whiskers,
+  callPackage,
 
   # our beautiful wrapper
   wrapNeovim,
@@ -217,6 +218,7 @@ wrapNeovim {
       fd
       ripgrep
       lazygit
+      (callPackage ./obsidian-headless.nix { })
     ]
 
     (optionals bundleLSPs [

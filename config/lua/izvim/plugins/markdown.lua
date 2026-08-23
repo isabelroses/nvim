@@ -70,6 +70,7 @@ return {
         workspaces = obsidian_workspaces,
         legacy_commands = false,
         picker = { name = "fzf-lua" },
+        sync = { enabled = true },
 
         completion = {
           min_chars = 2,
