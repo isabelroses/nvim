@@ -9,18 +9,18 @@ return {
       local ignore = " --ignore-file " .. vim.fn.shellescape(vim.g.izvim_search_ignore)
 
       require("fzf-lua").setup({
-        "telescope",
-        winopts = function(opts)
-          opts = opts or {}
-          return {
-            backdrop = 100,
-            width = math.floor(math.min(vim.o.columns - 4, (opts.previewer and 0.8 or 0.6) * vim.o.columns)),
-          }
-        end,
+        -- telescope's keybinds, framed as one rounded border with the preview fused on
+        { "telescope", "border-fused" },
+        fzf_colors = true,
+        defaults = { formatter = "path.filename_first" },
+        -- force horizontal: flex stacks the preview under 120 cols. must be a table,
+        -- a function replaces the profile's winopts and its fused borders
+        winopts = { backdrop = 100, width = 0.8, preview = { layout = "horizontal", horizontal = "right:50%" } },
         fzf_opts = {
           ["--layout"] = "reverse-list",
           ["--info"] = "inline-right",
           ["--no-separator"] = "",
+          ["--highlight-line"] = true,
         },
         file_icon_padding = " ",
         prompt = " ",
@@ -31,8 +31,10 @@ return {
           cwd_prompt = false,
           previewer = false,
           git_icons = false,
+          winopts = { width = 0.6 }, -- narrower without a preview
         },
         grep = {
+          no_header_i = true,
           -- `-e` has to stay last, it takes the search pattern
           rg_opts = defaults.grep.rg_opts:gsub("%-e$", "") .. ignore .. " -e",
         },
