@@ -179,6 +179,21 @@ return {
         bash = { "shellcheck" },
         yaml = { "yamllint" },
       }
+
+      -- some linters (selene, yamllint) aren't bundled, so stay quiet when they're missing
+      local function lint()
+        require("lint").try_lint(nil, { ignore_errors = true })
+      end
+
+      -- lint on open and save. add "InsertLeave" to lint while editing
+      vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost" }, {
+        group = vim.api.nvim_create_augroup("izvim.lint", { clear = true }),
+        callback = lint,
+        desc = "Run nvim-lint linters",
+      })
+
+      -- we load after the first buffer was read, so lint it now
+      lint()
     end,
   },
 
