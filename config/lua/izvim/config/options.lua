@@ -71,7 +71,32 @@ vim.opt.fillchars:append({
   vertright = "├",
   vertleft = "┤",
   verthoriz = "┼",
+  eob = " ", -- hide the ~ on lines past the end of the buffer
 })
+vim.o.listchars = "tab:» ,trail:·,nbsp:␣"
+
+-- highlight the current line number only, not the whole line
+vim.o.cursorline = true
+vim.o.cursorlineopt = "number"
+
+-- preview :s substitutions in a split with every match
+vim.o.inccommand = "split"
+vim.opt.wildoptions:append("fuzzy")
+-- ask to save instead of erroring on :q with unsaved changes
+vim.o.confirm = true
+-- let visual-block selections go past the end of short lines
+vim.o.virtualedit = "block"
+-- keep text where it is on screen when splits open or close (explorer, quickfix)
+vim.o.splitkeep = "screen"
+-- restore the scroll position when jumping back through the jumplist
+vim.opt.jumpoptions:append("view")
+-- better diffs for moved/reordered code
+vim.opt.diffopt:append("algorithm:histogram")
+vim.o.undolevels = 10000
+
+-- don't run regex syntax past column 300, minified files are slow otherwise.
+-- treesitter highlighting is unaffected
+vim.o.synmaxcol = 300
 
 -- fix markdown stuff
 vim.g.markdown_recommended_style = 0
