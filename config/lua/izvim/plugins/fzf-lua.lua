@@ -67,15 +67,12 @@ return {
           "%.vscode/",
           "%.webp",
           ".direnv/",
-          ".direnv/*",
           "__pycache__/",
-          "__pycache__/*",
           "_sources/",
           "build/",
           "env/",
           "gradle/",
           "node_modules/",
-          "node_modules/*",
           "smalljre_*/*",
           "target/",
           "tmp/",
@@ -86,17 +83,15 @@ return {
 
       require("fzf-lua").register_ui_select()
 
-      local map = function(mode, shortcut, command, opt)
-        opt = opt or { noremap = true, silent = true }
-        vim.keymap.set(mode, shortcut, command, opt)
+      local map = function(lhs, rhs, desc)
+        vim.keymap.set("n", lhs, rhs, { silent = true, desc = desc })
       end
 
-      map("n", "<leader><leader>", "<cmd>FzfLua files<cr>") -- find files
-      map("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>") -- grep through all files
-      map("n", "<leader>fs", "<cmd>SessionManager load_session<cr>") -- Show nvim sessions
-      map("n", "<leader>fh", "<cmd>FzfLua help_tags<cr>") -- search help tags
-      map("n", "<leader>ft", "<cmd>TodoFzfLua<cr>") -- live grep but for TODOs and FIXMEs
-      map("n", "<leader>fz", "<cmd>FzfLua zoxide<cr>") -- list recent dirs
+      map("<leader><leader>", "<cmd>FzfLua files<cr>", "find files")
+      map("<leader>fg", "<cmd>FzfLua live_grep<cr>", "grep through all files")
+      map("<leader>fh", "<cmd>FzfLua help_tags<cr>", "search help tags")
+      map("<leader>ft", "<cmd>TodoFzfLua<cr>", "grep for TODOs and FIXMEs")
+      map("<leader>fz", "<cmd>FzfLua zoxide<cr>", "list recent dirs")
     end,
   },
 

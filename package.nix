@@ -162,7 +162,6 @@ wrapNeovim {
       rainbow-delimiters-nvim
       rustaceanvim
       snacks-nvim
-      telescope-fzf-native-nvim
       todo-comments-nvim
       toggleterm-nvim
       trouble-nvim

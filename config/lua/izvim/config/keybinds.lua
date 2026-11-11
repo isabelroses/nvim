@@ -2,9 +2,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " m"
 
-local map = function(mode, shortcut, command, opt)
-  opt = opt or { noremap = true, silent = true }
-  vim.keymap.set(mode, shortcut, command, opt)
+local map = function(mode, lhs, rhs)
+  vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
 -- move lines
@@ -13,7 +12,7 @@ map("n", "<A-k>", "<cmd>m .-2<cr>==")
 map("v", "J", "<cmd>m '>+1<CR>gv=gv")
 map("v", "K", "<cmd>m '<-1<CR>gv=gv")
 
--- vertical movment
+-- vertical movement
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")

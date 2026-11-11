@@ -21,8 +21,6 @@ return {
           ["<c-k>"] = { "scroll_documentation_up", "fallback" },
         },
 
-        appearance = {},
-
         completion = {
           trigger = {
             show_on_keyword = true,
@@ -62,8 +60,6 @@ return {
           },
         },
 
-        -- default list of enabled providers defined so that you can extend it
-        -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
           default = { "lsp", "path", "snippets", "buffer" },
 
@@ -81,20 +77,16 @@ return {
               :totable()
           end,
           min_keyword_length = function()
-            local default = 1
-            return vim.bo.filetype == "markdown" and 2 or default
+            return vim.bo.filetype == "markdown" and 2 or 1
           end,
         },
 
-        -- experimental signature help support
         signature = {
           enabled = true,
         },
 
         fuzzy = {
-          max_typos = function(_)
-            return 0
-          end,
+          max_typos = 0,
           -- proximity bonus boosts the score of items matching nearby words
           use_proximity = true,
 
@@ -123,10 +115,10 @@ return {
     lazy = false,
     after = function()
       vim.g.rustaceanvim = {
-        on_attach = function(client, bufnr)
+        on_attach = function(_, bufnr)
           vim.keymap.set("n", "<leader>cR", function()
             vim.cmd.RustLsp("codeAction")
-          end)
+          end, { buffer = bufnr })
           vim.keymap.set("n", "<leader>dr", function()
             vim.cmd.RustLsp("debuggables")
           end, { buffer = bufnr })

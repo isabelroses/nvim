@@ -1,13 +1,11 @@
 vim.api.nvim_create_autocmd("VimResized", {
-  pattern = "*",
   command = "wincmd =",
   desc = "Automatically resize windows when the host window size changes.",
 })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-  pattern = "*",
   callback = function()
-    vim.highlight.on_yank({ higroup = "CurSearch", timeout = 200 })
+    vim.hl.on_yank({ higroup = "CurSearch", timeout = 200 })
   end,
   desc = "Highlight yanked text",
 })
@@ -28,16 +26,8 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "Conceal markup in markdown, obsidian.nvim's UI features require it",
 })
 
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.tmpl",
-  callback = function()
-    vim.bo.filetype = "gohtmltmpl"
-  end,
-})
-
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "BufWinEnter", "WinEnter", "TermOpen" }, {
   pattern = "term://*",
-  callback = function()
-    vim.api.nvim_command("startinsert")
-  end,
+  command = "startinsert",
+  desc = "Enter insert mode when focusing a terminal",
 })

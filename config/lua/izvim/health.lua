@@ -8,7 +8,7 @@ M.check = function()
   if M.loaded then
     vim.health.ok("izvim loaded correctly")
   else
-    vim.health.error("izvim did not loaded correctly")
+    vim.health.error("izvim did not load correctly")
   end
 
   local deps = {

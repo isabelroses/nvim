@@ -1,5 +1,5 @@
--- by default unload all vim plugins
-local loaded_plugins = {
+-- disable builtin vim plugins I don't use
+for _, plugin in ipairs({
   "zipPlugin",
   "zip",
   "tarPlugin",
@@ -9,7 +9,6 @@ local loaded_plugins = {
   "matchit",
   "netrw",
   "netrwPlugin",
-}
-vim.iter(ipairs(loaded_plugins)):each(function(_, k)
-  vim.g["loaded_" .. k] = 1
-end)
+}) do
+  vim.g["loaded_" .. plugin] = 1
+end

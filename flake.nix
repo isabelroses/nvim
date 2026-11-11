@@ -68,10 +68,6 @@
             on-unmatched = "info";
             tree-root-file = "flake.nix";
 
-            excludes = [
-              "pkgs/izvim-plugins/_sources/*"
-            ];
-
             formatter = {
               # keep-sorted start block=yes newline_separated=yes
               deadnix = {

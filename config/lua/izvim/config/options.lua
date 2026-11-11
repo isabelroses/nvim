@@ -30,8 +30,8 @@ vim.o.tabstop = 2
 vim.o.softtabstop = 0
 vim.o.expandtab = true
 vim.o.smartindent = true
--- Enable break indent
-vim.opt.breakindent = true
+-- enable break indent
+vim.o.breakindent = true
 vim.o.wrap = false
 
 -- always show 1 column of sign column (gitsigns, etc.)
@@ -40,19 +40,16 @@ vim.o.signcolumn = "yes:1"
 -- hide search notices, intro
 vim.opt.shortmess:append("sI")
 
--- hide extra text
-vim.opt.conceallevel = 0
-
 -- nice font icons or something
 vim.g.have_nerd_font = true
 
--- Decrease update time
-vim.opt.updatetime = 250
--- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 300
+-- decrease update time
+vim.o.updatetime = 250
+-- decrease mapped sequence wait time
+vim.o.timeoutlen = 300
 
--- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+-- don't show the mode, since it's already in the status line
+vim.o.showmode = false
 vim.o.cmdheight = 0
 -- always show status
 vim.o.laststatus = 3
@@ -61,68 +58,37 @@ vim.o.laststatus = 3
 vim.o.showtabline = 0
 
 -- use rg for grepping
-vim.opt.grepprg = "rg --vimgrep"
+vim.o.grepprg = "rg --vimgrep"
 
 -- enable project-local configs
-vim.opt.exrc = true
+vim.o.exrc = true
 
 -- let me have spelling checking for english
 vim.opt.spelllang = { "en" }
 vim.opt.spelloptions:append("noplainbuffer")
 
--- indent blank line imporvments
-vim.opt.list = true
+-- indent blank line improvements
+vim.o.list = true
 
--- disable swap, backup, and undo files
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
-vim.opt.undofile = true
+-- disable swap and backup files, keep persistent undo
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = vim.fs.normalize("~/.local/state/nvim/undodir")
+vim.o.undofile = true
 
----@class izvim.BorderChars
----@field style string
----@field vert string
----@field vertleft string
----@field vertright string
----@field horiz string
----@field horizup string
----@field horizdown string
----@field verthoriz string
----@field topleft string
----@field topright string
----@field botleft string
----@field botright string
-
----@type izvim.BorderChars
-local borderchars = {
-  style = "rounded",
-  vert = "│",
-  vertleft = "┤",
-  vertright = "├",
+-- borders
+vim.o.winborder = "rounded"
+vim.opt.fillchars:append({
   horiz = "─",
   horizup = "┴",
   horizdown = "┬",
+  vert = "│",
+  vertright = "├",
+  vertleft = "┤",
   verthoriz = "┼",
-  topleft = "╭",
-  topright = "╮",
-  botleft = "╰",
-  botright = "╯",
-}
-
--- my custom borderchars
-vim.o.winborder = "rounded"
-vim.g.bc = borderchars
-vim.opt.fillchars:append({
-  horiz = vim.g.bc.horiz,
-  horizup = vim.g.bc.horizup,
-  horizdown = vim.g.bc.horizdown,
-  vert = vim.g.bc.vert,
-  vertright = vim.g.bc.vertright,
-  vertleft = vim.g.bc.vertleft,
-  verthoriz = vim.g.bc.verthoriz,
 })
 
--- fix markfown stuff
+-- fix markdown stuff
 vim.g.markdown_recommended_style = 0
 
 if vim.fn.has("unix") == 1 then
