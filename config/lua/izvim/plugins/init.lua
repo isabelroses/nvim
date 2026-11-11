@@ -7,15 +7,15 @@ return {
     after = function()
       require("mini.surround").setup({
         mappings = {
-          add = "S", -- Add surrounding in Normal and Visual modes
-          delete = "ds", -- Delete surrounding
-          find = "sf", -- Find surrounding (to the right)
-          find_left = "sF", -- Find surrounding (to the left)
-          highlight = "sh", -- Highlight surrounding
-          replace = "cs", -- Replace surrounding
-          update_n_lines = "sn", -- Update `n_lines`
-          suffix_last = "", -- Suffix to search with "prev" method
-          suffix_next = "", -- Suffix to search with "next" method
+          add = "S",
+          delete = "ds",
+          find = "sf",
+          find_left = "sF",
+          highlight = "sh",
+          replace = "cs",
+          update_n_lines = "sn",
+          suffix_last = "",
+          suffix_next = "",
         },
       })
     end,

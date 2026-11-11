@@ -145,13 +145,6 @@ return {
             },
           },
         },
-
-        -- undo defaults
-        notifier = { enabled = false },
-        scope = { enabled = false },
-        scroll = { enabled = false },
-        statuscolumn = { enabled = false },
-        words = { enabled = false },
       }
 
       snacks.setup(opts)

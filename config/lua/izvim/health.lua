@@ -13,7 +13,7 @@ M.check = function()
 
   local deps = {
     "direnv", -- direnv.nvim doesn't provide a checkhealth command
-    "lazygit", -- used by snacks.lazygit for <leader>gg
+    "lazygit",
   }
 
   for _, dep in ipairs(deps) do

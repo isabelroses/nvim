@@ -1,7 +1,5 @@
--- true colors
 vim.o.termguicolors = true
 
--- line numbers
 vim.o.mouse = "a"
 vim.o.number = true
 vim.o.relativenumber = true
@@ -10,27 +8,21 @@ vim.o.relativenumber = true
 vim.o.scrolloff = 5
 vim.o.sidescrolloff = 15
 
--- completion height
 vim.o.pumheight = 15
 
--- split directions
 vim.o.splitbelow = true
 vim.o.splitright = true
 
--- search settings
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- redefine word boundaries - '_' is a word separator, this helps with snake_case
 vim.opt.iskeyword:remove("_")
 
--- indentations settings
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
-vim.o.softtabstop = 0
 vim.o.expandtab = true
 vim.o.smartindent = true
--- enable break indent
 vim.o.breakindent = true
 vim.o.wrap = false
 
@@ -40,18 +32,12 @@ vim.o.signcolumn = "yes:1"
 -- hide search notices, intro
 vim.opt.shortmess:append("sI")
 
--- nice font icons or something
-vim.g.have_nerd_font = true
-
--- decrease update time
 vim.o.updatetime = 250
--- decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
 -- don't show the mode, since it's already in the status line
 vim.o.showmode = false
 vim.o.cmdheight = 0
--- always show status
 vim.o.laststatus = 3
 -- keep progress (LSP loading etc.) out of the message area, the statusline shows it
 vim.o.messagesopt = "hit-enter,history:500,progress:"
@@ -66,7 +52,6 @@ vim.o.grepprg = "rg --vimgrep --smart-case --ignore-file " .. vim.fn.fnameescape
 vim.o.exrc = true
 
 -- let me have spelling checking for english
-vim.opt.spelllang = { "en" }
 vim.opt.spelloptions:append("noplainbuffer")
 
 -- indent blank line improvements
@@ -74,11 +59,9 @@ vim.o.list = true
 
 -- disable swap and backup files, keep persistent undo
 vim.o.swapfile = false
-vim.o.backup = false
 vim.o.undodir = vim.fs.normalize("~/.local/state/nvim/undodir")
 vim.o.undofile = true
 
--- borders
 vim.o.winborder = "rounded"
 vim.opt.fillchars:append({
   horiz = "─",

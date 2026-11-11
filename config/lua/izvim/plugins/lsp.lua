@@ -22,9 +22,6 @@ return {
         },
 
         completion = {
-          trigger = {
-            show_on_keyword = true,
-          },
           list = {
             cycle = {
               from_top = false,
@@ -38,9 +35,6 @@ return {
             scrolloff = 0,
             border = "none",
             draw = {
-              -- align_to = "label", -- or 'none' to disable, or 'cursor' to align to the cursor
-              padding = 1,
-              gap = 1,
               treesitter = { "buffer", "lsp" },
               columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source_name" } },
               components = {
@@ -61,8 +55,6 @@ return {
         },
 
         sources = {
-          default = { "lsp", "path", "snippets", "buffer" },
-
           providers = { snippets = { opts = { search_paths = { vim.g.snippets_path } } } },
 
           transform_items = function(_, items)
@@ -87,9 +79,6 @@ return {
 
         fuzzy = {
           max_typos = 0,
-          -- proximity bonus boosts the score of items matching nearby words
-          use_proximity = true,
-
           prebuilt_binaries = {
             download = false,
           },
@@ -129,14 +118,12 @@ return {
           },
         },
         settings = {
-          -- rust-analyzer language server configuration
           ["rust-analyzer"] = {
             cargo = {
               allFeatures = true,
               loadOutDirsFromCheck = true,
               runBuildScripts = true,
             },
-            -- Add clippy lints for Rust.
             checkOnSave = {
               allFeatures = true,
               command = "clippy",

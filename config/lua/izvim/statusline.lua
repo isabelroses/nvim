@@ -1,7 +1,5 @@
--- native statusline, enabled from init.lua
 local M = {}
 
--- icons are picked by the first letter of the mode
 local icons = { default = "", n = "", i = "󰗧", v = "󰫙", c = "" }
 
 local mode_names = {
@@ -21,7 +19,6 @@ local mode_names = {
   ["!"] = "SHELL",
 }
 
--- first letter of the mode -> highlight group suffix
 local mode_groups = {
   n = "Normal",
   i = "Insert",

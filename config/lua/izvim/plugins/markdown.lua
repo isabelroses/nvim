@@ -51,7 +51,6 @@ return {
             pad_amount = 1,
           },
           list_items = {
-            -- indent_size = 0,
             marker_minus = { add_padding = false },
             marker_plus = { add_padding = false },
             marker_star = { add_padding = false },

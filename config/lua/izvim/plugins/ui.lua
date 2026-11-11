@@ -33,17 +33,14 @@ return {
     event = "DeferredUIEnter",
     after = function()
       require("colorizer").setup({
+        -- RGB, RRGGBB, AARRGGBB and css look like defaults but aren't once user options are given
         user_default_options = {
           RGB = true,
           RRGGBB = true,
           names = false,
           RRGGBBAA = true,
           AARRGGBB = false,
-          rgb_fn = false,
-          hsl_fn = false,
           css = false,
-          css_fn = false,
-          mode = "background",
           tailwind = "both",
           sass = {
             enable = true,

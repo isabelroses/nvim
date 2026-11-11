@@ -23,17 +23,8 @@ return {
                   separator = "",
                 },
               },
-              left_mouse_command = "buffer %d",
               middle_mouse_command = "bdelete! %d",
-              right_mouse_command = nil,
-              mode = "buffers",
-              numbers = "none",
-              indicator = {
-                style = "icon",
-                icon = "",
-              },
-              style = "none",
-              diagnostics = false,
+              indicator = { icon = "" },
             },
           }
 

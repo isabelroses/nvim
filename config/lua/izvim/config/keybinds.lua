@@ -1,4 +1,3 @@
--- set space as leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " m"
 
@@ -38,8 +37,6 @@ end)
 map({ "n", "v" }, "<leader>y", '"+y')
 map({ "n", "v" }, "<leader>p", '"+p')
 
--- quit all
 map({ "n", "v" }, "<leader>q", "<cmd>qall<cr>")
 
--- save file
 map("n", "<C-s>", "<cmd>w<cr>")

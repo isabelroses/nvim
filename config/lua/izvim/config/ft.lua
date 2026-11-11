@@ -32,8 +32,7 @@ for lang, filetypes in pairs({
   vim.treesitter.language.register(lang, filetypes)
 end
 
--- start treesitter for any filetype we have a parser for. the available parsers
--- come from the `grammars` list in package.nix
+-- start treesitter for any filetype with a parser (see `grammars` in package.nix)
 vim.api.nvim_create_autocmd("FileType", {
   callback = function(ev)
     local lang = vim.treesitter.language.get_lang(ev.match)
