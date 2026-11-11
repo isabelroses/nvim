@@ -90,7 +90,6 @@ return {
       map("<leader><leader>", "<cmd>FzfLua files<cr>", "find files")
       map("<leader>fg", "<cmd>FzfLua live_grep<cr>", "grep through all files")
       map("<leader>fh", "<cmd>FzfLua help_tags<cr>", "search help tags")
-      map("<leader>ft", "<cmd>TodoFzfLua<cr>", "grep for TODOs and FIXMEs")
       map("<leader>fz", "<cmd>FzfLua zoxide<cr>", "list recent dirs")
     end,
   },

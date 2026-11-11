@@ -45,15 +45,8 @@ return {
           },
           cmp = false,
           blink_cmp = true,
-          lsp_trouble = true,
-          indent_blankline = {
-            enabled = true,
-            colored_indent_levels = true,
-          },
-          navic = {
-            enabled = true,
-            custom_bg = "NONE",
-          },
+          dropbar = { enabled = true },
+          snacks = { enabled = true },
           gitsigns = true,
           markdown = true,
           harpoon = true,

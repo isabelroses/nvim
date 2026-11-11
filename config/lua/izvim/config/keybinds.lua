@@ -18,8 +18,21 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
--- NvimTree
-map("n", "<C-N>", "<Plug>(neotree-toggle)")
+-- native undotree, see |undotree-plugin|
+map("n", "<leader>u", function()
+  vim.cmd.packadd("nvim.undotree")
+  require("undotree").open()
+end)
+
+-- toggle a quickfix list of all diagnostics, `[d` and `]d` jump between them
+map("n", "<leader>tt", function()
+  local qf = vim.fn.getqflist({ winid = 0, title = 0 })
+  if qf.winid ~= 0 and qf.title == "Diagnostics" then
+    vim.cmd.cclose()
+  else
+    vim.diagnostic.setqflist({ title = "Diagnostics" })
+  end
+end)
 
 -- improved clipboard
 map({ "n", "v" }, "<leader>y", '"+y')

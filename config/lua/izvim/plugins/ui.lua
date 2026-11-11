@@ -85,48 +85,6 @@ return {
   },
 
   {
-    "fidget.nvim",
-    event = "DeferredUIEnter",
-    after = function()
-      require("fidget").setup({
-        notification = {
-          window = { normal_hl = "MsgArea", winblend = 100 },
-        },
-        progress = {
-          display = { done_icon = "󰗡" },
-          ignore = {
-            "null-ls",
-          },
-        },
-      })
-    end,
-  },
-
-  {
-    "indent-blankline.nvim",
-    event = "DeferredUIEnter",
-    after = function()
-      ---@type ibl.config
-      local opts = {
-        scope = { enabled = false },
-        exclude = {
-          filetypes = {
-            "help",
-            "neo-tree",
-            "ToggleTerm",
-            "LazyGit",
-            "prompt",
-            "Trouble",
-            "snacks_dashboard",
-          },
-        },
-      }
-
-      require("ibl").setup(opts)
-    end,
-  },
-
-  {
     "mini.icons",
     lazy = false,
     priority = 100,
@@ -189,12 +147,15 @@ return {
     end,
   },
 
-  -- highlight TODO, FIXME, etc.
+  -- breadcrumbs in the winbar
   {
-    "todo-comments.nvim",
-    event = "DeferredUIEnter",
+    "dropbar.nvim",
+    event = "DeferredUIEnter", -- attaches to already open windows when it loads
     after = function()
-      require("todo-comments").setup()
+      require("dropbar").setup()
+      vim.keymap.set("n", "<leader>;", function()
+        require("dropbar.api").pick()
+      end, { desc = "pick a winbar symbol" })
     end,
   },
 

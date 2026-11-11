@@ -12,16 +12,6 @@ vim.lsp.config("*", {
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
   callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-
-    if client == nil then
-      return
-    end
-
-    if navic_present and client.server_capabilities.documentSymbolProvider then
-      navic.attach(client, ev.buf)
-    end
-
     vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
 
     local opts = { buffer = ev.buf }
@@ -36,6 +26,36 @@ vim.api.nvim_create_autocmd("LspAttach", {
       require("conform").format({ async = true, lsp_format = "fallback" })
     end, opts)
   end,
+})
+
+-- forward LSP progress to native progress messages, which ui2 displays
+local progress = {}
+vim.api.nvim_create_autocmd("LspProgress", {
+  group = vim.api.nvim_create_augroup("izvim.lsp-progress", { clear = true }),
+  callback = function(ev)
+    local value = ev.data.params.value
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if not client or type(value) ~= "table" then
+      return
+    end
+
+    local key = ev.data.client_id .. ":" .. tostring(ev.data.params.token)
+    local state = progress[key] or {}
+    local done = value.kind == "end"
+
+    state.title = value.title or state.title
+    state.id = vim.api.nvim_echo({ { value.message or (done and "done" or "") } }, false, {
+      id = state.id,
+      kind = "progress",
+      source = client.name,
+      title = state.title,
+      status = done and "success" or "running",
+      percent = done and 100 or value.percentage,
+    })
+
+    progress[key] = not done and state or nil
+  end,
+  desc = "Show LSP progress",
 })
 
 local servers = {

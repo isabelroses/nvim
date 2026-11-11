@@ -121,7 +121,6 @@ wrapNeovim {
       inherit (vimPlugins)
         # keep-sorted start
         lz-n
-        lzn-auto-require
         nvim-lspconfig
         plenary-nvim
         # keep-sorted end
@@ -139,45 +138,30 @@ wrapNeovim {
       conform-nvim
       cord-nvim
       crates-nvim
-      fidget-nvim
+      dropbar-nvim
       freeze-nvim
       fzf-lua
       gitsigns-nvim
       grug-far-nvim
       harpoon2
       img-clip-nvim
-      indent-blankline-nvim
       lazydev-nvim
       lualine-nvim
       markview-nvim
+      mini-hipatterns
       mini-icons
       mini-surround
-      neo-tree-nvim
-      nui-nvim
       nvim-colorizer-lua
       nvim-lint
-      nvim-navic
       nvim-treesitter-context
       obsidian-nvim
       rainbow-delimiters-nvim
       rustaceanvim
       snacks-nvim
-      todo-comments-nvim
-      toggleterm-nvim
-      trouble-nvim
       typst-preview-nvim
       vim-wakatime
       # keep-sorted end
       ;
-
-    undotree = vimPlugins.undotree.overrideAttrs (oa: {
-      src = fetchFromGitHub {
-        owner = "jiaoshijie";
-        repo = "undotree";
-        rev = "3976ed63d7fb0cc47f6a778e230a390a399df69c";
-        hash = "sha256-rrsVgewhIMrJ1FioFTDejzXQMPslPeq3ntpEOBze/DI=";
-      };
-    });
 
     nivvie-nvim = vimUtils.buildVimPlugin {
       pname = "nivvie-nvim";

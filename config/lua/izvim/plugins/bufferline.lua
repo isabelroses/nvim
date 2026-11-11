@@ -17,7 +17,7 @@ return {
               show_buffer_icons = false,
               offsets = {
                 {
-                  filetype = "neo-tree",
+                  filetype = "snacks_layout_box",
                   text = "File Browser",
                   text_align = "center",
                   separator = "",
