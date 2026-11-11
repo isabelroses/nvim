@@ -9,9 +9,6 @@ return {
         mappings = {
           add = "S",
           delete = "ds",
-          find = "sf",
-          find_left = "sF",
-          highlight = "sh",
           replace = "cs",
           update_n_lines = "sn",
           suffix_last = "",

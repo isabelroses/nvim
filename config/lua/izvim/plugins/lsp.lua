@@ -30,7 +30,6 @@ return {
           },
 
           menu = {
-            min_width = vim.o.pumwidth,
             max_height = vim.o.pumheight,
             scrolloff = 0,
             border = "none",
@@ -112,11 +111,6 @@ return {
             vim.cmd.RustLsp("debuggables")
           end, { buffer = bufnr })
         end,
-        tools = {
-          float_win_config = {
-            border = "rounded",
-          },
-        },
         settings = {
           ["rust-analyzer"] = {
             cargo = {

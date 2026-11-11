@@ -49,10 +49,7 @@ return {
       ---@type snacks.Config
       local opts = {
         bigfile = { enabled = true },
-        quickfile = {
-          enabled = true,
-          exclude = { "latex" },
-        },
+        quickfile = { enabled = true },
         input = { enabled = true },
         dashboard = {
           enabled = true,

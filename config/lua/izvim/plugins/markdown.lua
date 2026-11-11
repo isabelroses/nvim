@@ -75,7 +75,6 @@ return {
         sync = { enabled = true },
 
         completion = {
-          min_chars = 2,
           match_case = false,
         },
       })

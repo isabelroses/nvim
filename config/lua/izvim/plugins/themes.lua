@@ -15,13 +15,8 @@ return {
             crust = "#000000",
           },
         },
-        styles = {
-          comments = { "italic" },
-          conditionals = { "italic" },
-        },
         integrations = {
           cmp = false,
-          blink_cmp = true,
           snacks = { enabled = true },
           harpoon = true,
         },

@@ -24,13 +24,11 @@ return {
         },
         file_icon_padding = " ",
         prompt = " ",
-        previewer = "builtin",
         files = {
           fd_opts = defaults.files.fd_opts .. ignore,
           rg_opts = defaults.files.rg_opts .. ignore,
           cwd_prompt = false,
           previewer = false,
-          git_icons = false,
           winopts = { width = 0.6 }, -- narrower without a preview
         },
         grep = {

@@ -106,7 +106,6 @@ local servers = {
         matcher = "Fuzzy",
         diagnosticsDelay = "500ms",
         symbolMatcher = "fuzzy",
-        semanticTokens = true,
         gofumpt = true,
       },
     },
@@ -151,7 +150,6 @@ local servers = {
           globals = { "vim" },
         },
         hint = {
-          enable = true,
           arrayIndex = "Disable",
         },
       },
@@ -213,11 +211,6 @@ local servers = {
           ["https://json.schemastore.org/helmfile"] = "helmfile.{yaml,yml}",
           ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yml,yaml}",
           ["https://goreleaser.com/static/schema.json"] = ".goreleaser.{yml,yaml}",
-        },
-      },
-      redhat = {
-        telemetry = {
-          enabled = false,
         },
       },
     },
