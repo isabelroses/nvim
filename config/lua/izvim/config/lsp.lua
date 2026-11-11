@@ -134,9 +134,12 @@ local servers = {
   intelephense = {},
   jqls = {},
   jsonls = {
+    -- the schemastore catalog is slow to load, so only build it when the server starts
+    before_init = function(_, config)
+      config.settings.json.schemas = require("schemastore").json.schemas()
+    end,
     settings = {
       json = {
-        schemas = require("schemastore").json.schemas(),
         validate = { enable = true },
       },
     },
@@ -191,6 +194,10 @@ local servers = {
   ts_ls = {},
   vue_ls = {},
   yamlls = {
+    before_init = function(_, config)
+      config.settings.yaml.schemas =
+        vim.tbl_extend("keep", config.settings.yaml.schemas, require("schemastore").yaml.schemas())
+    end,
     settings = {
       yaml = {
         completion = true,
@@ -198,14 +205,15 @@ local servers = {
         suggest = {
           parentSkeletonSelectedFirst = true,
         },
-        schemas = vim.tbl_extend("keep", {
+        -- merged with the schemastore catalog in before_init
+        schemas = {
           ["https://json.schemastore.org/github-action"] = ".github/action.{yaml,yml}",
           ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*",
           ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "*lab-ci.{yaml,yml}",
           ["https://json.schemastore.org/helmfile"] = "helmfile.{yaml,yml}",
           ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yml,yaml}",
           ["https://goreleaser.com/static/schema.json"] = ".goreleaser.{yml,yaml}",
-        }, require("schemastore").yaml.schemas()),
+        },
       },
       redhat = {
         telemetry = {

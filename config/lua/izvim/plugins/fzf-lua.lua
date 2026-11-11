@@ -4,6 +4,10 @@ return {
     "fzf-lua",
     event = "DeferredUIEnter",
     after = function()
+      -- fd/rg skip ignored paths while walking the tree
+      local defaults = require("fzf-lua.defaults").defaults
+      local ignore = " --ignore-file " .. vim.fn.shellescape(vim.g.izvim_search_ignore)
+
       require("fzf-lua").setup({
         "telescope",
         winopts = function(opts)
@@ -22,62 +26,20 @@ return {
         prompt = " ",
         previewer = "builtin",
         files = {
+          fd_opts = defaults.files.fd_opts .. ignore,
+          rg_opts = defaults.files.rg_opts .. ignore,
           cwd_prompt = false,
           previewer = false,
           git_icons = false,
+        },
+        grep = {
+          -- `-e` has to stay last, it takes the search pattern
+          rg_opts = defaults.grep.rg_opts:gsub("%-e$", "") .. ignore .. " -e",
         },
         grep_curbuf = {
           winopts = {
             treesitter = true,
           },
-        },
-        file_ignore_patterns = {
-          -- keep-sorted start
-          "%.age",
-          "%.cache",
-          "%.class",
-          "%.dart_tool/",
-          "%.dll",
-          "%.docx",
-          "%.dylib",
-          "%.exe",
-          "%.git/",
-          "%.gradle/",
-          "%.ico",
-          "%.idea/",
-          "%.ipynb",
-          "%.jar",
-          "%.jpeg",
-          "%.jpg",
-          "%.lock",
-          "%.luac",
-          "%.met",
-          "%.min.js",
-          "%.npz",
-          "%.otf",
-          "%.pdb",
-          "%.pdf",
-          "%.png",
-          "%.pyc",
-          "%.settings/",
-          "%.so",
-          "%.sqlite3",
-          "%.ttf",
-          "%.vale/",
-          "%.vscode/",
-          "%.webp",
-          ".direnv/",
-          "__pycache__/",
-          "_sources/",
-          "build/",
-          "env/",
-          "gradle/",
-          "node_modules/",
-          "smalljre_*/*",
-          "target/",
-          "tmp/",
-          "vendor/*",
-          -- keep-sorted end
         },
       })
 

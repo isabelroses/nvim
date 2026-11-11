@@ -59,10 +59,10 @@ vim.o.messagesopt = "hit-enter,history:500,progress:"
 -- ohhhh tabs, already have bufferline
 vim.o.showtabline = 0
 
--- use rg for grepping
-vim.o.grepprg = "rg --vimgrep"
+-- use rg for grepping, skipping the same paths as the fzf-lua pickers
+vim.g.izvim_search_ignore = vim.api.nvim_get_runtime_file("search-ignore", false)[1]
+vim.o.grepprg = "rg --vimgrep --smart-case --ignore-file " .. vim.fn.fnameescape(vim.g.izvim_search_ignore)
 
--- enable project-local configs
 vim.o.exrc = true
 
 -- let me have spelling checking for english

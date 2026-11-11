@@ -1,0 +1,48 @@
+# files fd and rg skip while searching, on top of each repo's .gitignore.
+# gitignore syntax: a bare name matches a file or directory of that name anywhere.
+# used by fzf-lua (files, grep) and 'grepprg'
+# keep-sorted start
+*.age
+*.cache
+*.class
+*.dll
+*.docx
+*.dylib
+*.exe
+*.ico
+*.ipynb
+*.jar
+*.jpeg
+*.jpg
+*.lock
+*.luac
+*.met
+*.min.js
+*.npz
+*.otf
+*.pdb
+*.pdf
+*.png
+*.pyc
+*.so
+*.sqlite3
+*.ttf
+*.webp
+.dart_tool/
+.direnv/
+.gradle/
+.idea/
+.settings/
+.vale/
+.vscode/
+__pycache__/
+_sources/
+build/
+env/
+gradle/
+node_modules/
+smalljre_*/
+target/
+tmp/
+vendor/
+# keep-sorted end

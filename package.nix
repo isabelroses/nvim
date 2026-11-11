@@ -3,6 +3,7 @@
 
   # path
   fd,
+  fzf,
   ripgrep,
   emmet-language-server,
   vscode-langservers-extracted,
@@ -178,6 +179,7 @@ wrapNeovim {
     [
       # external deps
       fd
+      fzf
       ripgrep
       lazygit
       obsidian-headless

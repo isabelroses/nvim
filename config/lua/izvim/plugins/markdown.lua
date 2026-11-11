@@ -64,7 +64,10 @@ return {
 
   {
     "obsidian.nvim",
-    enabled = obsidian_workspaces ~= nil and #obsidian_workspaces > 0,
+    enabled = #obsidian_workspaces > 0,
+    -- setup blocks on the `ob` sync CLI (~100ms), so only pay for it when it's needed
+    ft = "markdown",
+    cmd = "Obsidian",
     after = function()
       require("obsidian").setup({
         workspaces = obsidian_workspaces,
