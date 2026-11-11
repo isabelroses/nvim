@@ -1,11 +1,3 @@
-local lsp_present, lspconfig = pcall(require, "lspconfig")
-local navic_present, navic = pcall(require, "nvim-navic")
-
-if not lsp_present then
-  vim.notify("lspconfig not present", vim.log.levels.ERROR)
-  return
-end
-
 vim.lsp.config("*", {
   root_markers = { ".git" },
   capabilities = {
@@ -60,22 +52,6 @@ local servers = {
     filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
   },
   cssls = {},
-  denols = {
-    root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-    single_file_support = false,
-    settings = {
-      deno = {
-        inlayHints = {
-          parameterNames = { enabled = "all", suppressWhenArgumentMatchesName = true },
-          parameterTypes = { enabled = true },
-          variableTypes = { enabled = true, suppressWhenTypeMatchesName = true },
-          propertyDeclarationTypes = { enabled = true },
-          functionLikeReturnTypes = { enable = true },
-          enumMemberValues = { enabled = true },
-        },
-      },
-    },
-  },
   dockerls = {},
   emmet_language_server = {
     filetypes = {
@@ -94,7 +70,6 @@ local servers = {
   },
   gleam = {},
   gopls = {
-    single_file_support = true,
     filetypes = { "go", "gomod", "gosum", "gotmpl", "gohtmltmpl", "gotexttmpl" },
     cmd = {
       "gopls", -- share the gopls instance if there is one already
@@ -203,19 +178,6 @@ local servers = {
   teal_ls = {},
   tinymist = {},
   ts_ls = {},
-  vtsls = {
-    root_dir = function(fname)
-      local root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json")(fname)
-
-      -- this is needed to make sure we don't pick up root_dir inside node_modules
-      local node_modules_index = root_dir and root_dir:find("node_modules", 1, true)
-      if node_modules_index and node_modules_index > 0 then
-        root_dir = root_dir:sub(1, node_modules_index - 2)
-      end
-
-      return root_dir
-    end,
-  },
   vue_ls = {},
   yamlls = {
     settings = {
