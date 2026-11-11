@@ -16,7 +16,8 @@ return {
         harpoon:list():add()
       end)
 
-      for i = 0, 4 do
+      -- harpoon lists are 1-indexed
+      for i = 1, 4 do
         vim.keymap.set("n", "<leader>" .. i, function()
           harpoon:list():select(i)
         end)
