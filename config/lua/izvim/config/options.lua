@@ -53,6 +53,8 @@ vim.o.showmode = false
 vim.o.cmdheight = 0
 -- always show status
 vim.o.laststatus = 3
+-- keep progress (LSP loading etc.) out of the message area, the statusline shows it
+vim.o.messagesopt = "hit-enter,history:500,progress:"
 
 -- ohhhh tabs, already have bufferline
 vim.o.showtabline = 0

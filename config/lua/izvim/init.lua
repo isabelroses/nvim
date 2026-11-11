@@ -6,6 +6,7 @@ require("izvim.config.ft")
 require("izvim.config.keybinds")
 require("izvim.config.neovide")
 require("izvim.config.options")
+require("izvim.statusline").setup()
 
 require("lz.n").load("izvim.plugins")
 require("izvim.config.lsp")
