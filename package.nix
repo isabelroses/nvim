@@ -145,7 +145,6 @@ wrapNeovim {
       grug-far-nvim
       harpoon2
       img-clip-nvim
-      lazydev-nvim
       lualine-nvim
       markview-nvim
       mini-hipatterns

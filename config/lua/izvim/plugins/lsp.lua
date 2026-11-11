@@ -156,14 +156,6 @@ return {
     end,
   },
 
-  {
-    "lazydev.nvim",
-    event = "DeferredUIEnter",
-    after = function()
-      require("lazydev").setup()
-    end,
-  },
-
   { "rainbow-delimiters.nvim" },
 
   {
