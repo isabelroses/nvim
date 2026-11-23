@@ -140,6 +140,7 @@ wrapNeovim {
       cord-nvim
       crates-nvim
       dropbar-nvim
+      flash-nvim
       freeze-nvim
       fzf-lua
       gitsigns-nvim
@@ -147,16 +148,18 @@ wrapNeovim {
       harpoon2
       img-clip-nvim
       markview-nvim
+      mini-animate
       mini-hipatterns
       mini-icons
       mini-surround
       nvim-colorizer-lua
       nvim-lint
-      nvim-treesitter-context
       obsidian-nvim
       rainbow-delimiters-nvim
       rustaceanvim
+      smear-cursor-nvim
       snacks-nvim
+      tiny-glimmer-nvim
       typst-preview-nvim
       vim-wakatime
       # keep-sorted end

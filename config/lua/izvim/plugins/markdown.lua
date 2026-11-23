@@ -29,6 +29,16 @@ return {
     after = function()
       local p = require("markview.presets")
 
+      local checkboxes = vim.deepcopy(p.checkboxes.nerd)
+      vim.list_extend(checkboxes.custom, {
+        { match_string = "@", text = "\u{f1978}", hl = "DiagnosticWarn" },
+        { match_string = "s", text = "\u{f040a}", hl = "DiagnosticInfo" },
+        { match_string = "d", text = "\u{f03e4}", hl = "Comment" },
+        { match_string = "b", text = "\u{f073a}", hl = "DiagnosticError" },
+        { match_string = "!", text = "\u{f0238}", hl = "Constant" },
+        { match_string = "?", text = "\u{f0625}", hl = "DiagnosticHint" },
+      })
+
       require("markview").setup({
         -- allows us to use hybrid mode
         preview = {
@@ -45,7 +55,7 @@ return {
 
         markdown = {
           headings = p.headings.glow,
-          checkboxes = p.checkboxes.nerd,
+          checkboxes = checkboxes,
           horizontal_rules = p.horizontal_rules.thin,
           code_blocks = {
             pad_amount = 1,
@@ -77,6 +87,8 @@ return {
         completion = {
           match_case = false,
         },
+
+        checkbox = { order = { " ", "@", "s", "x" } },
       })
     end,
   },
@@ -100,16 +112,6 @@ return {
           },
         },
       })
-    end,
-  },
-
-  -- typst preview isn't actually markdown but ehhh close enough
-  {
-    "typst-preview-nvim",
-    ft = "typst",
-    after = function()
-      -- don't call setup since it does binary stuff SIGHHHHH
-      require("typst-preview.commands").create_commands()
     end,
   },
 }

@@ -28,6 +28,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+local severity = vim.diagnostic.severity
+vim.diagnostic.config({
+  virtual_text = { prefix = "●" },
+  severity_sort = true,
+  signs = {
+    text = {
+      [severity.ERROR] = "\u{f057} ",
+      [severity.WARN] = "\u{f071} ",
+      [severity.HINT] = "\u{f0335} ",
+      [severity.INFO] = "\u{f05a} ",
+    },
+  },
+})
+
 -- forward LSP progress to native progress messages, which ui2 displays
 local progress = {}
 vim.api.nvim_create_autocmd("LspProgress", {

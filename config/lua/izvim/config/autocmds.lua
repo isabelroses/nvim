@@ -3,13 +3,6 @@ vim.api.nvim_create_autocmd("VimResized", {
   desc = "Automatically resize windows when the host window size changes.",
 })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.hl.on_yank({ higroup = "CurSearch", timeout = 200 })
-  end,
-  desc = "Highlight yanked text",
-})
-
 vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
   callback = function(data)
     local msg = data.event == "RecordingEnter" and "Recording macro..." or "Macro recorded"

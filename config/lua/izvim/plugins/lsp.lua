@@ -91,55 +91,6 @@ return {
   { "SchemaStore.nvim" },
 
   {
-    "crates.nvim",
-    after = function()
-      require("crates").setup({})
-    end,
-    event = "BufRead Cargo.toml",
-  },
-
-  {
-    "rustaceanvim",
-    lazy = false,
-    after = function()
-      vim.g.rustaceanvim = {
-        on_attach = function(_, bufnr)
-          vim.keymap.set("n", "<leader>cR", function()
-            vim.cmd.RustLsp("codeAction")
-          end, { buffer = bufnr })
-          vim.keymap.set("n", "<leader>dr", function()
-            vim.cmd.RustLsp("debuggables")
-          end, { buffer = bufnr })
-        end,
-        settings = {
-          ["rust-analyzer"] = {
-            cargo = {
-              allFeatures = true,
-              loadOutDirsFromCheck = true,
-              runBuildScripts = true,
-            },
-            checkOnSave = {
-              allFeatures = true,
-              command = "clippy",
-              extraArgs = { "--no-deps" },
-            },
-            procMacro = {
-              enable = true,
-              ignored = {
-                ["async-trait"] = { "async_trait" },
-                ["napi-derive"] = { "napi" },
-                ["async-recursion"] = { "async_recursion" },
-              },
-            },
-          },
-        },
-      }
-    end,
-  },
-
-  { "rainbow-delimiters.nvim" },
-
-  {
     "nvim-lint",
     event = "DeferredUIEnter",
     after = function()

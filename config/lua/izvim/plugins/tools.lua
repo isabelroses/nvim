@@ -1,19 +1,17 @@
 ---@type lz.n.PluginSpec[]
 return {
-  -- mini
   {
-    "mini.surround",
-    event = "InsertEnter",
+    "freeze.nvim",
+    event = "DeferredUIEnter",
     after = function()
-      require("mini.surround").setup({
-        mappings = {
-          add = "S",
-          delete = "ds",
-          replace = "cs",
-          update_n_lines = "sn",
-          suffix_last = "",
-          suffix_next = "",
-        },
+      vim.keymap.set("v", "<leader>sc", "<cmd>Freeze<cr>")
+
+      require("freeze").setup({
+        output = function()
+          return vim.fn.getcwd() .. "/" .. os.date("%Y-%m-%d") .. "_freeze.png"
+        end,
+        config = "user",
+        font = { family = "JetBrains Mono" },
       })
     end,
   },
@@ -36,14 +34,6 @@ return {
         editor = { icon = "https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp" },
         display = { swap_icons = true },
       })
-    end,
-  },
-
-  {
-    "gitsigns.nvim",
-    event = "BufReadPost",
-    after = function()
-      require("gitsigns").setup()
     end,
   },
 

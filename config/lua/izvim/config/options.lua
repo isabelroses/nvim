@@ -63,16 +63,8 @@ vim.o.undodir = vim.fs.normalize("~/.local/state/nvim/undodir")
 vim.o.undofile = true
 
 vim.o.winborder = "rounded"
-vim.opt.fillchars:append({
-  horiz = "─",
-  horizup = "┴",
-  horizdown = "┬",
-  vert = "│",
-  vertright = "├",
-  vertleft = "┤",
-  verthoriz = "┼",
-  eob = " ", -- hide the ~ on lines past the end of the buffer
-})
+-- hide the ~ on lines past the end of the buffer, the separators already default to box drawing
+vim.opt.fillchars:append({ eob = " " })
 vim.o.listchars = "tab:» ,trail:·,nbsp:␣"
 
 -- highlight the current line number only, not the whole line

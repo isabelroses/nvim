@@ -1,19 +1,5 @@
 vim.filetype.add({
-  extension = {
-    jq = "jq",
-    tmpl = "gohtmltmpl",
-    rasi = "scss",
-    envrc = "bash",
-    tera = "tera",
-    mdx = "mdx",
-  },
-  filename = {
-    ["flake.lock"] = "json",
-    [".Justfile"] = "just",
-    [".justfile"] = "just",
-    ["Justfile"] = "just",
-    ["justfile"] = "just",
-  },
+  extension = { tmpl = "gohtmltmpl", rasi = "scss", envrc = "bash", mdx = "mdx" },
 })
 
 -- map filetypes to the parser that handles them, when the names differ.

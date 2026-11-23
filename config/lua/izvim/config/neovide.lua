@@ -42,9 +42,5 @@ vim.g.neovide_detach_on_quit = "always_detach"
 
 vim.keymap.set("n", "<m-enter>", function()
   vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
-  if vim.g.neovide_fullscreen then
-    vim.notify("enabling fullscreen")
-  else
-    vim.notify("disabling fullscreen")
-  end
+  vim.notify((vim.g.neovide_fullscreen and "enabling" or "disabling") .. " fullscreen")
 end, { silent = true })

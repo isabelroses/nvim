@@ -1,6 +1,4 @@
-local M = {}
-
-M.loaded = false
+local M = { loaded = false }
 
 M.check = function()
   vim.health.start("izvim report")
@@ -11,12 +9,8 @@ M.check = function()
     vim.health.error("izvim did not load correctly")
   end
 
-  local deps = {
-    "direnv", -- direnv.nvim doesn't provide a checkhealth command
-    "lazygit",
-  }
-
-  for _, dep in ipairs(deps) do
+  -- direnv.nvim doesn't provide a checkhealth command
+  for _, dep in ipairs({ "direnv", "lazygit" }) do
     if vim.fn.executable(dep) == 1 then
       vim.health.ok(dep .. " is installed")
     else

@@ -17,6 +17,13 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
+map("n", "J", "mzJ`z")
+
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+map("n", "<Esc>", "<cmd>nohlsearch<cr>")
+
 -- native undotree, see |undotree-plugin|
 map("n", "<leader>u", function()
   vim.cmd.packadd("nvim.undotree")

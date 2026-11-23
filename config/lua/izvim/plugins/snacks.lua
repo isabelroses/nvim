@@ -6,20 +6,20 @@ return {
     after = function()
       local snacks = require("snacks")
 
+      local function restore_session()
+        local nivvie = require("nivvie")
+        if nivvie.autorestored then
+          return
+        end
+        nivvie.autorestored = true
+        vim.schedule(nivvie.restore)
+      end
+
       -- restore session after closing
       vim.api.nvim_create_autocmd("User", {
         pattern = "SnacksDashboardClosed",
         group = vim.api.nvim_create_augroup("izvim.dashboard-restore", { clear = true }),
-        callback = function()
-          local nivvie = require("nivvie")
-          if nivvie.autorestored then
-            return
-          end
-          nivvie.autorestored = true
-          vim.schedule(function()
-            nivvie.restore()
-          end)
-        end,
+        callback = restore_session,
       })
 
       local quote_state = { text = nil, started = false }
@@ -97,6 +97,7 @@ return {
           },
         },
         image = { enabled = true },
+        words = { enabled = true },
         indent = {
           enabled = true,
           scope = { enabled = false },
@@ -153,6 +154,26 @@ return {
       map("n", "<C-N>", snacks.explorer.open, "toggle file explorer")
       map({ "n", "t" }, "<c-t>", snacks.terminal.toggle, "toggle terminal")
       map("n", "<leader>gg", snacks.lazygit.open, "open lazygit")
+      map({ "n", "v" }, "<leader>gB", function()
+        snacks.gitbrowse()
+      end, "open line on the git remote")
+      for lhs, dir in pairs({ ["]]"] = 1, ["[["] = -1 }) do
+        map("n", lhs, function()
+          snacks.words.jump(dir * vim.v.count1)
+        end, "jump to LSP reference")
+      end
+      map("n", "<leader>z", function()
+        snacks.zen()
+      end, "zen mode")
+      map("n", "<leader>Z", function()
+        snacks.zen.zoom()
+      end, "zoom window")
+      map("n", "<leader>tw", function()
+        (snacks.dim.enabled and snacks.dim.disable or snacks.dim.enable)()
+      end, "dim code outside the current scope")
+      map("n", "<leader>rf", function()
+        snacks.rename.rename_file()
+      end, "rename file")
     end,
   },
 }
